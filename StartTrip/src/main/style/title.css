@@ -1,0 +1,24 @@
+﻿body {
+}
+* {
+            margin:0;
+            font-family: 微軟正黑體;
+            margin:auto;
+        }
+header{
+    background-color:aquamarine;
+}
+ .mborder{
+           width:500px;
+            border:2px solid black;
+            margin-top:10px;
+        }
+ .planeimg{
+     float:left;
+     margin:16px;
+ }
+ .taketicket{
+      float:right;
+      margin:20px;
+      margin-top:30px;
+ }
