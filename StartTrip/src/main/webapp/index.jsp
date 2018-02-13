@@ -7,6 +7,10 @@
 <title>index</title>
 </head>
 <body>
+<<<<<<< HEAD
 jhjjjbj
+=======
+123
+>>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
 </body>
 </html>
