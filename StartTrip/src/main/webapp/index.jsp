@@ -14,7 +14,7 @@
 </head>
 <body>
 	<header style="background-color: antiquewhite">
-		<a href="#"><img src="/image/01.png" /></a>
+		<a href="#"><img src="image/01.png" /></a>
 		<nav>
 			<ul>
 				<li><a href="#">機票</a></li>
