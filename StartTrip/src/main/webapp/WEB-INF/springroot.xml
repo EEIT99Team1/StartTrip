@@ -10,6 +10,7 @@
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="test.bean"></context:component-scan>
 	<context:component-scan base-package="test.model"></context:component-scan>
+	<context:component-scan base-package="model"></context:component-scan>
 
 	
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
