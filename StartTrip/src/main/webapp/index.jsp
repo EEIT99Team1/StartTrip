@@ -8,5 +8,7 @@
 </head>
 <body>
 
+<a href="Bonusshop/bonusshop.jsp">紅利商店</a>
+
 </body>
 </html>

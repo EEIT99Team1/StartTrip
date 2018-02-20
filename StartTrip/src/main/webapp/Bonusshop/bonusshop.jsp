@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Bonus shops</title>
 </head>
 <body>
-
+<script type="js/jquery-3.3.1.min.js"></script>
+<script type="js/bootstrap.min.js"></script>
+<script type="js/jquery-ui.effects.min.js"></script>
+<script type="js/jquery-ui.min.js"></script>
+<script>
+	$(document).ready(function() {
+	
+	
+	})
+</script>
 </body>
 </html>
