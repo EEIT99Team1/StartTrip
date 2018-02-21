@@ -21,7 +21,6 @@
 				<li>飯店</li>
 				<li><input type="button" value="登入" style="float: right;" /></li>
 			</ul>
-
 		</nav>
 
 	</header>
@@ -84,5 +83,6 @@
 			</div>
 		</form>
 	</fieldset>
+
 </body>
 </html>
