@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.bean.Bonusorder;
+import model.bean.BonusorderBean;
 
 @Repository
 public class BonusorderDao {
@@ -16,11 +16,11 @@ public class BonusorderDao {
 		return sessionFactory.getCurrentSession();
 	}
 
-	public Bonusorder select(int wid) {
-		return this.getSession().get(Bonusorder.class, wid);
+	public BonusorderBean select(int wid) {
+		return this.getSession().get(BonusorderBean.class, wid);
 	}
 	public boolean update(int wid,String email, int ID, int wuchs) {
-		Bonusorder result = this.getSession().get(Bonusorder.class, wid);
+		BonusorderBean result = this.getSession().get(BonusorderBean.class, wid);
 		if(result!=null) {
 			result.setEmail(email);
 			result.setID(ID);

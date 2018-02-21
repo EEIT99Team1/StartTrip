@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Bonushop {
+public class BonushopBean {
 	@Id
 	private int ID;
 	private String name;

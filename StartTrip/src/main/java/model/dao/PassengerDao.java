@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.bean.Passenger;
+import model.bean.PassengerBean;
 
 @Repository
 public class PassengerDao {
@@ -18,11 +18,11 @@ public class PassengerDao {
 	}
 	
 	@Transactional
-	public Passenger get(Integer wid) {
-		return getSession().get(Passenger.class, wid);
+	public PassengerBean get(Integer wid) {
+		return getSession().get(PassengerBean.class, wid);
 	}
 	@Transactional
-	public Passenger insert(Passenger bean) {
+	public PassengerBean insert(PassengerBean bean) {
 		if(bean!=null) {
 			getSession().save(bean);
 			return bean;

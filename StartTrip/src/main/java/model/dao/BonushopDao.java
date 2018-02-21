@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.bean.Bonushop;
+import model.bean.BonushopBean;
 
 @Repository
 public class BonushopDao {
@@ -15,11 +15,11 @@ public class BonushopDao {
 		return sessionFactory.getCurrentSession();
 	}
 
-	public Bonushop select(int ID) {
-		return this.getSession().get(Bonushop.class, ID);
+	public BonushopBean select(int ID) {
+		return this.getSession().get(BonushopBean.class, ID);
 	}
 	public boolean update(int ID,String name,int much,int bonus) {
-		Bonushop result = this.getSession().get(Bonushop.class, ID);
+		BonushopBean result = this.getSession().get(BonushopBean.class, ID);
 		if(result!=null) {
 			result.setName(name);
 			result.setMuch(much);

@@ -3,13 +3,13 @@ package model.bean;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Orderman {
+public class OrdermanBean {
 	String email;
 	int orderID;
 	boolean status;
-	Set<Orderman> items = new LinkedHashSet<>();
+	Set<OrdermanBean> items = new LinkedHashSet<>();
 	
-	public Orderman( String email, int orderID, boolean status,Set<Orderman> items ) {
+	public OrdermanBean( String email, int orderID, boolean status,Set<OrdermanBean> items ) {
 		super();
 		this.email=email;
 		this.orderID=orderID;
@@ -42,11 +42,11 @@ public class Orderman {
 		this.status = status;
 	}
 
-	public Set<Orderman> getItems() {
+	public Set<OrdermanBean> getItems() {
 		return items;
 	}
 
-	public void setItems(Set<Orderman> items) {
+	public void setItems(Set<OrdermanBean> items) {
 		this.items = items;
 	}
 
