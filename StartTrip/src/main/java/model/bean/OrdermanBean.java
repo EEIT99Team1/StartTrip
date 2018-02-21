@@ -1,22 +1,17 @@
 package model.bean;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class OrdermanBean {
-	String email;
-	int orderID;
-	boolean status;
-	Set<OrdermanBean> items = new LinkedHashSet<>();
-	
-	public OrdermanBean( String email, int orderID, boolean status,Set<OrdermanBean> items ) {
-		super();
-		this.email=email;
-		this.orderID=orderID;
-		this.status=status;
-		
-	}
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String email;
+	private Integer orderid;
+	private boolean stutus;
 
 	public String getEmail() {
 		return email;
@@ -26,28 +21,24 @@ public class OrdermanBean {
 		this.email = email;
 	}
 
-	public int getOrderID() {
-		return orderID;
+	public int getOrderid() {
+		return orderid;
 	}
 
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
+	public void setOrderid(int orderid) {
+		this.orderid = orderid;
 	}
 
-	public boolean isStatus() {
-		return status;
+	public boolean isStutus() {
+		return stutus;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setStutus(boolean stutus) {
+		this.stutus = stutus;
 	}
 
-	public Set<OrdermanBean> getItems() {
-		return items;
+	@Override
+	public String toString() {
+		return "Orderman [email" + email + ", orderid=" + orderid + ", stutus=" + stutus + "]";
 	}
-
-	public void setItems(Set<OrdermanBean> items) {
-		this.items = items;
-	}
-
 }
