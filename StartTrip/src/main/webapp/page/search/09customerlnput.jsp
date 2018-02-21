@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,6 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="import" href="<c:url value="/page/shared/headerfooter.jsp"/>">
 <title>Insert title here</title>
 </head>
 <body class="bg-light">
@@ -17,31 +19,31 @@
 		<div class="col-md-8 order-md-1">
 			<h4 class="mb-3">乘客資訊</h4>
 			<form class="needs-validation" id="passengerForm" action="#">
-<!-- 				<div class="row"> -->
-<!-- 					<div class="col-md-6 mb-3"> -->
-<!-- 						<label for="firstName">First name</label> <input type="text" -->
-<!-- 							class="form-control" id="firstName" value="" required="required"> -->
-<!-- 										<div class="invalid-feedback">Valid first name is required.</div> -->
-<!-- 					</div> -->
-<!-- 					<div class="col-md-6 mb-3"> -->
-<!-- 						<label for="lastName">Last name</label> <input type="text" -->
-<!-- 							class="form-control" id="lastName" value="" required> -->
-<!-- 										<div class="invalid-feedback">Valid last name is required.</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="row"> -->
-<!-- 					<div class="col-md-6 mb-3"> -->
-<!-- 						<label for="passport">護照號碼</label> <input type="text" -->
-<!-- 							class="form-control" id="passport" value="" required> -->
-<!-- 										<div class="invalid-feedback">Valid first name is required.</div> -->
-<!-- 					</div> -->
-<!-- 					<div class="col-md-6 mb-3"> -->
-<!-- 						<label for="expiry">護照到期日</label> <input type="text" -->
-<!-- 							class="form-control" id="expiry" value="" required> -->
-<!-- 										<div class="invalid-feedback">Valid last name is required.</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<input type="submit" value="submit" /> -->
+				<!-- 				<div class="row"> -->
+				<!-- 					<div class="col-md-6 mb-3"> -->
+				<!-- 						<label for="firstName">First name</label> <input type="text" -->
+				<!-- 							class="form-control" id="firstName" value="" required="required"> -->
+				<!-- 										<div class="invalid-feedback">Valid first name is required.</div> -->
+				<!-- 					</div> -->
+				<!-- 					<div class="col-md-6 mb-3"> -->
+				<!-- 						<label for="lastName">Last name</label> <input type="text" -->
+				<!-- 							class="form-control" id="lastName" value="" required> -->
+				<!-- 										<div class="invalid-feedback">Valid last name is required.</div> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="row"> -->
+				<!-- 					<div class="col-md-6 mb-3"> -->
+				<!-- 						<label for="passport">護照號碼</label> <input type="text" -->
+				<!-- 							class="form-control" id="passport" value="" required> -->
+				<!-- 										<div class="invalid-feedback">Valid first name is required.</div> -->
+				<!-- 					</div> -->
+				<!-- 					<div class="col-md-6 mb-3"> -->
+				<!-- 						<label for="expiry">護照到期日</label> <input type="text" -->
+				<!-- 							class="form-control" id="expiry" value="" required> -->
+				<!-- 										<div class="invalid-feedback">Valid last name is required.</div> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 				<input type="submit" value="submit" /> -->
 			</form>
 		</div>
 	</div>
@@ -57,6 +59,16 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+	<script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+
+    // 从 warning.html 的文档中获取 DOM。
+    var el = content.querySelector('header');
+
+//     document.body.appendChild(el.cloneNode(true));
+    $("body").prepend(el.cloneNode(true));
+  	</script>
 	<script>
 	$(document).ready(function(){
 		var documentFragment = $(document.createDocumentFragment());
