@@ -8,10 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello</h1>
+<h1>test.controller</h1>
 <form action='<c:url value="/test.controller"/>'>
 	ID:<input type="text" name="id"/><br/>
 	Name:<input type="text" name="name"/><br/>
+	<input type="submit" value="submit"/>
+</form>
+<h1>passenger.controller</h1>
+<form action='<c:url value="/passenger.controller"/>'>
 	<input type="submit" value="submit"/>
 </form>
 </body>

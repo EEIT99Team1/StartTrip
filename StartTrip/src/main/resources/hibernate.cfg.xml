@@ -9,5 +9,6 @@
         <property name="hibernate.show_sql">true</property>
         
         <mapping class="test.model.TestTable"/>
+        <mapping class="model.bean.Passenger"/>
     </session-factory>
 </hibernate-configuration>
