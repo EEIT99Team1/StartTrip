@@ -11,12 +11,12 @@ public class BonusorderBean {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int wid;
 	private String email;
-	private int ID;
-	private int wuchs;
+	private int id;
+	private int wmuchs;
 
 	@Override
 	public String toString() {
-		return "Bonusorder [wid=" + wid + ", email=" + email + ", ID=" + ID + ", wuchs=" + wuchs + "]";
+		return "Bonusorder [wid=" + wid + ", email=" + email + ", id=" + id + ", wuchs=" + wmuchs + "]";
 	}
 	public int getWid() {
 		return wid;
@@ -30,16 +30,17 @@ public class BonusorderBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
-	public void setID(int iD) {
-		this.ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getWuchs() {
-		return wuchs;
+	public int getWmuchs() {
+		return wmuchs;
 	}
-	public void setWuchs(int wuchs) {
-		this.wuchs = wuchs;
+	public void setWmuchs(int wmuchs) {
+		this.wmuchs = wmuchs;
 	}
+
 }

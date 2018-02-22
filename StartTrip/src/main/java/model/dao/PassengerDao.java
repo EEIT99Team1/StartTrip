@@ -19,12 +19,13 @@ public class PassengerDao {
 	}
 	
 	@Transactional
-	public PassengerBean get(int wid) {
+	public PassengerBean select(int wid) {
 		return getSession().get(PassengerBean.class, wid);
 	}
 	@Transactional
 	public PassengerBean insert(PassengerBean bean) {
-		if(bean!=null) {
+		PassengerBean result = getSession().get(PassengerBean.class, bean.getWid());
+		if(result==null) {
 			getSession().save(bean);
 			return bean;
 		}		
