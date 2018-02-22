@@ -22,7 +22,7 @@
 
     <div class="mborder">
         <div class="planeimg">
-            <img src="../image/01.png" />
+            <img src="<c:url value="/image/01.png"/>" />
         </div>
         <a href="03ticketcheck.jsp" class="taketicket">
         <input type="button" value="訂票" />
@@ -43,7 +43,7 @@
 
     <div class="mborder">
         <div class="planeimg">
-            <img src="../image/01.png" />
+            <img src="<c:url value="/image/01.png"/>" />
         </div>
         <a href="03ticketcheck.jsp" class="taketicket">
             <input type="button" value="訂票" />

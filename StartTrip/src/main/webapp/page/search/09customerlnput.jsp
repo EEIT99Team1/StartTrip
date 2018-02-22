@@ -11,10 +11,10 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="import" href="<c:url value="/page/shared/headerfooter.jsp"/>">
 <title>Insert title here</title>
 </head>
 <body class="bg-light">
+<%@ include file='/page/shared/headerfooter.jsp' %>
 	<div class="container">
 		<div class="col-md-8 order-md-1">
 			<h4 class="mb-3">乘客資訊</h4>
@@ -59,16 +59,6 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	<script>
-    var link = document.querySelector('link[rel="import"]');
-    var content = link.import;
-
-    // 从 warning.html 的文档中获取 DOM。
-    var el = content.querySelector('header');
-
-//     document.body.appendChild(el.cloneNode(true));
-    $("body").prepend(el.cloneNode(true));
-  	</script>
 	<script>
 	$(document).ready(function(){
 		var documentFragment = $(document.createDocumentFragment());
