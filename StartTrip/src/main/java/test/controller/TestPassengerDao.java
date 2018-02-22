@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import model.bean.Passenger;
+import model.bean.PassengerBean;
 import model.dao.PassengerDao;
 
 @Controller
@@ -14,7 +14,7 @@ public class TestPassengerDao {
 	private PassengerDao dao;
 	@RequestMapping(path = { "/passenger.controller" }, method = { RequestMethod.GET, RequestMethod.POST })
 	public String method() {
-		Passenger p=new Passenger();
+		PassengerBean p=new PassengerBean();
 		System.out.println(p.getWid());
 		p.setWid(2);
 		System.out.println(p.getWid());

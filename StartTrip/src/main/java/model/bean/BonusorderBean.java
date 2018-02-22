@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Bonusorder {
+public class BonusorderBean {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int wid;
