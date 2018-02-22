@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import model.bean.BonushopBean;
 import model.bean.PassengerBean;
 
 @Repository
@@ -18,7 +19,7 @@ public class PassengerDao {
 	}
 	
 	@Transactional
-	public PassengerBean get(Integer wid) {
+	public PassengerBean get(int wid) {
 		return getSession().get(PassengerBean.class, wid);
 	}
 	@Transactional
@@ -29,6 +30,30 @@ public class PassengerDao {
 		}		
 		return null;
 	}
+	@Transactional
+	public boolean update(int wid,String firstname,String lastname,
+			java.sql.Date expiry,String passport,Integer orderid) {
+		PassengerBean result = getSession().get(PassengerBean.class, wid);
+		if(result!=null) {
+			result.setFirstname(firstname);
+			result.setLastname(lastname);
+			result.setExpiry(expiry);
+			result.setPassport(passport);
+			result.setOrderid(orderid);
+			return true;
+		}
+		return false;
+	}
+	@Transactional
+	public boolean delete(int wid) {
+		PassengerBean result = getSession().get(PassengerBean.class, wid);
+		if(result!=null) {
+			this.getSession().delete(result);
+			return true;
+		}
+		return false;
+	}
+	
 	
 	
 }

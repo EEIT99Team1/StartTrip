@@ -15,11 +15,11 @@ public class BonushopDao {
 		return sessionFactory.getCurrentSession();
 	}
 
-	public BonushopBean select(int ID) {
-		return this.getSession().get(BonushopBean.class, ID);
+	public BonushopBean select(int id) {
+		return this.getSession().get(BonushopBean.class, id);
 	}
-	public boolean update(int ID,String name,int much,int bonus) {
-		BonushopBean result = this.getSession().get(BonushopBean.class, ID);
+	public boolean update(int id,String name,int much,int bonus) {
+		BonushopBean result = this.getSession().get(BonushopBean.class, id);
 		if(result!=null) {
 			result.setName(name);
 			result.setMuch(much);
