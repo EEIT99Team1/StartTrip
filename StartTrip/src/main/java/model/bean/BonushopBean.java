@@ -6,17 +6,23 @@ import javax.persistence.Id;
 @Entity
 public class BonushopBean {
 	@Id
-	private int ID;
+	private int id;
 	private String name;
 	private int much;
 	private int bonus;
 
 	@Override
 	public String toString() {
-		return "bonushop [ID=" + ID + ", name=" + name + ", much=" + much + ", bonus=" + bonus + "]";
+		return "bonushop [id=" + id + ", name=" + name + ", much=" + much + ", bonus=" + bonus + "]";
 	}
 	public String getName() {
 		return name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setName(String name) {
 		this.name = name;
