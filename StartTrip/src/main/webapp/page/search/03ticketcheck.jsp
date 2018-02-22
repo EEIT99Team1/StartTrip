@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-		<a href="../index.jsp"><img src="../image/01.png" /></a>
+		<a href="<c:url value="/image/01.png"/>"><img src="../image/01.png" /></a>
 		<nav>
 			<ul>
 				<li><a href="../index.jsp">機票</a></li>

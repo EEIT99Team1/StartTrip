@@ -6,9 +6,7 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
 <!--         <property name="hibernate.current_session_context_class">thread</property> -->
-        <property name="hibernate.show_sql">true</property>
-        
+        <property name="hibernate.show_sql">true</property>        
         <mapping class="test.model.TestTable"/>
-<!--         <mapping class="model.bean.Passenger"/> -->
     </session-factory>
 </hibernate-configuration>
