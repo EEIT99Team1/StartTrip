@@ -15,7 +15,13 @@ public class CustomerBean {
 	private String birthday;
 	private String phonenumber ;
 	private int bonus;
-		
+	
+	@Override
+	public String toString() {
+		return "CustomerBean [email=" + email + ", password=" + password + ", firstname=" + firstname + ", lastname="
+				+ lastname + ", country=" + country + ", birthday=" + birthday + ", phonenumber=" + phonenumber
+				+ ", bonus=" + bonus + "]";
+	}
 	public String getEmail() {
 		return email;
 	}
