@@ -22,7 +22,7 @@ public class CustomerDao {
 	
 	@Transactional
 	public CustomerBean insert(CustomerBean bean) {
-		if(bean!=null) {
+		if(bean!=null && (select(bean.getEmail())==null)) {
 			getSession().save(bean);
 			return bean;
 		}
@@ -37,10 +37,10 @@ public class CustomerDao {
 //	private String phonenumber ;
 //	private int bonus;
 	@Transactional
-	public boolean update(String email,String password,String firstname,String lastname,String country,String birthday,String phonenumber,int bonus) {
+	public boolean update(String email,String password,String firstname
+			,String lastname,String country,String birthday,String phonenumber,int bonus) {
 		CustomerBean rs = this.getSession().get(CustomerBean.class, email);
 		if(rs!=null) {
-			rs.setEmail(email);
 			rs.setPassword(password);
 			rs.setFirstname(firstname);
 			rs.setLastname(lastname);

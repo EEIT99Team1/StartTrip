@@ -4,14 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Orderman")
 public class OrdermanBean {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String email;
 	private Integer orderid;
-	private boolean stutus;
+	private Boolean stutus;
 
 	public String getEmail() {
 		return email;
@@ -29,12 +30,16 @@ public class OrdermanBean {
 		this.orderid = orderid;
 	}
 
-	public boolean isStutus() {
+	public void setStutus(Boolean stutus) {
+		this.stutus = stutus;
+	}
+
+	public Boolean getStutus() {
 		return stutus;
 	}
 
-	public void setStutus(boolean stutus) {
-		this.stutus = stutus;
+	public void setOrderid(Integer orderid) {
+		this.orderid = orderid;
 	}
 
 	@Override

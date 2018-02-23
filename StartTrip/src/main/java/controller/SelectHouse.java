@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.HouseService;
 import model.bean.HouseBean;
+import model.service.HouseService;
 
 
 @WebServlet("/SelectHouse")

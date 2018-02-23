@@ -26,8 +26,7 @@ public class OrdermanDao {
 
 	@Transactional
 	public OrdermanBean insert(OrdermanBean bean) {
-		OrdermanBean result = getSession().get(OrdermanBean.class, bean.getEmail());
-		if(result==null) {
+		if(bean!=null && (select(bean.getEmail())==null)) {
 			getSession().save(bean);
 			return bean;
 		}

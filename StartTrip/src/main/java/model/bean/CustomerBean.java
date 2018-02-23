@@ -2,8 +2,10 @@ package model.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Customer")
 public class CustomerBean {
 	
 	@Id
@@ -14,7 +16,7 @@ public class CustomerBean {
 	private String country;	
 	private String birthday;
 	private String phonenumber ;
-	private int bonus;
+	private Integer bonus;
 	
 	@Override
 	public String toString() {
@@ -64,10 +66,10 @@ public class CustomerBean {
 	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
-	public int getBonus() {
+	public Integer getBonus() {
 		return bonus;
 	}
-	public void setBonus(int bonus) {
+	public void setBonus(Integer bonus) {
 		this.bonus = bonus;
 	}
 	

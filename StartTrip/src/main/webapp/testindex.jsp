@@ -13,10 +13,38 @@
 	ID:<input type="text" name="id"/><br/>
 	Name:<input type="text" name="name"/><br/>
 	<input type="submit" value="submit"/>
-</form>
+</form><hr/>
+<h1>bonushopBean.controller</h1>
+<form action='<c:url value="/bonushopBean.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
+<h1>bonusorderDao.controller</h1>
+<form action='<c:url value="/bonusorderDao.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
+<h1>customerDao.controller</h1>
+<form action='<c:url value="/customerDao.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
+<h1>fightorderDao.controller</h1>
+<form action='<c:url value="/fightorderDao.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
+<h1>ordermanDao.controller</h1>
+<form action='<c:url value="/ordermanDao.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
+<h1>passenger.controller</h1>
+<form action='<c:url value="/passengerDao.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
 <h1>passenger.controller</h1>
 <form action='<c:url value="/passenger.controller"/>'>
 	<input type="submit" value="submit"/>
-</form>
+</form><hr/>
+<h1>passenger.controller</h1>
+<form action='<c:url value="/passenger.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
 </body>
 </html>

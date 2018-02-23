@@ -1,4 +1,4 @@
-package model;
+package model.service;
 
 import java.util.List;
 
@@ -13,7 +13,6 @@ public class HouseService {
 		
 		
 		return houseDAO.select(a,b);
-				//houseDAO.select();
 	}
 
 }

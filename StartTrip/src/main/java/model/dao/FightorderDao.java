@@ -26,8 +26,7 @@ public class FightorderDao {
 	
 	@Transactional
 	public FightorderBean insert(FightorderBean bean) {
-		FightorderBean result = getSession().get(FightorderBean.class, bean.getWid());
-		if(result==null) {
+		if(bean!=null) {
 			getSession().save(bean);
 			return bean;
 		}		

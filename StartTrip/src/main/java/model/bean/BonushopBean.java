@@ -2,14 +2,16 @@ package model.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Bonushop")
 public class BonushopBean {
 	@Id
-	private int id;
+	private Integer id;
 	private String name;
-	private int much;
-	private int bonus;
+	private Integer much;
+	private Integer bonus;
 
 	@Override
 	public String toString() {
@@ -18,25 +20,25 @@ public class BonushopBean {
 	public String getName() {
 		return name;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getMuch() {
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getMuch() {
 		return much;
 	}
-	public void setMuch(int much) {
+	public void setMuch(Integer much) {
 		this.much = much;
 	}
-	public int getBonus() {
+	public Integer getBonus() {
 		return bonus;
 	}
-	public void setBonus(int bonus) {
+	public void setBonus(Integer bonus) {
 		this.bonus = bonus;
 	}
 	

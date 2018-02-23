@@ -26,8 +26,7 @@ public class BonusorderDao {
 
 	@Transactional
 	public BonusorderBean insert(BonusorderBean bean) {
-		BonusorderBean result = getSession().get(BonusorderBean.class, bean.getWid());
-		if(result==null) {
+		if(bean!=null) {
 			getSession().save(bean);
 			return bean;
 		}		

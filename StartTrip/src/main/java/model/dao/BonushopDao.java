@@ -23,9 +23,8 @@ public class BonushopDao {
 	}
 	
 	@Transactional
-	public BonusorderBean insert(BonusorderBean bean) {
-		BonushopBean result = this.getSession().get(BonushopBean.class, bean.getId());
-		if(result==null) {
+	public BonushopBean insert(BonushopBean bean) {
+		if(bean!=null && (select(bean.getId())==null)) {
 			getSession().save(bean);
 			return bean;
 		}		

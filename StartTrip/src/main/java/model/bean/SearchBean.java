@@ -2,8 +2,10 @@ package model.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Search")
 public class SearchBean {
 	@Id
 	private String aircode;

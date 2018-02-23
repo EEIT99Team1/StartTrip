@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import model.bean.FightorderBean;
 import model.bean.SearchBean;
 
 @Repository
@@ -24,7 +25,7 @@ public class SearchDao {
 		}
 	
 	public SearchBean insert(SearchBean bean) {
-		if(bean!=null) {
+		if(bean!=null && (select(bean.getAircode())==null)) {
 			getSession().save(bean);
 			return bean;
 		}
@@ -35,7 +36,6 @@ public class SearchDao {
 	public boolean update(String aircode,String airport,String country) {
 		SearchBean rs = this.getSession().get(SearchBean.class, aircode);
 		if(rs!=null) {
-			rs.setAircode(aircode);
 			rs.setAirport(airport);
 			rs.setCountry(country);
 			return true;
