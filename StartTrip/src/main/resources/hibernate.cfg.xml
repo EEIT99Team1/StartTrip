@@ -10,7 +10,7 @@
         <mapping class="model.bean.BonushopBean"/>
         <mapping class="model.bean.BonusorderBean"/>
         <mapping class="model.bean.CustomerBean"/>
-        <mapping class="model.bean.FightorderBean"/>
+        <mapping class="model.bean.FlightorderBean"/>
         <mapping class="model.bean.OrdermanBean"/>
         <mapping class="model.bean.PassengerBean"/>
         <mapping class="model.bean.SearchBean"/>

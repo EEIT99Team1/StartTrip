@@ -7,11 +7,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.bean.FightorderBean;
-import model.bean.OrdermanBean;
+import model.bean.FlightorderBean;
 
 @Repository
-public class FightorderDao {
+public class FlightorderDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -20,12 +19,12 @@ public class FightorderDao {
 	}
 	
 	@Transactional
-	public FightorderBean select (Integer wid) {
-		return getSession().get(FightorderBean.class, wid);
+	public FlightorderBean select (Integer wid) {
+		return getSession().get(FlightorderBean.class, wid);
 	}
 	
 	@Transactional
-	public FightorderBean insert(FightorderBean bean) {
+	public FlightorderBean insert(FlightorderBean bean) {
 		if(bean!=null) {
 			getSession().save(bean);
 			return bean;
@@ -35,17 +34,17 @@ public class FightorderDao {
 
 	@Transactional
 	public boolean update(Integer wid,String start,String endstart
-			,java.sql.Date update,java.sql.Date downdate,Integer adult,
+			,java.sql.Date uptime,java.sql.Date downtime,Integer adult,
 			Integer child,String fight,String model,Integer orderid) {
-		FightorderBean result = getSession().get(FightorderBean.class,wid);
+		FlightorderBean result = getSession().get(FlightorderBean.class,wid);
 		if (result != null) {
 			result.setStart(start);
 			result.setEndstart(endstart);
-			result.setUpdate(update);
-			result.setDowndate(downdate);
+			result.setUptime(uptime);
+			result.setDowntime(downtime);
 			result.setAdult(adult);
 			result.setChild(child);
-			result.setFight(fight);
+			result.setFlight(fight);
 			result.setModel(model);
 			result.setOrderid(orderid);
 			return true;
@@ -55,7 +54,7 @@ public class FightorderDao {
 
 	@Transactional
 	public boolean delete(int wid) {
-		FightorderBean result = getSession().get(FightorderBean.class, wid);
+		FlightorderBean result = getSession().get(FlightorderBean.class, wid);
 		if (result != null) {
 			this.getSession().delete(result);
 			return true;

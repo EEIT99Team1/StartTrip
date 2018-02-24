@@ -7,28 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Fightorder")
-public class FightorderBean {
+@Table(name="Flightorder")
+public class FlightorderBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer wid;
 	private String start;
 	private String endstart;
-	private java.sql.Date update;
-	private java.sql.Date downdate;
+	private java.sql.Date uptime;
+	private java.sql.Date downtime;
 	private Integer adult;
 	private Integer child;
-	private String fight;
+	private String flight;
 	private String model;
 	private Integer orderid;
-
-	public void setAdult(Integer adult) {
-		this.adult = adult;
-	}
-
-	public void setChild(Integer child) {
-		this.child = child;
-	}
 
 	public Integer getWid() {
 		return wid;
@@ -54,44 +46,45 @@ public class FightorderBean {
 		this.endstart = endstart;
 	}
 
-	public java.sql.Date getUpdate() {
-		return update;
+
+	public java.sql.Date getUptime() {
+		return uptime;
 	}
 
-	public void setUpdate(java.sql.Date update) {
-		this.update = update;
+	public void setUptime(java.sql.Date uptime) {
+		this.uptime = uptime;
 	}
 
-	public java.sql.Date getDowndate() {
-		return downdate;
+	public java.sql.Date getDowntime() {
+		return downtime;
 	}
 
-	public void setDowndate(java.sql.Date downdate) {
-		this.downdate = downdate;
+	public void setDowntime(java.sql.Date downtime) {
+		this.downtime = downtime;
 	}
 
-	public int getAdult() {
+	public Integer getAdult() {
 		return adult;
 	}
 
-	public void setAdult(int adult) {
+	public void setAdult(Integer adult) {
 		this.adult = adult;
 	}
 
-	public int getChild() {
+	public Integer getChild() {
 		return child;
 	}
 
-	public void setChild(int child) {
+	public void setChild(Integer child) {
 		this.child = child;
 	}
 
-	public String getFight() {
-		return fight;
+	public String getFlight() {
+		return flight;
 	}
 
-	public void setFight(String fight) {
-		this.fight = fight;
+	public void setFlight(String flight) {
+		this.flight = flight;
 	}
 
 	public String getModel() {
@@ -110,10 +103,5 @@ public class FightorderBean {
 		this.orderid = orderid;
 	}
 
-	@Override
-	public String toString() {
-		return "Fightorder [wid=" + wid + ", start= " + start + ", endstart=" + endstart + ", update" + update
-				+ ", downdate" + downdate + ", adult" + adult + ", child=" + child + ", fight=" + fight + ", model="
-				+ model + ",orderid= " + orderid + "]";
-	}
+
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.bean.BonusorderBean;
-import model.bean.FightorderBean;
 
 @Repository
 public class BonusorderDao {

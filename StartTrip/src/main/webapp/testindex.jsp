@@ -26,8 +26,8 @@
 <form action='<c:url value="/customerDao.controller"/>'>
 	<input type="submit" value="submit"/>
 </form><hr/>
-<h1>fightorderDao.controller</h1>
-<form action='<c:url value="/fightorderDao.controller"/>'>
+<h1>flightorderDao.controller</h1>
+<form action='<c:url value="/flightorderDao.controller"/>'>
 	<input type="submit" value="submit"/>
 </form><hr/>
 <h1>ordermanDao.controller</h1>
@@ -38,12 +38,8 @@
 <form action='<c:url value="/passengerDao.controller"/>'>
 	<input type="submit" value="submit"/>
 </form><hr/>
-<h1>passenger.controller</h1>
-<form action='<c:url value="/passenger.controller"/>'>
-	<input type="submit" value="submit"/>
-</form><hr/>
-<h1>passenger.controller</h1>
-<form action='<c:url value="/passenger.controller"/>'>
+<h1>searchDao.controller</h1>
+<form action='<c:url value="/searchDao.controller"/>'>
 	<input type="submit" value="submit"/>
 </form><hr/>
 </body>

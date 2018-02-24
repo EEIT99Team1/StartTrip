@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.bean.FightorderBean;
 import model.bean.SearchBean;
 
 @Repository
@@ -23,7 +22,7 @@ public class SearchDao {
 	public SearchBean select(String aircode) {
 		return this.getSession().get(SearchBean.class, aircode);
 		}
-	
+	@Transactional
 	public SearchBean insert(SearchBean bean) {
 		if(bean!=null && (select(bean.getAircode())==null)) {
 			getSession().save(bean);
@@ -42,7 +41,7 @@ public class SearchDao {
 		}
 		return false;
 		}
-	
+	@Transactional
 	public boolean delete(String aircode) {
 		SearchBean rs = this.getSession().get(SearchBean.class, aircode);
 		if(rs!=null) {
