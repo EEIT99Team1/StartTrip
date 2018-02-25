@@ -163,9 +163,10 @@ public class TestPassengerDao {
 		bean.setCountry("台灣");
 		
 		searchDao.insert(bean);
-		//update
-		//delete
-		
+//		//update
+//		searchDao.update("JPA", "東京", "日本");
+//		//delete
+//		searchDao.delete("JPA");
 		return "test.success";
 	}
 }
