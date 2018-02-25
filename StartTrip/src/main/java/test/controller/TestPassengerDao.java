@@ -108,7 +108,11 @@ public class TestPassengerDao {
 		
 		flightorderDao.insert(bean);
 		//update
+		//flightorderDao.update(4, "TEP", "NTR", new java.sql.Date(156778),
+		//		new java.sql.Date(0), 4, 3, "長榮", "BR-132", 1);
 		//delete
+		//flightorderDao.delete(4);
+		
 		return "test.success";
 	}
 	
@@ -123,8 +127,9 @@ public class TestPassengerDao {
 		bean.setEmail("qweret@yahoo.com.tw");
 		bean.setStutus(false);
 		
-		ordermanDao.insert(bean);
+		//ordermanDao.insert(bean);
 		//update
+		ordermanDao.update("test@yahoo.com", 1, true);
 		//delete
 		return "test.success";
 	}
