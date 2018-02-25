@@ -7,7 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bonus shop</title>
 <link href="<c:url value="/css/bonusshop/bonusshop.css"/>" rel="stylesheet">
+<meta name="viewport" content="width= device-width, initial-scale=1.0">
 <script type="js/jquery-3.3.1.min.js"></script>
+<script type="js/bootstrap.min.js"></script>
 <script>
 	$(document).ready(function() {
 
@@ -71,7 +73,7 @@
 				<div class="box">
 				<!--圖片區塊 -->
 					<div class="col-md-4">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品3</p>
@@ -92,7 +94,7 @@
 				<div class="box">
 				<!--圖片區塊 -->
 					<div class="col-md-4">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品4</p>
@@ -113,7 +115,7 @@
 				<div class="box">
 				<!--圖片區塊 -->
 					<div class="col-md-4">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品5</p>
@@ -134,7 +136,7 @@
 				<div class="box">
 				<!--圖片區塊 -->
 					<div class="col-md-4">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品6</p>
