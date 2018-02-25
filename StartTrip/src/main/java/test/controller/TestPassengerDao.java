@@ -157,16 +157,16 @@ public class TestPassengerDao {
 		SearchBean bean=new SearchBean();
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
-		//insert
+//		insert
 		bean.setAircode("TWH");
 		bean.setAirport("台北");
 		bean.setCountry("台灣");
 		
 		searchDao.insert(bean);
 //		//update
-//		searchDao.update("JPA", "東京", "日本");
+//		searchDao.update("TWH", "東京", "日本");
 //		//delete
-//		searchDao.delete("JPA");
+//		searchDao.delete("TWH");
 		return "test.success";
 	}
 }
