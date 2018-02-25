@@ -7,13 +7,6 @@
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
 <!--         <property name="hibernate.current_session_context_class">thread</property> -->
         <property name="hibernate.show_sql">true</property>        
-        <mapping class="model.bean.BonushopBean"/>
-        <mapping class="model.bean.BonusorderBean"/>
-        <mapping class="model.bean.CustomerBean"/>
-        <mapping class="model.bean.FlightorderBean"/>
-        <mapping class="model.bean.OrdermanBean"/>
-        <mapping class="model.bean.PassengerBean"/>
-        <mapping class="model.bean.SearchBean"/>
-        <mapping class="test.model.TestTable"/>
+
     </session-factory>
 </hibernate-configuration>

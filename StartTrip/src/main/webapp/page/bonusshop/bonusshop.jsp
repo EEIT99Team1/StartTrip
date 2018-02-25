@@ -17,6 +17,7 @@
 </script>
 </head>
 <body>
+<%@ include file='/page/shared/header.jsp' %>
 	<article>
 		<section>
 			<div class="titlebox">廣告頁</div>

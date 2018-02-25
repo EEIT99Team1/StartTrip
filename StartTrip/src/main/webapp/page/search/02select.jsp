@@ -9,16 +9,7 @@
     <link href="<c:url value="/style/title.css"/>" rel="stylesheet" />
 </head>
 <body>
-    <header>
-		<a href="../index.jsp"><img src="<c:url value="/image/01.png"/>" /></a>
-		<nav>
-			<ul>
-				<li><a href="../index.jsp">機票</a></li>
-				<li>飯店</li>
-				<li><input type="button" value="登入" style="float: right;" /></li>
-			</ul>
-		</nav>
-	</header>
+<%@ include file='/page/shared/header.jsp' %>
 
     <div class="mborder">
         <div class="planeimg">

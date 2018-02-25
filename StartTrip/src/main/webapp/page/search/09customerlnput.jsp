@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body class="bg-light">
-<%@ include file='/page/shared/headerfooter.jsp' %>
+<%@ include file='/page/shared/header.jsp' %>
 	<div class="container">
 		<div class="col-md-8 order-md-1">
 			<h4 class="mb-3">乘客資訊</h4>

@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+<%@ include file='/page/shared/header.jsp' %>
     <h3>訂購完成</h3>
     <hr />
 
@@ -44,7 +45,7 @@
     <hr />
     <div>
         <input type="submit" value="列印明細" />
-        <a href="../index.jsp"><input type="button" value="回查詢首頁" /></a>
+        <a href="<c:url value="/index.jsp"/>"><input type="button" value="回查詢首頁" /></a>
     </div>
 </body>
 </html>
