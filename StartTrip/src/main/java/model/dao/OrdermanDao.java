@@ -35,9 +35,9 @@ public class OrdermanDao {
 
 	@Transactional
 	public boolean update(String email, Integer orderid, boolean stutus) {
-		OrdermanBean result = getSession().get(OrdermanBean.class, email);
+		OrdermanBean result = getSession().get(OrdermanBean.class, orderid);
 		if (result != null) {
-			result.setOrderid(orderid);
+			result.setEmail(email);
 			result.setStutus(stutus);
 			return true;
 		}
@@ -45,8 +45,8 @@ public class OrdermanDao {
 	}
 
 	@Transactional
-	public boolean delete(String email) {
-		OrdermanBean result = getSession().get(OrdermanBean.class, email);
+	public boolean delete(Integer orderid) {
+		OrdermanBean result = getSession().get(OrdermanBean.class, orderid);
 		if (result != null) {
 			this.getSession().delete(result);
 			return true;

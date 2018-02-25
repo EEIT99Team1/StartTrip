@@ -128,10 +128,11 @@ public class TestPassengerDao {
 		bean.setEmail("qweret@yahoo.com.tw");
 		bean.setStutus(false);
 		
-		//ordermanDao.insert(bean);
+		ordermanDao.insert(bean);
 		//update
-		ordermanDao.update("test@yahoo.com", 1, true);
+		//ordermanDao.update("test@yahoo.com", 2, false);
 		//delete
+		//ordermanDao.delete(1);
 		return "test.success";
 	}
 	
