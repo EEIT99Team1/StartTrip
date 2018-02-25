@@ -46,17 +46,18 @@ public class TestPassengerDao {
 	private BonusorderDao bonusorderDao;
 	@RequestMapping(path = { "/bonusorderDao.controller" }, method = { RequestMethod.GET, RequestMethod.POST })
 	public String method2() {
-		BonusorderBean bean=new BonusorderBean();
+		BonusorderBean bean =new BonusorderBean();
 		//select
-//		bean=bonusorderDao.select(1);
-		//insert
-		bean.setEmail("qwe@gmail.com");
-		bean.setId(1);
-		bean.setWmuchs(100);
-		bonusorderDao.insert(bean);
+//		bean = bonusorderDao.select(1);
+		//insert	//先insert	Bonushop和Customer在執行
+//		bean.setEmail("qwe@gmail.com");
+//		bean.setId(1);
+//		bean.setWmuchs(100);
+//		bonusorderDao.insert(bean);
 		//update
+//		bonusorderDao.update(1,"qwe@gmail.com",1,10);
 		//delete
-		
+//		bonusorderDao.delete(1);
 		return "test.success";
 	}
 	
@@ -108,7 +109,11 @@ public class TestPassengerDao {
 		
 		flightorderDao.insert(bean);
 		//update
+		//flightorderDao.update(4, "TEP", "NTR", new java.sql.Date(156778),
+		//		new java.sql.Date(0), 4, 3, "長榮", "BR-132", 1);
 		//delete
+		//flightorderDao.delete(4);
+		
 		return "test.success";
 	}
 	
@@ -125,7 +130,9 @@ public class TestPassengerDao {
 		
 		ordermanDao.insert(bean);
 		//update
+		//ordermanDao.update("test@yahoo.com", 2, false);
 		//delete
+		//ordermanDao.delete(1);
 		return "test.success";
 	}
 	
@@ -157,15 +164,16 @@ public class TestPassengerDao {
 		SearchBean bean=new SearchBean();
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
-		//insert
+//		insert
 		bean.setAircode("TWH");
 		bean.setAirport("台北");
 		bean.setCountry("台灣");
 		
 		searchDao.insert(bean);
-		//update
-		//delete
-		
+//		//update
+//		searchDao.update("TWH", "東京", "日本");
+//		//delete
+//		searchDao.delete("TWH");
 		return "test.success";
 	}
 }
