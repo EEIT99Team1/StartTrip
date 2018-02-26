@@ -21,10 +21,10 @@
     border:solid 2px red;
 }
 
-.box,.col-md-4{
-	width: 33;
-	float: left;
-}
+/* .box,.col-md-4{ */
+/* 	width: 25%; */
+/* 	float: left; */
+/* } */
 
 .image{	
 	max-width:100%;	
