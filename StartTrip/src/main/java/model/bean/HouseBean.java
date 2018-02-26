@@ -1,60 +1,57 @@
 package model.bean;
 
 public class HouseBean {
-	private String Name;
-	private String Country;
-	private String Area;
-	private String Addres;
-	private int Telephone;
-	private String Explain ;
+	private String name;
+	private String country;
+	private String area;
+	private String addres;
+	private int telephone;
+	private String explain ;
 	//Picture image
-	
-	
-	@Override
-	public String toString() {
-		return "HouseBean [Name=" + Name + ", Country=" + Country + ", Area=" + Area + ", Addres=" + Addres
-				+ ", Telephone=" + Telephone + ", Explain=" + Explain + "]";
-	}
-	
-	
-	
-	
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getCountry() {
-		return Country;
+		return country;
 	}
 	public void setCountry(String country) {
-		Country = country;
+		this.country = country;
 	}
 	public String getArea() {
-		return Area;
+		return area;
 	}
 	public void setArea(String area) {
-		Area = area;
+		this.area = area;
 	}
 	public String getAddres() {
-		return Addres;
+		return addres;
 	}
 	public void setAddres(String addres) {
-		Addres = addres;
+		this.addres = addres;
 	}
 	public int getTelephone() {
-		return Telephone;
+		return telephone;
 	}
 	public void setTelephone(int telephone) {
-		Telephone = telephone;
+		this.telephone = telephone;
 	}
 	public String getExplain() {
-		return Explain;
+		return explain;
 	}
 	public void setExplain(String explain) {
-		Explain = explain;
+		this.explain = explain;
 	}
+	@Override
+	public String toString() {
+		return "HouseBean [name=" + name + ", country=" + country + ", area=" + area + ", addres=" + addres
+				+ ", telephone=" + telephone + ", explain=" + explain + "]";
+	}
+	
+	
+	
 	
 
 }
