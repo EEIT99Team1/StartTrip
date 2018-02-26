@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>StartTrip帳號登入</title>
 <link rel="shortcut icon"
-	href="//bnetus-a.akamaihd.net/login/static/images/meta/favicon.0gxnz.ico" />
+	href="" />
 <!--[if gt IE 8]><!-->
 <link rel="stylesheet" type="text/css" media="all"
 	href="//bnetus-a.akamaihd.net/login/static/css/toolkit/blizzard-web.min.0RPhe.css" />
