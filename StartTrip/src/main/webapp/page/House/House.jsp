@@ -29,7 +29,7 @@
 	<c:forEach var="row" items="${select}">
 	<table>
 	<tr>
-	    <h1>民宿:${row.name}</h1>
+	    <h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1>
 	    <td>國家:${row.country}</td>
 		<td>地區:${row.area}</td>
 		<td>電話:${row.telephone}</td>

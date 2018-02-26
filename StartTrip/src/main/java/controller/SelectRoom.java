@@ -10,31 +10,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.bean.HouseBean;
-import model.service.HouseService;
+import model.bean.RoomBean;
+import model.service.RoomService;
 
 
-@WebServlet("/page/House/SelectHouse")
-public class SelectHouse extends HttpServlet {
+@WebServlet("/page/House/SelectRoom")
+public class SelectRoom extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	HouseService houseService = new HouseService();
+	RoomService roomService = new RoomService();
    
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.doPost(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String name=request.getParameter("name");
+		List<RoomBean> c = roomService.select(name);
+		request.setAttribute("select", c);
+		request.getRequestDispatcher(
+				"/page/House/Room.jsp").forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String Area=request.getParameter("Area");
-		String Country=request.getParameter("Country");
-		List<HouseBean> c = houseService.select(Country,Area);
-		request.setAttribute("select", c);
-		System.out.println(c.size());
 		
-		request.getRequestDispatcher(
-				"/page/House/House.jsp").forward(request, response);
-		
-	
 	}
 
 }
