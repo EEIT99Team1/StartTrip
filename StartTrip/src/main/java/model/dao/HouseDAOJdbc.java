@@ -36,7 +36,7 @@ public class HouseDAOJdbc {
 	public List<HouseBean> select(String a,String b) {
 		List<HouseBean> result=new ArrayList<HouseBean>();
 		ResultSet rset=null;
-		int c = 0;
+		//int c = 0;
 		
 		try(Connection conn = dataSource.getConnection();
 			PreparedStatement stmt = conn.prepareStatement(SELECT_ALL);) {
@@ -52,10 +52,10 @@ public class HouseDAOJdbc {
 				bean.setAddres(rset.getString("Addres"));
 				bean.setExplain(rset.getString("Explain"));
 				bean.setTelephone(rset.getInt("Telephone"));
-				System.out.println(bean.toString());
+				//System.out.println(bean.toString());
 				result.add(bean);
 				
-				c++;
+			//	c++;
 			}
 
 		} catch (SQLException e) {

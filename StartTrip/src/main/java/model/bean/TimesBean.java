@@ -1,83 +1,56 @@
 package model.bean;
 
 public class TimesBean {
-	private String Name;
-	private String RoomName;
-	private java.util.Date GoTime;
-	private java.util.Date OutTime;
+	private String name;
+	private String roomName;
+	private java.util.Date goTime;
+	private java.util.Date outTime;
 	private String people;
-	private int Telephone;
-	
-	
+	private int telephone;
 	@Override
 	public String toString() {
-		return "Times [Name=" + Name + ", RoomName=" + RoomName + ", GoTime=" + GoTime + ", OutTime=" + OutTime
-				+ ", people=" + people + ", Telephone=" + Telephone + "]";
+		return "TimesBean [name=" + name + ", roomName=" + roomName + ", goTime=" + goTime + ", outTime=" + outTime
+				+ ", people=" + people + ", telephone=" + telephone + "]";
 	}
-
-
-	
-	
-	
 	public String getName() {
-		return Name;
+		return name;
 	}
-
-
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-
-
 	public String getRoomName() {
-		return RoomName;
+		return roomName;
 	}
-
-
 	public void setRoomName(String roomName) {
-		RoomName = roomName;
+		this.roomName = roomName;
 	}
-
-
 	public java.util.Date getGoTime() {
-		return GoTime;
+		return goTime;
 	}
-
-
 	public void setGoTime(java.util.Date goTime) {
-		GoTime = goTime;
+		this.goTime = goTime;
 	}
-
-
 	public java.util.Date getOutTime() {
-		return OutTime;
+		return outTime;
 	}
-
-
 	public void setOutTime(java.util.Date outTime) {
-		OutTime = outTime;
+		this.outTime = outTime;
 	}
-
-
 	public String getPeople() {
 		return people;
 	}
-
-
 	public void setPeople(String people) {
 		this.people = people;
 	}
-
-
 	public int getTelephone() {
-		return Telephone;
+		return telephone;
 	}
-
-
 	public void setTelephone(int telephone) {
-		Telephone = telephone;
+		this.telephone = telephone;
 	}
-
+	
+	
+	
 	
 	
 	
