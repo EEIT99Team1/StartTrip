@@ -95,20 +95,21 @@ public class TestPassengerDao {
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
 		//insert
-		bean.setAdult(3);
-		bean.setChild(2);
-		bean.setDowntime(new java.sql.Date(0));
-		bean.setUptime(new java.sql.Date(214748));
-		bean.setStart("twn");
-		bean.setEndstart("jpa");
-		bean.setFlight("華航");
-		bean.setModel("M5454");
-		bean.setOrderid(1);
-		bean.setWid(1);
-		
-		flightorderDao.insert(bean);
+//		bean.setAdult(3);
+//		bean.setChild(2);
+//		bean.setDowntime(new java.sql.Date(0));
+//		bean.setUptime(new java.sql.Date(214748));
+//		bean.setStart("twn");
+//		bean.setEndstart("jpa");
+//		bean.setFlight("華航");
+//		bean.setModel("M5454");
+//		bean.setOrderid(1);
+//		bean.setWid(1);
+//		
+//		flightorderDao.insert(bean);
 		//update
 		//delete
+//		flightorderDao.delete(2);
 		return "test.success";
 	}
 	
