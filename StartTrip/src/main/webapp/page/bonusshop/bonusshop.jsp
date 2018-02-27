@@ -8,8 +8,9 @@
 <meta name="viewport" content="width= device-width, initial-scale=1.0">
 <title>Bonus shop</title>
 <link href="<c:url value="/css/bonusshop/bonusshop.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script type="js/jquery-3.3.1.min.js"></script>
-<script type="js/bootstrap.min.js"></script>
+<!-- <script type="js/bootstrap.min.js"></script> -->
 <script>
 	$(document).ready(function() {
 
@@ -28,9 +29,9 @@
 		<!-- 分割區塊 -->
 			<div class="row">
 			<!--區塊1 -->
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
+					<div class="box">
 						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
@@ -49,9 +50,9 @@
 				</div><!--區塊1 -->
 				
 			<!--區塊2 -->
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
+					<div class="box">
 						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
@@ -70,10 +71,10 @@
 				</div><!--區塊2 -->
 				
 			<!--區塊3 -->
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
-						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+					<div class="box">
+						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品3</p>
@@ -91,10 +92,10 @@
 				</div><!--區塊3 -->
 					
 			<!--區塊4 -->		
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
-						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+					<div class="box">
+						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品4</p>
@@ -112,10 +113,10 @@
 				</div><!--區塊4 -->
 				
 			<!--區塊5 -->
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
-						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+					<div class="box">
+						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品5</p>
@@ -133,10 +134,10 @@
 				</div><!--區塊5 -->
 								
 			<!--區塊6 -->				
-				<div class="box">
+				<div class="col-md-4">
 				<!--圖片區塊 -->
-					<div class="col-md-4">
-						<img class="img-responsive" alt="Responsive image" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+					<div class="box">
+						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品6</p>
@@ -157,6 +158,8 @@
 			
 				
 		</div><!-- downdiv -->
+			<div class="titlebox">
+			</div>
 	</article>	
 </body>
 </html>
