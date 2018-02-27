@@ -3,7 +3,7 @@
 <Context displayName="JSP Exercise" docBase="jspExercise" path="/jspExercise" reloadable="true">
   <!--                  SQLServer                      -->
   <Resource name="jdbc/team1" type="javax.sql.DataSource"
-      username="sa" password="sa123456"
+      username="sa" password="passw0rd"
       driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
       url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=TEAM1"    
       maxActive="8" maxIdle="4" maxWait="5000"/>  
