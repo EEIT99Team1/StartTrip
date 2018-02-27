@@ -1,5 +1,7 @@
 package test.controller;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -152,8 +154,9 @@ public class TestPassengerDao {
 		
 		passengerDao.insert(bean);
 		//update
+		//passengerDao.update(1, "Jeff", "Jeff", new Date(1919/01/01), "1561156",1);
 		//delete
-		
+		//passengerDao.delete(1);
 		return "test.success";
 	}
 	
