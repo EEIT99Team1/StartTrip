@@ -30,7 +30,7 @@ public class TestPassengerDao {
 	@RequestMapping(path = { "/testConnectionSaber.controller" }, method = { RequestMethod.GET, RequestMethod.POST })
 	public String testConnectionSaber() {
 		String bst=connectionSaber.createSession();
-		connectionSaber.requestSession(bst);
+//		connectionSaber.requestSession(bst);
 		connectionSaber.closeSession(bst);
 
 		return "test.success";

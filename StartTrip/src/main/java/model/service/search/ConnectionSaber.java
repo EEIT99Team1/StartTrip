@@ -1,9 +1,12 @@
 package model.service.search;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Iterator;
@@ -22,6 +25,8 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import model.bean.search.SearchDataBean;
 
 @Service
 public class ConnectionSaber {
@@ -73,19 +78,20 @@ public class ConnectionSaber {
 		return null;
 	}
 
-	public void requestSession(String BinarySecurityToken) {
-		String GOTIME="2018-03-03T11:00:00";
-		String BACKTIME="2018-03-06T11:00:00";
-		String GOPLACE="TPE";
-		String ENDPLACE="HKG";
-		String Cabin="Y";
-		String ADULT="2";
-		String CHILD="1";
+	public String requestSession(String BinarySecurityToken,SearchDataBean searchData) {
+		String goplace=searchData.getGoplace();
+		String endplace=searchData.getEndplace();
+		String way=searchData.getWay();
+		String gotime=searchData.getGotime()+"T11:00:00";
+		String backtime=searchData.getBacktime()+"T11:00:00";
+		String adult=searchData.getAdult();
+		String child=searchData.getChild();
+		String cabin=searchData.getCabin();//艙等
 		
 		PostMethod post = null;
 		System.out.println("requestSession------------------");
 		try {
-			String soapResponseData = "fail";
+			String soapResponseData = "";
 			String endpoint = "https://webservices.havail.sabre.com";
 
 			//取得應用系統在硬碟上的位置
@@ -106,21 +112,21 @@ public class ConnectionSaber {
 				if (temp.getName().equals("OriginDestinationInformation")
 						&& temp.attributeValue("RPH").equals("1")) {
 					// 設定出發時間<DepartureDateTime>{{{GOTIME}}}</DepartureDateTime>
-					temp.element("DepartureDateTime").setText(GOTIME);
+					temp.element("DepartureDateTime").setText(gotime);
 					// 設定出發地<OriginLocation LocationCode="HKG" LocationType="C"/>
-					temp.element("OriginLocation").addAttribute("LocationCode", GOPLACE);
+					temp.element("OriginLocation").addAttribute("LocationCode", goplace);
 					// 設定目的地<DestinationLocation LocationCode="TPE" LocationType="C"/>
-					temp.element("DestinationLocation").addAttribute("LocationCode", ENDPLACE);
+					temp.element("DestinationLocation").addAttribute("LocationCode", endplace);
 				}else if(temp.getName().equals("OriginDestinationInformation")
 						&& temp.attributeValue("RPH").equals("2")) {
 					// 設定出發時間<DepartureDateTime>{{{GOTIME}}}</DepartureDateTime>
-					temp.element("DepartureDateTime").setText(BACKTIME);
+					temp.element("DepartureDateTime").setText(backtime);
 					// 設定出發地<OriginLocation LocationCode="HKG" LocationType="C"/>
-					temp.element("OriginLocation").addAttribute("LocationCode", ENDPLACE);
+					temp.element("OriginLocation").addAttribute("LocationCode", endplace);
 					// 設定目的地<DestinationLocation LocationCode="TPE" LocationType="C"/>
-					temp.element("DestinationLocation").addAttribute("LocationCode", GOPLACE);
+					temp.element("DestinationLocation").addAttribute("LocationCode", goplace);
 				}else if(temp.getName().equals("TravelPreferences")) {
-					temp.element("CabinPref").addAttribute("Cabin", Cabin);
+					temp.element("CabinPref").addAttribute("Cabin", cabin);
 				}
 			}
 
@@ -131,10 +137,10 @@ public class ConnectionSaber {
 			while (iter.hasNext()) {
 				Element temp = iter.next();
 				if (temp.attributeValue("Code").equals("ADT")) {
-					temp.addAttribute("Quantity", ADULT);
+					temp.addAttribute("Quantity", adult);
 				}
 				if (temp.attributeValue("Code").equals("CNN")) {
-					temp.addAttribute("Quantity", CHILD);
+					temp.addAttribute("Quantity", child);
 				}
 			}
 
@@ -157,9 +163,16 @@ public class ConnectionSaber {
 			int result = httpclient.executeMethod(post);
 			System.out.println("Response status code: " + result);
 			System.out.println("Response body: ");
-			System.out.println(soapResponseData = post.getResponseBodyAsString());
+//			System.out.println(soapResponseData = post.getResponseBodyAsString());
+			InputStream is=post.getResponseBodyAsStream();
+			InputStreamReader isr=new InputStreamReader(is);
+			BufferedReader br=new BufferedReader(isr);
+			String str=null;
+			while((str=br.readLine())!=null) {
+				soapResponseData+=str;
+			}
+			System.out.println(soapResponseData);
 			
-			System.out.println(realPath+"output/02Response.xml");
 			// ---------------------------------------------------------
 			 OutputStream os=new FileOutputStream("d:\\02Response.xml");
 			 OutputStreamWriter osw=new OutputStreamWriter(os);
@@ -172,6 +185,7 @@ public class ConnectionSaber {
 			 osw.close();
 			 os.close();
 
+			 return soapResponseData;
 		} catch (HttpException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -179,9 +193,11 @@ public class ConnectionSaber {
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		} finally {
+			System.out.println("finally-----");
 			post.setRequestHeader("SOAPAction", "CloseSession");
 			post.releaseConnection();
 		}
+		return null;
 
 	}
 
