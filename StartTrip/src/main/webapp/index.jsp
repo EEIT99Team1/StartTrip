@@ -8,6 +8,7 @@
 <style>
 </style>
 <script src="style/CombinedCompact/CalendarPopup.js"></script>
+<meta name="google-signin-client_id" content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 <script>
 	var cal = new CalendarPopup();
 </script>
