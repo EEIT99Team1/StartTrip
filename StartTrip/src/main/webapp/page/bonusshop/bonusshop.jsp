@@ -26,7 +26,7 @@
 			<div class="titlebox">廣告頁</div>
 		</section>
 	<!-- downdiv -->
-		<div class="container">
+		<div class="downbox">
 		<!-- 分割區塊 -->
 			<div class="row">
 			<!--區塊1 -->
@@ -159,8 +159,8 @@
 			
 				
 		</div><!-- downdiv -->
-			<div class="titlebox">
-			</div>
+<!-- 		底下顯示金額和購買區塊 -->
+
 	</article>	
 </body>
 </html>
