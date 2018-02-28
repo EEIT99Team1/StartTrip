@@ -42,5 +42,9 @@
 <form action='<c:url value="/searchDao.controller"/>'>
 	<input type="submit" value="submit"/>
 </form><hr/>
+<h1>testConnectionSaber.controller</h1>
+<form action='<c:url value="/testConnectionSaber.controller"/>'>
+	<input type="submit" value="submit"/>
+</form><hr/>
 </body>
 </html>

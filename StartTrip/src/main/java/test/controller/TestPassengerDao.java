@@ -1,6 +1,6 @@
 package test.controller;
 
-import java.sql.Date;
+import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,9 +21,21 @@ import model.dao.FlightorderDao;
 import model.dao.OrdermanDao;
 import model.dao.PassengerDao;
 import model.dao.SearchDao;
+import model.service.search.ConnectionSaber;
 
 @Controller
 public class TestPassengerDao {	
+	@Autowired
+	private ConnectionSaber connectionSaber;
+	@RequestMapping(path = { "/testConnectionSaber.controller" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public String testConnectionSaber() {
+		String bst=connectionSaber.createSession();
+		connectionSaber.requestSession(bst);
+		connectionSaber.closeSession(bst);
+
+		return "test.success";
+	}
+	
 	@Autowired
 	private BonushopDao bonushopDao;
 	@RequestMapping(path = { "/bonushopBean.controller" }, method = { RequestMethod.GET, RequestMethod.POST })
