@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bonus shop</title>
+
 <%-- <link href="<c:url value="/css/bonusshop/bonusshop2.css"/>" --%>
-<!-- 	rel="stylesheet"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -31,8 +31,10 @@
 			<!--區塊1 -->
 			<div class="col-md-4">
 				<!--圖片區塊 -->
+				<div>
 				<img class="image" alt="狗"
 					src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+				</div>
 				<!-- 文字區塊 -->
 				<p class="center">商品1</p>
 				<!--按鈕區塊 -->
@@ -49,9 +51,10 @@
 			<!--區塊2 -->
 			<div class="col-md-4">
 				<!--圖片區塊 -->
+				<div>
 				<img class="image" alt="狗"
 					src="<c:url value="/image/bonusshop/dog4.jpg"/>">
-
+				</div>
 				<!-- 文字區塊 -->
 				<p class="center">商品2</p>
 				<!--按鈕區塊 -->
@@ -68,9 +71,10 @@
 			<!--區塊3 -->
 			<div class="col-md-4">
 				<!--圖片區塊 -->
-				<img class="img-responsive" alt="Responsive image"
+				<div>
+				<img class="image" alt="狗"
 					src="<c:url value="/image/bonusshop/dog4.jpg"/>">
-
+				</div>
 				<!-- 文字區塊 -->
 				<p class="center">商品3</p>
 				<!--按鈕區塊 -->
