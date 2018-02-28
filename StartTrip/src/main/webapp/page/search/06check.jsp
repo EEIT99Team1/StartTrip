@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<%@ include file='/page/shared/header.jsp' %>
     <h3> 資料確認</h3>
     <div>
         <a href="07finally.jsp"><input type="submit" value="確認，下一步" /></a>

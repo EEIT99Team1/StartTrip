@@ -1,0 +1,247 @@
+<PricedItinerary SequenceNumber="1">
+	<AirItinerary DirectionInd="Return">
+		<OriginDestinationOptions>
+			<OriginDestinationOption ElapsedTime="110">
+				<FlightSegment DepartureDateTime="2018-03-01T19:00:00"
+					ArrivalDateTime="2018-03-01T20:50:00" StopQuantity="0"
+					FlightNumber="809" ResBookDesigCode="W" ElapsedTime="110">
+					<DepartureAirport LocationCode="TPE" TerminalID="2" />
+					<ArrivalAirport LocationCode="HKG" TerminalID="1" />
+					<OperatingAirline Code="BR" FlightNumber="809" />
+					<Equipment AirEquipType="321" />
+					<MarketingAirline Code="BR" />
+					<MarriageGrp>O</MarriageGrp>
+					<DepartureTimeZone GMTOffset="8" />
+					<ArrivalTimeZone GMTOffset="8" />
+					<TPA_Extensions>
+						<eTicket Ind="true" />
+					</TPA_Extensions>
+				</FlightSegment>
+			</OriginDestinationOption>
+			<OriginDestinationOption ElapsedTime="105">
+				<FlightSegment DepartureDateTime="2018-03-02T13:35:00"
+					ArrivalDateTime="2018-03-02T15:20:00" StopQuantity="0"
+					FlightNumber="868" ResBookDesigCode="W" ElapsedTime="105">
+					<DepartureAirport LocationCode="HKG" TerminalID="1" />
+					<ArrivalAirport LocationCode="TPE" TerminalID="2" />
+					<OperatingAirline Code="BR" FlightNumber="868" />
+					<Equipment AirEquipType="321" />
+					<MarketingAirline Code="BR" />
+					<MarriageGrp>O</MarriageGrp>
+					<DepartureTimeZone GMTOffset="8" />
+					<ArrivalTimeZone GMTOffset="8" />
+					<TPA_Extensions>
+						<eTicket Ind="true" />
+					</TPA_Extensions>
+				</FlightSegment>
+			</OriginDestinationOption>
+		</OriginDestinationOptions>
+	</AirItinerary>
+	<AirItineraryPricingInfo PricingSource="ADVJR1"
+		PricingSubSource="MIP" FareReturned="true" LastTicketDate="2018-02-28"
+		PrivateFareType="@">
+		<ItinTotalFare>
+			<BaseFare Amount="5425" CurrencyCode="TWD" DecimalPlaces="0" />
+			<FareConstruction Amount="180.50" CurrencyCode="NUC"
+				DecimalPlaces="2" />
+			<EquivFare Amount="5425" CurrencyCode="TWD" DecimalPlaces="0" />
+			<Taxes>
+				<Tax TaxCode="TOTALTAX" Amount="4055" CurrencyCode="TWD"
+					DecimalPlaces="0" />
+			</Taxes>
+			<TotalFare Amount="9480" CurrencyCode="TWD" DecimalPlaces="0" />
+		</ItinTotalFare>
+		<PTC_FareBreakdowns>
+			<PTC_FareBreakdown PrivateFareType="@">
+				<PassengerTypeQuantity Code="ADT" Quantity="1" />
+				<FareBasisCodes>
+					<FareBasisCode PrivateFareType="@" BookingCode="W"
+						AvailabilityBreak="true" DepartureAirportCode="TPE"
+						ArrivalAirportCode="HKG" FareComponentBeginAirport="TPE"
+						FareComponentEndAirport="HKG" FareComponentDirectionality="FROM"
+						FareComponentVendorCode="ATP" GovCarrier="BR">W14R3S</FareBasisCode>
+					<FareBasisCode PrivateFareType="@" BookingCode="W"
+						AvailabilityBreak="true" DepartureAirportCode="HKG"
+						ArrivalAirportCode="TPE" FareComponentBeginAirport="HKG"
+						FareComponentEndAirport="TPE" FareComponentDirectionality="TO"
+						FareComponentVendorCode="ATP" GovCarrier="BR">W14R3S</FareBasisCode>
+				</FareBasisCodes>
+				<PassengerFare>
+					<BaseFare Amount="3100" CurrencyCode="TWD" />
+					<FareConstruction Amount="103.14" CurrencyCode="NUC"
+						DecimalPlaces="2" />
+					<EquivFare Amount="3100" CurrencyCode="TWD"
+						DecimalPlaces="0" />
+					<Taxes>
+						<Tax TaxCode="YQF" Amount="436" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="YQF" Amount="436" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="G3" Amount="262" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="HK" Amount="449" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="I5" Amount="169" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="TW" Amount="500" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<TotalTax Amount="2252" CurrencyCode="TWD" DecimalPlaces="0" />
+					</Taxes>
+					<TotalFare Amount="5352" CurrencyCode="TWD" />
+					<TPA_Extensions>
+						<Messages>
+							<Message AirlineCode="BR" Type="N" FailCode="0"
+								Info="NONEND/O/B VLD ON/AFT 1830PM FLT//HKG NO COSH/" />
+							<Message Type="W" FailCode="0"
+								Info="PRIVATE FARE APPLIED - CHECK RULES FOR CORRECT TICKETING" />
+							<Message Type="W" FailCode="0" Info="VALIDATING CARRIER - BR" />
+						</Messages>
+						<BaggageInformationList>
+							<BaggageInformation ProvisionType="A"
+								AirlineCode="BR">
+								<Segment Id="0" />
+								<Allowance Weight="30" Unit="kg" />
+							</BaggageInformation>
+							<BaggageInformation ProvisionType="A"
+								AirlineCode="BR">
+								<Segment Id="1" />
+								<Allowance Weight="30" Unit="kg" />
+							</BaggageInformation>
+						</BaggageInformationList>
+						<CommissionData Cat35CommissionPercentage="4.00"
+							Cat35CommissionAmount="124" Cat35MarkupAmount="0"
+							CommissionAmountInEquivalent="124" CommissionSource="C" />
+					</TPA_Extensions>
+				</PassengerFare>
+				<Endorsements NonRefundableIndicator="false" />
+				<TPA_Extensions>
+					<FareCalcLine Info="TPE BR HKG51.57BR TPE51.57NUC103.14END ROE30.052601" />
+				</TPA_Extensions>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>W</FareReference>
+						<TPA_Extensions>
+							<SeatsRemaining Number="2" BelowMin="false" />
+							<Cabin Cabin="Y" />
+						</TPA_Extensions>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>W</FareReference>
+						<TPA_Extensions>
+							<SeatsRemaining Number="9" BelowMin="false" />
+							<Cabin Cabin="Y" />
+						</TPA_Extensions>
+					</FareInfo>
+				</FareInfos>
+			</PTC_FareBreakdown>
+			<PTC_FareBreakdown PrivateFareType="@">
+				<PassengerTypeQuantity Code="CNN" Quantity="1" />
+				<FareBasisCodes>
+					<FareBasisCode PrivateFareType="@" BookingCode="W"
+						AvailabilityBreak="true" DepartureAirportCode="TPE"
+						ArrivalAirportCode="HKG" FareComponentBeginAirport="TPE"
+						FareComponentEndAirport="HKG" FareComponentDirectionality="FROM"
+						FareComponentVendorCode="ATP" GovCarrier="BR">W14R3S/CH25
+					</FareBasisCode>
+					<FareBasisCode PrivateFareType="@" BookingCode="W"
+						AvailabilityBreak="true" DepartureAirportCode="HKG"
+						ArrivalAirportCode="TPE" FareComponentBeginAirport="HKG"
+						FareComponentEndAirport="TPE" FareComponentDirectionality="TO"
+						FareComponentVendorCode="ATP" GovCarrier="BR">W14R3S/CH25
+					</FareBasisCode>
+				</FareBasisCodes>
+				<PassengerFare>
+					<BaseFare Amount="2325" CurrencyCode="TWD" />
+					<FareConstruction Amount="77.36" CurrencyCode="NUC"
+						DecimalPlaces="2" />
+					<EquivFare Amount="2325" CurrencyCode="TWD"
+						DecimalPlaces="0" />
+					<Taxes>
+						<Tax TaxCode="YQF" Amount="436" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="YQF" Amount="436" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="G3" Amount="262" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="I5" Amount="169" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<Tax TaxCode="TW" Amount="500" CurrencyCode="TWD"
+							DecimalPlaces="0" />
+						<TotalTax Amount="1803" CurrencyCode="TWD" DecimalPlaces="0" />
+					</Taxes>
+					<TotalFare Amount="4128" CurrencyCode="TWD" />
+					<TPA_Extensions>
+						<Messages>
+							<Message AirlineCode="BR" Type="N" FailCode="0"
+								Info="NONEND/O/B VLD ON/AFT 1830PM FLT//HKG NO COSH/" />
+							<Message Type="W" FailCode="0"
+								Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" />
+							<Message Type="W" FailCode="0"
+								Info="PRIVATE FARE APPLIED - CHECK RULES FOR CORRECT TICKETING" />
+							<Message Type="W" FailCode="0" Info="VALIDATING CARRIER - BR" />
+						</Messages>
+						<BaggageInformationList>
+							<BaggageInformation ProvisionType="A"
+								AirlineCode="BR">
+								<Segment Id="0" />
+								<Allowance Weight="30" Unit="kg" />
+							</BaggageInformation>
+							<BaggageInformation ProvisionType="A"
+								AirlineCode="BR">
+								<Segment Id="1" />
+								<Allowance Weight="30" Unit="kg" />
+							</BaggageInformation>
+						</BaggageInformationList>
+						<CommissionData Cat35CommissionPercentage="4.00"
+							Cat35CommissionAmount="93" Cat35MarkupAmount="0"
+							CommissionAmountInEquivalent="93" CommissionSource="C" />
+					</TPA_Extensions>
+				</PassengerFare>
+				<Endorsements NonRefundableIndicator="false" />
+				<TPA_Extensions>
+					<FareCalcLine Info="TPE BR HKG38.68BR TPE38.68NUC77.36END ROE30.052601" />
+				</TPA_Extensions>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>W</FareReference>
+						<TPA_Extensions>
+							<SeatsRemaining Number="2" BelowMin="false" />
+							<Cabin Cabin="Y" />
+						</TPA_Extensions>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>W</FareReference>
+						<TPA_Extensions>
+							<SeatsRemaining Number="9" BelowMin="false" />
+							<Cabin Cabin="Y" />
+						</TPA_Extensions>
+					</FareInfo>
+				</FareInfos>
+			</PTC_FareBreakdown>
+		</PTC_FareBreakdowns>
+		<FareInfos>
+			<FareInfo>
+				<FareReference>W</FareReference>
+				<TPA_Extensions>
+					<SeatsRemaining Number="2" BelowMin="false" />
+					<Cabin Cabin="Y" />
+				</TPA_Extensions>
+			</FareInfo>
+			<FareInfo>
+				<FareReference>W</FareReference>
+				<TPA_Extensions>
+					<SeatsRemaining Number="9" BelowMin="false" />
+					<Cabin Cabin="Y" />
+				</TPA_Extensions>
+			</FareInfo>
+		</FareInfos>
+		<TPA_Extensions>
+			<DivideInParty Indicator="false" />
+		</TPA_Extensions>
+	</AirItineraryPricingInfo>
+	<TicketingInfo TicketType="eTicket" ValidInterline="Yes" />
+	<TPA_Extensions>
+		<ValidatingCarrier Code="BR" />
+		<DiversitySwapper WeighedPriceAmount="6283.26" />
+	</TPA_Extensions>
+</PricedItinerary>

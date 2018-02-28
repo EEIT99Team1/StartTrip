@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eb="http://www.ebxml.org/namespaces/messageHeader" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/1999/XMLSchema">
+   <SOAP-ENV:Header>
+      <eb:MessageHeader SOAP-ENV:mustUnderstand="1" eb:version="1.0">
+         <eb:ConversationId>2009-06-0249586768</eb:ConversationId>
+         <eb:From>
+            <eb:PartyId type="urn:x12.org:IO5:01">99999</eb:PartyId>
+         </eb:From>
+         <eb:To>
+            <eb:PartyId type="urn:x12.org:IO5:01">123123</eb:PartyId>
+         </eb:To>
+         <eb:CPAId>IPCC</eb:CPAId>
+         <eb:Service eb:type="sabreXML">SessionCloseRQ</eb:Service>
+         <eb:Action>SessionCloseRQ</eb:Action>
+         <eb:MessageData>
+            <eb:MessageId>mid:20001209-133003-2333@clientofsabre.com</eb:MessageId>
+            <eb:Timestamp>2001-02-15T11:15:12Z</eb:Timestamp>
+            <eb:TimeToLive>2001-02-15T11:15:12Z</eb:TimeToLive>
+         </eb:MessageData>
+      </eb:MessageHeader>
+      <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/12/utility">
+         <wsse:BinarySecurityToken>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/RESA!ICESMSLB\/RES.LB!-3173921339001646449!1419776!0</wsse:BinarySecurityToken>
+      </wsse:Security>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <SessionCloseRQ>
+         <POS>
+            <Source PseudoCityCode="A2U8"/>
+         </POS>
+      </SessionCloseRQ>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

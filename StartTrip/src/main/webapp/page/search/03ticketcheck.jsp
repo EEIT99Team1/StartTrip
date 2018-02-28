@@ -7,18 +7,7 @@
     <title>訂票資料確認</title>
 </head>
 <body>
-<header>
-		<a href="<c:url value="/image/01.png"/>"><img src="../image/01.png" /></a>
-		<nav>
-			<ul>
-				<li><a href="../index.jsp">機票</a></li>
-				<li>飯店</li>
-				<li><input type="button" value="登入" style="float: right;" /></li>
-			</ul>
-
-		</nav>
-
-	</header>
+<%@ include file='/page/shared/header.jsp' %>
     <h3>訂票資料確認</h3>
     <hr />
     <hr />

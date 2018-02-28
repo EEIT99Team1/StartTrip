@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Facebook login</title>
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="src/main/webapp/js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="style.css" />
 <script>
 			$(document).ready(function() {
@@ -46,12 +46,65 @@
 				appId : b9d5e0e9970128e99c9f47e1d5f6e960,
 				cookie : true,
 				xfbml : true,
-				version : v2.12
+				version : 'v2.12',
 			});
 
 			FB.AppEvents.logPageView();
 
 		};
+		//檢查登入狀態
+
+		FB.getLoginStatus(function (response) {
+
+		    /* 如果有授權資料
+		        也可以用 response.status 來判斷
+		        response.status = 'connected'  已連接
+		        response.status = 'not_authorized'  未授權 
+		        請參考 FB SDK  FB.getLoginStatus
+		        https://developers.facebook.com/docs/reference/javascript/FB.getLoginStatus/
+		    */
+
+		     if (response.authResponse) {
+		          //授權登入後就可以取到 accessToken，以後可以做一些事
+		          //可以做什麼事可以看這裡  http://developers.facebook.com/docs/reference/api/
+		          //https://developers.facebook.com/docs/reference/api/examples/  
+		          //但這個例子用不到
+
+		          var accessToken = response.authResponse.accessToken;
+		          FB.api('/me', function (response) {
+		                 CheckPlayer(response.id, response.name, response.email, response.birthday);
+		         });
+		     } else {
+		    	 FB.login(function (response) {
+
+		              if (response.authResponse) {
+
+		                     FB.api('/me', function (response) {
+		                           //所以 login 後可以直接取得下面的值，並傳入 CheckPlayer 這 function 
+		                           //然後在 CheckPlayer 中透過AJAX在資料庫中檢查並寫入資料庫
+		                           CheckPlayer(response.id, response.name, response.email, response.birthday);
+		                     });
+		               } else {
+		                    alert('登入失敗!');
+		               }
+		         }, {
+		                 scope: 'email,user_birthday'
+		         });
+		     }
+		});
+
+		function CheckPlayer(uid, cname, email, birthday) {
+
+		       $.ajax({
+		              url: 'AJAX/CheckGamePlayer.aspx',
+		              type: 'POST',
+		              data: { uid: uid, cname: cname, email: email, birthday: birthday },
+		              dateType: 'html',
+		              success: function () {
+		                    //檢查資料庫並新增完之後就看要幹嘛
+		               }
+		       })
+		     }
 	</script>
 </body>
 </html>
