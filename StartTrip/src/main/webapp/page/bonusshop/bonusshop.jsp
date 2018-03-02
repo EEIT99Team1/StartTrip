@@ -23,7 +23,9 @@
 <%@ include file='/page/shared/header.jsp' %>
 	<article>
 		<section>
-			<div class="titlebox">廣告頁</div>
+			<div class="titlebox">
+				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>">
+			</div>			
 		</section>
 	<!-- downdiv -->
 		<div class="downbox">
@@ -46,7 +48,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">						
+						<input class="btn btn-primary" type="submit" value="選擇">						
 					</div>
 				</div><!--區塊1 -->
 				
@@ -67,7 +69,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<input class="btn btn-primary" type="submit" value="選擇">	
 					</div>
 				</div><!--區塊2 -->
 				
@@ -88,7 +90,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<input class="btn btn-primary" type="submit" value="選擇">	
 					</div>
 				</div><!--區塊3 -->
 					
@@ -109,7 +111,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<input class="btn btn-primary" type="submit" value="選擇">	
 					</div>
 				</div><!--區塊4 -->
 				
@@ -130,7 +132,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<input class="btn btn-primary" type="submit" value="選擇">	
 					</div>
 				</div><!--區塊5 -->
 								
@@ -151,12 +153,16 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<input class="btn btn-primary" type="submit" value="選擇">	
 					</div>
 				</div><!--區塊6 -->
 				
-			</div><!-- 分割區塊 -->	
-			
+			</div><!-- 分割區塊 -->			
+			<div class="shopimg">			
+				<img class="shopcart" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
+				<span class="cartnum">0</span>
+			</div>		
+
 				
 		</div><!-- downdiv -->
 <!-- 		底下顯示金額和購買區塊 -->
