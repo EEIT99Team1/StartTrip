@@ -70,12 +70,12 @@
                 <div class="searchdiv">
                     <h3>地點:</h3>
                     <div>
-                        出發地:<input type="text" name="goplace"/>
+                        出發地:<input class="citytext" type="text" name="goplace"/>
 <!--                  <select> -->
 <!--                     <option>台灣</option> -->
 <!--                     <option>日本</option> -->
 <!--                  </select> -->
-                        目的地:<input type="text" name="endplace"/>
+                        目的地:<input class="citytext" type="text" name="endplace"/>
                  <select>
                  	<option>台灣</option>
                  	<option>日本</option>
