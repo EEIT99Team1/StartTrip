@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	padding: 12px 24px;
+	border: 1px solid #a12727;
+	border-radius: 8px;
+	background: #ff4a4a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ff4a4a),
+		to(#992727));
+	background: -moz-linear-gradient(top, #ff4a4a, #992727);
+	background: linear-gradient(to bottom, #ff4a4a, #992727);
+	text-shadow: #591717 5px 5px 0px;
+	font: normal normal bold 20px arial;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.button:hover, .button:focus {
+	background: #ff5959;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ff5959),
+		to(#b62f2f));
+	background: -moz-linear-gradient(top, #ff5959, #b62f2f);
+	background: linear-gradient(to bottom, #ff5959, #b62f2f);
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.button:active {
+	background: #982727;
+	background: -webkit-gradient(linear, left top, left bottom, from(#982727),
+		to(#982727));
+	background: -moz-linear-gradient(top, #982727, #982727);
+	background: linear-gradient(to bottom, #982727, #982727);
+}
+
+.button:before {
+	content: "\0000a0";
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	margin: 0 4px -6px -4px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEmUlEQVRIiZWUW4hVVRjHf2vtddn7zNVxdBTTJsd0ynS6UNidoqIyKqQeIoyKLnR96UIv1VMFmRVCDwkF3YmkoKIooUjFJOwqjmUyZKZpc2acOdd99m31sKcRo3NiNnx8e6+99v+3/9+31hK0uC5foeQVK9Ud7QXuCwzzCgWLHwTDLq2/d2i0+vo9G5NKq+8BRKuXj64OHu5uF+usAd84Al/R1dNL56w5uKS894/9+667/aX451YaXrMXT9yo5vZ2yI1hJLujWJBkkKaONHEgDUHH/NmFwL+6v2vsza17XH2mAHnzheqN3i63qn9gkHLUyeTEJGkqSJIUhwSp8Dv6ZrnwSOXjnY0tzQCyybhfD+UFlbpg6dlruOuxDQydu5pKXVKuOsbHKoyPlyiV63im5zpAzRQgSzWSaqjoWzBIW+CzZu2DXHPT/YSJz0Q5ZqxYYnysRBTLxUvnyfZmgGbkaHSS4RP6l81rD3yIynhSc8ElV7Fk2Uo+/eBNRn7+jvRIEZeFZA4zUwfR/lH3Qd+iIWiUcY1JXFSCqMy8vl5uu/cRnnzuFRb0zWLkUOntfUeyiZkC+HJP9H6hY+6IaJQQ4QSEk4jGJKKRg3SjyNGo68O3t0dPAVEznabNKYXu8NzZPdtIosWkIcIz4FnwFCIJwaWcOLD8rTjddriZRksHQDZeHN3tTBfOgYtquHACVy3iogopOtu4adt3rcShxUYD2Lpz98EzTmo/b9HCExeQpYg0RghBKgt89NX37z7z6ua3gLiVRsujApADCzpX7nj17m+t9KUyPrVGHee55ObHNw19vv2X4f9z0LQHANdev5azzlheUAsHs1qtImu1OrMX9SE9pW64pX/p8vNLv72w7qHajBw8/+I7vVLZi+IkvdjzvMuM1YPnnLVMnrJsId98u5czhwaoVEP++uso1Vo4Xq7UtowWj362a/evn6x/+oHfmwKeXf/GoqDQ+XKpUr3MgbLaYIymreBTKFgKgY/WHtZqlPJQykOr/DkIDI0oyvb/fnjb5i++vnPDuof2TtcYYP78haqru+eVyXLlSgfKN5bAz0WDIL+3VuP7FmN0HlqhVL5G4jihvS2QQyuWXLRkoP+19o4udRxgzY23LxZCXuocWGPwrcH3c+F/wvdtPm4Ndgqgp5x40iNNM/44WKRcaay66tpbTz2uyXPm9A1mzkmtNdYYrDX4viHwTQ4ILNYajPbwPA/pCaQQCMl0PvTnOD/uGkEgmd3bdzrw0zSgo6NrqcscWiuM1nk5rMG3U3/uW3yr0VrhSYGQeeuEcMRxyoEDRQ4eLCKExJOStkLbiuMcBEFwcpY5tFLHIEYf58Rag1YeUgoQed1LpTrFsRLVWog2Ch0rlFJYG5w2Vf5MAtIYuyTLsumVobVCm2NO7FTdlVIIIYmjjFotJo6zfK7WaJU3XXke1tpByI9wCfDD9zs2e9JNSEECLgGXiKkAl7jMJY1GnNTrjSQMoyTLssSTIpGS6Tn/RBw3KiP7hj/59z4odHf3nNrW3tkLeeOklEiZZyH+60RxZJkjy7I8uzxXq5WJyYmxYaAE8DfoWNmuaugkBgAAAABJRU5ErkJggg==")
+		no-repeat left center transparent;
+	background-size: 100% 100%;
+}
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+/* Add Animation */
+@
+-webkit-keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
+}
+
+to {
+	top: 0;
+	opacity: 1
+}
+
+}
+@
+keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
+}
+
+to {
+	top: 0;
+	opacity: 1
+}
+
+}
+
+/* The Close Button */
+.close {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: #1E90FF;
+	color: white;
+}
+
+.modal-body {
+	padding: 2px 16px;
+}
+
+.modal-footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #1E90FF;
+	color: white;
+}
+
+#inputAccountAndPasswordSpaceFormId {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#googleIconSize {
+	padding-left: 10px;
+}
+
+label {
+	
+}
+</style>

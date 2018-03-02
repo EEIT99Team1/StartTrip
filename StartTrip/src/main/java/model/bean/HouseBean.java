@@ -5,7 +5,7 @@ public class HouseBean {
 	private String country;
 	private String area;
 	private String addres;
-	private int telephone;
+	private Integer telephone;
 	private String explain ;
 	//Picture image
 	public String getName() {
