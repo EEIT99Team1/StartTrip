@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" session="false"%>
+<%@ page contentType="text/html; charset=UTF-8" session="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -8,9 +8,11 @@
 <link href="style/hometitle.css" rel="stylesheet" />
 <link href="css/login/bouncebutton.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-signin-client_id" content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
+<meta name="google-signin-client_id"
+	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="style/CombinedCompact/CalendarPopup.js"></script>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <meta name="google-signin-client_id"
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 <script>
@@ -29,6 +31,7 @@
 			<!-- Trigger/Open The Modal -->
 			<!-- 	<button id="button">登入</button> -->
 			<a id="button" class="button" href="#">Login</a>
+			<a href="#" onclick="signOut();">Sign out</a>
 			<!-- The Modal -->
 			<div id="myModal" class="modal">
 
@@ -36,14 +39,26 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<span class="close">&times;</span>
-						<h2>會員登入</h2>
+						<h2>
+							會員登入
+						</h2>
 					</div>
 
 					<div class="modal-body">
-						<form id="inputAccountAndPasswordSpaceFormId" method="post">
-							<label>帳號：</label><input type="text"><br /> <label>密碼：</label><input
-								type="password"><br /> <br /> <a id="mybutton"
-								class="button" href="#">Login</a>
+						<form id="inputAccountAndPasswordSpaceFormId"
+							action="<c:url value="/LoginServlet"/>" method="post">
+							<label>帳號：</label><input type="text" name="userEmail" size=20"
+								value="${param.userEmail}">
+								&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.AccountEmptyError}
+             					</Font></small><br />
+							<label>密碼：</label><input type="password" name="pswd" size="20"
+								value="${param.password}">
+								&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}
+             					</Font></small><br /><br /> <br />
+							<!-- <a id="mybutton" class="button" href="#">Login</a> -->
+							<c:set var="target" value="${pageContext.request.servletPath}"
+								scope="session" />
+							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>
 
 					</div>
@@ -97,8 +112,9 @@
 					</div>
 				</div>
 				<div>
-					<input type="radio" name="way" id="double" checked="checked" />來回 <input
-						type="radio" name="way" id="one" />單程 艙等: <select name="cabin">
+					<input type="radio" name="way" id="double" checked="checked" />來回
+					<input type="radio" name="way" id="one" />單程 艙等: <select
+						name="cabin">
 						<option value="Y">經濟客艙</option>
 						<option value="Y">商務艙</option>
 						<option value="Y">豪華商務艙</option>
@@ -118,8 +134,8 @@
 			console.log('Name: ' + profile.getName());
 			console.log('Image URL: ' + profile.getImageUrl());
 			console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-			var m1 = $("<img></img>").attr("src", profile.getImageUrl());
-			$("#button").append(m1);
+// 			var m1 = $("<img></img>").attr("src", profile.getImageUrl());
+// 			$("#button").append(m1);
 		}
 	</script>
 	<script>
@@ -148,10 +164,6 @@
 				modal.style.display = "none";
 			}
 		}
-		var mybtn = document.getElementById("mybutton");
-		mybtn.onclick = function() {
-			modal.style.display = "none";
-		};
 	</script>
 	<!-- googleSignOut -->
 	<script>
@@ -162,5 +174,16 @@
 			});
 		}
 	</script>
+	<script>
+	var error=${hasError};
+			console.log(error);
+		if (error) {
+			$(".modal").css("display","block");
+		}else{
+			$(".modal").css("display","none");
+		}
+		
+	</script>
+
 </body>
 </html>
