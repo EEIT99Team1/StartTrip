@@ -145,7 +145,11 @@ public class ConnectionSaber {
 					temp.addAttribute("Quantity", adult);
 				}
 				if (temp.attributeValue("Code").equals("CNN")) {
-					temp.addAttribute("Quantity", child);
+					if("0".equals(child)) {
+						eSeat.remove(temp);
+					}else {
+						temp.addAttribute("Quantity", child);
+					}
 				}
 			}
 
