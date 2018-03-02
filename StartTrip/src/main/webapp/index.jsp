@@ -30,11 +30,11 @@
 	<header>
 		<nav>
             <ul class="menu">
-                <li ><img class="menuimg" src="image/01.png" /></li>
+                <li ><img class="menuimg" src="image/index/01.png" /></li>
                 <li class="menuli"><a href="#">機票</a></li>
                 <li class="menuli">飯店</li>
 				<li><a id="button" class="button" href="#" 
-					style="float:right;padding-top:2%;padding-bottom:2%;">Login</a></li>
+					style="float:right;">Login</a></li>
             </ul>
 			<!-- Trigger/Open The Modal -->
 			<!-- 	<button id="button">登入</button> -->
