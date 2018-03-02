@@ -119,14 +119,19 @@ public class ConnectionSaber {
 					temp.element("DestinationLocation").addAttribute("LocationCode", endplace);
 				}else if(temp.getName().equals("OriginDestinationInformation")
 						&& temp.attributeValue("RPH").equals("2")) {
-					// 設定出發時間<DepartureDateTime>{{{GOTIME}}}</DepartureDateTime>
-					temp.element("DepartureDateTime").setText(backtime);
-					// 設定出發地<OriginLocation LocationCode="HKG" LocationType="C"/>
-					temp.element("OriginLocation").addAttribute("LocationCode", endplace);
-					// 設定目的地<DestinationLocation LocationCode="TPE" LocationType="C"/>
-					temp.element("DestinationLocation").addAttribute("LocationCode", goplace);
+					if("OneWay".equals(way)) {
+						root.element("Body").element("OTA_AirLowFareSearchRQ").remove(temp);
+					}else {
+						// 設定出發時間<DepartureDateTime>{{{GOTIME}}}</DepartureDateTime>
+						temp.element("DepartureDateTime").setText(backtime);
+						// 設定出發地<OriginLocation LocationCode="HKG" LocationType="C"/>
+						temp.element("OriginLocation").addAttribute("LocationCode", endplace);
+						// 設定目的地<DestinationLocation LocationCode="TPE" LocationType="C"/>
+						temp.element("DestinationLocation").addAttribute("LocationCode", goplace);
+					}
 				}else if(temp.getName().equals("TravelPreferences")) {
 					temp.element("CabinPref").addAttribute("Cabin", cabin);
+					temp.element("TPA_Extensions").element("TripType").addAttribute("Value", way);
 				}
 			}
 
@@ -174,7 +179,7 @@ public class ConnectionSaber {
 			System.out.println(soapResponseData);
 			
 			// ---------------------------------------------------------
-			 OutputStream os=new FileOutputStream("d:\\02Response.xml");
+			 OutputStream os=new FileOutputStream("e:\\02Response.xml");
 			 OutputStreamWriter osw=new OutputStreamWriter(os);
 			 BufferedWriter bw=new BufferedWriter(osw);
 			

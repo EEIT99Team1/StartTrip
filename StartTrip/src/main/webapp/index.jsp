@@ -6,8 +6,7 @@
 <meta charset="utf-8" />
 <title>首頁</title>
 <link href="style/hometitle.css" rel="stylesheet" />
-<style>
-</style>
+<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 <script src="style/CombinedCompact/CalendarPopup.js"></script>
 <script>
 	var cal = new CalendarPopup();
@@ -31,8 +30,8 @@
 				<div>
 					<h3>地點:</h3>
 					<div>
-						出發地: <input type="text" name="goplace"/>
-						目的地: <input type="text" name="endplace"/>
+						出發地: <input class="citytext" type="text" name="goplace" />
+						目的地: <input class="citytext" type="text" name="endplace"/>
 					</div>
 
 					<h3>人數:</h3>
@@ -51,7 +50,6 @@
 					</div>
 				</div>
 
-
 				<div>
 					<h3>日期:</h3>
 					<div>
@@ -65,8 +63,8 @@
 					</div>
 				</div>
 				<div>
-					<input type="radio" name="way" id="double" checked="checked"/>來回 <input
-						type="radio" name="way" id="one" />單程 艙等: <select name="cabin">
+					<input type="radio" name="way" value="Return" id="double" checked="checked"/>來回 <input
+						type="radio" name="way" value="OneWay" id="one" />單程 艙等: <select name="cabin">
 						<option value="Y">經濟客艙</option>
 						<option value="Y">商務艙</option>
 						<option value="Y">豪華商務艙</option>
@@ -78,6 +76,17 @@
 			</div>
 		</form>
 	</fieldset>
+<script>
+$(document).ready(function(){
+	$(".citytext").keyup(function(){
+		var keyin=$(this).val();
+		$.get("SelectBox.controller",{"keyin":keyin},function(data){
+			console.log("data:"+data);
+		})
+		console.log("23");
+	});
+});
 
+</script>
 </body>
 </html>
