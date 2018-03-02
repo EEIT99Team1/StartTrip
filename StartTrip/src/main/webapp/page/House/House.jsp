@@ -46,10 +46,10 @@
 
 	
 			
-	
-</table>
-<input type="submit" name="prodaction" value="Select">
 
+</table>
+
+<input type="submit" name="prodaction" value="Select">	
 </form>
 
 

@@ -10,12 +10,10 @@ public class TimesBean implements Serializable {
 	private java.util.Date goTime;
 	private java.util.Date outTime;
 	private String people;
-	private int telephone;
-	@Override
-	public String toString() {
-		return "TimesBean [name=" + name + ", roomName=" + roomName + ", goTime=" + goTime + ", outTime=" + outTime
-				+ ", people=" + people + ", telephone=" + telephone + "]";
-	}
+	private Integer telephone;
+	private Integer goInt;
+	private Integer outInt;
+	private Integer price;
 	public String getName() {
 		return name;
 	}
@@ -46,14 +44,36 @@ public class TimesBean implements Serializable {
 	public void setPeople(String people) {
 		this.people = people;
 	}
-	public int getTelephone() {
+	public Integer getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(int telephone) {
+	public void setTelephone(Integer telephone) {
 		this.telephone = telephone;
 	}
-	
-	
+	public Integer getGoInt() {
+		return goInt;
+	}
+	public void setGoInt(Integer goInt) {
+		this.goInt = goInt;
+	}
+	public Integer getOutInt() {
+		return outInt;
+	}
+	public void setOutInt(Integer outInt) {
+		this.outInt = outInt;
+	}
+	public Integer getPrice() {
+		return price;
+	}
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "TimesBean [name=" + name + ", roomName=" + roomName + ", goTime=" + goTime + ", outTime=" + outTime
+				+ ", people=" + people + ", telephone=" + telephone + ", goInt=" + goInt + ", outInt=" + outInt
+				+ ", price=" + price + "]";
+	}
 	
 	
 	

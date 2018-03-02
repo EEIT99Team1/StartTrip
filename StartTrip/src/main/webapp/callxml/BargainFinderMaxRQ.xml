@@ -19,7 +19,7 @@
          </eb:MessageData>
       </eb:MessageHeader>
       <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/12/utility">
-         <wsse:BinarySecurityToken>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/RESF!ICESMSLB\/RES.LB!-3173920084753088370!1937365!0</wsse:BinarySecurityToken>         
+         <wsse:BinarySecurityToken>{{{BinarySecurityToken}}}</wsse:BinarySecurityToken>         
       </wsse:Security>			   
    </SOAP-ENV:Header>
    <SOAP-ENV:Body>
@@ -32,23 +32,23 @@
             </Source>
          </POS>
          <OriginDestinationInformation RPH="1">
-            <DepartureDateTime>2018-02-03T11:00:00</DepartureDateTime>
-            <OriginLocation LocationCode="HKG" LocationType="C"/>
-            <DestinationLocation LocationCode="TPE" LocationType="C"/>
+            <DepartureDateTime>{{{出發時間}}}</DepartureDateTime>
+            <OriginLocation LocationCode="{{{出發地點}}}" LocationType="C"/>
+            <DestinationLocation LocationCode="{{{抵達地點}}}" LocationType="C"/>
             <TPA_Extensions>
                <SegmentType Code="O"/>
             </TPA_Extensions>
          </OriginDestinationInformation>
          <OriginDestinationInformation RPH="2">
-            <DepartureDateTime>2018-02-09T11:00:00</DepartureDateTime>
-            <OriginLocation LocationCode="TPE" LocationType="C"/>
-            <DestinationLocation LocationCode="HKG" LocationType="C"/>
+            <DepartureDateTime>{{{回程時間}}}</DepartureDateTime>
+            <OriginLocation LocationCode="{{{出發地點}}}" LocationType="C"/>
+            <DestinationLocation LocationCode="{{{抵達地點}}}" LocationType="C"/>
             <TPA_Extensions>
                <SegmentType Code="O"/>
             </TPA_Extensions>
          </OriginDestinationInformation>
          <TravelPreferences ValidInterlineTicket="true">
-            <CabinPref Cabin="Y" PreferLevel="Preferred"/>
+            <CabinPref Cabin="{{{艙等}}}" PreferLevel="Preferred"/>
             <TPA_Extensions>
                <TripType Value="Return"/>
                <ExcludeCallDirectCarriers Enabled="true"/>
@@ -57,8 +57,8 @@
          </TravelPreferences>
 	<TravelerInfoSummary>
 		<AirTravelerAvail>
-			<PassengerTypeQuantity Code="ADT" Quantity="1"/>
-			<PassengerTypeQuantity Code="CNN" Quantity="1"/>
+			<PassengerTypeQuantity Code="ADT" Quantity="{{{大人數}}}"/>
+			<PassengerTypeQuantity Code="CNN" Quantity="{{{小孩數}}}"/>
 		</AirTravelerAvail>
 		<PriceRequestInformation CurrencyCode="TWD"/>
 	</TravelerInfoSummary>

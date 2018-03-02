@@ -7,8 +7,8 @@ public class RoomBean implements Serializable {
 
 	private String name;
 	private String roomName;
-	private int number;
-	private int price;
+	private Integer number;
+	private Integer price;
 	private String  explain1;
 	private String  explain2;
 	private String  explain3;

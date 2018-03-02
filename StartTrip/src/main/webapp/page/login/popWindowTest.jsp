@@ -27,6 +27,27 @@
 		});
 	});
 </script>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '1616500528432537',
+				xfbml : true,
+				version : 'v2.12'
+			});
+			FB.AppEvents.logPageView();
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1616500528432537&autoLogAppEvents=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 </head>
 <body style="background: url(img/img1.jpg)">
 	<div id="dialog" title="會員登入">
@@ -54,8 +75,7 @@
 					tabindex="1">
 					登入StartTrip帳號 <i class="spinner-battlenet"></i>
 				</button>
-				<button id="facebook" class="btn btn-block btn-large" rel="external"
-					tabindex="1">使用Facebook快速登入</button>
+				<fb:login-button autologoutlink="true" size="large" scope="public_profile,email" onlogin="FUNCTIONSAVEDATA" ></fb:login-button>
 			</div>
 		</div>
 		<input type="hidden" id="useSrp" name="useSrp" value="false" /> <input
@@ -78,7 +98,6 @@
 	</div>
 
 	<button id="opener">會員登入</button>
-
 	<div class="footer-links nav-left">
 		<a class="nav-item nav-a" href="" data-analytics="global-nav"
 			data-analytics-placement="Footer - eula">StartTrip® 最終用戶授權協議</a> <span>|</span>

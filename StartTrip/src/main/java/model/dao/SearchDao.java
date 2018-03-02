@@ -1,9 +1,12 @@
 package model.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -49,5 +52,13 @@ public class SearchDao {
 			return true;
 		}
 		return false;
+	}
+	
+	@Transactional
+	public List<SearchBean> selectByCode(String aircode) {
+		String HQL_SEARCH="from SearchBean WHERE aircode like '%"+aircode+"%'";
+		Query<SearchBean> query = getSession().createQuery(HQL_SEARCH,SearchBean.class);
+		List<SearchBean> list = query.list();
+		return list;
 	}
 }
