@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,20 +17,53 @@ import model.service.TimesService;
 public class SelectTimes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	TimesService timesService = new TimesService();
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    DateCompare compare = new DateCompare();  
    
    
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+	//	request.setCharacterEncoding("UTF-8");
 		String name=request.getParameter("name");
 		String roomName=request.getParameter("roomName");
 		String go = request.getParameter("gotime");
-		String out = request.getParameter("outtime");
-		int goint = Integer.parseInt(go);
-		int outint = Integer.parseInt(out);
-		int c=timesService.select(name, roomName, goint, outint);
-		request.setAttribute("select", c);
-		System.out.println(c);
+		String out1 = request.getParameter("outtime");
+		String price1 = request.getParameter("price");
+		int price = Integer.parseInt(price1);
+		try {
+			java.util.Date gotime = simpleDateFormat.parse(go);
+			int out = Integer.parseInt(out1);
+			java.util.Date outtime = 
+					new java.util.Date(gotime.getYear(), gotime.getMonth(), gotime.getDate()+out);
+			int goint = compare.getint(gotime);
+			int outint = compare.getint(outtime);
+			int c=timesService.select(name, roomName, goint, outint);
+			System.out.println(c);
+			if(c==0) {
+				request.setAttribute("price", price*out);
+				request.getRequestDispatcher(
+						"/page/House/TimesInsert.jsp").forward(request, response);
+				return;
+			}
+			
+			else {
+				request.setAttribute("select", "你輸入的時間內已經被訂了");
+				request.getRequestDispatcher(
+						"/page/House/Times.jsp").forward(request, response);
+				return;
+			}
+		} catch (ParseException  e) {
+			e.printStackTrace();
+			System.out.println("InsertTimes 38行錯誤");
+			request.setAttribute("select", "日期有錯");
+		} 
+		catch (NumberFormatException  e) {
+			e.printStackTrace();
+			System.out.println("InsertTimes 52行錯誤");
+			request.setAttribute("select", "天數有錯");
+		} 
+		
+
 		request.getRequestDispatcher(
 				"/page/House/Times.jsp").forward(request, response);
 		
