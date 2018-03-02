@@ -5,30 +5,42 @@
 <head>
 <meta charset="utf-8" />
 <title>首頁</title>
-<link href="style/hometitle.css" rel="stylesheet" />
-<link href="css/login/bouncebutton.css" rel="stylesheet" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="style/CombinedCompact/CalendarPopup.js"></script>
 <meta name="google-signin-client_id"
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
+	
+<link href="css/search/hometitle.css" rel="stylesheet" />
+<link href="css/search/jquery-ui.min.css" rel="stylesheet">
+<link href="css/login/bouncebutton.css" rel="stylesheet" />
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script>
-	var cal = new CalendarPopup();
+    $( function() {
+        $("#datego").datepicker()
+    });
+    $(function () {
+        $("#dateback").datepicker();
+    });
 </script>
+
 </head>
 <body>
-	<header style="background-color: antiquewhite">
-		<a href="#"><img src="image/01.png" /></a>
+	<header>
 		<nav>
-			<ul>
-				<li><a href="#">機票</a></li>
-				<li>飯店</li>
-				<!-- 				<li><input type="button" value="登入" style="float: right;" /></li> -->
-			</ul>
+            <ul class="menu">
+                <li ><img class="menuimg" src="image/01.png" /></li>
+                <li class="menuli"><a href="#">機票</a></li>
+                <li class="menuli">飯店</li>
+				<li><a id="button" class="button" href="#" 
+					style="float:right;padding-top:2%;padding-bottom:2%;">Login</a></li>
+            </ul>
 			<!-- Trigger/Open The Modal -->
 			<!-- 	<button id="button">登入</button> -->
-			<a id="button" class="button" href="#">Login</a>
 			<!-- The Modal -->
 			<div id="myModal" class="modal">
 
@@ -52,64 +64,76 @@
 							data-onsuccess="onSignIn"></div>
 					</div>
 				</div>
-
 			</div>
 		</nav>
-
 	</header>
-	<fieldset>
-		<form action="FlightGet.controller" method="get">
-			<div class="mainbody">
-				<div>
-					<h3>地點:</h3>
-					<div>
-						出發地: <input type="text" name="goplace" /> 目的地: <input type="text"
-							name="endplace" />
-					</div>
+	<article class="mainbody">
+        <form class="search" action="FlightGet.controller" method="get">
+            <div >
+                <div class="searchdiv">
+                    <h3>地點:</h3>
+                    <div>
+                        出發地:
+                 <select>
+                    <option>台灣</option>
+                    <option>日本</option>
+                 </select>
+                        目的地:
+                 <select>
+                 	<option>台灣</option>
+                 	<option>日本</option>
+                 </select>
+                    </div>
+                </div>
+                <div class="searchdiv">
+                    <h3>人數:</h3>
+                    <div>
+                        大人:
+                <select>
+                    <option>1人</option>
+                    <option>2人</option>
+                    <option>3人</option>
+                    <option>4人</option>
+                </select>
 
-					<h3>人數:</h3>
-					<div>
-						大人: <select name="adult">
-							<option value="1">1人</option>
-							<option value="2">2人</option>
-							<option value="3">3人</option>
-							<option value="4">4人</option>
-						</select> 小孩: <select name="child">
-							<option value="1">1人</option>
-							<option value="2">2人</option>
-							<option value="3">3人</option>
-							<option value="4">4人</option>
-						</select>
-					</div>
-				</div>
-
-
-				<div>
-					<h3>日期:</h3>
-					<div>
-						去程: <a href="#"
-							onclick="cal.select(document.forms[0].date, 'bookmark', 'yyyy/MM/dd'); return false;">
-							<input type="text" id="date" name="gotime" />
-						</a> 回程: <a href="#" id="bookmark"
-							onclick="cal.select(document.forms[0].date1,'bookmark','yyyy/MM/dd'); return false;">
-							<input type="text" id="date1" name="backtime" />
-						</a> <input type="submit" value="查詢" />
-					</div>
-				</div>
-				<div>
-					<input type="radio" name="way" id="double" checked="checked" />來回 <input
-						type="radio" name="way" id="one" />單程 艙等: <select name="cabin">
-						<option value="Y">經濟客艙</option>
-						<option value="Y">商務艙</option>
-						<option value="Y">豪華商務艙</option>
-						<option value="Y">頭等艙</option>
-					</select>
-				</div>
-
-
-			</div>
-		</form>
-	</fieldset>
+                        小孩:
+                <select>
+                    <option>1人</option>
+                    <option>2人</option>
+                    <option>3人</option>
+                    <option>4人</option>
+                </select>
+           </div>
+       </div>
+       <div class="searchdiv">
+            <h3>日期:</h3>
+               <div>
+                            去程:
+                            <input type="text" id="datego" />
+                            回程:
+                            <input type="text" id="dateback" />
+                            <a href="02middle.html"><input type="button" value="查詢" /></a>
+                    </div>
+                </div>
+                <div class="searchdiv">
+                    <input type="radio" name="way" id="double" required value="double" checked /><label for="double">來回</label>
+                    <input type="radio" name="way" id="one" value="one" /><label for="one">單程</label>
+                    艙等:
+                    <select>
+                        <option>經濟客艙 </option>
+                        <option>商務艙</option>
+                        <option>豪華商務艙</option>
+                        <option>頭等艙</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </article>
+    
+	    <footer>
+	        <span>電話: 0912-345-678</span>
+	    	<span> email:team1@eeit99.com</span>
+	    </footer>
 	<script>
 		//Google+第三放登入取得資料方法
 		function onSignIn(googleUser) {
