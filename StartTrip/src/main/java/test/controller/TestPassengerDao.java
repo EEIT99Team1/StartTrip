@@ -1,6 +1,7 @@
 package test.controller;
 
 import java.io.File;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -158,17 +159,17 @@ public class TestPassengerDao {
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
 		//insert
-		bean.setExpiry(new java.sql.Date(0));
-		bean.setFirstname("Jeff");
-		bean.setLastname("hsu");
-		bean.setOrderid(1);
-		bean.setPassport("156115641");
-		
-		passengerDao.insert(bean);
+//		bean.setExpiry(new java.sql.Date(0));
+//		bean.setFirstname("Jeff");
+//		bean.setLastname("hsu");
+//		bean.setOrderid(1);
+//		bean.setPassport("156115641");
+//		
+//		passengerDao.insert(bean);
 		//update
-		//passengerDao.update(1, "Jeff", "Jeff", new Date(1919/01/01), "1561156",1);
+//		passengerDao.update(1, "Jeff", "Jeff", new Date(1919/01/01), "156115646",1);
 		//delete
-		//passengerDao.delete(1);
+		passengerDao.delete(1);
 		return "test.success";
 	}
 	
