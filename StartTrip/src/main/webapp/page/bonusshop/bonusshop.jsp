@@ -9,11 +9,33 @@
 <title>Bonus shop</title>
 <link href="<c:url value="/css/bonusshop/bonusshop.css"/>" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script type="<c:url value="js/jquery-3.3.1.min.js"/>"></script>
+<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 <!-- <script type="js/bootstrap.min.js"></script> -->
 <script>
 	$(document).ready(function() {
-
+		$(".addcart").click(function(){
+// 			var shopcart = $(".shopcart");
+// 			alert(123);	
+			var addimg = $(this).parent().parent().find("div:eq(0) img:eq(0)");
+			
+			var cloneimg = addimg.clone();
+			cloneimg.css({
+				"width":'100px',
+				"height":'100px',
+				"position":"absolute",
+// 				"top":addimg.offset().top,
+// 				"left":addimg.offset().left,
+				"z-index":'1000',
+				"opacity":'0.4',				
+			})
+			cloneimg.appendTo($("body")).animate({
+				"width":'50px',
+				"height":'50px',
+				"top":$(".shopimg").offset.top,
+				"left":$(".shopimg").offset.left				
+			},2000)
+		});
+		
 
 		
 	})
@@ -27,12 +49,15 @@
 				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>">
 			</div>			
 		</section>
+		
+		<HR color="block" size="10" width="100%"  align="center">
+				
 	<!-- downdiv -->
 		<div class="container">
 		<!-- 分割區塊 -->
 			<div class="row">
 			<!--區塊1 -->
-				<div class="col-md-4">
+				<div class="col-md-4 product">
 				<!--圖片區塊 -->
 					<div class="box">
 						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
@@ -41,16 +66,12 @@
 					<p class="center">商品1</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
-
-						<input class="btn btn-primary" type="submit" value="選擇">						
-
+						<input class="btn btn-primary addcart" type="submit" value="選擇">						
 					</div>
 				</div><!--區塊1 -->
 				
@@ -64,15 +85,13 @@
 					<p class="center">商品2</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" type="submit" value="選擇">	
 
 					</div>
 				</div><!--區塊2 -->
@@ -87,15 +106,13 @@
 					<p class="center">商品3</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" type="submit" value="選擇">	
 
 					</div>
 				</div><!--區塊3 -->
@@ -110,15 +127,13 @@
 					<p class="center">商品4</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" type="submit" value="選擇">	
 
 					</div>
 				</div><!--區塊4 -->
@@ -133,15 +148,13 @@
 					<p class="center">商品5</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" type="submit" value="選擇">	
 
 					</div>
 				</div><!--區塊5 -->
@@ -156,15 +169,13 @@
 					<p class="center">商品6</p>
 				<!--按鈕區塊 -->
 					<div>
-						<label>數量：</label>
-						<input type="text" placeholder="數量" size="2">
-						<br>
-						<label>總點數：</label>
+
+						<label>點數：</label>
 						<span>xxx</span>
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" type="submit" value="選擇">	
 
 					</div>
 				</div><!--區塊6 -->			
