@@ -77,5 +77,3 @@
 		});
 	});
 </script>
-
-<!--<jsp:include page="/page/shared/footer.jsp" />-->
