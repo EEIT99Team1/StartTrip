@@ -6,12 +6,13 @@
 <head>
 <meta charset="utf-8" />
 <title>查詢結果</title>
+
 <link href="<c:url value="/style/title.css"/>" rel="stylesheet" />
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 </head>
 <body>
-	<%@ include file='/page/shared/header.jsp'%>
-
+	<jsp:include page="/page/shared/header.jsp" />
+	
 	<div class="mborder">
 		<div class="planeimg">
 			<img src="<c:url value="/image/01.png"/>" />
@@ -155,5 +156,6 @@
 			$("#flightInfo0").toggle(1000);
 		});
 	</script>
+	<jsp:include page="/page/shared/footer.jsp" />
 </body>
 </html>
