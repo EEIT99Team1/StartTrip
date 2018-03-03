@@ -9,7 +9,7 @@
 <title>Bonus shop</title>
 <link href="<c:url value="/css/bonusshop/bonusshop.css"/>" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script type="js/jquery-3.3.1.min.js"></script>
+<script type="<c:url value="js/jquery-3.3.1.min.js"/>"></script>
 <!-- <script type="js/bootstrap.min.js"></script> -->
 <script>
 	$(document).ready(function() {
@@ -26,7 +26,7 @@
 			<div class="titlebox">廣告頁</div>
 		</section>
 	<!-- downdiv -->
-		<div class="downbox">
+		<div class="container">
 		<!-- 分割區塊 -->
 			<div class="row">
 			<!--區塊1 -->
@@ -46,7 +46,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">						
+						<button type="button" class="btn btn-primary addCart">選擇</button>						
 					</div>
 				</div><!--區塊1 -->
 				
@@ -67,7 +67,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<button type="button" class="btn btn-primary addCart">選擇</button>	
 					</div>
 				</div><!--區塊2 -->
 				
@@ -88,7 +88,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<button type="button" class="btn btn-primary addCart">選擇</button>	
 					</div>
 				</div><!--區塊3 -->
 					
@@ -109,7 +109,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<button type="button" class="btn btn-primary addCart">選擇</button>	
 					</div>
 				</div><!--區塊4 -->
 				
@@ -130,7 +130,7 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<button type="button" class="btn btn-primary addCart">選擇</button>	
 					</div>
 				</div><!--區塊5 -->
 								
@@ -151,15 +151,22 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<input type="submit" value="選擇">	
+						<button type="button" class="btn btn-primary addCart">選擇</button>	
 					</div>
 				</div><!--區塊6 -->
 				
 			</div><!-- 分割區塊 -->	
 			
-				
 		</div><!-- downdiv -->
-<!-- 		底下顯示金額和購買區塊 -->
+<!-- 		購物車　 -->
+		<div class="container">
+			<div class="row">
+				<div class="shopcart">
+					<img src="<c:url value="/image/bonusshop/cart.png"/>" class="img-responsive" alt="購物車">
+					<span class="cartnum">0</span>
+				</div>
+			</div>
+		</div>
 
 	</article>	
 </body>
