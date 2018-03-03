@@ -13,12 +13,9 @@
 	box-sizing:border-box;
 }
 
-.container{	
-	padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    border:solid 2px red;
+.product{	
+	margin: 10px 10px 10px 10px;
+	border: solid 2px #ff0000
 }
 
 /* .box,.col-md-4{ */

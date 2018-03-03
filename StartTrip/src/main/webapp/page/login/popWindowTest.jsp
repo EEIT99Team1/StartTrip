@@ -12,6 +12,8 @@
 	$(function() {
 		$("#dialog").dialog({
 			autoOpen : false,
+			modal: true,
+			draggable: false,
 			show : {
 				effect : "blind",
 				duration : 1000
@@ -20,6 +22,7 @@
 				effect : "blind",
 				duration : 1000
 			}
+			
 		});
 
 		$("#opener").on("click", function() {
@@ -49,7 +52,8 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 </head>
-<body style="background: url(img/img1.jpg)">
+<body style="background: url(img/stars.jpg)">
+	<button id="opener">會員登入</button>
 	<div id="dialog" title="會員登入">
 		<div class="control-group">
 			<label id="accountName-label" class="control-label" for="accountName">帳號（請使用電子郵件登入）</label>
@@ -97,7 +101,6 @@
 		</ul>
 	</div>
 
-	<button id="opener">會員登入</button>
 	<div class="footer-links nav-left">
 		<a class="nav-item nav-a" href="" data-analytics="global-nav"
 			data-analytics-placement="Footer - eula">StartTrip® 最終用戶授權協議</a> <span>|</span>
