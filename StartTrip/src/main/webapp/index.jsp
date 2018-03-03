@@ -76,10 +76,10 @@
 <!--                     <option>日本</option> -->
 <!--                  </select> -->
                         目的地:<input class="citytext" type="text" name="endplace"/>
-                 <select>
-                 	<option>台灣</option>
-                 	<option>日本</option>
-                 </select>
+<!--                  <select> -->
+<!--                  	<option>台灣</option> -->
+<!--                  	<option>日本</option> -->
+<!--                  </select> -->
                     </div>
                 </div>
                 <div class="searchdiv">
