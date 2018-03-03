@@ -1,6 +1,7 @@
 package test.controller;
 
 import java.io.File;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -110,24 +111,24 @@ public class TestPassengerDao {
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
 		//insert
-		bean.setAdult(3);
-		bean.setChild(2);
-		bean.setDowntime(new java.sql.Date(0));
-		bean.setUptime(new java.sql.Date(214748));
-		bean.setStart("twn");
-		bean.setEndstart("jpa");
-		bean.setFlight("華航");
-		bean.setModel("M5454");
-		bean.setOrderid(1);
-		bean.setWid(1);
-		
-		flightorderDao.insert(bean);
+//		bean.setAdult(3);
+//		bean.setChild(2);
+//		bean.setDowntime(new java.sql.Date(0));
+//		bean.setUptime(new java.sql.Date(214748));
+//		bean.setStart("twn");
+//		bean.setEndstart("jpa");
+//		bean.setFlight("華航");
+//		bean.setModel("M5454");
+//		bean.setOrderid(1);
+//		bean.setWid(1);
+//		
+//		flightorderDao.insert(bean);
 		//update
 		//flightorderDao.update(4, "TEP", "NTR", new java.sql.Date(156778),
 		//		new java.sql.Date(0), 4, 3, "長榮", "BR-132", 1);
 		//delete
-		//flightorderDao.delete(4);
-		
+
+//		flightorderDao.delete(2);
 		return "test.success";
 	}
 	
@@ -158,17 +159,17 @@ public class TestPassengerDao {
 		//select
 //		bean=customerDao.select("qwe@gmail.com");
 		//insert
-		bean.setExpiry(new java.sql.Date(0));
-		bean.setFirstname("Jeff");
-		bean.setLastname("hsu");
-		bean.setOrderid(1);
-		bean.setPassport("156115641");
-		
-		passengerDao.insert(bean);
+//		bean.setExpiry(new java.sql.Date(0));
+//		bean.setFirstname("Jeff");
+//		bean.setLastname("hsu");
+//		bean.setOrderid(1);
+//		bean.setPassport("156115641");
+//		
+//		passengerDao.insert(bean);
 		//update
-		//passengerDao.update(1, "Jeff", "Jeff", new Date(1919/01/01), "1561156",1);
+//		passengerDao.update(1, "Jeff", "Jeff", new Date(1919/01/01), "156115646",1);
 		//delete
-		//passengerDao.delete(1);
+		passengerDao.delete(1);
 		return "test.success";
 	}
 	

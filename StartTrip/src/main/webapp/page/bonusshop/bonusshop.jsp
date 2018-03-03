@@ -23,7 +23,9 @@
 <%@ include file='/page/shared/header.jsp' %>
 	<article>
 		<section>
-			<div class="titlebox">廣告頁</div>
+			<div class="titlebox">
+				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>">
+			</div>			
 		</section>
 	<!-- downdiv -->
 		<div class="container">
@@ -46,7 +48,9 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>						
+
+						<input class="btn btn-primary" type="submit" value="選擇">						
+
 					</div>
 				</div><!--區塊1 -->
 				
@@ -67,7 +71,9 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>	
+
+						<input class="btn btn-primary" type="submit" value="選擇">	
+
 					</div>
 				</div><!--區塊2 -->
 				
@@ -88,7 +94,9 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>	
+
+						<input class="btn btn-primary" type="submit" value="選擇">	
+
 					</div>
 				</div><!--區塊3 -->
 					
@@ -109,7 +117,9 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>	
+
+						<input class="btn btn-primary" type="submit" value="選擇">	
+
 					</div>
 				</div><!--區塊4 -->
 				
@@ -130,7 +140,9 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>	
+
+						<input class="btn btn-primary" type="submit" value="選擇">	
+
 					</div>
 				</div><!--區塊5 -->
 								
@@ -151,22 +163,19 @@
 						<span>xxx</span>
 					</div>
 					<div class="center">
-						<button type="button" class="btn btn-primary addCart">選擇</button>	
+
+						<input class="btn btn-primary" type="submit" value="選擇">	
+
 					</div>
-				</div><!--區塊6 -->
-				
-			</div><!-- 分割區塊 -->	
-			
-		</div><!-- downdiv -->
-<!-- 		購物車　 -->
-		<div class="container">
-			<div class="row">
-				<div class="shopcart">
-					<img src="<c:url value="/image/bonusshop/cart.png"/>" class="img-responsive" alt="購物車">
-					<span class="cartnum">0</span>
-				</div>
-			</div>
+				</div><!--區塊6 -->			
+
+			<div class="shopimg">			
+				<img class="shopcart" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
+				<span class="cartnum">0</span>
+			</div>				
+
 		</div>
+	</div>
 
 	</article>	
 </body>

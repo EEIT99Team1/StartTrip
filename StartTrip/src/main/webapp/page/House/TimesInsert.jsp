@@ -8,8 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="SelectTimes" method="get">
+<form action="InsertTimes" method="post">
 <table>
     <tr>
 		<td>Name : </td>
@@ -19,25 +18,30 @@
 		<td>roomName : </td>
 		<td><input type="text" name="roomName" value="${param.roomName}" ></td>		
 	</tr>
-	 <tr>
-		<td>price : </td>
-		<td><input type="text" name="price" value="${param.price}"></td>		
-	</tr>
 	<tr>
 		<td>gotime : </td>
-		<td><input type="text" name="gotime" ></td>		
+		<td><input type="text" name="gotime" value="${param.gotime}"></td>		
 	</tr>
 	<tr>
 		<td>outtime : </td>
-		<td><input type="text" name="outtime" ></td>		
+		<td><input type="text" name="outtime" value="${param.outtime}"></td>		
 	</tr>
-</table>
-	
+	<tr>
+		<td>總價 : </td>
+		<td><input type="text" name="price" value="${price}" ></td>		
+	</tr>
+	<tr>
+		<td>people : </td>
+		<td><input type="text" name="people" ></td>		
+	</tr>
+	<tr>
+		<td>telephone : </td>
+		<td><input type="text" name="telephone" ></td>		
+	</tr>
+	</table>
 	
 	<input type="submit" value="go">
-	<h1>${select}</h1>
-	
-	
+	<h2>${select}</h2>
 </form>
 </body>
 </html>
