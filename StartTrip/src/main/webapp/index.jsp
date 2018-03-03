@@ -23,8 +23,15 @@
     $(function () {
         $("#dateback").datepicker();
     });
+    
+    $(function() {
+        $("#datepicker").datepicker();
+            $.datepicker.setDefaults({
+                dateFormat : "yy-mm-dd"
+            });
+        })
+    
 </script>
-
 </head>
 <body>
 	<header>
