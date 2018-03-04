@@ -66,15 +66,34 @@
 
 
 <script>
-	$(document).ready(function() {
-		$(".citytext").keyup(function() {
-			var keyin = $(this).val();
-			$.get("SelectBox.controller", {
-				"keyin" : keyin
-			}, function(data) {
-				console.log("data:" + data);
-			})
-			console.log("23");
-		});
+
+function strToJson(str){
+    var json = (new Function("return " + str))();
+    return json;
+}//Sting >> JSON
+	
+$(document).ready(function() {
+	$(".citytext").keyup(function() {
+		var keyin = $(this).val();
+		if(keyin.length>1){
+			$.ajax({
+				url:'<c:url value="SelectBox.controller"/>',
+				type:'GET',
+				data:{keyin:keyin},
+				scriptCharset:'UTF-8',
+				success:function(data){
+					var dataObj=strToJson(data);
+					for(var i=0,max=dataObj.length;i<max;i++){
+						var aircode=dataObj[i].aircode;
+						var airport=dataObj[i].airport;
+						var country=dataObj[i].country;
+						console.log(aircode+":"+airport);
+						
+						$(".citytext")
+					}
+				}//success function
+			});//ajax結束
+		};//if(keyin.length>1)判斷結束
 	});
+});
 </script>
