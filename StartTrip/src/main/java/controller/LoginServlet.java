@@ -16,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import model.bean.CustomerBean;
+import model.dao.CustomerDao;
 import model.service.login.LoginService;
 
 @WebServlet("/LoginServlet")
@@ -56,6 +57,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		LoginService ls = wac.getBean(LoginService.class);
+		CustomerDao dao = wac.getBean(CustomerDao.class);
 		CustomerBean mb = ls.checkEmailPassword(userEmail, password);
 
 		if (mb != null) {
@@ -66,23 +68,26 @@ public class LoginServlet extends HttpServlet {
 		if (errorMsgMap.isEmpty()) {
 			//如果session物件內含有"target"屬性物件，表示使用者先前嘗試執行某個應該登入，但使用者未登入的網頁
 			//，由該網頁放置的"target"屬性物件，因次如果有"target"屬性物件則導向"target"屬性物件所標示的網頁，否則導向首頁。
-			String contextPath = getServletContext().getContextPath();
-			System.out.println("contextPath ="+contextPath);
+//			String contextPath = getServletContext().getContextPath();
+//			System.out.println("contextPath ="+contextPath);
 			if (target != null) {
 				req.setAttribute("hasError", false);
-				System.out.println("success false");
+				CustomerBean bean =dao.select(userEmail);
+				String firstname = bean.getFirstname();
+				String lastname = bean.getLastname();
+				req.setAttribute("firstname", "\""+firstname+"\"");
+				req.setAttribute("lastname", "\""+lastname+"\"");
+//				System.out.println("success false");
 				//先由session中移除此項屬性，否則下一次User直接執行login功能後，會再度被導向到target。
 				session.removeAttribute("target");
 				RequestDispatcher rd = req.getRequestDispatcher(target);
 				rd.forward(req, resp);
-				System.out.println("contextPath + target ="+contextPath + target);
+//				System.out.println("contextPath + target ="+contextPath + target);
 			} else {
 				RequestDispatcher rd = req.getRequestDispatcher(target);
 				rd.forward(req, resp);
-				System.out.println("contextPath +index.jsp = "+contextPath + "/index.jsp");
+//				System.out.println("contextPath +index.jsp = "+contextPath + "/index.jsp");
 			}
-			
-			
 			System.out.println("success");
 			return;
 		} else {

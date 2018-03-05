@@ -20,8 +20,8 @@
 		console.log('Name: ' + profile.getName());
 		console.log('Image URL: ' + profile.getImageUrl());
 		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
-		$("#button").append(m1);
+// 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
+// 		$("#button").append(m1);
 	}});
 </script>
 <script>
@@ -34,7 +34,10 @@ $(document).ready(function(){
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
-
+	
+	//取得Login裡面的那個Login按鈕。
+//		var mybutton = document.getElementById("mybutton");
+	
 	// When the user clicks the button, open the modal 
 	btn.onclick = function() {
 		modal.style.display = "block";
@@ -44,17 +47,18 @@ $(document).ready(function(){
 	span.onclick = function() {
 		modal.style.display = "none";
 	}
-
+	
+//		mybutton.onclick = function(){
+//			modal.style.display = "block";	
+//		}
+	
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
-	}});
-// 	var mybtn = document.getElementById("mybutton");
-// 	mybtn.onclick = function() {
-// 		modal.style.display = "none";
-// 	};
+	}
+});
 </script>
 <!-- googleSignOut -->
 <script>
@@ -104,15 +108,18 @@ $(document).ready(function() {
 		$(document).ready(function(){
 		var error=${hasError};
 		
-// 		var user=${param.userEmail};
+ 		
 // 		var password=${param.password};
 // 				console.log(error+user+password);
 			if (error) {
 				$(".modal").css("display","block");
 			}else{
+				var firstname = ${firstname};
+				var lastname = ${lastname};
+				
 // 				$(".modal").css("display","none");
 // 				$(".button").text().remove();
-				$(".button").text("顏堃");
+				$(".button").text(firstname+lastname);
 				
 			};
 		});
