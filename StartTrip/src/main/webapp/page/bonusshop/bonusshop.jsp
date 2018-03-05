@@ -11,35 +11,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 
-<script>
-		$(function(){
-			$("table tr:nth-child(odd)").css("background-color",'#eee');
-			$("#chkAll").click(function() {
-	
-				if(this.checked){
-					$("table tr td input[type='checkbox']")
-						.prop("checked",true);
-				}else{
-					$("table tr td input[type='checkbox']")
-						.removeAttr("checked");
-				}	
-			});
-			$("#btnDel").click(function(){
-				var intL=$("table tr td input:checked:not('#chkAll')").length;
-				console.log(intL);
-				if(intL){
-					$("table tr td input[type=checkbox]:not('#chkAll')").each(function(index){
-								if(this.checked){
-									$(this).parent().parent().remove();
-								}
-						})
-				}
-			})
 
-		});
-		
-
-	</script>
 
 <!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
