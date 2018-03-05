@@ -13,9 +13,12 @@
 <!-- <script type="js/bootstrap.min.js"></script> -->
 <script>
 	$(document).ready(function() {
+		
+			var cartnum = 0;
 		$(".addcart").click(function(){
-// 			var shopcart = $(".shopcart");
-// 			alert(123);	
+			var shopcart = $(".shopimg");
+// 			alert(123);
+
 			var addimg = $(this).parent().parent().find("div:eq(0) img:eq(0)");
 			
 			var cloneimg = addimg.clone();
@@ -23,17 +26,25 @@
 				"width":'100px',
 				"height":'100px',
 				"position":"absolute",
-// 				"top":addimg.offset().top,
-// 				"left":addimg.offset().left,
+				"top":addimg.offset().top,
+				"left":addimg.offset().left,
 				"z-index":'1000',
 				"opacity":'0.4',				
-			})
+			});
 			cloneimg.appendTo($("body")).animate({
 				"width":'50px',
 				"height":'50px',
-				"top":$(".shopimg").offset.top,
-				"left":$(".shopimg").offset.left				
-			},2000)
+				"top":shopcart.offset().top,
+				"left":shopcart.offset().left,				
+			},2000,function(){
+				cloneimg.animate({
+					"width":"0px",
+					"height":"0px",						
+ 				},function(){
+					$(".cartnum").html(++cartnum);
+					$(this).detach();
+				});
+			});
 		});
 		
 
@@ -42,7 +53,7 @@
 </script>
 </head>
 <body>
-<%@ include file='/page/shared/header.jsp' %>
+<%-- <%@ include file='/page/shared/header.jsp' %> --%>
 	<article>
 		<section>
 			<div class="titlebox">
