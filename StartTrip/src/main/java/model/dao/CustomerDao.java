@@ -27,15 +27,8 @@ public class CustomerDao {
 			return bean;
 		}
 		return null;
-	}//insert
-//	private String email;
-//	private String password;
-//	private String firstname;
-//	private String lastname;
-//	private String country;	
-//	private String birthday;
-//	private String phonenumber ;
-//	private int bonus;
+	}
+	
 	@Transactional
 	public boolean update(String email,String password,String firstname
 			,String lastname,String country,String birthday,String phonenumber,int bonus) {

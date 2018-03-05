@@ -14,8 +14,17 @@
 			FB.init({
 				appId : '1616500528432537',
 				xfbml : true,
-				version : 'v2.12'
+				version : 'v2.12',
 			});
+
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					console.log('connected');
+				} else {
+					alert('please login');
+				}
+			});
+		
 			FB.AppEvents.logPageView();
 		};
 
