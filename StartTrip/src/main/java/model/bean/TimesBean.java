@@ -1,6 +1,10 @@
 package model.bean;
 
-public class TimesBean {
+import java.io.Serializable;
+
+public class TimesBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	private String roomName;
 	private java.util.Date goTime;

@@ -1,6 +1,10 @@
 package model.bean;
 
-public class RoomBean {
+import java.io.Serializable;
+
+public class RoomBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	private String roomName;
 	private Integer number;
@@ -8,12 +12,7 @@ public class RoomBean {
 	private String  explain1;
 	private String  explain2;
 	private String  explain3;
-	@Override
-	public String toString() {
-		return "RoomBean [name=" + name + ", roomName=" + roomName + ", number=" + number + ", price=" + price
-				+ ", explain1=" + explain1 + ", explain2=" + explain2 + ", explain3=" + explain3 + "]";
-	}
-	//Picture image,
+	private String picture;
 	public String getName() {
 		return name;
 	}
@@ -26,16 +25,16 @@ public class RoomBean {
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public String getExplain1() {
@@ -55,6 +54,17 @@ public class RoomBean {
 	}
 	public void setExplain3(String explain3) {
 		this.explain3 = explain3;
+	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+	@Override
+	public String toString() {
+		return "RoomBean [name=" + name + ", roomName=" + roomName + ", number=" + number + ", price=" + price
+				+ ", explain1=" + explain1 + ", explain2=" + explain2 + ", explain3=" + explain3 + "]";
 	}
 	
 	

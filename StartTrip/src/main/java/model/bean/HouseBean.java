@@ -1,13 +1,27 @@
 package model.bean;
 
-public class HouseBean {
+import java.io.Serializable;
+
+public class HouseBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	private String country;
 	private String area;
 	private String addres;
 	private Integer telephone;
 	private String explain ;
-	//Picture image
+	private String Picture ;
+	
+	public String getPicture() {
+		return Picture;
+	}
+	public void setPicture(String picture) {
+		Picture = picture;
+	}
+	public void setTelephone(Integer telephone) {
+		this.telephone = telephone;
+	}
 	public String getName() {
 		return name;
 	}
