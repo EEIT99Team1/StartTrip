@@ -10,7 +10,7 @@
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 </head>
 <body>
-<%-- 	<jsp:include page="/page/shared/indexheader.jsp" /> --%>
+	<jsp:include page="/page/shared/indexheader.jsp" />
 	
 <!-- 	<div class="mborder"> -->
 <!-- 		<div class="planeimg"> -->
@@ -87,7 +87,7 @@
 	</div><!-- flightsResult結束 -->
 
 
-<%-- 	<jsp:include page="/page/shared/indexfooter.jsp" /> --%>
+	<jsp:include page="/page/shared/indexfooter.jsp" />
 	<script>
 		function infoDivShow(){
 			var id="#d"+$(this).attr("id");
