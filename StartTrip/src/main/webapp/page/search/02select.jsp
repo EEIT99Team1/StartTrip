@@ -51,7 +51,7 @@
 			<thead></thead>
 			<tbody>	<tr><td rowspan="5">酷航空</td><td>TPE</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG</td><td></td><td style="width:20%" rowspan="2">15000元</td></tr>
 					<tr><td>06:40</td><td></td><td>10:50</td><td>3時10分，直飛</td></tr>
-					<tr><td colspan="4">-------------------------------------------------------------------------------------------</td><td style="width:20%" rowspan="3"><button>訂購</button></td></tr>
+					<tr><td colspan="4">-----------------------------------------------------------------------</td><td style="width:20%" rowspan="3"><button>訂購</button></td></tr>
 					<tr><td>HKG</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>TPE</td><td></td></tr>
 					<tr><td>20:40</td><td></td><td>23:10</td><td>3時30分，直飛</td></tr>
 			</tbody>
@@ -94,6 +94,9 @@
 			console.log(PricedItinerarys.length);
 			for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){
 				console.log(i);
+				//總金額
+				var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
+				console.log(totalFare+"?????--");
 				var go_trip  = PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[0];
 				var back_trip= PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[1];
 				//去程飛機資訊
