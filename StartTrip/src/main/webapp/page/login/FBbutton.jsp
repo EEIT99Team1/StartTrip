@@ -6,7 +6,7 @@
 <head>
 <title>Facebook login button</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="src/main/webapp/js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-3.3.1.min.js"></script>
 <link rel="shortcut icon" href="img/webicon.ico" />
 </head>
 <body>
@@ -15,8 +15,17 @@
 			FB.init({
 				appId : '1616500528432537',
 				xfbml : true,
-				version : 'v2.12'
+				version : 'v2.12',
 			});
+
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					console.log('connected');
+				} else {
+					alert('please login');
+				}
+			});
+		
 			FB.AppEvents.logPageView();
 		};
 
@@ -31,6 +40,15 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<fb:login-button autologoutlink="true" size="large" scope="public_profile,email" onlogin="FUNCTIONSAVEDATA" ></fb:login-button>
+	<script>
+		// Only works after `FB.init` is called
+		function myFacebookLogin() {
+			console.log('login,successed');
+			alert('login,successed');
+		}
+	</script>
+	<fb:login-button autologoutlink="true" size="large"
+		scope="public_profile,email" onlogin="myFacebookLogin()"></fb:login-button>
+
 </body>
 </html>

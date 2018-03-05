@@ -32,13 +32,13 @@ public class SearchDataBean {
 		return gotime;
 	}
 	public void setGotime(String gotime) {
-		this.gotime = gotime.replaceAll("/", "-");
+		this.gotime = gotime;
 	}
 	public String getBacktime() {
 		return backtime;
 	}
 	public void setBacktime(String backtime) {
-		this.backtime = backtime.replaceAll("/", "-");
+		this.backtime = backtime;
 	}
 	public String getAdult() {
 		return adult;

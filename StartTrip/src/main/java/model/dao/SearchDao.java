@@ -61,4 +61,11 @@ public class SearchDao {
 		List<SearchBean> list = query.list();
 		return list;
 	}
+	@Transactional
+	public List<SearchBean> selectByAirport(String airport) {
+		String HQL_SEARCH="from SearchBean WHERE airport like '%"+airport+"%'";
+		Query<SearchBean> query = getSession().createQuery(HQL_SEARCH,SearchBean.class);
+		List<SearchBean> list = query.list();
+		return list;
+	}
 }
