@@ -73,6 +73,8 @@ function strToJson(str){
 }//Sting >> JSON
 	
 $(document).ready(function() {
+	var ans=[];
+	
 	$(".citytext").keyup(function() {
 		var keyin = $(this).val();
 		if(keyin.length>1){
@@ -82,18 +84,23 @@ $(document).ready(function() {
 				data:{keyin:keyin},
 				scriptCharset:'UTF-8',
 				success:function(data){
+					ans.length=0;
 					var dataObj=strToJson(data);
 					for(var i=0,max=dataObj.length;i<max;i++){
 						var aircode=dataObj[i].aircode;
 						var airport=dataObj[i].airport;
 						var country=dataObj[i].country;
 						console.log(aircode+":"+airport);
-						
-						$(".citytext")
+						ans.push(aircode+airport);
 					}
 				}//success function
 			});//ajax結束
 		};//if(keyin.length>1)判斷結束
+	});
+
+
+	$(".citytext").autocomplete({
+		source:ans
 	});
 });
 </script>
