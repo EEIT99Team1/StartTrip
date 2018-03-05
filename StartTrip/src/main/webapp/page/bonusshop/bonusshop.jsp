@@ -10,39 +10,13 @@
 <link href="<c:url value="/css/bonusshop/bonusshop.css"/>" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
-<!-- <script type="js/bootstrap.min.js"></script> -->
-<script>
-	$(document).ready(function() {
-		$(".addcart").click(function(){
-// 			var shopcart = $(".shopcart");
-// 			alert(123);	
-			var addimg = $(this).parent().parent().find("div:eq(0) img:eq(0)");
-			
-			var cloneimg = addimg.clone();
-			cloneimg.css({
-				"width":'100px',
-				"height":'100px',
-				"position":"absolute",
-// 				"top":addimg.offset().top,
-// 				"left":addimg.offset().left,
-				"z-index":'1000',
-				"opacity":'0.4',				
-			})
-			cloneimg.appendTo($("body")).animate({
-				"width":'50px',
-				"height":'50px',
-				"top":$(".shopimg").offset.top,
-				"left":$(".shopimg").offset.left				
-			},2000)
-		});
-		
 
-		
-	})
-</script>
+
+
+<!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
 <body>
-<%@ include file='/page/shared/header.jsp' %>
+<%-- <%@ include file='/page/shared/header.jsp' %> --%>
 	<article>
 		<section>
 			<div class="titlebox">
@@ -56,7 +30,7 @@
 		<div class="container">
 		<!-- 分割區塊 -->
 			<div class="row">
-			<!--區塊1 -->
+
 				<div class="col-md-4 product">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -75,7 +49,7 @@
 					</div>
 				</div><!--區塊1 -->
 				
-			<!--區塊2 -->
+
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -96,7 +70,7 @@
 					</div>
 				</div><!--區塊2 -->
 				
-			<!--區塊3 -->
+
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -117,7 +91,7 @@
 					</div>
 				</div><!--區塊3 -->
 					
-			<!--區塊4 -->		
+					
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -138,7 +112,7 @@
 					</div>
 				</div><!--區塊4 -->
 				
-			<!--區塊5 -->
+
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -159,7 +133,7 @@
 					</div>
 				</div><!--區塊5 -->
 								
-			<!--區塊6 -->				
+			
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
@@ -188,6 +162,8 @@
 		</div>
 	</div>
 
-	</article>	
+	</article>
+	
+	<jsp:include page="/page/bonusshop/addcartshop.jsp"/>
 </body>
 </html>
