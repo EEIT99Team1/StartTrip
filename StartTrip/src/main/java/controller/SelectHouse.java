@@ -31,6 +31,7 @@ public class SelectHouse extends HttpServlet {
 		request.setAttribute("select", c);
 		System.out.println(c.size());
 		
+		
 		request.getRequestDispatcher(
 				"/page/House/House.jsp").forward(request, response);
 		

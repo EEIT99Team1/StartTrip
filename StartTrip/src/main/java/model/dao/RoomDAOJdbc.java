@@ -51,6 +51,7 @@ private  DataSource dataSource;
 				bean.setNumber(rset.getInt("Number"));
 				bean.setPrice(rset.getInt("Price"));
 				bean.setRoomName(rset.getString("RoomName"));
+				bean.setPicture("http://localhost:8080/StartTrip/image/House/"+(bean.getName()).trim()+"--"+(bean.getRoomName()).trim()+".jpg");
 				result.add(bean);
 			//	System.out.println(bean.toString());
 								
