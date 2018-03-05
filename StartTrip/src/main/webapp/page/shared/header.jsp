@@ -39,5 +39,3 @@
 		</div>
 	</nav>
 </header>
-
-<!-- <jsp:include page="/page/shared/header.jsp" />  -->

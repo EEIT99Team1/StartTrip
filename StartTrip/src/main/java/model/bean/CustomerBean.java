@@ -1,12 +1,16 @@
 package model.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Customer")
-public class CustomerBean {
+public class CustomerBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	
 	@Id
 	private String email;
@@ -17,6 +21,10 @@ public class CustomerBean {
 	private String birthday;
 	private String phonenumber ;
 	private Integer bonus;
+	
+	
+	
+	
 	
 	@Override
 	public String toString() {

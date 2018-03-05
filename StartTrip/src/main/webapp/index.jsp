@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" session="false"%>
+<%@ page contentType="text/html; charset=UTF-8" session="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,7 @@
 <meta charset="utf-8" />
 <title>首頁</title>
 
+<!-- 彈跳視窗需要 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id"
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
@@ -20,6 +21,7 @@
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
 <script>
+
 	$(function() {
 		$("#datego").datepicker()
 	});
@@ -33,10 +35,12 @@
 			dateFormat : "yy-mm-dd"
 		});
 	})
+
 </script>
 
 </head>
 <body>
+
 	<jsp:include page="/page/shared/indexheader.jsp" />
 	
 	<article class="mainbody">
@@ -94,8 +98,6 @@
             </div>
         </form>
     </article>
-	
-	<jsp:include page="page/shared/indexfooter.jsp" />
-	
+<jsp:include page="page/shared/indexfooter.jsp" />
 </body>
 </html>
