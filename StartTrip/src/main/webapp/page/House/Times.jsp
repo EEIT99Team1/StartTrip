@@ -5,14 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="/StartTrip/js/jquery-3.3.1.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 
 <form action="SelectTimes" method="get">
 <table>
+
+
+
+
+<img  src=${param.picture}>
+<input style="display:none" type="text" name="picture" value="${param.picture}"/>
+
     <tr>
-		<td>Name : </td>
+		<td>Name1 : </td>
 		<td><input type="text" name="name" value="${param.name}" ></td>		
 	</tr>
 	<tr>
@@ -28,7 +36,7 @@
 		<td><input type="text" name="gotime" ></td>		
 	</tr>
 	<tr>
-		<td>outtime : </td>
+		<td>入住天數 : </td>
 		<td><input type="text" name="outtime" ></td>		
 	</tr>
 </table>

@@ -56,15 +56,16 @@
 	margin-bottom:3px; 
 }
 
-.shopimg{
+.shopcart{
 	position:fixed;
-/* 	top:85%; */
 	right:0;
 	bottom:50px;
 }
-.shopcart{	
+.shopimg{	
 	width:80px;
 	height:80px;
+	border-radius:50%;
+	
 }
 .cartnum{
 	display: block;
@@ -77,3 +78,22 @@
 	left:0px;
 	text-align:center;
 }
+.opencart{
+	display:none;
+	position:fixed;
+	width:350px;
+	height:450px;
+	border:solid 1px red;
+	right:0;
+	overflow:auto;
+	bottom:130px;
+	background-color: #beige;		
+}
+
+html.noscroll {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+
+

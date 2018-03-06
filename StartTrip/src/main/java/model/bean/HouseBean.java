@@ -11,7 +11,17 @@ public class HouseBean implements Serializable {
 	private String addres;
 	private Integer telephone;
 	private String explain ;
-	//Picture image
+	private String Picture ;
+	
+	public String getPicture() {
+		return Picture;
+	}
+	public void setPicture(String picture) {
+		Picture = picture;
+	}
+	public void setTelephone(Integer telephone) {
+		this.telephone = telephone;
+	}
 	public String getName() {
 		return name;
 	}
