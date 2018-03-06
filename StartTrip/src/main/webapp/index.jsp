@@ -59,7 +59,7 @@
                 </div>
                 <div class="searchdiv">
                     <h3>人數:</h3>
-                    <input type="button" style="float:right;width:100px;height:50px;" value="查詢" />
+                    <input type="submit" class="searchsubmit" value="查詢" />
                         
                     <div class="searchline">
                         大人:
