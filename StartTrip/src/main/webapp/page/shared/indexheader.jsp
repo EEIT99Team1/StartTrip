@@ -5,7 +5,7 @@
 <link href="<c:url value='/css/search/hometitle.css'/>" rel="stylesheet" />
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"
 	rel="stylesheet">
-<link href="<c:url value='/css/ login/bouncebutton.css'/>"
+<link href="<c:url value='/css/login/bouncebutton.css'/>"
 	rel="stylesheet" />
 
 <header>
@@ -14,14 +14,24 @@
 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
 			<li class="menuli"><a href="#">機票</a></li>
 			<li class="menuli">飯店</li>
-			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
+			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li>
 		</ul>
-		<!--Trigger/Open The Modal
-				<button id="button">登入</button>
-			The Modal -->
-		<div id="myModal" class="modal">
-
+		
+					<!--下拉選單 -->
+			<div class="customermenu">
+					<div class="customeroption">
+						<ul>
+							<li><a href="www.google.com">個人資料</a></li>
+							<li>歷史訂單</li>
+							<li>購物車</li>
+							<li>登出</li>
+						</ul>
+					</div>
+			</div>
 			
+		<div id="myModal" class="modal">
+			
+		
 			<div class="modal-content">
 				<div class="modal-header">
 					<span class="close">&times;</span>
@@ -38,20 +48,21 @@
 							<label>密碼：</label><input type="password" name="pswd" size="20"
 								value="${param.password}">
 								&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}
-             					</Font></small><br /><br /> <br />
-							<!-- <a id="mybutton" class="button" href="#">Login</a> -->
+             					</Font></small><br /><br />
+             					&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
 							<c:set var="target" value="${pageContext.request.servletPath}"
 								scope="session" />
 							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>
-
-				</div>
+				
+			</div>
 				<div class="modal-footer">
 					<div id="googleIconSize" class="g-signin2"
 						data-onsuccess="onSignIn"></div>
+					<a href="#" onclick="signOut();">Sign out</a>
 				</div>
-			</div>
 		</div>
+	</div>
 	</nav>
 </header>
-<%-- <jsp:include page="page/shared/indexheader.jsp" /> --%>
+
