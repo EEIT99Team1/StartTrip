@@ -8,18 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="SelectRoom" method="get">
- <tr>
-		<td>Name : </td>
-		<td><input type="text" name="name" ></td>
-		
-	</tr>
-
-
-<input type="submit" >
-</form>
-
-
 
 <c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
@@ -32,10 +20,12 @@
 			<c:param name="expire1" value="${row.explain1}" />
 			<c:param name="expire2" value="${row.explain2}" />
 			<c:param name="expire3" value="${row.explain3}" />
+			<c:param name="picture" value="${row.picture}" />
 		</c:url>
 	
 	<table>
 	<tr>
+	    <img src=${row.picture}>
 	    <h1>民宿:${row.name}</h1>
 	    <td><a href="${path}">房間名子:${row.roomName}</a></td>
 		<td>價錢:${row.price}</td>

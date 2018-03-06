@@ -13,47 +13,18 @@
 
 <script>
 	//Google+第三放登入取得資料方法
+	$(document).ready(function(){
 	function onSignIn(googleUser) {
 		var profile = googleUser.getBasicProfile();
 		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 		console.log('Name: ' + profile.getName());
 		console.log('Image URL: ' + profile.getImageUrl());
 		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
-		$("#button").append(m1);
-	}
+// 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
+// 		$("#button").append(m1);
+	}});
 </script>
-<script>
-	// Get the modal
-	var modal = document.getElementById('myModal');
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("button");
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-	var mybtn = document.getElementById("mybutton");
-	mybtn.onclick = function() {
-		modal.style.display = "none";
-	};
-</script>
 <!-- googleSignOut -->
 <script>
 	function signOut() {
@@ -64,6 +35,42 @@
 	}
 </script>
 
+<script>
+$(document).ready(function(){
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("button");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	//取得Login裡面的那個Login按鈕。
+//		var mybutton = document.getElementById("mybutton");
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+	
+//		mybutton.onclick = function(){
+//			modal.style.display = "block";	
+//		}
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+});
+</script>
 
 <script>
 
@@ -92,6 +99,9 @@ $(document).ready(function() {
 						var country=dataObj[i].country;
 						console.log(aircode+":"+airport);
 						ans.push(aircode+airport);
+						$(".citytext").autocomplete({
+							source:ans
+						});
 					}
 					$(".citytext").autocomplete({
 						source:ans
@@ -102,8 +112,43 @@ $(document).ready(function() {
 			ans.length=0;
 		};//if(keyin.length>1)判斷結束
 	});
+});
+</script>
+<script>
+		$("#mybutton").css("display","none");
+		var userEmail, password;
 
-
-	
+		 $(document).ready(function(){
+			 $('input[name="userEmail"]').keyup(function(){
+				 if($('input[name="userEmail"]').val().trim()!=""){
+					 userEmail = true;
+				 }else{
+					 userEmail = false;
+				 }
+				 showLoginButton();
+			 });
+			 $('input[name="pswd"]').keyup(function(){
+				 if($('input[name="pswd"]').val().trim()!=""){
+					 password = true;
+				 }else{
+					 password = false;
+				 }
+				 showLoginButton();
+			 });
+			 function showLoginButton(){
+				 if(userEmail && password){
+					 $("#mybutton").css("display","block");
+				 }else{
+					 $("#mybutton").css("display","none");
+				 }
+			 }
+		 });
+</script>
+<script>
+//讓外面的Login顯示登入者姓名。
+$(document).ready(function(){
+		var firstname = ${firstname};
+		var lastname = ${lastname};
+		$(".button").text(firstname+lastname);
 });
 </script>

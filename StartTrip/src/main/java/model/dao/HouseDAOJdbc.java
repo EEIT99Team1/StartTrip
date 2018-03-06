@@ -52,6 +52,7 @@ public class HouseDAOJdbc {
 				bean.setAddres(rset.getString("Addres"));
 				bean.setExplain(rset.getString("Explain"));
 				bean.setTelephone(rset.getInt("Telephone"));
+				bean.setPicture("http://localhost:8080/StartTrip/image/House/"+(bean.getName()).trim()+".jpg");
 				//System.out.println(bean.toString());
 				result.add(bean);
 				
