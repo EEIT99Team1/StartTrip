@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 
-
-
 <!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
 <body>
@@ -154,8 +152,9 @@
 					</div>
 				</div><!--區塊6 -->			
 
-			<div class="shopimg">			
-				<img class="shopcart" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
+			<div class="opencart"></div>			
+			<div class="shopcart">
+				<img class="shopimg" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
 				<span class="cartnum">0</span>
 			</div>				
 
@@ -164,6 +163,8 @@
 
 	</article>
 	
-	<jsp:include page="/page/bonusshop/addcartshop.jsp"/>
+	<jsp:include page="/page/bonusshop/myjs/addcartshop.jsp"/>
+	<jsp:include page="/page/bonusshop/myjs/shopcart.jsp"/>
+	
 </body>
 </html>

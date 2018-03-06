@@ -24,6 +24,17 @@
 // 		$("#button").append(m1);
 	}});
 </script>
+
+<!-- googleSignOut -->
+<script>
+	function signOut() {
+		var auth2 = gapi.auth2.getAuthInstance();
+		auth2.signOut().then(function() {
+			console.log('User signed out.');
+		});
+	}
+</script>
+
 <script>
 $(document).ready(function(){
 	// Get the modal
@@ -60,16 +71,6 @@ $(document).ready(function(){
 	}
 });
 </script>
-<!-- googleSignOut -->
-<script>
-	function signOut() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function() {
-			console.log('User signed out.');
-		});
-	}
-</script>
-
 
 <script>
 
@@ -111,23 +112,40 @@ $(document).ready(function() {
 });
 </script>
 <script>
-		//判斷登入是否成功，成功(hasError=false)後就關掉彈跳視窗、失敗(hasError=true)就繼續保持視窗打開著。
-		$(document).ready(function(){
-		var error=${hasError};
-		
- 		
-// 		var password=${param.password};
-// 				console.log(error+user+password);
-			if (error) {
-				$(".modal").css("display","block");
-			}else{
-				var firstname = ${firstname};
-				var lastname = ${lastname};
-				
-// 				$(".modal").css("display","none");
-// 				$(".button").text().remove();
-				$(".button").text(firstname+lastname);
-				
-			};
-		});
+		$("#mybutton").css("display","none");
+		var userEmail, password;
+
+		 $(document).ready(function(){
+			 $('input[name="userEmail"]').keyup(function(){
+				 if($('input[name="userEmail"]').val().trim()!=""){
+					 userEmail = true;
+				 }else{
+					 userEmail = false;
+				 }
+				 showLoginButton();
+			 });
+			 $('input[name="pswd"]').keyup(function(){
+				 if($('input[name="pswd"]').val().trim()!=""){
+					 password = true;
+				 }else{
+					 password = false;
+				 }
+				 showLoginButton();
+			 });
+			 function showLoginButton(){
+				 if(userEmail && password){
+					 $("#mybutton").css("display","block");
+				 }else{
+					 $("#mybutton").css("display","none");
+				 }
+			 }
+		 });
+</script>
+<script>
+//讓外面的Login顯示登入者姓名。
+$(document).ready(function(){
+		var firstname = ${firstname};
+		var lastname = ${lastname};
+		$(".button").text(firstname+lastname);
+});
 </script>
