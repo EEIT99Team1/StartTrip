@@ -77,9 +77,9 @@ $(document).ready(function() {
 	
 	$(".citytext").keyup(function() {
 		var keyin = $(this).val();
-		if(keyin.length>1){
+		if(keyin.length>0){
 			$.ajax({
-				url:'<c:url value="SelectBox.controller"/>',
+				url:'<c:url value="/SelectBox.controller"/>',
 				type:'GET',
 				data:{keyin:keyin},
 				scriptCharset:'UTF-8',
@@ -93,14 +93,17 @@ $(document).ready(function() {
 						console.log(aircode+":"+airport);
 						ans.push(aircode+airport);
 					}
+					$(".citytext").autocomplete({
+						source:ans
+					});
 				}//success function
 			});//ajax結束
+		}else{
+			ans.length=0;
 		};//if(keyin.length>1)判斷結束
 	});
 
 
-	$(".citytext").autocomplete({
-		source:ans
-	});
+	
 });
 </script>
