@@ -39,7 +39,8 @@ public class LoginServlet extends HttpServlet {
 		String password = req.getParameter("pswd");
 		// String rm = req.getParameter("rememberMe");
 		// String requestURI = (String) session.getAttribute("requestURI");
-
+		System.out.println(userEmail);
+		System.out.println(password);
 		if (userEmail == null || userEmail.trim().length() == 0) {
 			errorMsgMap.put("AccountEmptyError", "帳號欄必須輸入");
 		}
@@ -50,6 +51,8 @@ public class LoginServlet extends HttpServlet {
 
 		// 如果 errorMsgMap 不是空的，表示有錯誤，交棒給target
 		if (!errorMsgMap.isEmpty()) {
+			req.setAttribute("firstname", "null");
+			req.setAttribute("lastname", "null");
 			req.setAttribute("hasError", true);
 			RequestDispatcher rd = req.getRequestDispatcher(target);
 			rd.forward(req, resp);
@@ -92,6 +95,8 @@ public class LoginServlet extends HttpServlet {
 			return;
 		} else {
 			//如果errorMsgMap不是空的，表示有錯誤，交棒給target。
+			req.setAttribute("firstname", "null");
+			req.setAttribute("lastname", "null");
 			RequestDispatcher rd = req.getRequestDispatcher(target);
 			rd.forward(req, resp);
 			System.out.println("Error");

@@ -31,7 +31,7 @@
 				<div class="modal-body">
 						<form id="inputAccountAndPasswordSpaceFormId"
 							action="<c:url value="/LoginServlet"/>" method="post">
-							<label>帳號：</label><input type="text" name="userEmail" size=20"
+							<label>帳號：</label><input type="text" name="userEmail" size="20"
 								value="${param.userEmail}">
 								&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.AccountEmptyError}
              					</Font></small><br />
