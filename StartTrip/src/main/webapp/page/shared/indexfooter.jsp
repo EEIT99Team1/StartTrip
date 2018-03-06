@@ -16,10 +16,10 @@
 	$(document).ready(function(){
 	function onSignIn(googleUser) {
 		var profile = googleUser.getBasicProfile();
-		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-		console.log('Name: ' + profile.getName());
-		console.log('Image URL: ' + profile.getImageUrl());
-		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+		alert('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		alert('Name: ' + profile.getName());
+		alert('Image URL: ' + profile.getImageUrl());
+		alert('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 // 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
 // 		$("#button").append(m1);
 	}});
@@ -41,7 +41,10 @@ $(document).ready(function(){
 	var modal = document.getElementById('myModal');
 
 	// Get the button that opens the modal
-	var btn = document.getElementById("button");
+// 	var btn = document.getElementById("button");
+	
+	//沒有寫var 代表全域變數
+	btn = $("#button");
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
@@ -50,9 +53,12 @@ $(document).ready(function(){
 //		var mybutton = document.getElementById("mybutton");
 	
 	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
+// 	btn.onclick = function() {
+// 		modal.style.display = "block";
+// 	}
+	btn.on("click",function() {
 		modal.style.display = "block";
-	}
+	});
 
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
@@ -124,7 +130,13 @@ $(document).ready(function() {
 					 userEmail = true;
 				 }else{
 					 userEmail = false;
-				 }
+				 };
+					//以防使用者只輸入帳號時，不會跳出視窗
+				 if($('input[name="pswd"]').val().trim()!=""){
+					 password = true;
+				 }else{
+					 password = false;
+				 };
 				 showLoginButton();
 			 });
 			 $('input[name="pswd"]').keyup(function(){
@@ -132,7 +144,13 @@ $(document).ready(function() {
 					 password = true;
 				 }else{
 					 password = false;
-				 }
+				 };
+				//以防使用者只輸入密碼時，不會跳出視窗
+				 if($('input[name="userEmail"]').val().trim()!=""){
+					 userEmail = true;
+				 }else{
+					 userEmail = false;
+				 };
 				 showLoginButton();
 			 });
 			 function showLoginButton(){
@@ -149,6 +167,44 @@ $(document).ready(function() {
 $(document).ready(function(){
 		var firstname = ${firstname};
 		var lastname = ${lastname};
-		$(".button").text(firstname+lastname);
+		$("#button").val(firstname+lastname);
 });
 </script>
+<script>
+<!-- 判斷登入狀態 -->
+$(document).ready(function(){
+	//是否有錯誤，hasError=true有錯，hasError=false沒錯。
+	var loginStatus = ${hasError};
+	if(loginStatus){
+		$("#myModal").css("display","block");
+	}else{
+// 		var customermenu = false;
+		btn.off('click');
+// 		if(!customermenu){
+// 				btn.click(function(){
+// 				$('.customermenu').css('display','block');
+// 				});
+// 			customermenu = true;
+// 	    }else{
+// 	    		btn.click(function(){
+// 				$('.customermenu').css('display','none'); 
+// 				});  	
+// 	    	};
+		btn.click(function(){
+			$('.customermenu').toggle(500);
+		})
+		};	
+	});
+</script>
+<script>
+$(document).ready(function(){
+		$(".customeroption li").mouseover(function(){
+				$(this).css('background-color','#7AC5CD');
+		});
+		$(".customeroption li").mouseout(function(){
+				$(this).css('background-color','red');
+		});
+});
+</script>
+
+

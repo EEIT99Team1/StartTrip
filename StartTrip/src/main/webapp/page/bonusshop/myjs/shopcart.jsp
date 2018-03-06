@@ -28,6 +28,7 @@ $(document).ready(function() {
 	$(".shopimg").click(function(){	
 		if(open){
 			opencart.slideUpLeftShow(300);
+			opencart.css({"background-color":"#DDDDDD","opacity":"0.9"});
 			open = false;
 		}else{
 			opencart.slideUpLeftHide(300);
