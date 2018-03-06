@@ -84,7 +84,7 @@ $(document).ready(function() {
 	
 	$(".citytext").keyup(function() {
 		var keyin = $(this).val();
-		if(keyin.length>1){
+		if(keyin.length>0){
 			$.ajax({
 				url:'<c:url value="SelectBox.controller"/>',
 				type:'GET',
@@ -99,6 +99,9 @@ $(document).ready(function() {
 						var country=dataObj[i].country;
 						console.log(aircode+":"+airport);
 						ans.push(aircode+airport);
+						$(".citytext").autocomplete({
+							source:ans
+						});
 					}
 				}//success function
 			});//ajax結束
@@ -106,9 +109,6 @@ $(document).ready(function() {
 	});
 
 
-	$(".citytext").autocomplete({
-		source:ans
-	});
 });
 </script>
 <script>
