@@ -21,7 +21,7 @@
 				<tr><th>編號</th><th>圖片</th><th>描述</th><th>動作</th></tr>
 			</thead>
 			<tbody id="showImgBody">
-				<tr><td>1</td><td><img src="<c:url value="/image/backstage/01.gif"/>"/></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
+				<tr><td>1</td><td><img src="<c:url value="/image/backstage/1.gif"/>"/></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
 			</tbody>
 		</table>
 	

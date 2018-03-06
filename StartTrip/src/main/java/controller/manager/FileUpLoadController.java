@@ -28,8 +28,10 @@ public class FileUpLoadController {
 	public String method(HttpServletRequest request) {
 		String AppContextRoot = servletContext.getRealPath("/")+ "image/backstage/";
 		String filePath = AppContextRoot;
+
+		int count=new File(filePath).listFiles().length;
+		count++;
 		
-		System.out.println(filePath);
 		
 		File file ;
 		int maxFileSize = 5000 * 1024;
@@ -60,8 +62,9 @@ public class FileUpLoadController {
 						//long sizeInBytes = fi.getSize();
 						
 						// Write the file
-						file = new File(filePath+fileName) ;
-						System.out.println(filePath+fileName);
+						file = new File(filePath+count
+								+fileName.substring(fileName.lastIndexOf("."))) ;
+
 						fi.write( file ) ;
 					}
 				}
@@ -80,7 +83,6 @@ public class FileUpLoadController {
 		String filePath = AppContextRoot;
 		File file;
 		file=new File(filePath);
-		System.out.println(filePath);
 		File listFile[]=file.listFiles();
 		for(int i=0,max=listFile.length;i<max;i++) {
 			String name=listFile[i].getName();
