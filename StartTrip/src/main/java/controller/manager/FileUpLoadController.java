@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +26,8 @@ public class FileUpLoadController {
 	
 	@RequestMapping(path="/FileUpLoad.controller",method= {RequestMethod.POST})
 	public String method(HttpServletRequest request) {
-		String AppContextRoot = servletContext.getRealPath("/");
-		String filePath = AppContextRoot + "image/backstage/";
+		String AppContextRoot = servletContext.getRealPath("/")+ "image/backstage/";
+		String filePath = AppContextRoot;
 		
 		System.out.println(filePath);
 		
@@ -68,18 +71,21 @@ public class FileUpLoadController {
 		return "uploadView";
 	}
 	
-	@RequestMapping(path="/FileUpLoad.controller",method= {RequestMethod.GET})
+	@SuppressWarnings("unchecked")
+	@RequestMapping(path="/FileUpLoad.controller",method= {RequestMethod.GET},produces="application/json; charset=UTF-8")
 	@ResponseBody
 	public String getPitcher(){
-		String AppContextRoot = servletContext.getRealPath("/");
-		String filePath = AppContextRoot + "image/backstage/";
+		JSONArray result = new JSONArray();
+		String AppContextRoot = servletContext.getRealPath("/")+ "image/backstage/";
+		String filePath = AppContextRoot;
 		File file;
 		file=new File(filePath);
+		System.out.println(filePath);
 		File listFile[]=file.listFiles();
 		for(int i=0,max=listFile.length;i<max;i++) {
 			String name=listFile[i].getName();
-			System.out.println(name);
+			result.add(name);
 		}
-		return "loo";
+		return JSONValue.toJSONString(result);
 	}
 }
