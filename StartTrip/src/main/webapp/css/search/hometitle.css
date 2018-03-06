@@ -7,15 +7,16 @@
             margin:auto;
         }
         body{
-             background : #111111 url('../../image/index/03.jpg') no-repeat fixed 50% 50%;/*圖片畫面置中不重複*/
+             background : #111111 url('../../image/index/03.jpg') no-repeat fixed 50% 50% ;/*圖片畫面置中不重複*/
              background-size: cover;/*圖片隨頁面縮放大小*/
         }
         html,body{
-            height: 86.9%;
+            height: 87.3%;
         }
 
-       .menu{
+        .menu{
             overflow:auto;
+            background-color:antiquewhite;
             background:rgba(250,235,215,0.3);
             list-style-type:none;
             height: auto;
@@ -24,29 +25,49 @@
         .menuli{
             float:left;
             margin-left:5%;
-            margin-top:4%;
+            bottom:0;
+            margin-top:2.5%;
         }
         .menuimg{
             float:left;
             margin-left:5%;
-            padding-bottom:0;
+            bottom:0;
             padding-top:1%;
         }
-
+        .menubutton{
+            margin-top:2.5%;
+        }
         .mainbody{
-            height: 90%;
+            height:90%;
             margin:auto;
+            font-size:20px;
+
         }
         .search{
+            padding:2% 5%;
             margin:auto;
+            margin-top:5%;
             border:1px solid #9d9d9d;
-            border-radius:5px;
+            border-radius:30px;
             background:rgba(128, 128, 128,0.2);
-            margin-top:8%;
-            width:1000px;
+            width:500px;
         }
         .searchdiv{
-            padding:2%;
+            padding-top:2%;
+        }
+        .searchline{
+            padding-top:2%;
+        }
+        .search img{
+            float:right;
+            width:8%;
+            margin-right:5%;
+            margin-top:0.5%;
+        }
+        .searchsubmit{
+        	float:right;
+        	width:100px;
+        	height:50px;
         }
         footer{
             clear:both;
@@ -62,4 +83,6 @@
             float:right;
             padding-right:1%;
         }
+      
+       
        
