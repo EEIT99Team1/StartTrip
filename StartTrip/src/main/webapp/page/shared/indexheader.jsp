@@ -2,23 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link href="<c:url value='/css/search/hometitle.css'/>" rel="stylesheet" />
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>"
-	rel="stylesheet">
-<link href="<c:url value='/css/login/bouncebutton.css'/>"
-	rel="stylesheet" />
-
-<header>
 	<nav>
 		<ul class="menu">
-			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
-			<li class="menuli"><a href="#">機票</a></li>
-			<li class="menuli">飯店</li>
+			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+            <li class="menuli"><a href="#">機票</a></li>
+            <li class="menuli"><a href="#">飯店</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li>
 		</ul>
 		
 					<!--下拉選單 -->
-			<div class="customermenu">
+			<div class="customermenu" >
 					<div class="customeroption">
 						<ul>
 							<li><a href="www.google.com">個人資料</a></li>
@@ -64,5 +57,3 @@
 		</div>
 	</div>
 	</nav>
-</header>
-
