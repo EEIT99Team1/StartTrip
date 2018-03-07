@@ -4,10 +4,15 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
-.customeroption li:lt(4){
-	color:white;
+.customeroption li{
+	background-color : red;
+	list-style-type: none;
+}
+.customeroption li a{
+	color : white;
 	text-decoration:none;
 }
+
 .customermenu{
 	display: none;
 	position:absolute;
@@ -24,10 +29,7 @@ body {
     line-height: 35px;
     width: 100px;
 }
-.customeroption li{
-	background-color : red;
-    list-style-type: none;
-}
+
 .button {
 	display: inline-block;
 	text-align: center;

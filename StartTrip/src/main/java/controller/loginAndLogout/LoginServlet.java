@@ -1,4 +1,4 @@
-﻿package controller;
+﻿package controller.loginAndLogout;
 
 import java.io.IOException;
 import java.util.HashMap;

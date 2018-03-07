@@ -14,10 +14,10 @@
 	$(document).ready(function(){
 	function onSignIn(googleUser) {
 		var profile = googleUser.getBasicProfile();
-		alert('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-		alert('Name: ' + profile.getName());
-		alert('Image URL: ' + profile.getImageUrl());
-		alert('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 // 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
 // 		$("#button").append(m1);
 	}});
@@ -168,8 +168,39 @@ $(document).ready(function(){
 		$("#button").val(firstname+lastname);
 });
 </script>
+<!--判斷LoginServlet裡的LoginOK是否有值，來判斷登入狀態-->
+<c:if test="${empty LoginOK}" var="LoginState" scope="session" ></c:if> <!-- 未登入 -->
 <script>
-<!-- 判斷登入狀態 -->
+$(document).ready(function(){
+	$("#logout").on('click',function(){
+		sendPost("<c:url value='/LogoutServlet'/>");
+		$("#button").val("Loging");	
+	});
+})
+</script>
+<script>
+function sendPost(url){
+	  var form = document.createElement("form");
+
+	  // 設定表單的一些屬性，包含網頁接收伺服器回應的頁面或框架
+	  form.setAttribute("method", "post");
+	  form.setAttribute("action", url);
+
+	  // 隱藏的submit按鈕，預防瀏覽器不支援模糊的表單設計。（可不用）
+	  var hiddenSubmit = document.createElement("input");
+	  hiddenSubmit.setAttribute("type", "submit");
+	  hiddenSubmit.setAttribute("style", "display:none;");
+	  form.appendChild(hiddenSubmit);
+
+	  // 將表單加入網頁中
+	  document.body.appendChild(form); 
+
+	  // 送出請求
+	  form.submit();
+	}
+</script>
+<script>
+<!-- 判斷輸入帳密狀態 -->
 $(document).ready(function(){
 	//是否有錯誤，hasError=true有錯，hasError=false沒錯。
 	var loginStatus = ${hasError};
