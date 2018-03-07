@@ -12,23 +12,23 @@
 <table style="margin: auto;margin-top: 20px">
     <tr>
 		<td>民宿 : </td>
-		<td><input type="text" name="name" value="${param.name}" disabled="disabled"></td>		
+		<td><input type="text" name="name" value="${param.name}" ></td>		
 	</tr>
 	<tr>
 		<td>房間名 : </td>
-		<td><input type="text" name="roomName" value="${param.roomName}" disabled="disabled"></td>		
+		<td><input type="text" name="roomName" value="${param.roomName}"></td>		
 	</tr>
 	<tr>
 		<td>入住時間 : </td>
-		<td><input type="text" name="gotime" value="${param.gotime}" disabled="disabled"></td>		
+		<td><input type="text" name="gotime" value="${param.gotime}"></td>		
 	</tr>
 	<tr>
 		<td>入住天數 : </td>
-		<td><input type="text" name="outtime" value="${param.outtime}" disabled="disabled"></td>		
+		<td><input type="text" name="outtime" value="${param.outtime}"></td>		
 	</tr>
 	<tr>
 		<td>總價 : </td>
-		<td><input type="text" name="price" value="${price}" disabled="disabled"></td>		
+		<td><input type="text" name="price" value="${price}"></td>		
 	</tr>
 	<tr>
 		<td>房客姓名 : </td>
