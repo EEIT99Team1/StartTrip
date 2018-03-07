@@ -101,10 +101,10 @@
 	</article>
 
 	<footer>
-			<jsp:include page="page/shared/footer.jsp" />
+	<jsp:include page="page/shared/footer.jsp" />
 	</footer>
-	
-	<jsp:include page="page/shared/googlejs.jsp" />
-	<jsp:include page="page/search/firstsearchjs.jsp" />
+
+		<jsp:include page="page/shared/googlejs.jsp" />
+	<jsp:include page="page/search/searchjs.jsp" />
 	</body>
 </html>
