@@ -13,7 +13,7 @@
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 
 
-<link href="<c:url value='/css/search/hometitle.css'/>" type="text/css"rel="stylesheet" />
+<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
 
@@ -101,8 +101,11 @@
 	</article>
 
 	<footer>
-		<jsp:include page="page/shared/indexfooter.jsp" />
+		<jsp:include page="page/shared/footer.jsp" />
 	</footer>
 
-	<jsp:include page="page/shared/indexfooterjs.jsp" />/body>
+	<jsp:include page="page/shared/googlejs.jsp" />
+	<jsp:include page="page/search/firstseachjs.jsp" />
+</body>
+	
 </html>
