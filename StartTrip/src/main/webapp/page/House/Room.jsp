@@ -5,14 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="../../js/jquery-3.3.1.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
+<script >
 
+
+</script>
 <c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
 	
-	    <c:url value="/page/House/Times.jsp" var="path">
+	    <c:url value="http://localhost:8080/StartTrip/page/House/GoToTimes?picture=${row.picture}&name=${row.number}&roomName=${row.roomName}&price=${row.price}"
+	        var="path">
 			<c:param name="name" value="${row.name}" />
 			<c:param name="roomName" value="${row.roomName}" />
 			<c:param name="price" value="${row.price}" />
@@ -23,16 +28,16 @@
 			<c:param name="picture" value="${row.picture}" />
 		</c:url>
 	
-	<table>
-	<tr>
-	    <img src=${row.picture}>
-	    <h1>民宿:${row.name}</h1>
-	    <td><a href="${path}">房間名子:${row.roomName}</a></td>
-		<td>價錢:${row.price}</td>
-		<td>入住人數:${row.number}</td>
-		<td>註解:1.${row.explain1} 2.${row.explain2} 3.${row.explain3}</td>
+	<table style="margin: auto;margin-top:30px">
+	    <a href="${path}">
+	    <h1 align="center">房間名子:${row.roomName}</h1>
+	    <h3 align="center"><img src=${row.picture}></h3>
+	    </a>
+		<h3 align="center">價錢:${row.price}</h3>
+		<h3 align="center">入住人數:${row.number}</h3>
+		<h3 align="center">註解:1.${row.explain1} 2.${row.explain2} 3.${row.explain3}</h3>
 			
-	</tr>
+
 	</table>
 	
 	</c:forEach>

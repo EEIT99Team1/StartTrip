@@ -13,7 +13,7 @@
 		<ul class="menu">
 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
 			<li class="menuli"><a href="#">機票</a></li>
-			<li class="menuli">飯店</li>
+			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
 			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
 		</ul>
 		<!--Trigger/Open The Modal

@@ -9,39 +9,39 @@
 </head>
 <body>
 <form action="InsertTimes" method="post">
-<table>
+<table style="margin: auto;margin-top: 20px">
     <tr>
-		<td>Name : </td>
-		<td><input type="text" name="name" value="${param.name}" ></td>		
+		<td>民宿 : </td>
+		<td><input type="text" name="name" value="${param.name}" disabled="disabled"></td>		
 	</tr>
 	<tr>
-		<td>roomName : </td>
-		<td><input type="text" name="roomName" value="${param.roomName}" ></td>		
+		<td>房間名 : </td>
+		<td><input type="text" name="roomName" value="${param.roomName}" disabled="disabled"></td>		
 	</tr>
 	<tr>
-		<td>gotime : </td>
-		<td><input type="text" name="gotime" value="${param.gotime}"></td>		
+		<td>入住時間 : </td>
+		<td><input type="text" name="gotime" value="${param.gotime}" disabled="disabled"></td>		
 	</tr>
 	<tr>
-		<td>outtime : </td>
-		<td><input type="text" name="outtime" value="${param.outtime}"></td>		
+		<td>入住天數 : </td>
+		<td><input type="text" name="outtime" value="${param.outtime}" disabled="disabled"></td>		
 	</tr>
 	<tr>
 		<td>總價 : </td>
-		<td><input type="text" name="price" value="${price}" ></td>		
+		<td><input type="text" name="price" value="${price}" disabled="disabled"></td>		
 	</tr>
 	<tr>
-		<td>people : </td>
+		<td>房客姓名 : </td>
 		<td><input type="text" name="people" ></td>		
 	</tr>
 	<tr>
-		<td>telephone : </td>
+		<td>房客電話 : </td>
 		<td><input type="text" name="telephone" ></td>		
 	</tr>
 	</table>
 	
-	<input type="submit" value="go">
-	<h2>${select}</h2>
+	<input type="submit" value="go" style="display:block;margin:0 auto;margin-top:20px">
+	<h1 align="center" style="color:red;">${select}</h2>
 </form>
 </body>
 </html>
