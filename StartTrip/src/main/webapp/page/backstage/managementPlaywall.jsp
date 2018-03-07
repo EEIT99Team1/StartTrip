@@ -20,10 +20,8 @@
 				<tr><th><h2>紅利頁面輪播牆</h2></th></tr>
 				<tr><th>編號</th><th>圖片</th><th>描述</th><th>動作</th></tr>
 			</thead>
-			<tbody>
-				<tr><td>1</td><td><img src="<c:url value="/image/backstage/image1.gif"/>"/></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
-				<tr><td>2</td><td></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
-				<tr><td>3</td><td></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
+			<tbody id="showImgBody">
+				<tr><td>1</td><td><img src="<c:url value="/image/backstage/1.gif"/>"/></td><td>飛機</td><td><button>上移</button><br/><button>下移</button><br/><button>刪除</button></td></tr>
 			</tbody>
 		</table>
 	
@@ -37,17 +35,54 @@
 	</div>
 </div>
 <script>
+//動態產生伺服器中的圖檔
 $(function(){
-	$("#show").click(function(){
-		$.ajax({
-			url:'<c:url value="/FileUpLoad.controller"/>',
-			type:'GET',
-			success:function(data){
-				alert(data);
+	$.ajax({
+		url:'<c:url value="/FileUpLoad.controller"/>',
+		type:'GET',
+		dataType:"json",
+		scriptCharset:'UTF-8',
+		success:function(data){
+			var documentFragment=$(document.createDocumentFragment());
+			for(var i=0,max=data.length;i<max;i++){
+				var tr=$("<tr></tr>");
+				
+				var td0=$("<td></td>");
+				td0.text(i);
+				var img=$("<img></img>");
+				img.attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>'});
+				var td1=$("<td></td>");
+				td1.append(img);
+				var td2=$("<td></td>");
+				td2.text("飛機");
+				var td3=$("<td></td>");
+				var but0=$("<button></button>").text("上移");
+				var but1=$("<button></button>").text("下移");
+				var but2=$("<button></button>").text("刪除").attr({value:data[i]}).on("click",deletePicture);
+				td3.append(but0).append(but1).append(but2);
+				
+				tr.append(td0).append(td1).append(td2).append(td3);
+				
+				documentFragment.append(tr);
 			}
-		});
+			$("#showImgBody").append(documentFragment);
+		}
 	});
 });
+</script>
+<script>
+//刪除圖檔
+function deletePicture(){
+	var pictureId=$(this).attr("value");
+	$(this).parent().parent().remove();
+	$.ajax({
+		url:'<c:url value="/DeletePicture.controller"/>',
+		type:'GET',
+		data:{id:pictureId},
+		scriptCharset:'UTF-8'
+	});
+	
+};
 </script>
 </body>
 </html>

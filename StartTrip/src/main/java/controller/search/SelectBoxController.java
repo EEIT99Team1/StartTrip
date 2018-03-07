@@ -1,4 +1,4 @@
-package controller;
+package controller.search;
 
 import java.util.Iterator;
 import java.util.List;
