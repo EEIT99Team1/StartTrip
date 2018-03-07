@@ -4,17 +4,12 @@
 
 	<nav>
 		<ul class="menu">
-<<<<<<< HEAD
-			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+<%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
 			<li class="menuli"><a href="#">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
+<!-- 			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li> -->
 			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
-=======
-			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
-            <li class="menuli"><a href="#">機票</a></li>
-            <li class="menuli"><a href="#">飯店</a></li>
-			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li>
->>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
 		</ul>
 		
 					<!--下拉選單 -->

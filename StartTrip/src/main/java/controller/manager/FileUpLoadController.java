@@ -74,7 +74,7 @@ public class FileUpLoadController {
 			} catch(Exception ex) {
 				ex.printStackTrace();
 			}
-		return "uploadView";
+		return "playWallView";
 	}
 	
 	@SuppressWarnings("unchecked")
