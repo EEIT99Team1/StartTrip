@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<header>
+
 	<nav>
 		<ul class="menu">
-			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
-			<li class="menuli"><a href="#">機票</a></li>
-			<li class="menuli">飯店</li>
+			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+            <li class="menuli"><a href="#">機票</a></li>
+            <li class="menuli"><a href="#">飯店</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li>
 		</ul>
 		
@@ -57,5 +57,3 @@
 		</div>
 	</div>
 	</nav>
-</header>
-

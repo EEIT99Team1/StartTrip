@@ -2,15 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-<header>
 	<nav>
-		<ul class="menu">
-			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
-			<li class="menuli"><a href="#">機票</a></li>
-			<li class="menuli">飯店</li>
-			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
-		</ul>
+            <ul id="top-bar" class="menu">
+                <li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+                <li class="menuli"><a href="#">機票</a></li>
+                <li class="menuli"><a href="#">飯店</a></li>
+				<li class="logbutton"><a  type="button" id="button" class="button" href="#">Login</a></li>
+            </ul>
 		<!--Trigger/Open The Modal
 				<button id="button">登入</button>
 			The Modal -->
@@ -38,4 +36,3 @@
 			</div>
 		</div>
 	</nav>
-</header>

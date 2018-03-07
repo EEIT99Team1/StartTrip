@@ -8,6 +8,9 @@ body {
 	color:white;
 	text-decoration:none;
 }
+.logbutton{
+	float:right;
+}
 .customermenu{
 	display: none;
 	position:absolute;
@@ -32,9 +35,10 @@ body {
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	padding: 12px 33px;
+	padding: 14.5px 25px;
 	border: 1px solid #a12727;
-	border-radius: 8px;
+	border-radius: 2px;
+
 	background: #ff4a4a;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ff4a4a),
 		to(#992727));
@@ -44,8 +48,7 @@ body {
 	font: normal normal bold 20px arial;
 	color: #ffffff;
 	text-decoration: none;
-	margin-top: 2.5%;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .button:hover, .button:focus {
