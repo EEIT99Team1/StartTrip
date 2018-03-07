@@ -12,13 +12,10 @@ body {
 	color : white;
 	text-decoration:none;
 }
-<<<<<<< HEAD
-
-=======
 .logbutton{
 	float:right;
 }
->>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
+
 .customermenu{
 	display: none;
 	position:absolute;
