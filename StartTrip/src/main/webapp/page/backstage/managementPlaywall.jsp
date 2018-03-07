@@ -35,6 +35,7 @@
 	</div>
 </div>
 <script>
+//動態產生伺服器中的圖檔
 $(function(){
 	$.ajax({
 		url:'<c:url value="/FileUpLoad.controller"/>',
@@ -57,7 +58,7 @@ $(function(){
 				var td3=$("<td></td>");
 				var but0=$("<button></button>").text("上移");
 				var but1=$("<button></button>").text("下移");
-				var but2=$("<button></button>").text("刪除");
+				var but2=$("<button></button>").text("刪除").attr({value:data[i]}).on("click",deletePicture);
 				td3.append(but0).append(but1).append(but2);
 				
 				tr.append(td0).append(td1).append(td2).append(td3);
@@ -68,6 +69,20 @@ $(function(){
 		}
 	});
 });
+</script>
+<script>
+//刪除圖檔
+function deletePicture(){
+	var pictureId=$(this).attr("value");
+	$(this).parent().parent().remove();
+	$.ajax({
+		url:'<c:url value="/DeletePicture.controller"/>',
+		type:'GET',
+		data:{id:pictureId},
+		scriptCharset:'UTF-8'
+	});
+	
+};
 </script>
 </body>
 </html>

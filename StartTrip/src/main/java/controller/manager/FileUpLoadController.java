@@ -15,17 +15,20 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping(path="/FileUpLoad.controller")
 public class FileUpLoadController {
 	@Autowired
 	ServletContext servletContext;
 	
-	@RequestMapping(path="/FileUpLoad.controller",method= {RequestMethod.POST})
-	public String method(HttpServletRequest request) {
+	@RequestMapping(method= {RequestMethod.POST})
+	public String insertPicture(HttpServletRequest request) {
 		String AppContextRoot = servletContext.getRealPath("/")+ "image/backstage/";
 		String filePath = AppContextRoot;
 
@@ -75,11 +78,11 @@ public class FileUpLoadController {
 	}
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(path="/FileUpLoad.controller",method= {RequestMethod.GET},produces="application/json; charset=UTF-8")
+	@RequestMapping(method= {RequestMethod.GET},produces="application/json; charset=UTF-8")
 	@ResponseBody
-	public String getPitcher(){
+	public String getPicture(){
 		JSONArray result = new JSONArray();
-		String AppContextRoot = servletContext.getRealPath("/")+ "image/backstage/";
+		String AppContextRoot = servletContext.getRealPath("/")+"image/backstage/";
 		String filePath = AppContextRoot;
 		File file;
 		file=new File(filePath);
