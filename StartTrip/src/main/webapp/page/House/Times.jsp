@@ -62,7 +62,7 @@ ans.push({
 <script >
 $(document).ready(function() {
 $('#calendar').fullCalendar({
-	editable : true,
+	//editable : true,
 	events : ans
 });
 });
