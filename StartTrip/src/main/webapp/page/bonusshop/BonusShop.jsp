@@ -14,11 +14,13 @@
 <!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
 <body>
+	<jsp:include page="/page/shared/indexheader.jsp" />
+
 <%-- <%@ include file='/page/shared/header.jsp' %> --%>
 	<article>
 		<section>
 <!-- 			<div class="titlebox"> -->
-<%-- 				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
+				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>">
 
 
 		</section>
@@ -202,7 +204,6 @@
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
-	<jsp:include page="/page/bonusshop/myjs/NewFile.jsp"/>
 	
 </body>
 </html>

@@ -2,13 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-
-<footer>
-	<span>電話: 0912-345-678</span> 
-	<span> email:team1@eeit99.com</span>
-</footer>
-
 <script>
 	//Google+第三放登入取得資料方法
 	$(document).ready(function(){
@@ -168,8 +161,6 @@ $(document).ready(function(){
 		$("#button").val(firstname+lastname);
 });
 </script>
-<!--判斷LoginServlet裡的LoginOK是否有值，來判斷登入狀態-->
-<c:if test="${empty LoginOK}" var="LoginState" scope="session" ></c:if> <!-- 未登入 -->
 <script>
 $(document).ready(function(){
 	$("#logout").on('click',function(){

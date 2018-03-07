@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
 
+
+<header>
 	<nav>
 		<ul class="menu">
 			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
 <%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
-			<li class="menuli"><a href="#">機票</a></li>
+			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
-<!-- 			<li><input type="button" id="button" class="button" style="float: right;" value="Loging"/></li> -->
-			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
+			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
+<!-- 			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li> -->
 		</ul>
 		
 					<!--下拉選單 -->
@@ -18,7 +22,7 @@
 						<ul>
 							<li><a href="www.google.com">個人資料</a></li>
 							<li><a href="www.google.com">歷史訂單</a></li>
-							<li><a href="www.google.com">購物車</a></li>
+							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">購物車</a></li>
 							<li><a id="logout">登出</a></li>
 						</ul>
 					</div>
@@ -59,3 +63,4 @@
 		</div>
 	</div>
 	</nav>
+</header>
