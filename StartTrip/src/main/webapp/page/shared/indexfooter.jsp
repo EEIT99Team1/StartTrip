@@ -2,9 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link href="<c:url value='/css/search/hometitle.css'/>" rel="stylesheet" />
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>" rel="stylesheet">
-<link href="<c:url value='/css/login/bouncebutton.css'/>" rel="stylesheet" />
+
 
 <footer>
 	<span>電話: 0912-345-678</span> 

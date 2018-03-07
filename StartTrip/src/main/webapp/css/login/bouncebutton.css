@@ -4,7 +4,7 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
-li a{
+.customeroption li:lt(4){
 	color:white;
 	text-decoration:none;
 }
