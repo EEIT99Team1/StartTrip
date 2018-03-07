@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 
-
-
 <!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
 <body>
@@ -34,7 +32,7 @@
 				<div class="col-md-4 product">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品1" src="<c:url value="/image/bonusshop/commodity1.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品1</p>
@@ -42,7 +40,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">12</span>
 					</div>
 					<div class="center">
 						<input class="btn btn-primary addcart" type="submit" value="選擇">						
@@ -53,7 +51,7 @@
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品2" src="<c:url value="/image/bonusshop/commodity2.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品2</p>
@@ -61,7 +59,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">45</span>
 					</div>
 					<div class="center">
 
@@ -74,7 +72,7 @@
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品3" src="<c:url value="/image/bonusshop/commodity3.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品3</p>
@@ -82,7 +80,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">78</span>
 					</div>
 					<div class="center">
 
@@ -95,7 +93,7 @@
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品4" src="<c:url value="/image/bonusshop/commodity4.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品4</p>
@@ -103,7 +101,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">123</span>
 					</div>
 					<div class="center">
 
@@ -116,7 +114,7 @@
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品5" src="<c:url value="/image/bonusshop/commodity5.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品5</p>
@@ -124,7 +122,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">456</span>
 					</div>
 					<div class="center">
 
@@ -137,7 +135,7 @@
 				<div class="col-md-4">
 				<!--圖片區塊 -->
 					<div class="box">
-						<img class="image" alt="狗" src="<c:url value="/image/bonusshop/dog4.jpg"/>">
+						<img class="image" alt="商品6" src="<c:url value="/image/bonusshop/commodity6.jpg"/>">
 					</div>
 				<!-- 文字區塊 -->
 					<p class="center">商品6</p>
@@ -145,7 +143,7 @@
 					<div>
 
 						<label>點數：</label>
-						<span>xxx</span>
+						<span class="bonus">789</span>
 					</div>
 					<div class="center">
 
@@ -154,8 +152,12 @@
 					</div>
 				</div><!--區塊6 -->			
 
-			<div class="shopimg">			
-				<img class="shopcart" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
+			<div class="opencart">
+				<table class="carttable">		
+				</table>
+			</div>			
+			<div class="shopcart">
+				<img class="shopimg" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
 				<span class="cartnum">0</span>
 			</div>				
 
@@ -164,6 +166,8 @@
 
 	</article>
 	
-	<jsp:include page="/page/bonusshop/addcartshop.jsp"/>
+	<jsp:include page="/page/bonusshop/myjs/addcartshop.jsp"/>
+	<jsp:include page="/page/bonusshop/myjs/shopcart.jsp"/>
+	
 </body>
 </html>

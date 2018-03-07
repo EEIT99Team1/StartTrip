@@ -52,19 +52,24 @@
 	height:25%;
 /* 	border:solid 2px blue;		 */
 }
+.bonus{
+	font-family:fantasy;
+	color: red;
+}
 .btn{
 	margin-bottom:3px; 
 }
-
-.shopimg{
+/* 購物車相關設定 */
+.shopcart{
 	position:fixed;
-/* 	top:85%; */
 	right:0;
 	bottom:50px;
 }
-.shopcart{	
+.shopimg{	
 	width:80px;
 	height:80px;
+	border-radius:50%;
+	
 }
 .cartnum{
 	display: block;
@@ -76,4 +81,29 @@
 	position:absolute;
 	left:0px;
 	text-align:center;
+}
+.opencart{
+	display:none;
+	position:fixed;
+	width:350px;
+	height:450px;
+	border:solid 1px red;
+	right:0;
+	overflow:auto;
+	bottom:130px;
+	
+}
+
+html.noscroll {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+/* 表格樣式設定 */
+table{
+	width:100%;
+}
+tr,td{
+	width:100%;
+	height:100px;
 }
