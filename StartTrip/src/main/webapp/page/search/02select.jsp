@@ -17,52 +17,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <%-- <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script> --%>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-<script  type="text/javascript">
-        $(function () {
-            $(window).load(function () {
-                $(window).bind('scroll resize', function () {
-                    var $this = $(this);
-                    var $this_Top = $this.scrollTop();
-                    if ($this_Top < 150) {
-                        $('#top-bar').stop().animate({ 'opacity': '0.9' }, 500);
 
-                        $('#top-bar').hover(over, out);
-                        function over() {
-                            $(this).stop().animate({ 'opacity': '0.9' });
-                        }
-                        function out() {
-                            $(this).stop().animate({ 'opacity': '0.9' });
-                        }
-                    }
-                    else if ($this_Top > 150) {
-                        $('#top-bar').stop().animate({ 'opacity': '0.4' }, 500);
-
-                        $('#top-bar').hover(over, out);
-                        function over() {
-                            $(this).stop().animate({ 'opacity': '0.9' }, 150);
-                        }
-                        function out() {
-                            $(this).stop().animate({ 'opacity': '0.4' }, 150);
-                        }
-                    }
-
-                }).scroll();
-             });   
-         });
-        
-         $(function () {
-             $('.barbutton').on('click', function () {
-                $('.aside').toggleClass('open');
-                if ($('.aside').hasClass('open')) {
-	                $('.aside').stop().animate({ left: '-50px' }, 250, 'easeOutBack');
-	                $('.barbuttonimg').attr('src', "<c:url value='/image/search/left.png'/>");
-             	} else {
-	                $('.aside').stop().animate({ left: '-275px' }, 250, 'easeInBack');
-	                $('.barbuttonimg').attr('src', "<c:url value='/image/search/right.png'/>");
-             	};
-          	});
-     	});
-    </script>
+		<jsp:include page="/page/shared/headerstylejs.jsp" />
 </head>
 
 <body>
