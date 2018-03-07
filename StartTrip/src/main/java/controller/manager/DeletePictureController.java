@@ -18,11 +18,24 @@ public class DeletePictureController {
 	private ServletContext servletContext;
 	
 	@RequestMapping(path="/DeletePicture.controller",method= {RequestMethod.GET})
-	@ResponseBody
 	public String deletePicture(String id){
-		String ApplicationRoot=servletContext.getRealPath("/")+"image/backstage/"+id;
+		String ApplicationRoot=servletContext.getRealPath("/")+"image/backstage/";
 		String Path=ApplicationRoot;
-		System.out.println(Path);
-		return "";
+		File file=new File(Path);
+		File list[]=file.listFiles();
+		
+		for(int i=0,max=list.length;i<max;i++){
+			if(list[i].getName().equals(id)) {
+				list[i].delete();
+				for(int j=(i+1);j<max;j++) {
+					String fileName=list[j].getName();
+					String viceName=fileName.substring(fileName.indexOf("."));
+					String newName=j+viceName;
+					list[j].renameTo(new File(Path+newName));
+				}
+				break;
+			}
+		}
+		return "playWallView";
 	}
 }

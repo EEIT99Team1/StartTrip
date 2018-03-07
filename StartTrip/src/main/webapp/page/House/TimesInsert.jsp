@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/page/shared/indexheader.jsp" />
 <form action="InsertTimes" method="post">
 <table style="margin: auto;margin-top: 20px">
     <tr>

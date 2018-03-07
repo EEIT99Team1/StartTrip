@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<jsp:include page="/page/shared/indexheader.jsp" />
 
 <form action="SelectHouse" method="post">
 <table style="margin:auto;margin-top:30px;">

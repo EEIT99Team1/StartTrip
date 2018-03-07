@@ -43,12 +43,13 @@ $(function(){
 		dataType:"json",
 		scriptCharset:'UTF-8',
 		success:function(data){
+			$("#showImgBody").empty();
 			var documentFragment=$(document.createDocumentFragment());
 			for(var i=0,max=data.length;i<max;i++){
 				var tr=$("<tr></tr>");
 				
 				var td0=$("<td></td>");
-				td0.text(i);
+				td0.text(i+1);
 				var img=$("<img></img>");
 				img.attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>'});
 				var td1=$("<td></td>");
@@ -79,9 +80,9 @@ function deletePicture(){
 		url:'<c:url value="/DeletePicture.controller"/>',
 		type:'GET',
 		data:{id:pictureId},
-		scriptCharset:'UTF-8'
+		scriptCharset:'UTF-8',
+		async: false
 	});
-	
 };
 </script>
 </body>

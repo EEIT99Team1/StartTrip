@@ -12,7 +12,7 @@
 		<property name="url" value="/page/search/02select.jsp"></property>
 	</bean>
 	
-	<bean id="uploadView" class="org.springframework.web.servlet.view.RedirectView">
+	<bean id="playWallView" class="org.springframework.web.servlet.view.RedirectView">
 		<property name="url" value="/page/backstage/managementPlaywall.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>

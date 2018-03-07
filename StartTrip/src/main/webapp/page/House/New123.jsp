@@ -67,6 +67,7 @@ $(function() {
 
 </head>
 <body>
+<jsp:include page="/page/shared/indexheader.jsp" />
 	<p>
 		日期999：<input type="text" id="datepicker">
 	</p>

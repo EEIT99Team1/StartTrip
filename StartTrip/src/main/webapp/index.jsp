@@ -13,9 +13,7 @@
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 
 
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
-<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -40,9 +38,9 @@
 
 </head>
 <body>
-	<header>
-		<jsp:include page="/page/shared/indexheader.jsp" />
-	</header>
+	
+	<jsp:include page="/page/shared/indexheader.jsp" />
+	
 
 	<article class="mainbody">
 		<form class="search" action="FlightGet.controller" method="get">
@@ -101,10 +99,9 @@
 	</article>
 
 	<footer>
-	<jsp:include page="page/shared/footer.jsp" />
+	<jsp:include page="/page/shared/footer.jsp" />
 	</footer>
-
-		<jsp:include page="page/shared/googlejs.jsp" />
-	<jsp:include page="page/search/searchjs.jsp" />
+	
+	<jsp:include page="/page/shared/indexfooter.jsp" />
 	</body>
 </html>
