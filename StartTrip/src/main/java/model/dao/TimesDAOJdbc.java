@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -94,7 +96,7 @@ private  DataSource dataSource;
 	
 	
 	private static final String SelectRoom =
-			 "select * from Times where Name=? and RoomName=? ";
+			 "select * from Room where Name=? and RoomName=? ";
 	
 	public int SelectRoom(String name ,String roomName) {
 		ResultSet rset=null;
@@ -113,6 +115,41 @@ private  DataSource dataSource;
 			e.printStackTrace();
 		}
 		return c;
+	}
+	
+	
+	
+	private static final String SelectTimes =
+			 "select * from Times where Name=? and RoomName=? ";
+	
+	public List<TimesBean> SelectTimes(String name ,String roomName) {
+		ResultSet rset=null;
+		List<TimesBean> times = new ArrayList<TimesBean>();
+		int c=0;
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(SelectTimes);) {
+			stmt.setString(1, name);
+			stmt.setString(2, roomName);
+			rset=stmt.executeQuery();
+			 
+			while (rset.next()) {
+				TimesBean bean = new TimesBean();
+				bean.setGoTime(rset.getDate("GoTime"));
+				bean.setOutTime(rset.getDate("OutTime"));
+				times.add(bean);
+				c++;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(c);
+		return times;
 	}	
+	
+	
+	
+	
+	
 	
 }

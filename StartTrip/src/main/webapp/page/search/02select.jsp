@@ -7,393 +7,112 @@
 <meta charset="utf-8" />
 <title>查詢結果</title>
 
-<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
+<link href="<c:url value='/css/title.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/footer.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/search/searchbody.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/search/jquery-ui.min.css'/>" type="text/css" rel="stylesheet">
+<link href="<c:url value='/css/login/bouncebutton.css'/>" type="text/css" rel="stylesheet" />
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<%-- <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script> --%>
+<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+
+		<jsp:include page="/page/shared/header.jsp" />
 </head>
+
 <body>
-<%-- 	<jsp:include page="/page/shared/indexheader.jsp" /> --%>
+
+	<header>
+		<jsp:include page="/page/shared/header.jsp" />
+	</header>
 	
-<!-- 	<div class="mborder"> -->
-<!-- 		<div class="planeimg"> -->
-<%-- 			<img src="<c:url value="/image/index/01.png"/>" /> --%>
-<!-- 		</div> -->
-<!-- 		<a href="03ticketcheck.jsp" class="taketicket"> <input -->
-<!-- 			type="button" value="訂票" /> -->
-<!-- 		</a> -->
-<!-- 		<div> -->
+	 <div id="searchbar"class="searchbar">
+            <aside class="aside">
+                <table>
+                    <thead><tr><td colspan="3">航班篩選</td> </tr> </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width:10%"><input type="checkbox" value="" /></td>
+                            <td style="width:20%"><img src="<c:url value='/image/search/航空1.png'/>" /></td>
+                            <td style="width:50%;">中華航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空2.png'/>" /></td>
+                            <td>馬來西亞航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空3.png'/>" /></td>
+                            <td>長榮航空</td>
+                        </tr>
 
-<%-- 			機場${searchData.goplace}<br /> 時間${searchData.gotime}<br /> --%>
-
-<!-- 			<hr /> -->
-
-<!-- 			機場<br /> 時間<br /> -->
-<!-- 		</div> -->
-
-<!-- 	</div> -->
-
-
-<!-- 	<div class="mborder" id="d1"> -->
-<!-- 		<div class="planeimg"> -->
-<%-- 			<img src="<c:url value="/image/index/01.png"/>" /> --%>
-<!-- 		</div> -->
-<!-- 		<a href="03ticketcheck.jsp" class="taketicket"> <input -->
-<!-- 			type="button" value="訂票" /> -->
-<!-- 		</a> -->
-<!-- 		<div> -->
-<!-- 			機場<br /> 時間<br /> -->
-<!-- 			<hr /> -->
-<!-- 			機場<br /> 時間<br /> -->
-<!-- 		</div> -->
-
-<!-- 	</div> -->
-
-	<div id="flightsResult" style="width:50%">
-		<div style="border:4px solid #8C0044">
-		<table style="border:2px solid #003C9D;width:100%" >
-			<thead></thead>
-			<tbody>	<tr><td rowspan="5">酷航空</td><td>TPE</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG</td><td></td><td style="width:20%" rowspan="2">15000元</td></tr>
-					<tr><td>06:40</td><td></td><td>10:50</td><td>3時10分，直飛</td></tr>
-					<tr><td colspan="4">-----------------------------------------------------------------------</td><td style="width:20%" rowspan="3"><button>訂購</button></td></tr>
-					<tr><td>HKG</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>TPE</td><td></td></tr>
-					<tr><td>20:40</td><td></td><td>23:10</td><td>3時30分，直飛</td></tr>
-			</tbody>
-		</table>
-		<button id="flightInfox">航班資訊</button>
-		<div id="dflightInfox" style="display:none">
-		<table style="border:2px solid #003C9D;width:100%" >
-			<thead><tr><th>去程 : </th><th>TPE<img src='<c:url value="/image/search/003-plane.png"/>'/></th><th>HKG</th></tr></thead>
-			<tbody>
-			<tr><td rowspan="4">NX322</td><td>2018-04-01</td><td></td><td>2018-04-01</td><td><img src='<c:url value="/image/search/003-plane.png"/>'/>:789</td></tr>
-			<tr><td>06:40</td><td>3時10分</td><td>09:50</td><td><img src='<c:url value="/image/search/002-desk-chair.png"/>'/>:經濟艙(F)</td></tr>
-			<tr><td>TPE(台北)</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG(香港)</td><td><img src='<c:url value="/image/search/001-suitcase.png"/>'/>:30kg</td></tr>
-			</tbody>
-		</table>
-		<table style="border:2px solid #003C9D;width:100%">
-			<thead><tr><th>回程 : </th><th>HKG<img src='<c:url value="/image/search/003-plane.png"/>'/></th><th>TPE</th></tr></thead>
-			<tbody>
-			<tr><td rowspan="4">NX322</td><td>2018-04-01</td><td></td><td>2018-04-01</td><td><img src='<c:url value="/image/search/003-plane.png"/>'/>:789</td></tr>
-			<tr><td>06:40</td><td>3時10分</td><td>09:50</td><td><img src='<c:url value="/image/search/002-desk-chair.png"/>'/>:經濟艙(F)</td></tr>
-			<tr><td>TPE(台北)</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG(香港)</td><td><img src='<c:url value="/image/search/001-suitcase.png"/>'/>:30kg</td></tr>
-			</tbody>
-		</table><br/>
-		<p>托運行李</p> 
-		<p>1.託運行李相關規定請參照航空公司官方網站行李限制說明。</p>
-		<p>2.聯合營運航班需依實際承運航空公司託運行李相關規定為主。</p>
-		<p>3.託運行李若以件數計算，則每1件不得超過20公斤；若以重量計算，則不得超過表列之公斤數。</p>
-		<p>4.託運行李資訊是根據航空公司於訂位系統中的票價規則進行自動分析而取得，本公司不保證其準確性，得依實際開票時之確認為準， 開票後如有變動，恕不另行通知。</p>
-		<p>5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。</p>
-		</div>
-		</div><br/>
-		
-	</div><!-- flightsResult結束 -->
-
-
-<%-- 	<jsp:include page="/page/shared/indexfooter.jsp" /> --%>
-	<script>
-		function infoDivShow(){
-			var id="#d"+$(this).attr("id");
-			$(id).toggle(1000);
-		}	
-	</script>
-	<script>
-		$(document).ready(function() {
-			//取得回傳的responseXml並轉成xml檔處理
-			var text = ${responseXml};
-			var parser = new DOMParser();
-			var xmlDoc = parser.parseFromString(text, "text/xml");
-			var PricedItinerarys = xmlDoc.getElementsByTagName("PricedItinerary");
-			var documentFragment = $(document.createDocumentFragment());
-			console.log(PricedItinerarys.length);
-			
-			
-			
-			for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){
-				var divBig=$("<div></div>").css({"border":"4px solid #8C0044"});//最外圈的div
-				var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊").click(infoDivShow);
-				var infoDiv=$("<div></div>").attr({id:"dflightInfo"+i}).css({"display":"none"});
-				var tableShow=$("<table></table>").css({"border":"2px solid #003C9D","width":"100%"});
-				var tbodyShow=$("<tbody></tbody>");
-				console.log(i);
-				//總金額//總飛行時間
-				var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
-				var totalTime=0;
-				//行李重量
-				var weight;
-				if(PricedItinerarys[i].getElementsByTagName("Allowance")[0]!=null){
-					weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
-				}
-				
-				console.log(totalFare+"?????--");
-				
-				
-				var	gotable;
-				var thead;
-				var tbody;
-				//去程飛機資訊
-				var go_trip  = PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[0];
-				var Flight=go_trip.getElementsByTagName("FlightSegment");
-				for(var j=0,maxj=Flight.length;j<maxj;j++){
-					//出發時間//抵達時間//艙等//飛行時間
-					var departureDateTime=Flight[j].getAttribute("DepartureDateTime");
-					var arrivalDateTime=Flight[j].getAttribute("ArrivalDateTime");
-					var resBookDesigCode=Flight[j].getAttribute("ResBookDesigCode");
-					var elapsedTime=Flight[j].getAttribute("ElapsedTime");
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空4.png'/>" /></td>
+                            <td>日本航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空5.png'/>" /></td>
+                            <td>酷航</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="barbutton">
+                	<img class="barbuttonimg" src="<c:url value='/image/search/right.png'/>">
+                </button>
+            </aside>
+        </div>
 	
-					//出發地點//抵達地點
-					var departureAirport=Flight[j].getElementsByTagName("DepartureAirport")[0].getAttribute("LocationCode");
-					var arrivalAirport=Flight[j].getElementsByTagName("ArrivalAirport")[0].getAttribute("LocationCode");
-					
-					
-					var operatingAirline=Flight[j].getElementsByTagName("OperatingAirline")[0];
-					//航空公司//航班代號//飛機型號
-					var flightCode=operatingAirline.getAttribute("Code");
-					var flightNum=operatingAirline.getAttribute("FlightNumber");
-					var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
-					
-					console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
-					console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);
-					
-					//將 出發時間&抵達時間 分割為 [0]日期 與 [1]時間
-					departureDateTime=departureDateTime.split("T");
-					arrivalDateTime=arrivalDateTime.split("T");
-					//飛行時間(分) 轉為字串(時分)//計算總飛行時間
-					var hour=Math.floor(elapsedTime/60);
-					var min=elapsedTime%60;
-					var elapsedTimeString=hour+"小時"+min+"分";
-					totalTime=totalTime+parseInt(elapsedTime);
-					
-					if(j==0){
-						//放入tableShow資訊
-						var tr0show = $("<tr></tr>");
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(flightCode);
-						var td01show = $("<td></td>").text(departureAirport);
-						var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-						var td02show = $("<td></td>").append(imgshowArrows);
-						var td03show = $("<td></td>").text(arrivalAirport);
-						var td04show = $("<td></td>");
-						var td05show = $("<td></td>").attr({rowspan:"2"}).css({"width":"20%"}).text(totalFare+"元(台幣)");
-						tr0show.append(td00show).append(td01show).append(td02show)
-								.append(td03show).append(td04show).append(td05show);
-						
-						
-						var tr1show = $("<tr></tr>");
-						var td10show = $("<td></td>").text(departureDateTime[1]);
-						var td11show = $("<td></td>");
-						var td12show = $("<td></td>").text(arrivalDateTime[1]);
-						var td13show = $("<td></td>").text(elapsedTimeString+"，直飛");
-						tr1show.append(td10show).append(td11show).append(td12show).append(td13show);
-					
-						var tr2show = $("<tr></tr>");
-						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
-						var butSelect= $("<button></button>").text("訂購");
-						var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%"});
-						td21show.append(butSelect);
-						tr2show.append(td20show).append(td21show);
-						
-						tbodyShow.append(tr0show).append(tr1show).append(tr2show);
-					}else{
-						tbodyShow.find("tr:eq(0) td:eq(3)").text(arrivalAirport);
-						tbodyShow.find("tr:eq(1) td:eq(3)").text(
-								Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
-					}
-					
-					
-					//table
-					if(j==0){
-						gotable=$("<table></table>").css({"border":"2px solid #003C9D","width":"100%"});
-						//thead
-						thead=$("<thead></thead>");
-						var trhead=$("<tr></tr>");
-						var th0=$("<th></th>").text("去程:");
-						var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-						var th1=$("<th></th>").text(departureAirport).append(imgFlight0);;
-						var th2=$("<th></th>").text(arrivalAirport);
-						trhead.append(th0).append(th1).append(th2);
-						thead.append(trhead);
-						//thead-end
-						//tbody
-						tbody=$("<tbody></tbody>");
-						gotable.append(thead).append(tbody);
-					}else{
-						thead.find("tr th:eq(2)").text(arrivalAirport);
-					}
-					var trB0=$("<tr></tr>");
-					var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum);
-					var td01=$("<td></td>").text(departureDateTime[0]);
-					var td02=$("<td></td>");
-					var td03=$("<td></td>").text(arrivalDateTime[0]);
-					var imgFlight=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-					var td04=$("<td></td>").text(":"+airEquipType).prepend(imgFlight);
-					trB0.append(td00).append(td01).append(td02).append(td03).append(td04);
-					
-					var trB1=$("<tr></tr>");
-					var td10=$("<td></td>").text(departureDateTime[1]);
-					var td11=$("<td></td>").text(elapsedTimeString);
-					var td12=$("<td></td>").text(arrivalDateTime[1]);
-					var imgChair=$("<img></img>").attr({src:'<c:url value="/image/search/002-desk-chair.png"/>'});
-					var td13=$("<td></td>").text(":"+resBookDesigCode+"(經濟艙)").prepend(imgChair);
-					trB1.append(td10).append(td11).append(td12).append(td13);
-					
-					var trB2=$("<tr></tr>");
-					var td20=$("<td></td>").text(departureAirport);
-					var imgArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-					var td21=$("<td></td>").append(imgArrows);
-					var td22=$("<td></td>").text(arrivalAirport);
-					var imgBagage=$("<img></img>").attr({src:'<c:url value="/image/search/001-suitcase.png"/>'});
-					var td23=$("<td></td>").text(":"+weight+"kg").prepend(imgBagage);
-					trB2.append(td20).append(td21).append(td22).append(td23);
-					
-					tbody.append(trB0).append(trB1).append(trB2);
-						//tbody-end
-					//table-end
-					
-					infoDiv.append(gotable);
-				}//for迴圈 j 結束
-				
-				
-				
-				totalTime=0;
-				console.log("----------------------------------------");
-				//回程飛機資訊
-				var back_trip= PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[1];
-				if(back_trip!=null){
-					var	backtable;
-					var thead;
-					var tbody;
-					var Flight=back_trip.getElementsByTagName("FlightSegment");
-					for(var j=0,maxj=Flight.length;j<maxj;j++){
-						//出發時間//抵達時間//艙等//飛行時間
-						var departureDateTime=Flight[j].getAttribute("DepartureDateTime");
-						var arrivalDateTime=Flight[j].getAttribute("ArrivalDateTime");
-						var resBookDesigCode=Flight[j].getAttribute("ResBookDesigCode");
-						var elapsedTime=Flight[j].getAttribute("ElapsedTime");
+	
+<!-- 	<div id="flightsResult" style="width:50%; height:5000px;"> -->
+<!-- 		<div style="border:4px solid #8C0044"> -->
+<!-- 		<table style="border:2px solid #003C9D;width:100%" > -->
+<!-- 			<thead></thead> -->
+<%-- 			<tbody>	<tr><td rowspan="5">酷航空</td><td>TPE</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG</td><td></td><td style="width:20%" rowspan="2">15000元</td></tr> --%>
+<!-- 					<tr><td>06:40</td><td></td><td>10:50</td><td>3時10分，直飛</td></tr> -->
+<!-- 					<tr><td colspan="4">-----------------------------------------------------------------------</td><td style="width:20%" rowspan="3"><button>訂購</button></td></tr> -->
+<%-- 					<tr><td>HKG</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>TPE</td><td></td></tr> --%>
+<!-- 					<tr><td>20:40</td><td></td><td>23:10</td><td>3時30分，直飛</td></tr> -->
+<!-- 			</tbody> -->
+<!-- 		</table> -->
+<!-- 		<button id="flightInfox">航班資訊</button> -->
+<!-- 		<div id="dflightInfox" style="display:none"> -->
+<!-- 		<table style="border:2px solid #003C9D;width:100%" > -->
+<%-- 			<thead><tr><th>去程 : </th><th>TPE<img src='<c:url value="/image/search/003-plane.png"/>'/></th><th>HKG</th></tr></thead> --%>
+<!-- 			<tbody> -->
+<%-- 			<tr><td rowspan="4">NX322</td><td>2018-04-01</td><td></td><td>2018-04-01</td><td><img src='<c:url value="/image/search/003-plane.png"/>'/>:789</td></tr> --%>
+<%-- 			<tr><td>06:40</td><td>3時10分</td><td>09:50</td><td><img src='<c:url value="/image/search/002-desk-chair.png"/>'/>:經濟艙(F)</td></tr> --%>
+<%-- 			<tr><td>TPE(台北)</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG(香港)</td><td><img src='<c:url value="/image/search/001-suitcase.png"/>'/>:30kg</td></tr> --%>
+<!-- 			</tbody> -->
+<!-- 		</table> -->
+<!-- 		<table style="border:2px solid #003C9D;width:100%"> -->
+<%-- 			<thead><tr><th>回程 : </th><th>HKG<img src='<c:url value="/image/search/003-plane.png"/>'/></th><th>TPE</th></tr></thead> --%>
+<!-- 			<tbody> -->
+<%-- 			<tr><td rowspan="4">NX322</td><td>2018-04-01</td><td></td><td>2018-04-01</td><td><img src='<c:url value="/image/search/003-plane.png"/>'/>:789</td></tr> --%>
+<%-- 			<tr><td>06:40</td><td>3時10分</td><td>09:50</td><td><img src='<c:url value="/image/search/002-desk-chair.png"/>'/>:經濟艙(F)</td></tr> --%>
+<%-- 			<tr><td>TPE(台北)</td><td><img src='<c:url value="/image/search/004-arrows.png"/>'/></td><td>HKG(香港)</td><td><img src='<c:url value="/image/search/001-suitcase.png"/>'/>:30kg</td></tr> --%>
+<!-- 			</tbody> -->
+<!-- 		</table><br/> -->
+<!-- 		<p>托運行李</p>  -->
+<!-- 		<p>1.託運行李相關規定請參照航空公司官方網站行李限制說明。</p> -->
+<!-- 		<p>2.聯合營運航班需依實際承運航空公司託運行李相關規定為主。</p> -->
+<!-- 		<p>3.託運行李若以件數計算，則每1件不得超過20公斤；若以重量計算，則不得超過表列之公斤數。</p> -->
+<!-- 		<p>4.託運行李資訊是根據航空公司於訂位系統中的票價規則進行自動分析而取得，本公司不保證其準確性，得依實際開票時之確認為準， 開票後如有變動，恕不另行通知。</p> -->
+<!-- 		<p>5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。</p> -->
+<!-- 		</div> -->
+<!-- 		</div><br/> -->
 		
-						//出發地點//抵達地點
-						var departureAirport=Flight[j].getElementsByTagName("DepartureAirport")[0].getAttribute("LocationCode");
-						var arrivalAirport=Flight[j].getElementsByTagName("ArrivalAirport")[0].getAttribute("LocationCode");
-						
-						
-						var operatingAirline=Flight[j].getElementsByTagName("OperatingAirline")[0];
-						//航空公司//航班代號//飛機型號
-						var flightCode=operatingAirline.getAttribute("Code");
-						var flightNum=operatingAirline.getAttribute("FlightNumber");
-						var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
-						
-						console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
-						console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);
-						
-						//將 出發時間&抵達時間 分割為 [0]日期 與 [1]時間
-						departureDateTime=departureDateTime.split("T");
-						arrivalDateTime=arrivalDateTime.split("T");
-						//飛行時間(分) 轉為字串(時分)//計算總飛行時間
-						var hour=Math.floor(elapsedTime/60);
-						var min=elapsedTime%60;
-						var elapsedTimeString=hour+"小時"+min+"分";
-						totalTime=totalTime+parseInt(elapsedTime);
-						
-						if(j==0){
-							//放入tableShow資訊
-							var tr3show = $("<tr></tr>");
-							var td30show = $("<td></td>").text(departureAirport);
-							var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-							var td31show = $("<td></td>").append(imgshowArrows);
-							var td32show = $("<td></td>").text(arrivalAirport);
-							var td33show = $("<td></td>");
-							tr3show.append(td30show).append(td31show).append(td32show).append(td33show);
-							
-							var tr4show = $("<tr></tr>");
-							var td40show = $("<td></td>").text(departureDateTime[1]);
-							var td41show = $("<td></td>");
-							var td42show = $("<td></td>").text(arrivalDateTime[1]);
-							var td43show = $("<td></td>").text(elapsedTimeString+"，直飛");
-							tr4show.append(td40show).append(td41show).append(td42show).append(td43show);
-							
-							
-							tbodyShow.append(tr3show).append(tr4show);
-						}else{
-							tbodyShow.find("tr:eq(3) td:eq(2)").text(arrivalAirport);
-							tbodyShow.find("tr:eq(4) td:eq(3)").text(
-									Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
-						}
-						
-						//table
-						
-						if(j==0){
-							backtable=$("<table></table>").css({"border":"2px solid #003C9D","width":"100%"});
-							//thead
-							thead=$("<thead></thead>");
-							var trhead=$("<tr></tr>");
-							var th0=$("<th></th>").text("回程:");
-							var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-							var th1=$("<th></th>").text(departureAirport).append(imgFlight0);;
-							var th2=$("<th></th>").text(arrivalAirport);
-							trhead.append(th0).append(th1).append(th2);
-							thead.append(trhead);
-							//thead-end
-							//tbody
-							tbody=$("<tbody></tbody>");
-							gotable.append(thead).append(tbody);
-						}else{
-							thead.find("tr th:eq(2)").text(arrivalAirport);
-						}
-						var trB0=$("<tr></tr>");
-						var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum);
-						var td01=$("<td></td>").text(departureDateTime[0]);
-						var td02=$("<td></td>");
-						var td03=$("<td></td>").text(arrivalDateTime[0]);
-						var imgFlight=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-						var td04=$("<td></td>").text(":"+airEquipType).prepend(imgFlight);
-						trB0.append(td00).append(td01).append(td02).append(td03).append(td04);
-						
-						var trB1=$("<tr></tr>");
-						var td10=$("<td></td>").text(departureDateTime[1]);
-						var td11=$("<td></td>").text(elapsedTimeString);
-						var td12=$("<td></td>").text(arrivalDateTime[1]);
-						var imgChair=$("<img></img>").attr({src:'<c:url value="/image/search/002-desk-chair.png"/>'});
-						var td13=$("<td></td>").text(":"+resBookDesigCode+"(經濟艙)").prepend(imgChair);
-						trB1.append(td10).append(td11).append(td12).append(td13);
-						
-						var trB2=$("<tr></tr>");
-						var td20=$("<td></td>").text(departureAirport);
-						var imgArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-						var td21=$("<td></td>").append(imgArrows);
-						var td22=$("<td></td>").text(arrivalAirport);
-						var imgBagage=$("<img></img>").attr({src:'<c:url value="/image/search/001-suitcase.png"/>'});
-						var td23=$("<td></td>").text(":"+weight+"kg").prepend(imgBagage);
-						trB2.append(td20).append(td21).append(td22).append(td23);
-						
-						tbody.append(trB0).append(trB1).append(trB2);
-							//tbody-end
-						//table-end
-						infoDiv.append(backtable);
-					}//for迴圈 j 結束
-				}//if判斷 back_trip!=null 結束
-				console.log("========================================");
-				
-				
-				
-				
-				var br=$("<br/>");
-				var p0=$("<p></p>").text("托運行李");
-				var p1=$("<p></p>").text("1.託運行李相關規定請參照航空公司官方網站行李限制說明。");
-				var p2=$("<p></p>").text("2.聯合營運航班需依實際承運航空公司託運行李相關規定為主。");
-				var p3=$("<p></p>").text("3.託運行李若以件數計算，則每1件不得超過20公斤；若以重量計算，則不得超過表列之公斤數。");
-				var p4=$("<p></p>").text("4.託運行李資訊是根據航空公司於訂位系統中的票價規則進行自動分析而取得，本公司不保證其準確性，得依實際開票時之確認為準， 開票後如有變動，恕不另行通知。");
-				var p5=$("<p></p>").text("5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。");
-				infoDiv.append(br).append(p0).append(p1).append(p2).append(p3).append(p4).append(p5);
-				
-				tableShow.append(tbodyShow);
-				
-				divBig.append(tableShow).append(infoBut).append(infoDiv);
-				
-				
-				var br0=$("<br/>");
-				documentFragment.append(divBig).append(br0);
-// 				$("#flightsResult").append(divBig).append(br0);
-			}//for迴圈 i 結束
-			
-			$("#flightsResult").append(documentFragment);
-			
-		});
-	</script>
+<!-- 	</div>flightsResult結束 -->
+
+	<footer>
+		<jsp:include page="/page/shared/footer.jsp" />
+	</footer>
+	
+	<jsp:include page="/page/shared/googlejs.jsp" />
+	<jsp:include page="/page/search/searchjs.jsp" />
+
 </body>
 </html>
