@@ -31,7 +31,7 @@
 <!-- 		下部區塊 -->
 			<div class="row">
 <!-- 			商品格區塊 -->
-				<div class="col-md-4 product">
+				<div class="col-md-4">
 <!-- 				圖片區塊 -->
 					<div class="box">
 						<img class="image" alt="商品1" src="<c:url value="/image/bonusshop/commodity1.jpg"/>">
