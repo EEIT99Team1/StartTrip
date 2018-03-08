@@ -14,13 +14,13 @@ public class SearchDataBean {
 		return goplace;
 	}
 	public void setGoplace(String goplace) {
-		this.goplace = goplace.substring(0,3);
+		this.goplace = goplace.substring(0,3).toUpperCase();
 	}
 	public String getEndplace() {
 		return endplace;
 	}
 	public void setEndplace(String endplace) {
-		this.endplace = endplace.substring(0,3);
+		this.endplace = endplace.substring(0,3).toUpperCase();
 	}
 	public String getWay() {
 		return way;

@@ -1,5 +1,7 @@
 package controller.search;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ import model.service.search.ConnectionSaber;
 public class SearchController {
 	@Autowired
 	private ConnectionSaber connectionSaber;
+	@Autowired
+	private HttpSession session;
 	
 	@RequestMapping(path="/FlightGet.controller",method= {RequestMethod.GET})
 	public String search(SearchDataBean searchData,Model model) {
@@ -28,8 +32,8 @@ public class SearchController {
 		String bst=connectionSaber.createSession();
 		String responseXml=connectionSaber.requestSession(bst,searchData);
 		connectionSaber.closeSession(bst);
-		model.addAttribute("searchData", searchData);
-		model.addAttribute("responseXml", "'"+responseXml+"'");
+		session.setAttribute("searchData", searchData);
+		session.setAttribute("responseXml", "'"+responseXml+"'");
 		
 		return "select";
 	}
