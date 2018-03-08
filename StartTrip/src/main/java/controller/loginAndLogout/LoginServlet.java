@@ -1,4 +1,4 @@
-﻿package controller;
+﻿package controller.loginAndLogout;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -71,15 +71,15 @@ public class LoginServlet extends HttpServlet {
 		if (errorMsgMap.isEmpty()) {
 			//如果session物件內含有"target"屬性物件，表示使用者先前嘗試執行某個應該登入，但使用者未登入的網頁
 			//，由該網頁放置的"target"屬性物件，因次如果有"target"屬性物件則導向"target"屬性物件所標示的網頁，否則導向首頁。
-//			String contextPath = getServletContext().getContextPath();
+			String contextPath = getServletContext().getContextPath();
 //			System.out.println("contextPath ="+contextPath);
-			if (target != null) {
 				req.setAttribute("hasError", false);
 				CustomerBean bean =dao.select(userEmail);
 				String firstname = bean.getFirstname();
 				String lastname = bean.getLastname();
 				req.setAttribute("firstname", "\""+firstname+"\"");
 				req.setAttribute("lastname", "\""+lastname+"\"");
+			if (target != null) {
 //				System.out.println("success false");
 				//先由session中移除此項屬性，否則下一次User直接執行login功能後，會再度被導向到target。
 				session.removeAttribute("target");
@@ -87,13 +87,14 @@ public class LoginServlet extends HttpServlet {
 				rd.forward(req, resp);
 //				System.out.println("contextPath + target ="+contextPath + target);
 			} else {
-				RequestDispatcher rd = req.getRequestDispatcher(target);
+				RequestDispatcher rd = req.getRequestDispatcher(contextPath+"/index.jsp");
 				rd.forward(req, resp);
-//				System.out.println("contextPath +index.jsp = "+contextPath + "/index.jsp");
+				System.out.println("contextPath +index.jsp = "+contextPath + "/index.jsp");
 			}
 			System.out.println("success");
 			return;
 		} else {
+			req.setAttribute("hasError", true);
 			//如果errorMsgMap不是空的，表示有錯誤，交棒給target。
 			req.setAttribute("firstname", "null");
 			req.setAttribute("lastname", "null");

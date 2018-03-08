@@ -2,15 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link href="<c:url value='/css/search/hometitle.css'/>" rel="stylesheet" />
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>" rel="stylesheet">
-<link href="<c:url value='/css/login/bouncebutton.css'/>" rel="stylesheet" />
-
-<footer>
-	<span>電話: 0912-345-678</span> 
-	<span> email:team1@eeit99.com</span>
-</footer>
-
 <script>
 	//Google+第三放登入取得資料方法
 	$(document).ready(function(){
@@ -41,7 +32,10 @@ $(document).ready(function(){
 	var modal = document.getElementById('myModal');
 
 	// Get the button that opens the modal
-	var btn = document.getElementById("button");
+// 	var btn = document.getElementById("button");
+	
+	//沒有寫var 代表全域變數
+	btn = $("#button");
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
@@ -50,9 +44,12 @@ $(document).ready(function(){
 //		var mybutton = document.getElementById("mybutton");
 	
 	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
+// 	btn.onclick = function() {
+// 		modal.style.display = "block";
+// 	}
+	btn.on("click",function() {
 		modal.style.display = "block";
-	}
+	});
 
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
@@ -84,9 +81,9 @@ $(document).ready(function() {
 	
 	$(".citytext").keyup(function() {
 		var keyin = $(this).val();
-		if(keyin.length>1){
+		if(keyin.length>0){
 			$.ajax({
-				url:'<c:url value="SelectBox.controller"/>',
+				url:'<c:url value="/SelectBox.controller"/>',
 				type:'GET',
 				data:{keyin:keyin},
 				scriptCharset:'UTF-8',
@@ -99,15 +96,18 @@ $(document).ready(function() {
 						var country=dataObj[i].country;
 						console.log(aircode+":"+airport);
 						ans.push(aircode+airport);
+						$(".citytext").autocomplete({
+							source:ans
+						});
 					}
+					$(".citytext").autocomplete({
+						source:ans
+					});
 				}//success function
 			});//ajax結束
+		}else{
+			ans.length=0;
 		};//if(keyin.length>1)判斷結束
-	});
-
-
-	$(".citytext").autocomplete({
-		source:ans
 	});
 });
 </script>
@@ -121,7 +121,13 @@ $(document).ready(function() {
 					 userEmail = true;
 				 }else{
 					 userEmail = false;
-				 }
+				 };
+					//以防使用者只輸入帳號時，不會跳出視窗
+				 if($('input[name="pswd"]').val().trim()!=""){
+					 password = true;
+				 }else{
+					 password = false;
+				 };
 				 showLoginButton();
 			 });
 			 $('input[name="pswd"]').keyup(function(){
@@ -129,7 +135,13 @@ $(document).ready(function() {
 					 password = true;
 				 }else{
 					 password = false;
-				 }
+				 };
+				//以防使用者只輸入密碼時，不會跳出視窗
+				 if($('input[name="userEmail"]').val().trim()!=""){
+					 userEmail = true;
+				 }else{
+					 userEmail = false;
+				 };
 				 showLoginButton();
 			 });
 			 function showLoginButton(){
@@ -146,6 +158,73 @@ $(document).ready(function() {
 $(document).ready(function(){
 		var firstname = ${firstname};
 		var lastname = ${lastname};
-		$(".button").text(firstname+lastname);
+		$("#button").val(firstname+lastname);
 });
 </script>
+<script>
+$(document).ready(function(){
+	$("#logout").on('click',function(){
+		sendPost("<c:url value='/LogoutServlet'/>");
+		$("#button").val("Loging");	
+	});
+})
+</script>
+<script>
+function sendPost(url){
+	  var form = document.createElement("form");
+
+	  // 設定表單的一些屬性，包含網頁接收伺服器回應的頁面或框架
+	  form.setAttribute("method", "post");
+	  form.setAttribute("action", url);
+
+	  // 隱藏的submit按鈕，預防瀏覽器不支援模糊的表單設計。（可不用）
+	  var hiddenSubmit = document.createElement("input");
+	  hiddenSubmit.setAttribute("type", "submit");
+	  hiddenSubmit.setAttribute("style", "display:none;");
+	  form.appendChild(hiddenSubmit);
+
+	  // 將表單加入網頁中
+	  document.body.appendChild(form); 
+
+	  // 送出請求
+	  form.submit();
+	}
+</script>
+<script>
+<!-- 判斷輸入帳密狀態 -->
+$(document).ready(function(){
+	//是否有錯誤，hasError=true有錯，hasError=false沒錯。
+	var loginStatus = ${hasError};
+	if(loginStatus){
+		$("#myModal").css("display","block");
+	}else{
+// 		var customermenu = false;
+		btn.off('click');
+// 		if(!customermenu){
+// 				btn.click(function(){
+// 				$('.customermenu').css('display','block');
+// 				});
+// 			customermenu = true;
+// 	    }else{
+// 	    		btn.click(function(){
+// 				$('.customermenu').css('display','none'); 
+// 				});  	
+// 	    	};
+		btn.click(function(){
+			$('.customermenu').toggle(500);
+		})
+		};	
+	});
+</script>
+<script>
+$(document).ready(function(){
+		$(".customeroption li").mouseover(function(){
+				$(this).css('background-color','#7AC5CD');
+		});
+		$(".customeroption li").mouseout(function(){
+				$(this).css('background-color','red');
+		});
+});
+</script>
+
+

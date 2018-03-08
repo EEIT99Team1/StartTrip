@@ -30,6 +30,7 @@ public class SelectTimes extends HttpServlet {
 		String out1 = request.getParameter("outtime");
 		String price1 = request.getParameter("price");
 		request.setAttribute("picture", request.getParameter("picture"));
+		request.setAttribute("name",name);
 		int price = Integer.parseInt(price1);
 		try {
 			java.util.Date gotime = simpleDateFormat.parse(go);
@@ -46,7 +47,7 @@ public class SelectTimes extends HttpServlet {
 						"/page/House/TimesInsert.jsp").forward(request, response);
 				return;
 			}
-			
+
 			else {
 				request.setAttribute("select", "你輸入的時間內已經被訂了");
 				request.getRequestDispatcher(

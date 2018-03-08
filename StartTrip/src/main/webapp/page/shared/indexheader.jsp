@@ -1,27 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
 
-<link href="<c:url value='/css/search/hometitle.css'/>" rel="stylesheet" />
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>"
-	rel="stylesheet">
-<link href="<c:url value='/css/ login/bouncebutton.css'/>"
-	rel="stylesheet" />
 
 <header>
 	<nav>
 		<ul class="menu">
-			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
-			<li class="menuli"><a href="#">機票</a></li>
-			<li class="menuli">飯店</li>
-			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li>
+			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+<%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
+			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
+			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
+			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
+<!-- 			<li><a id="button" class="button" href="#" style="float: right;">Login</a></li> -->
 		</ul>
-		<!--Trigger/Open The Modal
-				<button id="button">登入</button>
-			The Modal -->
-		<div id="myModal" class="modal">
-
+		
+					<!--下拉選單 -->
+			<div class="customermenu" >
+					<div class="customeroption">
+						<ul>
+							<li><a href="www.google.com">個人資料</a></li>
+							<li><a href="www.google.com">歷史訂單</a></li>
+							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">購物車</a></li>
+							<li><a id="logout">登出</a></li>
+						</ul>
+					</div>
+			</div>
 			
+		<div id="myModal" class="modal">
+			
+		
 			<div class="modal-content">
 				<div class="modal-header">
 					<span class="close">&times;</span>
@@ -38,20 +47,20 @@
 							<label>密碼：</label><input type="password" name="pswd" size="20"
 								value="${param.password}">
 								&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}
-             					</Font></small><br /><br /> <br />
-							<!-- <a id="mybutton" class="button" href="#">Login</a> -->
+             					</Font></small><br /><br />
+             					&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
 							<c:set var="target" value="${pageContext.request.servletPath}"
 								scope="session" />
 							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>
-
-				</div>
+				
+			</div>
 				<div class="modal-footer">
 					<div id="googleIconSize" class="g-signin2"
 						data-onsuccess="onSignIn"></div>
+					<a href="#" onclick="signOut();">Sign out</a>
 				</div>
-			</div>
 		</div>
+	</div>
 	</nav>
 </header>
-<%-- <jsp:include page="page/shared/indexheader.jsp" /> --%>

@@ -11,12 +11,12 @@
 </head>
 <body>
 
+<jsp:include page="/page/shared/indexheader.jsp" />
 
 <form action="SelectHouse" method="post">
-<table>
+<table style="margin:auto;margin-top:30px;">
      <tr>
 		<td>國家 : </td>
-<!-- 		<td><input type="text" name="Country" ></td> -->
 		<td><select name="Country" id="country">
 		<option value="台灣">台灣</option>
 		<option value="日本">日本</option>
@@ -29,25 +29,35 @@
 	</tr>
 	<tr>
 		<td>地區 : </td>
-<!-- 		<td><input type="text" name="Area" ></td> -->
 		<td><select name="Area" id="area" >
 		</select></td>
 	</tr>
-</table>
-<input type="submit" name="prodaction" value="Select">	
+</table >
+<input type="submit" name="prodaction" value="收尋" style="display:block;margin:0 auto;margin-top: 20px">	
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
-	<table>
-	<tr>
-	    <td><h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1></td>
-	    <td>國家:${row.country}</td>
-		<td>地區:${row.area}</td>
-		<td>電話:${row.telephone}</td>
-		<td>地址:${row.addres}</td>
-		<td>民宿介紹:${row.explain}</td>
-		<img  src=${row.picture} />
-	</tr>
+	<table style="margin:auto;margin-top:50px;">
+<!-- 	<tr> -->
+<%-- 	    <td><h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1></td> --%>
+<%-- 	    <td>國家:${row.country}</td> --%>
+<%-- 		<td>地區:${row.area}</td> --%>
+<%--         <td>地址:${row.addres}</td> --%>
+<%-- 		<td>電話:${row.telephone}</td> --%>
+<%-- 		<td>民宿介紹:${row.explain}</td> --%>
+<!-- 		<img  src=${row.picture} style="display:block;margin:auto;" /> -->
+<!-- 	</tr> -->
+
+	    <a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">
+	    <h1 align="center">民宿:${row.name}</h1>
+		<img  src=${row.picture} style="display:block;margin:auto;" />
+	    </a>
+        <h3 align="center">地址:${row.addres}</h3>
+		<h3 align="center">電話:${row.telephone}</h3>
+		<h3 align="center">民宿介紹:${row.explain}</h3>
+		
+	
+	
 	</table>
 	
 	</c:forEach>
@@ -63,7 +73,7 @@
 <script src="/StartTrip/js/jquery-3.3.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			var c ={"台灣":["台北","台中","高雄"],
+			var c ={"台灣":["台北","台中","高雄","新北","屏東"],
 		 	         "日本":["東京","大阪"]
 			};
 			
