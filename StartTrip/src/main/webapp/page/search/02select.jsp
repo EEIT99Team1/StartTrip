@@ -22,6 +22,9 @@
 <body>
 	<jsp:include page="/page/shared/indexheader.jsp" />
 	<br/><br/><br/><br/><br/><br/>
+	<div id="clone"></div>
+	<hr/>
+	
 <!-- 	 <div id="searchbar"class="searchbar"> -->
 <!--             <aside class="aside"> -->
 <!--                 <table> -->
