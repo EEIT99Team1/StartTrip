@@ -14,7 +14,7 @@
 <!-- <script type="js/bootstrap.min.js"></script> -->
 </head>
 <body>
-	<jsp:include page="/page/shared/indexheader.jsp" />
+<%-- 	<jsp:include page="/page/shared/indexheader.jsp" /> --%>
 
 <%-- <%@ include file='/page/shared/header.jsp' %> --%>
 	<article>

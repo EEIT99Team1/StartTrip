@@ -8,8 +8,9 @@
 		<property name="contextRelative" value="true"></property>
 	</bean>
 
-	<bean id="select" class="org.springframework.web.servlet.view.InternalResourceView">
+	<bean id="select" class="org.springframework.web.servlet.view.RedirectView">
 		<property name="url" value="/page/search/02select.jsp"></property>
+		<property name="contextRelative" value="true"></property>
 	</bean>
 	
 	<bean id="playWallView" class="org.springframework.web.servlet.view.RedirectView">
