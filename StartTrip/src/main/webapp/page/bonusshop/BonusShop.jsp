@@ -18,7 +18,6 @@
 
 </head>
 <body>
-	<jsp:include page="/page/shared/indexheader.jsp" />
 	<article>
 		<section>
 <!-- 			<div class="titlebox"> -->

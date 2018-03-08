@@ -30,6 +30,7 @@ public class SearchController {
 		System.out.println("cabin = "+searchData.getCabin());
 		
 		String bst=connectionSaber.createSession();
+		System.out.println(bst);
 		String responseXml=connectionSaber.requestSession(bst,searchData);
 		connectionSaber.closeSession(bst);
 		session.setAttribute("searchData", searchData);

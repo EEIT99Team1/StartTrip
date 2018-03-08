@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		// 準備存放錯誤訊息的Map物件
 		Map<String, String> errorMsgMap = new HashMap<String, String>();
 		// 將errorMsgMap放入request物件內，識別字串為 "ErrorMsgKey"
-		req.setAttribute("ErrorMsgKey", errorMsgMap);
+		session.setAttribute("ErrorMsgKey", errorMsgMap);
 		// 1. 讀取使用者輸入資料
 		String userEmail = req.getParameter("userEmail");
 		String password = req.getParameter("pswd");
@@ -51,9 +51,9 @@ public class LoginServlet extends HttpServlet {
 
 		// 如果 errorMsgMap 不是空的，表示有錯誤，交棒給target
 		if (!errorMsgMap.isEmpty()) {
-			req.setAttribute("firstname", "null");
-			req.setAttribute("lastname", "null");
-			req.setAttribute("hasError", true);
+			session.setAttribute("firstname", "null");
+			session.setAttribute("lastname", "null");
+			session.setAttribute("hasError", true);
 			RequestDispatcher rd = req.getRequestDispatcher(target);
 			rd.forward(req, resp);
 			return;
@@ -73,12 +73,12 @@ public class LoginServlet extends HttpServlet {
 			//，由該網頁放置的"target"屬性物件，因次如果有"target"屬性物件則導向"target"屬性物件所標示的網頁，否則導向首頁。
 			String contextPath = getServletContext().getContextPath();
 //			System.out.println("contextPath ="+contextPath);
-				req.setAttribute("hasError", false);
+				session.setAttribute("hasError", false);
 				CustomerBean bean =dao.select(userEmail);
 				String firstname = bean.getFirstname();
 				String lastname = bean.getLastname();
-				req.setAttribute("firstname", "\""+firstname+"\"");
-				req.setAttribute("lastname", "\""+lastname+"\"");
+				session.setAttribute("firstname", "\""+firstname+"\"");
+				session.setAttribute("lastname", "\""+lastname+"\"");
 			if (target != null) {
 //				System.out.println("success false");
 				//先由session中移除此項屬性，否則下一次User直接執行login功能後，會再度被導向到target。
@@ -94,10 +94,10 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("success");
 			return;
 		} else {
-			req.setAttribute("hasError", true);
+			session.setAttribute("hasError", true);
 			//如果errorMsgMap不是空的，表示有錯誤，交棒給target。
-			req.setAttribute("firstname", "null");
-			req.setAttribute("lastname", "null");
+			session.setAttribute("firstname", "null");
+			session.setAttribute("lastname", "null");
 			RequestDispatcher rd = req.getRequestDispatcher(target);
 			rd.forward(req, resp);
 			System.out.println("Error");
