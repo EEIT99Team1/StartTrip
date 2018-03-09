@@ -104,9 +104,12 @@
 						
 						tbodyShow.append(tr0show).append(tr1show).append(tr2show);
 					}else{
+						//更新抵達機場//更新抵達時間//更新總飛行時數
 						tbodyShow.find("tr:eq(0) td:eq(3)").text(arrivalAirport);
+						tbodyShow.find("tr:eq(1) td:eq(2)").text(arrivalDateTime[1]);
 						tbodyShow.find("tr:eq(1) td:eq(3)").text(
 								Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
+						
 					}
 					
 					
@@ -223,7 +226,9 @@
 							
 							tbodyShow.append(tr3show).append(tr4show);
 						}else{
+							//更新抵達機場//更新抵達時間//更新總飛行時數
 							tbodyShow.find("tr:eq(3) td:eq(2)").text(arrivalAirport);
+							tbodyShow.find("tr:eq(4) td:eq(2)").text(arrivalDateTime[1]);
 							tbodyShow.find("tr:eq(4) td:eq(3)").text(
 									Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
 						}
