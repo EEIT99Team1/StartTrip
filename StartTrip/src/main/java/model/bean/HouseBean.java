@@ -2,6 +2,8 @@ package model.bean;
 
 import java.io.Serializable;
 
+
+
 public class HouseBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -11,17 +13,9 @@ public class HouseBean implements Serializable {
 	private String addres;
 	private Integer telephone;
 	private String explain ;
-	private String Picture ;
-	
-	public String getPicture() {
-		return Picture;
-	}
-	public void setPicture(String picture) {
-		Picture = picture;
-	}
-	public void setTelephone(Integer telephone) {
-		this.telephone = telephone;
-	}
+	private String picture ;
+	private String account ;
+	private String pass ;
 	public String getName() {
 		return name;
 	}
@@ -46,10 +40,10 @@ public class HouseBean implements Serializable {
 	public void setAddres(String addres) {
 		this.addres = addres;
 	}
-	public int getTelephone() {
+	public Integer getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(int telephone) {
+	public void setTelephone(Integer telephone) {
 		this.telephone = telephone;
 	}
 	public String getExplain() {
@@ -58,11 +52,36 @@ public class HouseBean implements Serializable {
 	public void setExplain(String explain) {
 		this.explain = explain;
 	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+	public String getAccount() {
+		return account;
+	}
+	public void setAccount(String account) {
+		this.account = account;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
 		return "HouseBean [name=" + name + ", country=" + country + ", area=" + area + ", addres=" + addres
-				+ ", telephone=" + telephone + ", explain=" + explain + "]";
+				+ ", telephone=" + telephone + ", explain=" + explain + ", picture=" + picture + ", account=" + account
+				+ ", pass=" + pass + "]";
 	}
+	
+	
+	
 	
 	
 	

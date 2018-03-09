@@ -1,4 +1,4 @@
-package controller;
+package controller.house;
 
 import java.io.IOException;
 import java.text.ParseException;
