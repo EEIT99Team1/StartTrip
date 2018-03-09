@@ -8,10 +8,12 @@
 <meta name="viewport" content="width= device-width, initial-scale=1.0">
 <title>Bonus shop</title>
 <link href="<c:url value="/css/bonusshop/BonusShop.css"/>" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="<c:url value="/css/Bootstrap/bootstrap.css"/>" rel="stylesheet">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
+<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-<!-- <script type="js/bootstrap.min.js"></script> -->
+
 </head>
 <body>
 <%-- <%@ include file='/page/shared/header.jsp' %> --%>
@@ -19,11 +21,42 @@
 		<section>
 <!-- 			<div class="titlebox"> -->
 <%-- 				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
-
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<!-- 		輪到哪一頁 -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		  </ol>
+<!-- 		  輪播 -->
+		  <div class="titlebox">
+		    <div class="carousel-item active">
+		      <img class="titleimg" src="<c:url value="/image/bonusshop/air1.jpg"/>" alt="First slide">
+		    </div>
+		    <div class="carousel-item">
+		      <img class="titleimg" src="<c:url value="/image/bonusshop/air2.jpg"/>" alt="Second slide">
+		    </div>
+		    <div class="carousel-item">
+		      <img class="titleimg" src="<c:url value="/image/bonusshop/air3.jpg"/>" alt="Third slide">
+		    </div>
+		  </div>
+		  
+<!-- 		  前後控制項 -->
+		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+		
+<!-- 廣告輪播列表 -->
 
 		</section>
 		
-		<HR color="block" size="10" width="100%"  align="center">
+		<HR color="block" size="5" width="100%"  align="center">
 		
 				
 	<!-- downdiv -->
@@ -201,8 +234,6 @@
 	
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
-	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
-	<jsp:include page="/page/bonusshop/myjs/NewFile.jsp"/>
-	
+	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>	
 </body>
 </html>
