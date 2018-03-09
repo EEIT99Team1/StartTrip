@@ -15,13 +15,16 @@
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<%-- <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script> --%>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
 </head>
 <body>
 	<jsp:include page="/page/shared/indexheader.jsp" />
 	<br/><br/><br/><br/><br/><br/>
+	<div id="clone"></div>
+	<hr/>
+	
 <!-- 	 <div id="searchbar"class="searchbar"> -->
 <!--             <aside class="aside"> -->
 <!--                 <table> -->
@@ -99,14 +102,11 @@
 <!-- 		<p>5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。</p> -->
 <!-- 		</div> -->
 <!-- 		</div><br/> -->
-		
 	</div><!-- flightsResult結束 -->
-
-	<footer>
-		<jsp:include page="/page/shared/footer.jsp" />
-	</footer>
 	
-	<jsp:include page="/page/shared/indexfooter.jsp" />
-	<jsp:include page="/page/search/searchjs.jsp" />
+	<jsp:include page="/page/shared/footer.jsp" />
+	<jsp:include page="/page/search/myjs/searchjs.jsp" />
+	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>
 </html>

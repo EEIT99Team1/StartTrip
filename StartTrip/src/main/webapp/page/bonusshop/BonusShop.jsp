@@ -18,7 +18,6 @@
 
 </head>
 <body>
-	<jsp:include page="/page/shared/indexheader.jsp" />
 	<article>
 		<section>
 <!-- 			<div class="titlebox"> -->
@@ -49,7 +48,7 @@
 		    <span class="sr-only">Next</span>
 		  </a>
 		</div>
-
+<!-- 		<輪播牆> -->
 		</section>
 		
 		<HR color="block" size="10" width="100%"  align="center">
