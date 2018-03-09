@@ -201,7 +201,8 @@ public class ConnectionSaber {
 			e.printStackTrace();
 		} catch (DocumentException e) {
 			e.printStackTrace();
-		} finally {
+		} 
+		finally {
 			System.out.println("finally-----");
 			post.setRequestHeader("SOAPAction", "CloseSession");
 			post.releaseConnection();

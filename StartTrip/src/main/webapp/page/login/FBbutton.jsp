@@ -6,7 +6,6 @@
 <head>
 <title>Facebook login button</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="../../js/jquery-3.3.1.min.js"></script>
 <link rel="shortcut icon" href="img/webicon.ico" />
 </head>
 <body>
@@ -39,16 +38,9 @@
 			js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1616500528432537&autoLogAppEvents=1";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<script>
-		// Only works after `FB.init` is called
-		function myFacebookLogin() {
-			console.log('login,successed');
-			alert('login,successed');
-		}
+		
 	</script>
 	<fb:login-button autologoutlink="true" size="large"
-		scope="public_profile,email" onlogin="myFacebookLogin()"></fb:login-button>
-
+		scope="public_profile,email" onlogin=""></fb:login-button>
 </body>
 </html>

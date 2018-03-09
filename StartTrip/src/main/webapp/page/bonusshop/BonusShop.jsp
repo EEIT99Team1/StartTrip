@@ -16,20 +16,17 @@
 
 </head>
 <body>
-<%-- <%@ include file='/page/shared/header.jsp' %> --%>
 	<article>
 		<section>
 <!-- 			<div class="titlebox"> -->
-<%-- 				<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
+<%-- 			<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<!-- 		輪到哪一頁 -->
 		  <ol class="carousel-indicators">
 		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 		    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 		  </ol>
-<!-- 		  輪播 -->
-		  <div class="titlebox">
+		  <div class="carousel-inner titlebox">
 		    <div class="carousel-item active">
 		      <img class="titleimg" src="<c:url value="/image/bonusshop/air1.jpg"/>" alt="First slide">
 		    </div>
@@ -40,8 +37,6 @@
 		      <img class="titleimg" src="<c:url value="/image/bonusshop/air3.jpg"/>" alt="Third slide">
 		    </div>
 		  </div>
-		  
-<!-- 		  前後控制項 -->
 		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		    <span class="sr-only">Previous</span>
@@ -51,9 +46,7 @@
 		    <span class="sr-only">Next</span>
 		  </a>
 		</div>
-		
-<!-- 廣告輪播列表 -->
-
+<!-- 		<輪播牆> -->
 		</section>
 		
 		<HR color="block" size="5" width="100%"  align="center">
@@ -234,6 +227,11 @@
 	
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
+<<<<<<< HEAD
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>	
+=======
+	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
+	
+>>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
 </body>
 </html>
