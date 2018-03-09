@@ -158,7 +158,7 @@ $(document).ready(function() {
 $(document).ready(function(){
 		var firstname = ${firstname};
 		var lastname = ${lastname};
-		$("#button").val(firstname+lastname);
+		$("#button").val(lastname+firstname);
 });
 </script>
 <script>
