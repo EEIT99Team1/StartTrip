@@ -227,11 +227,8 @@
 	
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
-<<<<<<< HEAD
-	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>	
-=======
+
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
-	
->>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
+
 </body>
 </html>

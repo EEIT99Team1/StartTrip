@@ -5943,19 +5943,21 @@ button.close {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 15%;
-  color: #fff;
+  width: 23.0%;
+  color: red;
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.2;
+  background-color: #000000	;
 }
 
 .carousel-control-prev:hover, .carousel-control-prev:focus,
 .carousel-control-next:hover,
 .carousel-control-next:focus {
-  color: #fff;
+  color: red;
   text-decoration: none;
   outline: 0;
-  opacity: .9;
+  opacity: 0.4;
+  background-color: #000000	;
 }
 
 .carousel-control-prev {
@@ -5969,8 +5971,8 @@ button.close {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
