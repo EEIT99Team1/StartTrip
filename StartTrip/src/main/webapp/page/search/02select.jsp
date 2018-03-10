@@ -65,7 +65,7 @@
 <!--         </div> -->
 	
 	
-	<div id="flightsResult" style="width:50%; height:5000px;">
+	<div id="flightsResult" style="width:50%;">
 <!-- 		<div style="border:4px solid #8C0044"> -->
 <!-- 		<table style="border:2px solid #003C9D;width:100%" > -->
 <!-- 			<thead></thead> -->
