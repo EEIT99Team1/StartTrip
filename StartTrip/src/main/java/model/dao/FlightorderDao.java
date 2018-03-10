@@ -24,6 +24,11 @@ public class FlightorderDao {
 	}
 	
 	@Transactional
+	public FlightorderBean select2 (Integer orderid) {
+		return getSession().get(FlightorderBean.class, orderid);
+	}
+	
+	@Transactional
 	public FlightorderBean insert(FlightorderBean bean) {
 		if(bean!=null) {
 			getSession().save(bean);
