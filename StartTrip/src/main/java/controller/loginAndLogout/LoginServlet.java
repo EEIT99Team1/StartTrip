@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
 		LoginService ls = wac.getBean(LoginService.class);
 		CustomerDao dao = wac.getBean(CustomerDao.class);
 		CustomerBean mb = ls.checkEmailPassword(userEmail, password);
-
+		
 		if (mb != null) {
 			session.setAttribute("LoginOK", mb);
 		} else {
