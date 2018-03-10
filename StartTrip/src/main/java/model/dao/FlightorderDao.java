@@ -1,13 +1,17 @@
 package model.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.bean.FlightorderBean;
+import model.bean.OrdermanBean;
 
 @Repository
 public class FlightorderDao {
@@ -21,6 +25,17 @@ public class FlightorderDao {
 	@Transactional
 	public FlightorderBean select (Integer wid) {
 		return getSession().get(FlightorderBean.class, wid);
+	}
+	
+	@Transactional
+	public List<FlightorderBean> selectByOrderid(Integer orderid) {
+		List<FlightorderBean> result=null;
+		if(orderid!=null) {
+			String HQL="from FlightorderBean where orderid="+orderid;
+			Query<FlightorderBean> query=getSession().createQuery(HQL,FlightorderBean.class);
+			result=query.list();
+		}
+		return result;
 	}
 	
 	@Transactional
