@@ -1,4 +1,4 @@
-package controller.register;
+package controller.customer;
 
 import java.util.HashMap;
 import java.util.Map;

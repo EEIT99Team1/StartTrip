@@ -1,4 +1,4 @@
-package controller.CustomerInformationAndUpdate;
+package controller.customer;
 
 import java.util.HashMap;
 import java.util.Map;

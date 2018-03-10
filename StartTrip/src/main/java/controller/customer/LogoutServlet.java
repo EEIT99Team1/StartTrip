@@ -1,4 +1,4 @@
-package controller.loginAndLogout;
+package controller.customer;
 
 import java.io.IOException;
 

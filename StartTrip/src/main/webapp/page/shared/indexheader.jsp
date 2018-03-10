@@ -20,7 +20,7 @@
 					<div class="customeroption">
 						<ul>				
 							<li><a href="<c:url value="/page/CustomerInformation/CutomerInfoAndUpdate.jsp"/>">個人資料</a></li>
-							<li><a href="www.google.com">歷史訂單</a></li>
+							<li><a href="<c:url value="/page/OrderMessage/OrderMessage.jsp"/>">歷史訂單</a></li>
 							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">購物車</a></li>
 							<li><a id="logout">登出</a></li>
 						</ul>
