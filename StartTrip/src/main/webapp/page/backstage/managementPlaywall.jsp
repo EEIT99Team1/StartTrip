@@ -27,7 +27,7 @@
 	
 	
 		<form action="<c:url value='/FileUpLoad.controller' />" method="post" enctype = "multipart/form-data">
-			Select file to upload: <input type="file" name="file" size="60"/>
+			Select file to upload: <input type="file" name="file[]" size="60" multiple="multiple"/>
 			<input type="submit" value="上傳" />
 		</form>
 		<div id="show"><h1>SHOW!!</h1>
@@ -75,14 +75,26 @@ $(function(){
 //刪除圖檔
 function deletePicture(){
 	var pictureId=$(this).attr("value");
-	$(this).parent().parent().remove();
-	$.ajax({
-		url:'<c:url value="/DeletePicture.controller"/>',
-		type:'GET',
-		data:{id:pictureId},
-		scriptCharset:'UTF-8',
-		async: false
-	});
+	
+	var form=$("<form></form>").attr({action:'<c:url value="/DeletePicture.controller"/>',method:"get"});
+	var input=$("<input></input>").attr({type:"text",name:"id",value:pictureId});
+	form.append(input);
+	// 隱藏的submit按鈕，預防瀏覽器不支援模糊的表單設計。（可不用）
+	var hiddenSubmit = $("<input></input>").attr({type:"submit"}).css({"display":"none"});
+	form.append(hiddenSubmit);
+	
+	// 將表單加入網頁中
+	$("body").append(form); 
+
+
+	form.submit();
+// $.ajax({
+// 	url:'<c:url value="/DeletePicture.controller"/>',
+// 	type:'GET',
+// 	data:{id:pictureId},
+// 	scriptCharset:'UTF-8',
+// 	async: false
+// });
 };
 </script>
 </body>
