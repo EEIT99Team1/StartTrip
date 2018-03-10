@@ -1,4 +1,4 @@
-package controller;
+package controller.house;
 
 public class DateCompare {
 	public int getint(java.util.Date a) {
