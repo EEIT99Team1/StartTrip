@@ -1,5 +1,8 @@
 package controller.customer;
 
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,23 +36,22 @@ public class OrderHistoryController {
 		System.out.println(bean);
 		String email = bean.getEmail();
 		//使用當前登入者的Email去搜尋訂單編號
-		OrdermanBean orderbean= orderdao.select(email);
-		Integer orderid = orderbean.getOrderid();
+		List<OrdermanBean> orderbean= orderdao.selectByEmail(email);
+		Iterator<OrdermanBean> orderid = orderbean.iterator();
 		System.out.println(orderid);
 		//使用當前登入者的訂單編號去搜尋訂單內容
-		FlightorderBean flightbean = flightdao.select(orderid);
-		
-		model.addAttribute("orderid", flightbean.getOrderid());
-		model.addAttribute("start", flightbean.getStart());
-		model.addAttribute("endstart", flightbean.getEndstart());
-		model.addAttribute("uptime", flightbean.getUptime());
-		model.addAttribute("downtime", flightbean.getDowntime());
-		model.addAttribute("adult", flightbean.getAdult());
-		model.addAttribute("child", flightbean.getChild());
-		model.addAttribute("flight", flightbean.getFlight());
-		model.addAttribute("model", flightbean.getModel());
-		
-		
+		List<FlightorderBean> flightbean = null;
+		int i=0;
+		while(orderid.hasNext()) {
+			OrdermanBean odbean = orderid.next();
+			if(i==0) {
+			    flightbean=flightdao.selectByOrderid(odbean.getOrderid());
+			}else {
+				flightbean.addAll(flightdao.selectByOrderid(odbean.getOrderid()));
+			}
+			i++;
+		}
+		model.addAttribute("flightbean",flightbean);
 		return "orderhistory";	
 	}
 }
