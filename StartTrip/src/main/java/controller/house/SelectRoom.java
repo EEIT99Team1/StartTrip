@@ -23,8 +23,16 @@ public class SelectRoom extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String name=request.getParameter("name");
+		String account = request.getParameter("account");
 		List<RoomBean> c = roomService.select(name);
 		request.setAttribute("select", c);
+		
+		if(account!=null) {
+			request.getRequestDispatcher(
+					"/page/House/TryUpdate_Delete_Room.jsp").forward(request, response);
+			return;
+		}
+		
 		request.getRequestDispatcher(
 				"/page/House/Room.jsp").forward(request, response);
 	}
