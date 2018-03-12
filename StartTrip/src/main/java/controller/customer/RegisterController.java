@@ -3,6 +3,8 @@ package controller.customer;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +22,13 @@ public class RegisterController {
 	private CustomerDao dao;
 	
 	@RequestMapping(method= {RequestMethod.POST},produces="text/plain;charset=utf-8")
-	public String regist(CustomerBean bean , Model model) {
+	public String regist(CustomerBean bean , Model model,HttpSession session) {
 		
 		Map<String,String> errorMsg = new HashMap<String,String>();
 		Map<String,String> successMsg = new HashMap<String,String>(); 
 		
 		model.addAttribute("error",errorMsg);
-		model.addAttribute("success",successMsg);
+		session.setAttribute("success",successMsg);
 		
 			if(bean.getEmail()==null || bean.getEmail().trim().length()==0) {
 				errorMsg.put("errorIDEmpty", "帳號欄必須輸入");
@@ -47,7 +49,7 @@ public class RegisterController {
 				errorMsg.put("errorBirthday", "生日欄必須輸入");
 			}
 			if(bean.getPhonenumber()==null || bean.getPhonenumber().trim().length()==0) {
-				errorMsg.put("errorPhonenumber", "手機號碼欄必須輸入");
+				errorMsg.put("errorPhonenumber", "手機欄必須輸入");
 			}
 			
 			if(!errorMsg.isEmpty() && errorMsg!=null) {
@@ -58,9 +60,7 @@ public class RegisterController {
 		if(!(dao.select(bean.getEmail())==null)){
 			errorMsg.put("errorIDDup", "此帳號已存在，請換一個帳號");
 			System.out.println("errorIDDup = "+dao.select(bean.getEmail()));
-		}else {
-			successMsg.put("successIDDup", "此帳號可使用");
-			System.out.println("successIDDup ="+dao.select(bean.getEmail()));
+			return "register.error";
 		}
 		
 		if(!errorMsg.isEmpty() && errorMsg!=null) {

@@ -55,7 +55,7 @@ public class CustomerInformationAndUpdate {
 					return "customerupdate.error";
 				
 				}else{
-					successMsg.put("InsertOK", "恭喜您註冊成功。");
+					successMsg.put("updateOK", "恭喜您更改成功。");
 					bean.setBonus(0);
 					dao.update(bean.getEmail(),bean.getPassword(),bean.getFirstname(),
 							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus());

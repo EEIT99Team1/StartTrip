@@ -8,7 +8,7 @@
 <header>
 	<nav>
 		<ul class="menu">
-			<li class="menuliimg"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li>
+			<li class="menuliimg"><a href="<c:url value="/index.jsp"/>"><img class="menuimg" src="<c:url value='/image/index/01.png'/>"  /></a></li>
 <%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
 			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>			
@@ -19,9 +19,9 @@
 			<div class="customermenu" >
 					<div class="customeroption">
 						<ul>				
-							<li><a href="<c:url value="/page/CustomerInformation/CutomerInfoAndUpdate.jsp"/>">個人資料</a></li>
+							<li><a href="<c:url value="/page/register/CutomerInfoAndUpdate.jsp"/>">個人資料</a></li>
 							<li><a href="<c:url value='/OrderHistoryController.controller'/>">歷史訂單</a></li>
-							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">購物車</a></li>
+							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商店</a></li>
 							<li><a id="logout">登出</a></li>
 						</ul>
 					</div>
