@@ -33,7 +33,7 @@ public class FileUpLoadController {
 		String filePath = AppContextRoot;
 
 		int count=new File(filePath).listFiles().length;
-		count++;
+		
 		
 		
 		File file ;
@@ -63,7 +63,7 @@ public class FileUpLoadController {
 						String fileName = fi.getName();
 						//boolean isInMemory = fi.isInMemory();
 						//long sizeInBytes = fi.getSize();
-						
+						count++;
 						// Write the file
 						file = new File(filePath+count
 								+fileName.substring(fileName.lastIndexOf("."))) ;

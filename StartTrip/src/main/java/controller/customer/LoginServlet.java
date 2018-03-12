@@ -1,4 +1,4 @@
-﻿package controller.loginAndLogout;
+﻿package controller.customer;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
 		LoginService ls = wac.getBean(LoginService.class);
 		CustomerDao dao = wac.getBean(CustomerDao.class);
 		CustomerBean mb = ls.checkEmailPassword(userEmail, password);
-
+		
 		if (mb != null) {
 			session.setAttribute("LoginOK", mb);
 		} else {
@@ -77,6 +77,7 @@ public class LoginServlet extends HttpServlet {
 				CustomerBean bean =dao.select(userEmail);
 				String firstname = bean.getFirstname();
 				String lastname = bean.getLastname();
+				session.setAttribute("customerBean", bean);
 				session.setAttribute("firstname", "\""+firstname+"\"");
 				session.setAttribute("lastname", "\""+lastname+"\"");
 			if (target != null) {

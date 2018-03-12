@@ -1,14 +1,16 @@
 package model.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.bean.OrdermanBean;
-import model.bean.PassengerBean;
 
 @Repository
 public class OrdermanDao {
@@ -20,10 +22,22 @@ public class OrdermanDao {
 	}
 
 	@Transactional
-	public OrdermanBean select(String email) {
-		return getSession().get(OrdermanBean.class, email);
+	public OrdermanBean select(Integer orderid) {
+		return getSession().get(OrdermanBean.class, orderid);
 	}
 
+	@Transactional
+	public List<OrdermanBean> selectByEmail(String email) {
+		List<OrdermanBean> result=null;
+		if(email!=null) {
+			String HQL="FROM OrdermanBean WHERE email="+"'"+email+"'";
+			Query<OrdermanBean> query=getSession().createQuery(HQL,OrdermanBean.class);
+			result=query.list();
+		}
+		return result;
+	}
+	
+	
 	@Transactional
 	public OrdermanBean insert(OrdermanBean bean) {
 		if(bean!=null) {

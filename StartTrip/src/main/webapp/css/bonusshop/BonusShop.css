@@ -14,7 +14,7 @@
 }
 
 .titleimg{
-	max-width:100%;
+	max-width:auto;
 	max-height:auto;
 	border-radius:1%;
 /* 	box-shadow:4px 4px rgba(20%,20%,40%,0.5); */	

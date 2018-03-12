@@ -22,10 +22,19 @@
 
 <script>
 	$(function() {
-		$("#datego").datepicker()
+		$("#datego").datepicker({
+			changeMonth: true,
+	        changeYear: true,
+	        minDate: 1, 
+	         
+		})
 	});
 	$(function() {
-		$("#dateback").datepicker();
+		$("#dateback").datepicker({
+			changeMonth: true,
+	        changeYear: true,
+	        minDate: 1, 
+		});
 	});
 
 	$(function() {
