@@ -18,18 +18,21 @@
     </script>
 </head>
 <body onload="onLoad()">
+    <h1> 資料確認</h1><hr/>
+    <h3>機票資訊</h3><hr/>
+    <form action="">
+    </form><hr/>
+	<h3>乘客資料</h3><hr/>
+	<form>
+		姓氏(護照上的英文姓): <span id="outputfirstname"></span><br />
+		名字(護照上的英文名): <span id="outputlastname"></span><br />
+		電子郵件: <span id="outputemail"></span><br />
+		護照號碼: <span id="outputpassportNo"></span><br />
+		護照到期日:
+	</form>
 
-    <h3> 資料確認</h3>
-	姓氏(護照上的英文姓): <span id="outputfirstname"></span><br />
-	名字(護照上的英文名): <span id="outputlastname"></span><br />
-	電子郵件: <span id="outputemail"></span><br />
-	護照號碼: <span id="outputpassportNo"></span><br />
-	護照到期日:
-    
-    
-    
     <div>
-        <a href="07finally.jsp"><input type="submit" value="確認，下一步" /></a>
+        <input type="submit" value="確認，下一步" />
         <a href="04enter.jsp"><input type="submit" value="返回" /></a>
     </div>
 </body>

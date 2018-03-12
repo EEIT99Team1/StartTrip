@@ -74,68 +74,44 @@
 </head>
 <body onload="onLoad()">
     <h1>資料填寫</h1>
-<!--     <hr /> -->
-<!--     <h3>訂購人資訊</h3> -->
-        <hr />
-    <form>
-        <h3>乘客資訊</h3>
-        <div>
-            姓氏(護照上的英文姓):
-            <input type="text" id="inputfirstname" size="10"/>
-        </div>
-        <div>
-             名字(護照上的英文名):
-             <input type="text" id="inputlastname" size="20"/>
-        </div>
-<!--         <div> -->
-<!--             性別: -->
-<!--             <input type="radio" id="ml" name="sex" required value="male" checked/><label for="ml">男</label> -->
-<!--             <input type="radio" id="fl" name="sex" value="female" /><label for="fl">女</label> -->
-<!--         </div> -->
-<!--             國籍: -->
-<!--             <select> -->
-<!--                 <option value="TW">台灣 </option> -->
-<!--                 <option value="JP">日本</option> -->
-<!--                 <option value="CH">中國</option> -->
-<!--                 <option value="US">美國</option> -->
-<!--             </select> -->
-<!--         </div> -->
-<!--         <div> -->
-<!--             手機號碼: -->
-<!--             <select> -->
-<!--                 <option>+886 (台灣) </option> -->
-<!--                 <option>+86  (中國)</option> -->
-<!--                 <option>+81  (日本)</option> -->
-<!--                 <option>+852 (香港)</option> -->
-<!--             </select> -->
-<!--             <input type="text" /> -->
-<!--         </div> -->
-<!--         <div> -->
-        <div>
+    <hr/>
+	<form>
+    <h2>訂購人資料填寫</h2>
+	 <div>
             電子郵件:
             <input type="text" id="inputemail" />
-
             再確認電子郵件:
             <input type="text" />
         </div>
-<!--         <div> -->
-<!--             出生年月日: -->
-<!--             <input type="text" /> -->
-<!--             (格式:yyyy/MM/dd) -->
-<!--         </div> -->
+	</form>
+        <hr />
+    <form action="/passenger.controller" method="get">
+        <h2>乘客資訊</h2>
+        <div>
+            姓氏(護照上的英文姓):
+            <input type="text" id="inputfirstname" />
+        <span>${errmsg.errfirstname}</span>
+        </div>
+        <div>
+             名字(護照上的英文名):
+             <input type="text" id="inputlastname" />
+             <span>${errmsg.errlastname}</span>
+        </div>
         <div>
             護照號碼:
-            <input type="text" id="inputpassportNo" size="9" />
+            <input type="text" id="inputpassportNo" />
+            <span>${errmsg.errpassport}</span>
         </div>
         
             護照到期日:
            <div>
-               <input type="text"id="passportdate" /> 
+               <input type="text"id="passportdate"/> 
+	            <span>${errors.errexpiry}</span>
            </div>
         <hr />
         <div>
             <a href="<c:url value='/page/search/05check.jsp'/>"><input type="button" id="next" value="下一步" /></a>
-            <a href="02select.jsp"><input type="button" value="返回查詢結果" /></a>
+            <a href="<c:url value='/page/search/02select.jsp'/>"><input type="button" value="返回查詢結果" /></a>
             <a href="<c:url value='/index.jsp'/>"><input type="button" value="回查詢首頁" /></a>
         </div>
     </form>
