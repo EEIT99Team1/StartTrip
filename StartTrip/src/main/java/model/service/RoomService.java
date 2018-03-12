@@ -15,6 +15,14 @@ public class RoomService {
 			return RoomDAO.select(a);
 		}
 		
+		
+		public int insert_room(RoomBean room) {
+			
+			int c= RoomDAO.insert_room(room);
+			
+			return c;
+		}
+		
 
 
 }
