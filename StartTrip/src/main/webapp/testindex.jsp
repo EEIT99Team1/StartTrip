@@ -14,6 +14,20 @@
 	Name:<input type="text" name="name"/><br/>
 	<input type="submit" value="submit"/>
 </form><hr/>
+<h1>Reports.controller</h1>
+<form action='<c:url value="/Reports.controller"/>'>
+	<select name="selectBy">
+		<option value="start">start</option>
+		<option value="endstart">endstart</option>
+		<option value="uptime">uptime</option>
+		<option value="downtime">downtime</option>
+		<option value="adult">adult</option>
+		<option value="child">child</option>
+		<option value="flight">flight</option>
+		<option value="model">model</option>
+	</select>
+	<input type="submit" value="submit"/>
+</form><hr/>
 <h1>bonushopBean.controller</h1>
 <form action='<c:url value="/bonushopBean.controller"/>'>
 	<input type="submit" value="submit"/>

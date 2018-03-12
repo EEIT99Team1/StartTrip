@@ -35,7 +35,16 @@ public class FlightorderDao {
 			result=query.list();
 		}
 		return result;
+	}
+	
+	@Transactional
+	public List selectBy(String selectBy) {
+		String HQL="select "+selectBy+",count("+selectBy+") from FlightorderBean flight GROUP BY "+selectBy;
 
+		Query query = getSession().createQuery(HQL);
+		List result =query.list();
+		
+		return result;
 	}
 	
 	@Transactional
