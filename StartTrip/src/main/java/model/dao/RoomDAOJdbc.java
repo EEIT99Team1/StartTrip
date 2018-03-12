@@ -84,9 +84,7 @@ private  DataSource dataSource;
 			stmt.setString(7, room.getExplain3());
 			
 			System.out.println(room.toString());
-			 c=stmt.executeUpdate();
-			
-			
+			 c=stmt.executeUpdate();			
 			
 		}
 		
@@ -106,6 +104,77 @@ private  DataSource dataSource;
 		
 		return c;
 	}
+	
+	
+	private static final String UPDATE_ROOM =
+			"update room set  Number=?, Price=?, Explain1=? , Explain2=? , Explain3=? where name=? and RoomName=?";
+	   public int update_room(RoomBean room){
+		int c=0;
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(	UPDATE_ROOM);)
+		   {
+			stmt.setInt(1, room.getNumber());
+			stmt.setInt(2, room.getPrice());
+			stmt.setString(3, room.getExplain1());
+			stmt.setString(4, room.getExplain2());
+			stmt.setString(5, room.getExplain3());
+			stmt.setString(6, room.getName());
+			stmt.setString(7, room.getRoomName());
+			
+			System.out.println(room.toString());
+			 c=stmt.executeUpdate();			
+			
+		}
+		
+		
+           catch(SQLException e) {
+        	   e.printStackTrace();
+
+			return e.getErrorCode();
+		}
+		
+		
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		return c;
+	}
+	
+	
+	   
+	   private static final String DELETE_ROOM =
+				"delete from room where name=? and roomname=?";
+		   public int delete_room(RoomBean room){
+			int c=0;
+			try(Connection conn = dataSource.getConnection();
+				PreparedStatement stmt = conn.prepareStatement(	DELETE_ROOM);)
+			   {
+
+				stmt.setString(1, room.getName());
+				stmt.setString(2, room.getRoomName());
+				c=stmt.executeUpdate();		
+				
+			}
+			
+			
+	           catch(SQLException e) {
+	        	   e.printStackTrace();
+
+				return e.getErrorCode();
+			}
+			
+			
+			catch (Exception e) {
+				e.printStackTrace();
+
+			}
+
+			return c;
+		}
+	
+	
 	
 	
 	
