@@ -35,23 +35,25 @@ public class OrderHistoryController {
 		CustomerBean bean = (CustomerBean) session.getAttribute("customerBean");
 		System.out.println(bean);
 		String email = bean.getEmail();
-		//使用當前登入者的Email去搜尋訂單編號
+		//使用當前登入者的Email去搜尋訂單編號(一個使用者可能有多筆訂單編號，所以在DAO裡用List+HQL語法做select方法，以便使用。)
 		List<OrdermanBean> orderbean= orderdao.selectByEmail(email);
 		Iterator<OrdermanBean> orderid = orderbean.iterator();
-		System.out.println(orderid);
-		//使用當前登入者的訂單編號去搜尋訂單內容
+		System.out.println("orderid = "+orderid);
+		//使用當前登入者的訂單編號(orderid)去搜尋訂單內容
 		List<FlightorderBean> flightbean = null;
 		int i=0;
 		while(orderid.hasNext()) {
 			OrdermanBean odbean = orderid.next();
+			System.out.println("odbean = "+odbean);
 			if(i==0) {
 			    flightbean=flightdao.selectByOrderid(odbean.getOrderid());
+			    System.out.println("flightbean = "+flightbean);
 			}else {
 				flightbean.addAll(flightdao.selectByOrderid(odbean.getOrderid()));
 			}
 			i++;
 		}
-		model.addAttribute("flightbean",flightbean);
+		session.setAttribute("flightbean",flightbean);
 		return "orderhistory";	
 	}
 }

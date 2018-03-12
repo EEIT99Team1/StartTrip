@@ -30,7 +30,7 @@ public class FlightorderDao {
 	public List<FlightorderBean> selectByOrderid(Integer orderid) {
 		List<FlightorderBean> result=null;
 		if(orderid!=null) {
-			String HQL="from FlightorderBean where orderid="+orderid;
+			String HQL="FROM FlightorderBean WHERE orderid="+orderid;
 			Query<FlightorderBean> query=getSession().createQuery(HQL,FlightorderBean.class);
 			result=query.list();
 		}

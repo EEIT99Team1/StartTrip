@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>歷史訂單</title>
 </head>
 <body>
-<c:forEach items="${flightbean}" var="flight">
+<c:forEach  var="flight" items="${flightbean}">
 		<div>
 			<label for="orderid">訂單編號:</label>&nbsp;<small><Font color='red' size="-3">${flight.orderid}</Font></small>
 		</div>
@@ -16,7 +16,7 @@
 			<div>
 				<label for="start">起點:</label>&nbsp;<small><Font color='black' size="-3">${flight.start}</Font></small>
 			</div>
-			<label for="endstart">訖點:</label>&nbsp;<small><Font color='black' size="-3">${flight.endstar}</Font></small>
+			<label for="endstart">訖點:</label>&nbsp;<small><Font color='black' size="-3">${flight.endstart}</Font></small>
 		</div>
 		<div>
 			<label for="uptime">起程時間:</label>&nbsp;<small><Font color='black' size="-3">${flight.uptime}</Font></small>
