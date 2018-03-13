@@ -60,14 +60,14 @@ public class UpdateHouse extends HttpServlet {
 			request.setAttribute("fail", "修改失敗");
 			request.setAttribute("bean", bean);
 			request.getRequestDispatcher(
-					"/page/House/ttt.jsp").forward(request, response);
+					"/page/House/BackstageUpdateHouse.jsp").forward(request, response);
 			return;
 			}
 			
 		request.setAttribute("bean", bb);
 		request.setAttribute("success", "修改成功");
 		request.getRequestDispatcher(
-				"/page/House/ttt.jsp").forward(request, response);
+				"/page/House/BackstageUpdateHouse.jsp").forward(request, response);
 		
 		
 	}

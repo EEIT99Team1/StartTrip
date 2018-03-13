@@ -29,7 +29,7 @@ public class SelectRoom extends HttpServlet {
 		
 		if(account!=null) {
 			request.getRequestDispatcher(
-					"/page/House/TryUpdate_Delete_Room.jsp").forward(request, response);
+					"/page/House/BackstageUpdate_DeleteRoom.jsp").forward(request, response);
 			return;
 		}
 		
