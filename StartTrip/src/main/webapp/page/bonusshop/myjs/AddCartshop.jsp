@@ -15,9 +15,11 @@
 			
 			var shopcart = $(".shopimg");			
 			
-// 			$("html").addClass("noscroll");
+			//將購物車顯示出來
+			$(".shopcart").css("visibility","visible");
 
-	
+//選購商品的飛入動畫
+
 			//搜尋img位置
 			var addimg = $(this).parent().parent().find("div:eq(0) img:eq(0)");
 			//複製搜尋出的img，並改變大小定位
@@ -44,11 +46,13 @@
 				cloneimg.animate({
 					"width":"0px",
 					"height":"0px",
- 				},function(){	
-//				$("html").removeClass("noscroll");  
- 				//搜尋idn物件是否有id存在
- 				var idnn =  $("#"+idn).attr("id");
- 				
+				},function(){
+					$(this).detach();
+				});
+			});				
+//判斷商品累加
+ 	 			//搜尋idn物件是否有id存在
+ 				var idnn =  $("#"+idn).attr("id"); 				
  				
  				if(idn != idnn){
  				//用來添加至購物車
@@ -89,9 +93,7 @@
  					var bns = tbonus + parseInt(bonus);
 					tbonus = $("#allbonus").text(bns);
 					
- 					}//else
- 				});
-			});//加到購物車的function 				
+ 					}//else				
 		});//點擊的function		
 	});//ready的function
 </script>
