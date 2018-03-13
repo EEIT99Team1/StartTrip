@@ -29,7 +29,7 @@ public class OrdermanDao {
 	@Transactional
 	public List<OrdermanBean> selectByEmail(String email) {
 		List<OrdermanBean> result=null;
-		if(email!=null) {
+		if(email!=null && email.trim().length()==0) {
 			String HQL="FROM OrdermanBean WHERE email="+"'"+email+"'";
 			Query<OrdermanBean> query=getSession().createQuery(HQL,OrdermanBean.class);
 			result=query.list();

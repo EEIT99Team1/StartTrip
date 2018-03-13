@@ -49,10 +49,6 @@ float:left;
 margin-left: 10px;
 }
 
-.back{
-
-}
-
 .ordermessagefront{
 padding:auto;
 margin-right: 50px;
