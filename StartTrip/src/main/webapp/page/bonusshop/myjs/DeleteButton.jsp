@@ -7,11 +7,11 @@
 			
 			var h = i-k;
 			var oneprice = j*k;
-			var total = parseInt($("#allbonus").text());
-			var alltotal = total - oneprice;
+			var allprice = parseInt($("#allbonus").text());
+			var total = allprice - oneprice;
 			
 			$(".cartnum").text(h);			
-			$("#allbonus").text(alltotal)
+			$("#allbonus").text(total)
 			
 			$(this).parent().parent().remove();
 

@@ -212,7 +212,7 @@
 						<thead>
 							<tr>
 								<th>總點數：<span id=allbonus>0</span></th>
-								<th><form action="<c:url value='/LoginServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確認購物"></form></th>
+								<th><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確認購物"></form></th>
 								<th><input class="btn btn-danger dbtnall" type="button" value="全部清除"></th>
 							</tr>
 						</thead>
