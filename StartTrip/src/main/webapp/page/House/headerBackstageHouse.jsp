@@ -12,6 +12,7 @@
 			<li><a href="<c:url value="/page/House/BackstageInsertRoom.jsp"/>" accesskey="2" title="">客房新增</a></li>
 			<li><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${HouseLogin.name}&account=go">客房修改</a></li>
 			<li><a href="<c:url value="/page/House/BackstageDeleteTimes.jsp"/>" accesskey="4" title="">預約取消</a></li>	
+		    <li><a href="http://localhost:8080/StartTrip/page/House/Sign_Out?">登出</a></li>
 		</ul>
 	</div>
 </div>
