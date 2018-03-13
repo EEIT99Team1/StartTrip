@@ -20,28 +20,31 @@
 		<div>
 			<label for="email" >Email：</label> 
 			<input id="inputEmail" type="text" readonly name="email" size="40" value="${param.email}"/>
-			<span>${error.emailerr}</span>
+			&nbsp;<small><Font color='red'  size="-3">${error.errorIDEmpty}</Font></small>
+			&nbsp;<small><Font color='red'  size="-3">${success.successIDDup}</Font></small>
 		</div>
 		<br/>
 			<div>
 				<label for="password">密碼：</label> 
 				<input type="password" name="password" size="15" >
-				${error.passworderr}
+				<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
 			</div>
 			<br/>
 		<div>	
 			<label for="lastname">姓：</label> 
-			<input id="inputLname" type="text" name="lastname" size="20" value="${param.lastname}" required/>${error.lastnameerr}
+			<input id="inputLname" type="text" name="lastname" size="20" value="${param.lastname}" required/>
+			<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
 		</div>
 		<br/>
 		<div>
 			<label for="firstname">名：</label> 
-			<input id="inputFname" type="text" name="firstname" size="10" value="${param.firstname}" required/>${error.firstnameerr}
+			<input id="inputFname" type="text" name="firstname" size="10" value="${param.firstname}" required/>
+			<small><Font color='red'  size="-3">${error.errorFirstname}</Font></small>
 		</div>
 		<br/>
 		<div>
 			<label for="country">國家：</label> <select name="country" value="${param.country}"required>
-				<option selected="" value="TW">台灣</option>
+				<option selected value="TW">台灣</option>
 				<option value="AF">澳洲</option>
 				<option value="AL">加拿大</option>
 				<option value="DZ">印度</option>
@@ -52,16 +55,18 @@
 		</div>
 		<br/>
 		<div >
-				生日：<input type="text" id="date" name="birthday" value="${param.birthday}" required/> ${error.birthdayerr}
+				生日：<input type="text" id="date" name="birthday" value="${param.birthday}" required/> 
+				<small><Font color='red'  size="-3">${error.errorBirthday}</Font></small>
 		</div>
 		<br/>
 		<div >
-				電話：<input type="text" name="phonenumber" size="20" value="${param.phonenumber}" required /> ${error.phonenumbererr}
+				電話：<input type="text" name="phonenumber" size="20" value="${param.phonenumber}" required /> 
+				<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
 		</div>
-	<input type="submit" value="signup"/>
+	<input type="submit" name="submit" value="註冊一般會員" />
 	</form>
 	<button class="loginBtn loginBtn--facebook" onclick="_login();">使用Facebook登入</button>
-	<button onclick="javascript:logout()" id="logoutBtn"class="loginBtn loginBtn--facebook">登出您的Facebook</button>
+	<button onclick="javascript:logout()" id="logoutBtn"class="loginBtn loginBtn--facebook">登出Facebook帳號</button>
 	<div id="response"></div>
 
 <script>
