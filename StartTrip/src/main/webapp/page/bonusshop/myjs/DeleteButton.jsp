@@ -2,10 +2,16 @@
 		//單筆刪除
 		function dbtnr(){
 			var i = $(".cartnum").text();
-			i--;
-			$(".cartnum").text(i);
+			
+			var k = parseInt($(this).parent().parent().find("td:eq(2)").text());
+			
+			j=i-k;
+			
+			$(".cartnum").text(j);			
+			
 			$(this).parent().parent().remove();
 
+		
 		};//Deleteclick
 		
 		//全部刪除
