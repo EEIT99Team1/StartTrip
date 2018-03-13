@@ -24,20 +24,21 @@ public class FlightorderService {
 		return result;
 	}
 	
-	@Transactional(readOnly = true)
-	public List<FlightorderBean> select1(FlightorderBean bean){
-		List<FlightorderBean> result = null;
-			if(bean!=null&&bean.getWid()!=0) {
-				FlightorderBean wid = flightorderDao.select(bean.getWid());
-				if(wid!=null) {
-					result=new ArrayList<FlightorderBean>();
-					result.add(wid);
-			}
-		}else {
-			result = flightorderDao.select();
-		}
-		return result;
-	}
+//	
+//	@Transactional(readOnly = true)
+//	public List<FlightorderBean> selectByOrderid(FlightorderBean bean){
+//		List<FlightorderBean> result = null;
+//			if(bean!=null&&bean.getWid()!=0) {
+//				FlightorderBean wid = flightorderDao.selectByOrderid(bean.getOrderid());
+//				if(wid!=null) {
+//					result=new ArrayList<FlightorderBean>();
+//					result.add(wid);
+//			}else {
+//			result = flightorderDao.select();
+//		}
+//		}
+//		return result;
+//	}
 	
 
 	public FlightorderBean insert(FlightorderBean bean) {

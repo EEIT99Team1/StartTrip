@@ -1,12 +1,15 @@
 package model.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Passenger")
@@ -18,7 +21,8 @@ public class PassengerBean implements Serializable {
 	private Integer wid;
 	private String firstname;
 	private String lastname;
-	private java.sql.Date expiry;
+	@DateTimeFormat(pattern="yyyy-mm-dd")
+	private Date expiry;
 	private String passport;
 	private Integer orderid;
 
@@ -46,11 +50,11 @@ public class PassengerBean implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public java.sql.Date getExpiry() {
+	public java.util.Date getExpiry() {
 		return expiry;
 	}
 
-	public void setExpiry(java.sql.Date expiry) {
+	public void setExpiry(Date expiry) {
 		this.expiry = expiry;
 	}
 
