@@ -229,7 +229,6 @@
 	
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
-
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
 
 </body>
