@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="img/webicon.ico" />
 <link href="<c:url value='/css/login/FB&Googlebutton.css'/>"
 	rel="stylesheet">
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>

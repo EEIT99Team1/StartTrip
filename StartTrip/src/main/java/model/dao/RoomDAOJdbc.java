@@ -3,6 +3,7 @@ package model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,5 +65,118 @@ private  DataSource dataSource;
 		
 		return result;
 	}
+	
+	
+	private static final String INSERT_ROOM =
+			"insert into Room(name,roomName,number,price,explain1,explain2,explain3) values(?,?,?,?,?,?,?)";
+	public int insert_room(RoomBean room){
+
+		int c=0;
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(	INSERT_ROOM);)
+		   {
+			stmt.setString(1, room.getName());
+			stmt.setString(2, room.getRoomName());
+			stmt.setInt(3, room.getNumber());
+			stmt.setInt(4, room.getPrice());
+			stmt.setString(5, room.getExplain1());
+			stmt.setString(6, room.getExplain2());
+			stmt.setString(7, room.getExplain3());
+			
+			System.out.println(room.toString());
+			 c=stmt.executeUpdate();			
+			
+		}
+		
+		
+           catch(SQLException e) {
+        	   e.printStackTrace();
+        	   System.out.println("NNNNNNN");
+			return e.getErrorCode();
+		}
+		
+		
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("GGGGGG");
+		}
+		
+		
+		return c;
+	}
+	
+	
+	private static final String UPDATE_ROOM =
+			"update room set  Number=?, Price=?, Explain1=? , Explain2=? , Explain3=? where name=? and RoomName=?";
+	   public int update_room(RoomBean room){
+		int c=0;
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(	UPDATE_ROOM);)
+		   {
+			stmt.setInt(1, room.getNumber());
+			stmt.setInt(2, room.getPrice());
+			stmt.setString(3, room.getExplain1());
+			stmt.setString(4, room.getExplain2());
+			stmt.setString(5, room.getExplain3());
+			stmt.setString(6, room.getName());
+			stmt.setString(7, room.getRoomName());
+			
+			System.out.println(room.toString());
+			 c=stmt.executeUpdate();			
+			
+		}
+		
+		
+           catch(SQLException e) {
+        	   e.printStackTrace();
+
+			return e.getErrorCode();
+		}
+		
+		
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		return c;
+	}
+	
+	
+	   
+	   private static final String DELETE_ROOM =
+				"delete from room where name=? and roomname=?";
+		   public int delete_room(RoomBean room){
+			int c=0;
+			try(Connection conn = dataSource.getConnection();
+				PreparedStatement stmt = conn.prepareStatement(	DELETE_ROOM);)
+			   {
+
+				stmt.setString(1, room.getName());
+				stmt.setString(2, room.getRoomName());
+				c=stmt.executeUpdate();		
+				
+			}
+			
+			
+	           catch(SQLException e) {
+	        	   e.printStackTrace();
+
+				return e.getErrorCode();
+			}
+			
+			
+			catch (Exception e) {
+				e.printStackTrace();
+
+			}
+
+			return c;
+		}
+	
+	
+	
+	
+	
 	
 }

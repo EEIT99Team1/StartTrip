@@ -25,7 +25,7 @@ public class FlightorderDao {
 	public FlightorderBean select (Integer wid) {
 		return getSession().get(FlightorderBean.class, wid);
 	}
-	
+
 	@Transactional
 	public List<FlightorderBean> selectByOrderid(Integer orderid) {
 		List<FlightorderBean> result=null;

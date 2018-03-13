@@ -149,7 +149,64 @@ private  DataSource dataSource;
 	
 	
 	
+	private static final String Select_goint =
+			 "select * from times where name=? and goint=? ";
+	
+	public List<TimesBean>  Select_gotime(String name , int goint ) {
+		ResultSet rset=null;
+		List<TimesBean> times = new ArrayList<TimesBean>();
+		try(Connection conn = dataSource.getConnection();
+				PreparedStatement stmt = conn.prepareStatement(Select_goint);)
+		{
+		    stmt.setString(1, name);
+			stmt.setInt(2, goint);
+			
+			
+			rset=stmt.executeQuery();
+			 
+			while (rset.next()) {
+				TimesBean bean =new TimesBean();
+				bean.setPeople(rset.getString("People"));
+				bean.setTelephone(rset.getInt("Telephone"));
+				bean.setGoTime(rset.getDate("GoTime"));
+				bean.setOutTime(rset.getDate("OutTime"));
+				bean.setRoomName(rset.getString("RoomName"));
+				bean.setGoInt(rset.getInt("GoInt"));
+				bean.setOutInt(rset.getInt("OutInt"));
+				bean.setName(rset.getString("Name"));
+				times.add(bean);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return times;
+	}
 	
 	
+	private static final String delete =
+			"delete from times where name=? and roomName=? and Goint=? and Outint=?";
+	
+	public int delete(TimesBean time) {
+		
+		int c=0;
+		try(Connection conn = dataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(delete);) {
+			stmt.setString(1, time.getName());
+			stmt.setString(2, time.getRoomName());
+			stmt.setInt(3, time.getGoInt());
+			stmt.setInt(4, time.getOutInt());
+			
+			
+			c=stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+	
+	
+		
 	
 }

@@ -34,5 +34,16 @@ public int insert(TimesBean bean) {
 	return c;
 }
 
+ public List<TimesBean> select(String name ,int goint) {
+	return timesDAO.Select_gotime(name, goint);
+}
+ 
+ 
+ public int delete(TimesBean bean) {
+		
+		return timesDAO.delete(bean);
+	}
+ 
+
 
 }
