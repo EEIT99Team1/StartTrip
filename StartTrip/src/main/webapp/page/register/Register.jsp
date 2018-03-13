@@ -41,42 +41,50 @@ font-family: fantasy;
 }
 
 </style>
+<link rel="shortcut icon" href="../login/img/webicon.ico" />
+
+<title>Insert title here</title>
 </head>
 <body>
 <jsp:include page="/page/shared/indexheader.jsp" />
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>
-			<label for="email">信箱:</label> <input type="text" name="email" size="25" />
+			<label for="registeremail">信箱:</label> <input id="registeremail" type="text" name="email" size="25" value="${param.email}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorIDEmpty}${success.successIDDup}</Font></small>
 		</div>
-		<div>
-			<label for="passid">密碼:</label> <input type="password" name="password" size="25" />
+		<br/>
+			<div>
+				<label for="registerpassword">密碼：</label> <input id="registerpassword" type="password" name="password" size="25" >
 			&nbsp;<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
+			</div>
+			<br/>
+		<div>	
+			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
+			<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
 		</div>
+		<br/>
 		<div>
-			<label for="lastname">姓氏:</label> <input type="text" name="lastname" size="25" />
-			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
-		</div>
-		<div>
-			<label for="firstname">名字:</label> <input type="text" name="firstname" size="25" />
+			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorFirstname}</Font></small>
 		</div>
+		<br/>
 		<div>
-			<label for="country">國籍:</label> <input type="text" name="country" size="25" />
+			<label for="registercountry">國籍:</label> <input id="registercountry" type="text" name="country" size="25" />
 			&nbsp;<small><Font color='red'  size="-3">${error.errorCountry}</Font></small>
 		</div>
-		<div>
-			<label for="birthday">生日:</label> <input type="text" name="birthday" size="25" />
-			&nbsp;<small><Font color='red'  size="-3">${error.errorBirthday}</Font></small>
+		<br/>
+		<div >
+				<label for="registerbirthday">生日：</label><input id="registerbirthday" type="text" id="date" name="birthday" value="${param.birthday}" /> 
+				<small><Font color='red'  size="-3">${error.errorBirthday}</Font></small>
 		</div>
 		<div>
-			<label for="phonenumber">手機:</label> <input type="text" name="phonenumber" size="25" />
-			&nbsp;<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
+			<label for="registerphonenumber">手機:</label> <input id="registerphonenumber" type="text" name="phonenumber" size="25" value="${param.phonenumber}" />
+			&nbsp;<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small><br/>
 		</div>
-		<div>
-			<input type="submit" name="submit" value="註冊一般會員" />
-		</div>
+		<br/>
+	<input type="submit" name="submit" value="註冊一般會員" />
+		<h1>${error.errorIDDup}</h1>
 	</form>
 	<script>
 	$(document).ready(function(){
