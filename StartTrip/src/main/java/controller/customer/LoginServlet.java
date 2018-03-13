@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//取得Spring容器。
 		WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
@@ -63,7 +64,14 @@ public class LoginServlet extends HttpServlet {
 		CustomerDao dao = wac.getBean(CustomerDao.class);
 		CustomerBean mb = ls.checkEmailPassword(userEmail, password);
 		
+		
 		if (mb != null) {
+			if(mb.getBlacklist()) {
+				session.setAttribute("YouAreBlack", "很抱歉，您是黑名單。");
+				RequestDispatcher rd = req.getRequestDispatcher(target);
+				rd.forward(req, resp);
+				return;
+			}
 			session.setAttribute("LoginOK", mb);
 		} else {
 			errorMsgMap.put("LoginError", "該帳號不存在或密碼錯誤");

@@ -1,7 +1,10 @@
 package model.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +22,17 @@ public class CustomerDao {
 	public CustomerBean select(String email) {
 		return getSession().get(CustomerBean.class, email);
 	}//select
+	
+	@Transactional
+	public List<CustomerBean> selectByemail(String email){
+		List<CustomerBean> result = null;
+		if(email!=null && email.trim().length()==0) {
+			String HQL = "From CustomerBean Where email="+"'"+email+"'";
+		Query<CustomerBean> query = getSession().createQuery(HQL, CustomerBean.class);
+		result = query.list();
+		}
+		return result;
+	}
 	
 	@Transactional
 	public CustomerBean insert(CustomerBean bean) {
