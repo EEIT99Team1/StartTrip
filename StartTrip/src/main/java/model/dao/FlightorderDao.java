@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.bean.FlightorderBean;
-import model.bean.OrdermanBean;
 
 @Repository
 public class FlightorderDao {
@@ -26,15 +25,25 @@ public class FlightorderDao {
 	public FlightorderBean select (Integer wid) {
 		return getSession().get(FlightorderBean.class, wid);
 	}
-	
+
 	@Transactional
 	public List<FlightorderBean> selectByOrderid(Integer orderid) {
 		List<FlightorderBean> result=null;
 		if(orderid!=null) {
-			String HQL="from FlightorderBean where orderid="+orderid;
+			String HQL="FROM FlightorderBean WHERE orderid="+orderid;
 			Query<FlightorderBean> query=getSession().createQuery(HQL,FlightorderBean.class);
 			result=query.list();
 		}
+		return result;
+	}
+	
+	@Transactional
+	public List selectBy(String selectBy) {
+		String HQL="select "+selectBy+",count("+selectBy+") from FlightorderBean flight GROUP BY "+selectBy;
+
+		Query query = getSession().createQuery(HQL);
+		List result =query.list();
+		
 		return result;
 	}
 	
