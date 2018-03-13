@@ -7,7 +7,7 @@
     <title>訂票資料確認</title>
 </head>
 <body>
-<%@ include file='/page/shared/header.jsp' %>
+
     <h3>訂票資料確認</h3>
     <hr />
     <hr />

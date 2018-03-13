@@ -18,7 +18,7 @@ public class PassengerService {
 @Transactional(readOnly=true)
 	public PassengerBean select(PassengerBean bean){
 		PassengerBean result = null;
-			if(bean!=null&&bean.getWid()!=0) {
+			if(bean !=null && bean.getWid() != 0) {
 				result = passengerDao.select(bean.getWid());
 			}
 		return result;
