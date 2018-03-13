@@ -51,7 +51,7 @@
 		
 		<HR color="block" size="5" width="100%"  align="center">
 		
-				
+			
 	<!-- downdiv -->
 		<div class="container">
 <!-- 		下部區塊 -->
@@ -71,7 +71,7 @@
 						<span class="bonus">12</span>
 					</div>
 					<div class="center">
-						<input class="btn btn-primary addcart" type="submit" value="選擇">						
+						<input class="btn btn-primary addcart" id="b1" type="submit" value="選擇">						
 					</div>
 				</div>
 <!-- 				區塊1 -->
@@ -92,7 +92,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b2" type="submit" value="選擇">	
 
 					</div>
 				</div>
@@ -114,7 +114,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b3" type="submit" value="選擇">	
 
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b4" type="submit" value="選擇">	
 
 					</div>
 				</div>
@@ -158,7 +158,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b5" type="submit" value="選擇">	
 
 					</div>
 				</div>
@@ -180,7 +180,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b6" type="submit" value="選擇">	
 
 					</div>
 				</div>
@@ -198,6 +198,7 @@
 						<tr class="fontcss">
 							<th>商品</th>
 							<th>點數</th>
+							<th>數量</th>
 							<th>刪除</th>
 						</tr>
 					</thead>
@@ -210,7 +211,8 @@
 					<table>
 						<thead>
 							<tr>
-								<th><input class="btn btn-success" type="submit" value="確認購物"></th>
+								<th>總點數：<span id=allbonus>0</span></th>
+								<th><form action="<c:url value='/LoginServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確認購物"></form></th>
 								<th><input class="btn btn-danger dbtnall" type="button" value="全部清除"></th>
 							</tr>
 						</thead>
@@ -227,7 +229,6 @@
 	
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
-
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
 
 </body>
