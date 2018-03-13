@@ -21,7 +21,8 @@ public class ShopCartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
-		session.getAttribute("idn");
+		session.getAttribute("allbonus");
+		
 		
 	}
 
