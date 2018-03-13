@@ -11,11 +11,11 @@
 </head>
 <body>
 <button class="loginBtn loginBtn--facebook">
-  Login with Facebook
+  使用Facebook登入
 </button>
 
 <button class="loginBtn loginBtn--google">
-  Login with Google
+  使用 Google登入
 </button>
 </body>
 </html>
