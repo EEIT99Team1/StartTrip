@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+
 <link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
 
+	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 <header>
 	<nav>
         <ul id="top-bar" class="menu">
@@ -13,13 +14,14 @@
 			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
 		</ul>
 		
-					<!--下拉選單 -->
+			<!--下拉選單 -->
 			<div class="customermenu" >
 					<div class="customeroption">
-						<ul>
-							<li><a href="www.google.com">個人資料</a></li>
-							<li><a href="www.google.com">歷史訂單</a></li>
-							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">購物車</a></li>
+						<ul>				
+							<li><a href="<c:url value="/page/register/CutomerInfoAndUpdate.jsp"/>">個人資料</a></li>
+							<li><a href="<c:url value='/OrderHistoryController.controller'/>">歷史訂單</a></li>
+							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商店</a></li>
+							<li><a href="<c:url value="/BonusShopOrderHistory.controller"/>">紅利商品歷史訂單</a></li>
 							<li><a id="logout">登出</a></li>
 						</ul>
 					</div>
@@ -51,12 +53,13 @@
 							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>
 				
-		</div>
-			<div class="modal-footer">
-				<div id="googleIconSize" class="g-signin2"
-					data-onsuccess="onSignIn"></div>
-				<a href="#" onclick="signOut();">Sign out</a>
 			</div>
+				<div class="modal-footer">
+<!-- 					<div id="googleIconSize" class="g-signin2" -->
+<!-- 						data-onsuccess="onSignIn"></div> -->
+					<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
+					<a href="#" onclick="signOut();">Sign out</a>
+				</div>
 		</div>
 	</div>
 	</nav>

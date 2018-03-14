@@ -56,8 +56,8 @@
 				
 			</div>
 				<div class="modal-footer">
-					<div id="googleIconSize" class="g-signin2"
-						data-onsuccess="onSignIn"></div>
+<!-- 					<div id="googleIconSize" class="g-signin2" -->
+<!-- 						data-onsuccess="onSignIn"></div> -->
 					<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
 					<a href="#" onclick="signOut();">Sign out</a>
 				</div>
