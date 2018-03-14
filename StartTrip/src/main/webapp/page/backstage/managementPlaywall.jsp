@@ -51,7 +51,7 @@ $(function(){
 				var td0=$("<td></td>");
 				td0.text(i+1);
 				var img=$("<img></img>");
-				img.attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>'});
+				img.attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>',width:"200"});
 				var td1=$("<td></td>");
 				td1.append(img);
 				var td2=$("<td></td>");

@@ -22,20 +22,8 @@
 <%-- 			<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-		    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 		  </ol>
 		  <div class="carousel-inner titlebox">
-		    <div class="carousel-item active">
-		      <img class="titleimg" src="<c:url value="/image/bonusshop/air1.jpg"/>" alt="First slide">
-		    </div>
-		    <div class="carousel-item">
-		      <img class="titleimg" src="<c:url value="/image/bonusshop/air2.jpg"/>" alt="Second slide">
-		    </div>
-		    <div class="carousel-item">
-		      <img class="titleimg" src="<c:url value="/image/bonusshop/air3.jpg"/>" alt="Third slide">
-		    </div>
 		  </div>
 		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -239,11 +227,40 @@
 	</div><!--container-->
 
 	</article>
-	
 <!-- 	載入function -->
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
+<script>
+$(function(){
+	$.ajax({
+		url:'<c:url value="/FileUpLoad.controller"/>',
+		type:'GET',
+		dataType:"json",
+		scriptCharset:'UTF-8',
+		success:function(data){
+			var documentFragmentDiv=$(document.createDocumentFragment());
+			var documentFragmentLi=$(document.createDocumentFragment());
+			for(var i=0,max=data.length;i<max;i++){
+				var div=$("<div></div>").addClass("carousel-item");
+				var li=$("<li></li>").attr({"data-target":"#carouselExampleIndicators","data-slide-to":i});
+				if(i==0){
+					div.addClass("active");
+					li.addClass("active");
+				}
+				var img=$("<img></img>").addClass("titleimg").attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>'});
+				div.append(img);
+				documentFragmentDiv.append(div);
+				documentFragmentLi.append(li);
+			}
+			var title=$(".titlebox");
+			title.append(documentFragmentDiv);
+			var ol=$(".carousel-indicators");
+			ol.append(documentFragmentLi);
+		}
+	});
+});
+</script>
 	<jsp:include page="/page/bonusshop/myjs/CheckTotal.jsp"/>
 </body>
 </html>

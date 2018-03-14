@@ -64,7 +64,7 @@ public class InsertTimes extends HttpServlet {
 			   request.setAttribute("select", "Sor 剛剛被訂走了");
 			}
 			else if(c==1) {
-				request.setAttribute("select", "訂房完成");
+				request.setAttribute("insert", "訂房完成");
 			}
 			else{
 				request.setAttribute("select", "有錯誤,請找管理員回報錯誤訊息");
