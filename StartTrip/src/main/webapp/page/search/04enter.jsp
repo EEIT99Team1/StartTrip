@@ -22,61 +22,6 @@
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
-    <script type="text/javascript">
-	    $(function() {
-	      $( "#passportdate" ).datepicker({
-	        changeMonth: true,
-	        changeYear: true,
-	        minDate: "+6M", 
-	      });
-	    });
-	    
-	    $(function() {
-			$("#datepicker").datepicker();
-			$.datepicker.setDefaults({
-				dateFormat : "yy-mm"
-			});
-		})
-    
-        function onLoad() {
-            $('#next').click(save1);
-            $('#next').click(save2);
-            $('#next').click(save3);
-            $('#next').click(save4);
-            $('#next').click(save5);
-            $('#next').click(save6);
-            $('#clear').load(clear);
-
-            document.getElementById("inputfirstname").innerHTML = localStorage["firstname"];
-            document.getElementById("inputlastname").innerHTML = localStorage["lastname"];
-            document.getElementById("inputemail").innerHTML = localStorage["email"];
-            document.getElementById("inputpassportNo").innerHTML = localStorage["passportNo"];
-            
-        }
-        function save1() {
-            localStorage.firstname = inputfirstname.value;
-        }
-        function save2() {
-            localStorage.lastname = inputlastname.value;
-        }
-        function save3() {
-            localStorage.email = inputemail.value;
-        }
-        function save4() {
-            localStorage.passportNo = inputpassportNo.value;
-        }
-        function save5() {
-            localStorage.yearSpanID = inputyearSpanID.value;
-        }
-        function save6() {
-            localStorage.monthSpanID = inputmonthSpanID.value;
-        }
-        
-        function clear() {
-            localStorage.clear();
-        }
-    </script>
-    
 </head>
 <body onload="onLoad()">
     <h1>資料填寫</h1>
@@ -112,10 +57,10 @@
         </div>
         
             護照到期日:
-<!--            <div> -->
-<!--                <input type="text" name="expiry" id="passportdate"/>  -->
-<%-- 	            <span>${error.errexpiry}</span> --%>
-<!--            </div> -->
+           <div>
+               <input type="text" name="expiry" id="passportdate"/> 
+	            <span>${error.errexpiry}</span>
+           </div>
         <hr />
         <div>
             <input type="submit" id="next" value="下一步" />

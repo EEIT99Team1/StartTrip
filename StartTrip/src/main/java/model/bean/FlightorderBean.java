@@ -18,8 +18,8 @@ public class FlightorderBean implements Serializable {
 	private Integer wid;
 	private String start;
 	private String endstart;
-	private java.sql.Date uptime;
-	private java.sql.Date downtime;
+	private String uptime;
+	private String downtime;
 	private Integer adult;
 	private Integer child;
 	private String flight;
@@ -51,19 +51,19 @@ public class FlightorderBean implements Serializable {
 	}
 
 
-	public java.sql.Date getUptime() {
+	public String getUptime() {
 		return uptime;
 	}
 
-	public void setUptime(java.sql.Date uptime) {
+	public void setUptime(String uptime) {
 		this.uptime = uptime;
 	}
 
-	public java.sql.Date getDowntime() {
+	public String getDowntime() {
 		return downtime;
 	}
 
-	public void setDowntime(java.sql.Date downtime) {
+	public void setDowntime(String downtime) {
 		this.downtime = downtime;
 	}
 

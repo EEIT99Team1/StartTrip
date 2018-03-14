@@ -58,7 +58,7 @@ public class FlightorderDao {
 
 	@Transactional
 	public boolean update(Integer wid,String start,String endstart
-			,java.sql.Date uptime,java.sql.Date downtime,Integer adult,
+			,String uptime,String downtime,Integer adult,
 			Integer child,String fight,String model,Integer orderid) {
 		FlightorderBean result = getSession().get(FlightorderBean.class,wid);
 		if (result != null) {
