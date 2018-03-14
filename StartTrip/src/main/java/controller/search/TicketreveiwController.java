@@ -14,7 +14,7 @@ import model.service.search.FlightorderService;
 @Controller
 @RequestMapping(path = "/Ticketreveiw.Controller")
 public class TicketreveiwController {
-	public String ordercheck(SearchDataBean searchData, FlightorderBean fbean,
+	public String ordercheck(FlightorderBean fbean,
 			HttpSession session, Model model) {		
 		
 		
