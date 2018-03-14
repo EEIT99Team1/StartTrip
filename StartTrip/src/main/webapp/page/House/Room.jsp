@@ -30,10 +30,10 @@
 		</c:url>
 	
 	<table style="margin: auto;margin-top:30px">
-	    <a href="${path}">
+	   
 	    <h1 align="center">房間名子:${row.roomName}</h1>
-	    <h3 align="center"><img src=${row.picture}></h3>
-	    </a>
+	    <h3 align="center"><a href="${path}"><img src=${row.picture}></a></h3>
+	    
 		<h3 align="center">價錢:${row.price}</h3>
 		<h3 align="center">入住人數:${row.number}</h3>
 		<h3 align="center">註解:1.${row.explain1} 2.${row.explain2} 3.${row.explain3}</h3>

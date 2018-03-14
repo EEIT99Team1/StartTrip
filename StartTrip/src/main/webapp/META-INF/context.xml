@@ -7,4 +7,10 @@
       driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
       url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=TEAM1"    
       maxActive="8" maxIdle="4" maxWait="5000"/>  
+      
+         <Resource name="mail/Session" auth="Container"
+             type="javax.mail.Session"
+             mail.smtp.host="smtp.google.com" mail.smtp.auth="true"
+             mail.transport.protocol="smtp"
+             />
 </Context>

@@ -13,6 +13,7 @@
 
 <jsp:include page="/page/shared/indexheader.jsp" />
 
+
 <form action="SelectHouse" method="post">
 <table style="margin:auto;margin-top:30px;">
      <tr>
@@ -37,7 +38,7 @@
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
-	<table style="margin:auto;margin-top:50px;">
+	<table style="margin:auto;margin-top:50px; width:500px">
 <!-- 	<tr> -->
 <%-- 	    <td><h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1></td> --%>
 <%-- 	    <td>國家:${row.country}</td> --%>
@@ -48,10 +49,9 @@
 <!-- 		<img  src=${row.picture} style="display:block;margin:auto;" /> -->
 <!-- 	</tr> -->
 
-	    <a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">
+	   
 	    <h1 align="center">民宿:${row.name}</h1>
-		<img  src=${row.picture} style="display:block;margin:auto;" />
-	    </a>
+        <h3 align="center"><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img src=${row.picture}></a></h3>
         <h3 align="center">地址:${row.addres}</h3>
 		<h3 align="center">電話:${row.telephone}</h3>
 		<h3 align="center">民宿介紹:${row.explain}</h3>
@@ -118,6 +118,6 @@
 
 
 
-
+<jsp:include page="/page/House/footer.jsp" />
 </body>
 </html>
