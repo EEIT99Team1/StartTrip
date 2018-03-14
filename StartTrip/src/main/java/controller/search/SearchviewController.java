@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import model.bean.FlightorderBean;
 import model.bean.OrdermanBean;
 import model.bean.PassengerBean;
+import model.service.search.FlightorderService;
 import model.service.search.OrdermanService;
 import model.service.search.PassengerService;
 
@@ -24,10 +26,12 @@ public class SearchviewController {
 	private PassengerService passengerService;
 	@Autowired
 	private OrdermanService ordermanService;
+	@Autowired
+	private FlightorderService flightorderService;
 
 	@RequestMapping( method = { RequestMethod.GET })
-	public String view(PassengerBean pbean, OrdermanBean obean,HttpSession session,
-					Model model) {
+	public String view(PassengerBean pbean, OrdermanBean obean, FlightorderBean fbean,
+			HttpSession session,Model model) {
 	
 		String firstname = (String) session.getAttribute("firstname");
 		String lastname = (String) session.getAttribute("lastname");
@@ -47,13 +51,13 @@ public class SearchviewController {
 		obean.setEmail(email);
 
 		 PassengerBean presult = passengerService.insert(pbean);
-
-			 model.addAttribute("insert", presult);
+		 model.addAttribute("insert", presult);
 		 
 		 OrdermanBean oresult = ordermanService.insert(obean);
-		
 		 model.addAttribute("insert", oresult);
 		 
+		 FlightorderBean fresult = flightorderService.insert(fbean);
+		 model.addAttribute("insert", fresult);
 		 
 		 System.out.println("success");
 		 return "view.success";
