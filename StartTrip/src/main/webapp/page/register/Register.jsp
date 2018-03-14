@@ -34,15 +34,10 @@ margin-top: 100px;
 font-size: 1cm;
 font-family: fantasy;
 }
-.insertok{
-text-align: center;
-margin-top: 400px;
-font-size: 1cm;
-font-family: fantasy;
-}
 .registersubmit{
 text-align:center;
-margin:8px  auto 0px;
+margin-top:15px;
+margin-left:250px;
 padding: auto;
 }
 </style>
@@ -84,15 +79,14 @@ padding: auto;
 		</div>
 	<input class="registersubmit" type="submit" name="submit" value="註冊一般會員" />
 	</form>
-	<div class="insertok">${success.InsertOK}</div>
 	<script>
-// 	$(document).ready(function(){
-// 		var InsertOK="${success.InsertOK}";
-// 		if(InsertOK!=""){
-// 			alert(InsertOK);
-// 			setTimeout("location.href='/StartTrip/index.jsp'",0);
-// 			}
-// 		});
+	$(document).ready(function(){
+		var InsertOK="${success.InsertOK}";
+		if(InsertOK!=""){
+			alert(InsertOK);
+			setTimeout("location.href='/StartTrip/index.jsp'",0);
+			}
+		});
 	</script>
 	<jsp:include page="/page/shared/footer.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />

@@ -97,7 +97,7 @@
 					
 						var tr2show = $("<tr></tr>");
 						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
-						var butSelect= $("<button></button>").text("訂購");
+						var butSelect= $("<button></button>").text("訂購").on("click",takedata);
 						var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%"});
 						td21show.append(butSelect);
 						tr2show.append(td20show).append(td21show);

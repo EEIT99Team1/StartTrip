@@ -108,5 +108,15 @@
 	<jsp:include page="/page/search/myjs/searchjs.jsp" />
 	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
+	<script>
+	function takedata(){
+		var table=$(this).parent().parent().parent().parent().parent().find("div:eq(0) table:eq(0)");
+		var go=table.find("thead tr th:eq(1)").text();//出發地(去程)
+		var go1=table.find("thead tr th:eq(2)").text();//
+		var gotime1=table.find("tbody tr:eq(0) td:eq(0)").text();
+		
+		
+	}
+	</script>
 </body>
 </html>
