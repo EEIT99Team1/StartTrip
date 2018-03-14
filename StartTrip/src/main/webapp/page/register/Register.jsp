@@ -6,27 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="shortcut icon" href="../login/img/webicon.ico" />
-
+<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <title>Insert title here</title>
+<script type="text/javascript">
+$(function() {
+	$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
+});</script>
 </head>
 <body>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 				<div>
 			<label for="email" >Email：</label> 
-			<input id="inputEmail" type="text" readonly name="email" size="40" value="${param.email}"/>
+			<input id="inputEmail" type="text" name="email" size="40" value="${param.email}"/>
 			<small><Font color='red'  size="-3">${error.errorIDEmpty}</Font></small>
 			<small><Font color='red'  size="-3">${success.successIDDup}</Font></small>
 		</div>
 		<br/>
 			<div>
 				<label for="password">密碼：</label> 
-				<input type="password" name="password" size="15" >
+				<input type="password" name="password" size="25" >
 				<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
 			</div>
 			<br/>
 		<div>	
 			<label for="lastname">姓：</label> 
-			<input id="inputLname" type="text" name="lastname" size="20" value="${param.lastname}" required/>
+			<input id="inputLname" type="text" name="lastname" size="25" value="${param.lastname}" required/>
 			<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
 		</div>
 		<br/>
@@ -54,7 +61,7 @@
 		</div>
 		<br/>
 		<div >
-				電話：<input type="text" name="phonenumber" size="20" value="${param.phonenumber}" required /> 
+				手機號碼：<input type="text" name="phonenumber" size="25" value="${param.phonenumber}" required /> 
 				<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
 		</div>
 		<br/>

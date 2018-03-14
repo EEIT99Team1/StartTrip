@@ -181,3 +181,93 @@ $(document).ready(function(){
 		});
 });
 </script>
+<script>
+		window.onload = function() {
+			function getUserData() {
+				FB.api('/me?fields=name,id,first_name,last_name,email', function(response) {
+					document.getElementById('response').innerHTML = 'Hello! '
+					+ response.name;
+				});
+			}
+
+			window.fbAsyncInit = function() {
+				//SDK loaded, initialize it
+				FB.init({
+					appId : '1616500528432537',
+					xfbml : true, // parse XFBML
+					version : 'v2.12',
+					cookie:true, // enable cookies to allow the server to access the session
+				});
+
+				//check user session and refresh it
+				FB.getLoginStatus(function(response) {
+							if (response.status === 'connected') {
+								//user is authorized
+								document.getElementById('loginBtn').style.display = 'none';
+								getUserData();
+							} else {
+								//user is not authorized
+					
+							}
+						});
+				FB.AppEvents.logPageView();
+			};
+
+			//load the JavaScript SDK
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1616500528432537&autoLogAppEvents=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+			
+			//add event listener to login button
+			document.getElementById('loginBtn').addEventListener('click',function() {
+				//do the login
+				FB.login(function(response) {
+						if (response.authResponse) {
+				//user just authorized your app
+						getUserData();}
+							},
+				{scope : 'email,public_profile',
+				return_scopes : true
+						});},false);
+		}
+		
+		function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            	alert('LOGOUT');
+            	console.log('LOGOUT');
+            	document.location.reload();
+            });
+		}
+		
+		function _login() {
+		    FB.login(function(response) {
+		       // handle the response
+		       if(response.status==='connected') {
+		    	   document.getElementById('inputAccountAndPasswordSpaceFormId').style.display = 'none';
+		    	   document.getElementById('otherBtns').style.display = 'none';
+		    	   $("#fbRead").show();
+		        _i();
+		       }
+		     }, {scope: 'public_profile,email'});
+		 }
+		 
+		 function _i(){
+		     FB.api('/me?fields=name,id,first_name,last_name,email', function(response) {
+// 		        document.getElementById("inputFname").value = response.first_name;
+// 		        document.getElementById("inputLname").value = response.last_name;
+// 		        document.getElementById("inputEmail").value = response.email;
+		        $("#inputFname").val(response.first_name);
+		        $("#inputLname").val(response.last_name);
+		        $("#inputEmail").val(response.email);
+		    });
+		 }
+		 
+</script>
