@@ -24,17 +24,6 @@ public class CustomerDao {
 	}//select
 	
 	@Transactional
-	public List<CustomerBean> selectByemail(String email){
-		List<CustomerBean> result = null;
-		if(email!=null && email.trim().length()==0) {
-			String HQL = "From CustomerBean Where email="+"'"+email+"'";
-		Query<CustomerBean> query = getSession().createQuery(HQL, CustomerBean.class);
-		result = query.list();
-		}
-		return result;
-	}
-	
-	@Transactional
 	public CustomerBean insert(CustomerBean bean) {
 		if(bean!=null && (select(bean.getEmail())==null)) {
 			getSession().save(bean);

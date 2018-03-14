@@ -38,8 +38,6 @@ public class RegisterController {
 			}
 			if(bean.getLastname()==null || bean.getLastname().trim().length()==0) {
 				errorMsg.put("errorLastname", "姓氏欄必須輸入");
-			}else if  (bean.getLastname().trim().length() < 2) {
-				errorMsg.put("lastnameerr", "姓氏欄字數不足");
 			}
 			if(bean.getFirstname()==null || bean.getFirstname().trim().length()==0) {
 				errorMsg.put("errorFirstname", "名字欄必須輸入");
@@ -53,7 +51,6 @@ public class RegisterController {
 				errorMsg.put("errorBirthday", "生日欄必須輸入");
 			}
 			if(bean.getPhonenumber()==null || bean.getPhonenumber().trim().length()==0) {
-
 				errorMsg.put("errorPhonenumber", "手機欄必須輸入");
 			}else if (bean.getPhonenumber().trim().length() < 10) {
 				errorMsg.put("phonenumbererr", "手機號碼格式不正確");
@@ -77,6 +74,7 @@ public class RegisterController {
 		}else{
 			successMsg.put("InsertOK", "恭喜您註冊成功。");
 			bean.setBonus(0);
+			bean.setBlacklist(false);
 			dao.insert(bean);
 		}
 		System.out.println("成功");
