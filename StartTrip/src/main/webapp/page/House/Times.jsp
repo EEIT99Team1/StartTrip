@@ -82,15 +82,18 @@ $('#calendar').fullCalendar({
 <input style="display:none; " type="text" name="picture" value="${picture}"/>
     <tr>
 		<td>民宿 : </td>
-		<td><input type="text" name="name" value="${name}"  ></td>		        
+		<td><input type="text" value="${name}" disabled="disabled" ></td>
+		<td><input style="display:none; type="text" name="name" value="${name}"  ></td>		        
 	</tr>
 	<tr>
 		<td>房間 : </td>
-		<td><input type="text" name="roomName" value="${param.roomName}" ></td>		
+		<td><input type="text" value="${param.roomName}" disabled="disabled" ></td>
+		<td><input style="display:none; type="text" name="roomName" value="${param.roomName}" ></td>			
 	</tr>
 	 <tr>
 		<td>價錢/1天 : </td>
-		<td><input type="text" name="price" value="${param.price}" ></td>		
+		<td><input type="text" value="${param.price}" disabled="disabled"></td>
+		<td><input style="display:none; type="text" name="price" value="${param.price}" ></td>		
 	</tr>
 	<tr>
 		<td>入住時間 : </td>

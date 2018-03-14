@@ -29,9 +29,10 @@
 		  
 <form action="UpdateHouse" method="post">		  
 <table style="margin-left:5%;margin-top:20px">		  
- <tr>
+<tr>
  <td>帳號:</td>
- <td><input type="text" name="account" value="${bean.account}"></td>
+ <td><input type="text" disabled="disabled" value="${bean.account}"></td>
+ <td><input style="display:none;" type="text" name="account" value="${bean.account}"></td>
 </tr>
 <tr>
  <td>密碼:</td>
@@ -39,7 +40,8 @@
 </tr>
 <tr>
  <td>name:</td>
- <td><input type="text" name="name" value="${bean.name}"></td>
+ <td><input type="text" disabled="disabled" value="${bean.name}"></td>
+ <td><input style="display:none;" type="text" name="name" value="${bean.name}"></td>
 </tr>
 <tr>
  <td>Country:</td>
@@ -65,10 +67,24 @@
 	<input type="submit" value="修改">	  
 </form>		  
 <h1>${fail}</h1>	  
-<h1 align="left" style="margin-top:10px;color:red;">${success}</h1>	  
-			
-		</table>
+<h1 align="left" style="margin-top:10px;color:red;">${success}</h1>	 
+
+<img src="${bean.picture}" style="margin-left:20px; display: block;"> 
+<form action="picture" method="post" enctype = "multipart/form-data">
+<input type="file" value="圖片選擇" name="file">
+<input type="submit" value="圖片修改">	
+</form>	
+
 	
+		</table>
+<c:if test="${empty bean}">
+<script >
+alert("修改成功");
+window.location.href='http://localhost:8080/StartTrip/page/House/SelectHouse_update?name=${HouseLogin.name}&account=${HouseLogin.account}';
+
+</script>
+</c:if>
+		
 	
 		
 		</div>

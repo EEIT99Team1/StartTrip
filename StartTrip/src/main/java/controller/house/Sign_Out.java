@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 
+import model.bean.HouseBean;
+
 
 @WebServlet("/page/House/Sign_Out")
 public class Sign_Out extends HttpServlet {
@@ -22,18 +24,24 @@ public class Sign_Out extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String ss =(String) session.getAttribute("HouseTarget");
+		//String ss =(String) session.getAttribute("HouseLogin");
+		HouseBean ss= new HouseBean();
+		ss= (HouseBean) session.getAttribute("HouseLogin");
+		//System.out.println(ss.toString());
 		if(ss==null) {
-			
+			System.out.println("err");
 		}
 		
 		else {
 			session.removeAttribute("HouseLogin");
 			//session.removeAttribute("HouseTarget");
-			request.getRequestDispatcher(
-					"/page/House/BackstageHouse.jsp").forward(request, response);
-			return;
+			
 		}
+		
+		request.getRequestDispatcher(
+				"/page/House/BackstageHouse.jsp").forward(request, response);
+		return;
+		
 	}
 
 }
