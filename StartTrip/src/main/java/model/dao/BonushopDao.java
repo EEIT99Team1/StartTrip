@@ -1,9 +1,12 @@
 package model.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +25,17 @@ public class BonushopDao {
 		return this.getSession().get(BonushopBean.class, id);
 	}
 	
+	@Transactional
+	public List<BonushopBean> selectById(Integer id) {
+		List<BonushopBean> result = null;
+		if(id!=null) {
+		String HQL="from BonushopBean where id="+id;
+		 Query<BonushopBean> query = getSession().createQuery(HQL, BonushopBean.class);
+		result = query.list();
+		System.out.println("bonusshopresult="+result);
+		}
+		return result;
+	}
 	@Transactional
 	public BonushopBean insert(BonushopBean bean) {
 		if(bean!=null && (select(bean.getId())==null)) {

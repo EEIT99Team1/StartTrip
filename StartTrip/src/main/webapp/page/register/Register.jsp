@@ -5,61 +5,96 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+
+<title>會員註冊</title>
+<style>
+form {
+/* set width in form, not fieldset (still takes up more room w/ fieldset width */
+font:100% verdana,arial,sans-serif;
+margin: auto;
+padding: 0;
+min-width: 500px;
+max-width: 600px;
+width: 560px; 
+position:absolute; height:300px;
+top:0; bottom:0; left:0; right:0;
+border:8px #FFD382 groove;
+}
+
+form div{
+text-align:center;
+margin:8px auto 0px;
+padding: auto;
+}
+#title{
+text-align: center;
+margin-top: 100px;
+font-size: 1cm;
+font-family: fantasy;
+}
+.insertok{
+text-align: center;
+margin-top: 400px;
+font-size: 1cm;
+font-family: fantasy;
+}
+.registersubmit{
+text-align:center;
+margin:8px  auto 0px;
+padding: auto;
+}
+</style>
 <link rel="shortcut icon" href="../login/img/webicon.ico" />
 
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/page/shared/indexheader.jsp" />
+<div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
-				<div>
-			<label for="email" >Email：</label> 
-			<input id="inputEmail" type="text" readonly name="email" size="40" value="${param.email}"/>
-			<small><Font color='red'  size="-3">${error.errorIDEmpty}</Font></small>
-			<small><Font color='red'  size="-3">${success.successIDDup}</Font></small>
+		<div>
+			<label for="registeremail">信箱：</label> <input id="registeremail" type="text" name="email" size="25" value="${param.email}"/>
+			&nbsp;<small><Font color='red'  size="-3">${error.errorIDEmpty}${success.successIDDup}</Font></small>
 		</div>
-		<br/>
-			<div>
-				<label for="password">密碼：</label> 
-				<input type="password" name="password" size="15" >
-				<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
-			</div>
-			<br/>
+		<div>
+			<label for="registerpassword">密碼：</label> <input id="registerpassword" type="password" name="password" size="25" >
+			&nbsp;<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
+		</div>
 		<div>	
-			<label for="lastname">姓：</label> 
-			<input id="inputLname" type="text" name="lastname" size="20" value="${param.lastname}" required/>
-			<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
+			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
+			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
 		</div>
-		<br/>
 		<div>
-			<label for="firstname">名：</label> 
-			<input id="inputFname" type="text" name="firstname" size="10" value="${param.firstname}" required/>
-			<small><Font color='red'  size="-3">${error.errorFirstname}</Font></small>
+			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>
+			&nbsp;<small><Font color='red'  size="-3">${error.errorFirstname}${error.firstnameerr}</Font></small>
 		</div>
-		<br/>
 		<div>
-			<label for="country">國家：</label> <select name="country" value="${param.country}"required>
-				<option selected value="TW">台灣</option>
-				<option value="AF">澳洲</option>
-				<option value="AL">加拿大</option>
-				<option value="DZ">印度</option>
-				<option value="AS">俄羅斯</option>
-				<option value="AD">美國</option>
-				<option value="JP">日本</option>				
-			</select>
+			<label for="registercountry">國籍：</label> <input id="registercountry" type="text" name="country" size="25" />
+			&nbsp;<small><Font color='red'  size="-3">${error.errorCountry}</Font></small>
 		</div>
-		<br/>
 		<div >
-				生日：<input type="text" id="date" name="birthday" value="${param.birthday}" required/> 
-				<small><Font color='red'  size="-3">${error.errorBirthday}</Font></small>
+			<label for="registerbirthday">生日：</label><input id="registerbirthday" type="text" id="date" name="birthday" value="${param.birthday}" size="25"/> 
+			&nbsp;<small><Font color='red'  size="-3">${error.errorBirthday}</Font></small>
 		</div>
-		<br/>
-		<div >
-				電話：<input type="text" name="phonenumber" size="20" value="${param.phonenumber}" required /> 
-				<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
+		<div>
+			<label for="registerphonenumber">手機：</label> <input id="registerphonenumber" type="text" name="phonenumber" size="25" value="${param.phonenumber}" />
+			&nbsp;<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
 		</div>
-		<br/>
-	<input type="submit" name="submit" value="註冊一般會員" />
-		<h1>${error.errorIDDup}</h1>
+	<input class="registersubmit" type="submit" name="submit" value="註冊一般會員" />
 	</form>
+	<div class="insertok">${success.InsertOK}</div>
+	<script>
+// 	$(document).ready(function(){
+// 		var InsertOK="${success.InsertOK}";
+// 		if(InsertOK!=""){
+// 			alert(InsertOK);
+// 			setTimeout("location.href='/StartTrip/index.jsp'",0);
+// 			}
+// 		});
+	</script>
+	<jsp:include page="/page/shared/footer.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>
 </html>

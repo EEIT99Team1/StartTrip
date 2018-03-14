@@ -1,24 +1,20 @@
 package controller.house;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.bean.HouseBean;
 import model.service.HouseService;
 
 
-@WebServlet("/page/House/LoginHouse")
-public class LoginHouse extends HttpServlet {
+@WebServlet("/page/House/SelectHouse_update")
+public class SelectHouse_update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	HouseService houseService = new HouseService();  
-
+      HouseService houseService = new HouseService();
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -27,26 +23,20 @@ public class LoginHouse extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
-		String Account=request.getParameter("account");
-		String Pass=request.getParameter("pass");
-		HouseBean bean=houseService.select_account(Account, Pass);
-		//request.setAttribute("select", bean);
-		//System.out.println(bean.toString());	
-		if(bean==null) {
-			request.setAttribute("select", "loss");
-			request.getRequestDispatcher(
-					"/page/House/BackstageHouse.jsp").forward(request, response);
-			return;
-		}
-		else {
-			request.setAttribute("select", "YES");
-			request.setAttribute("bean", bean);
-			session.setAttribute("HouseLogin", bean);
-				
-		}
+		String name=request.getParameter("name");
+		String account=request.getParameter("account");
+		HouseBean bean = new HouseBean();
+		bean.setAccount(account);
+		bean.setName(name);
+		System.out.println(bean.toString());
+		HouseBean house = houseService.select_house(bean);
+		if(house!=null) {
+			request.setAttribute("bean", house);			
+			}
+		
 		request.getRequestDispatcher(
 				"/page/House/BackstageUpdateHouse.jsp").forward(request, response);
+	
 		
 		
 		

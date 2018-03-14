@@ -178,7 +178,7 @@
 				<img class="shopimg" alt="購物車" src="<c:url value="/image/bonusshop/cart.png"/>">
 				<span class="cartnum">0</span>
 			</div>	
-<!-- 			購物車			 -->
+<!-- 			購物車圖示			 -->
 
 			<div class="opencart">
 				<table class="carttable">
@@ -199,8 +199,8 @@
 					<table>
 						<thead>
 							<tr>
-								<th>總點數：<span id=allbonus>0</span></th>
-								<th><form action="<c:url value='/LoginServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確認購物"></form></th>
+								<th>總點數：<span class="allbonus" id=allbonus>0</span></th>
+								<th><input class="btn btn-success cbtnall" type="submit" value="確認購物"></th>
 								<th><input class="btn btn-danger dbtnall" type="button" value="全部清除"></th>
 							</tr>
 						</thead>
@@ -209,12 +209,25 @@
 <!-- 				確認及清除鈕區塊 -->
 			</div>
 <!-- 				購物車選單 -->	
-			
+			<div class = checktotal>
+				<p class = center>您剩餘紅利點數:<span class="nowbonus"></span></p>
+				<br>
+				<p class = center>所選商品總紅利:<span class="selectbonus"></span></p>
+				<table>
+					<thead>
+					<tr>
+						<td><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確定購買"></form></td>
+						<td><input class="btn btn-danger closebtn" type="button" value="關閉視窗"></td>
+					</tr>
+					</thead>				
+				</table>
+			</div>		
+<!-- 			購物最終確認 -->
 		</div><!--row-->
 	</div><!--container-->
 
 	</article>
-	
+<!-- 	載入function -->
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
@@ -248,5 +261,6 @@ $(function(){
 	});
 });
 </script>
+	<jsp:include page="/page/bonusshop/myjs/CheckTotal.jsp"/>
 </body>
 </html>

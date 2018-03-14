@@ -3,13 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
     
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<%-- <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script> --%>
-<%-- <script src="<c:url value='/js/jquery-ui.min.js'/>"></script> --%>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
 <head>
     <meta charset="utf-8" />
@@ -45,7 +45,13 @@
             $('#next').click(save4);
             $('#next').click(save5);
             $('#next').click(save6);
-            $('#clear').click(clear);
+            $('#clear').load(clear);
+
+            document.getElementById("inputfirstname").innerHTML = localStorage["firstname"];
+            document.getElementById("inputlastname").innerHTML = localStorage["lastname"];
+            document.getElementById("inputemail").innerHTML = localStorage["email"];
+            document.getElementById("inputpassportNo").innerHTML = localStorage["passportNo"];
+            
         }
         function save1() {
             localStorage.firstname = inputfirstname.value;
@@ -74,68 +80,46 @@
 </head>
 <body onload="onLoad()">
     <h1>資料填寫</h1>
-<!--     <hr /> -->
-<!--     <h3>訂購人資訊</h3> -->
-        <hr />
-    <form>
-        <h3>乘客資訊</h3>
-        <div>
-            姓氏(護照上的英文姓):
-            <input type="text" id="inputfirstname" size="10"/>
-        </div>
-        <div>
-             名字(護照上的英文名):
-             <input type="text" id="inputlastname" size="20"/>
-        </div>
-<!--         <div> -->
-<!--             性別: -->
-<!--             <input type="radio" id="ml" name="sex" required value="male" checked/><label for="ml">男</label> -->
-<!--             <input type="radio" id="fl" name="sex" value="female" /><label for="fl">女</label> -->
-<!--         </div> -->
-<!--             國籍: -->
-<!--             <select> -->
-<!--                 <option value="TW">台灣 </option> -->
-<!--                 <option value="JP">日本</option> -->
-<!--                 <option value="CH">中國</option> -->
-<!--                 <option value="US">美國</option> -->
-<!--             </select> -->
-<!--         </div> -->
-<!--         <div> -->
-<!--             手機號碼: -->
-<!--             <select> -->
-<!--                 <option>+886 (台灣) </option> -->
-<!--                 <option>+86  (中國)</option> -->
-<!--                 <option>+81  (日本)</option> -->
-<!--                 <option>+852 (香港)</option> -->
-<!--             </select> -->
-<!--             <input type="text" /> -->
-<!--         </div> -->
-<!--         <div> -->
-        <div>
+    <hr/>
+	<form action="<c:url value='/Searchenter.controller'/>" method="get">
+    <h2>訂購人資料填寫</h2>
+	 <div>
             電子郵件:
-            <input type="text" id="inputemail" />
-
+            <input type="text" name="email" id="inputemail" />
+            <span>${error.erremail}</span>
             再確認電子郵件:
             <input type="text" />
         </div>
-<!--         <div> -->
-<!--             出生年月日: -->
-<!--             <input type="text" /> -->
-<!--             (格式:yyyy/MM/dd) -->
-<!--         </div> -->
+	
+        <hr />
+    
+        <h2>乘客資訊</h2>
+        <div>
+            姓氏(護照上的英文姓):
+            <input type="text" name="firstname" id="inputfirstname" />
+        <span>${error.errfirstname}</span>
+        </div>
+        <div>
+             名字(護照上的英文名):
+             <input type="text" name="lastname" id="inputlastname" />
+             <span>${error.errlastname}</span>
+        </div>
         <div>
             護照號碼:
-            <input type="text" id="inputpassportNo" size="9" />
+            <input type="text" name="passport"id="inputpassportNo" />
+            
+            <span>${error.errpassport}</span>
         </div>
         
             護照到期日:
-           <div>
-               <input type="text"id="passportdate" /> 
-           </div>
+<!--            <div> -->
+<!--                <input type="text" name="expiry" id="passportdate"/>  -->
+<%-- 	            <span>${error.errexpiry}</span> --%>
+<!--            </div> -->
         <hr />
         <div>
-            <a href="<c:url value='/page/search/05check.jsp'/>"><input type="button" id="next" value="下一步" /></a>
-            <a href="02select.jsp"><input type="button" value="返回查詢結果" /></a>
+            <input type="submit" id="next" value="下一步" />
+            <a href="<c:url value='/page/search/02select.jsp'/>"><input type="button" value="返回查詢結果" /></a>
             <a href="<c:url value='/index.jsp'/>"><input type="button" value="回查詢首頁" /></a>
         </div>
     </form>

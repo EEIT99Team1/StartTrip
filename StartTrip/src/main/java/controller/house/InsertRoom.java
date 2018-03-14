@@ -60,7 +60,7 @@ public class InsertRoom extends HttpServlet {
 		
 		if(!err.isEmpty()) {
 			request.getRequestDispatcher(
-					"/page/House/TryInsertRoom.jsp").forward(request, response);
+					"/page/House/BackstageInsertRoom.jsp").forward(request, response);
 			return;
 		}		
 		
@@ -85,7 +85,7 @@ public class InsertRoom extends HttpServlet {
 			request.setAttribute("select", "系統有問題,請找管理員");
 		}
 		request.getRequestDispatcher(
-				"/page/House/TryInsertRoom.jsp").forward(request, response);
+				"/page/House/BackstageInsertRoom.jsp").forward(request, response);
 		
 		
 		

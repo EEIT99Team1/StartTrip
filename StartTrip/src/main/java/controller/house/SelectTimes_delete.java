@@ -45,7 +45,7 @@ public class SelectTimes_delete extends HttpServlet {
 		 if((g==null || g.trim().length()==0)&&(t==null || t.trim().length()==0)) {
 			 request.setAttribute("select","時間或是電話請輸入一個");				
 				request.getRequestDispatcher(
-						"/page/House/TryDeleteTimes.jsp").forward(request, response);
+						"/page/House/BackstageDeleteTimes.jsp").forward(request, response);
 			 	return;	 
 		 }
 		 
@@ -64,7 +64,7 @@ public class SelectTimes_delete extends HttpServlet {
 		 
 		 if(!err.isEmpty()) {
 			 request.getRequestDispatcher(
-						"/page/House/TryDeleteTimes.jsp").forward(request, response);
+						"/page/House/BackstageDeleteTimes.jsp").forward(request, response);
 			 return;		 
 		 }
 		 
@@ -76,7 +76,7 @@ public class SelectTimes_delete extends HttpServlet {
 			System.out.println(bean.size());
 			request.setAttribute("bean", bean);
 			 request.getRequestDispatcher(
-						"/page/House/TryDeleteTimes.jsp").forward(request, response);
+						"/page/House/BackstageDeleteTimes.jsp").forward(request, response);
 			 return;		
 		}
 		 
