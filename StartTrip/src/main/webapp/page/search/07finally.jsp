@@ -9,38 +9,36 @@
         table {
             margin: auto;
             margin-top: 25px;
-            border: 3px solid;
             width: 600px;
             line-height: 25px;
             border-collapse: collapse;
-            background: -webkit-linear-gradient(top,#A6FFFF,#84C1FF)
+            opacity:0.8;
+            background: -webkit-linear-gradient(top,#A6FFFF,#84C1FF);
         }
     </style>
 </head>
 <body>
 <%@ include file='/page/shared/header.jsp' %>
-    <h3>訂購完成</h3>
+    <h1>訂購完成，感謝您的購買</h1>
     <hr />
 
     <table>
+    
         <tr>
             <td>訂單編號:</td>
 
         </tr>
         <tr>
-            <td>訂單明細:</td>
-
+            <td>訂購人信箱:</td>
         </tr>
         <tr>
 
-            <td>地點:</td>
+            <td>乘客資訊:</td>
         </tr>
         <tr>
             <td>時間:</td>
         </tr>
-        <tr>
-            <td>詳細規則:</td>
-        </tr>
+        
     </table>
     <hr />
     <div>

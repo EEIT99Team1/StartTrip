@@ -14,58 +14,61 @@
 <link href="<c:url value='/css/login/bouncebutton.css'/>" type="text/css" rel="stylesheet" />
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
+	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
+	<jsp:include page="/page/search/myjs/searchbar.jsp" />
 </head>
 <body>
 	<jsp:include page="/page/shared/indexheader.jsp" />
-	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/>
 	<div id="clone"></div>
+	<h1 style="margin-left:100px;">機票查詢結果</h1>
 	<hr/>
 	
-<!-- 	 <div id="searchbar"class="searchbar"> -->
-<!--             <aside class="aside"> -->
-<!--                 <table> -->
-<!--                     <thead><tr><td colspan="3">航班篩選</td> </tr> </thead> -->
-<!--                     <tbody> -->
-<!--                         <tr> -->
-<!--                             <td style="width:10%"><input type="checkbox" value="" /></td> -->
-<%--                             <td style="width:20%"><img src="<c:url value='/image/search/航空1.png'/>" /></td> --%>
-<!--                             <td style="width:50%;">中華航空</td> -->
-<!--                         </tr> -->
-<!--                         <tr> -->
-<!--                             <td><input type="checkbox" value="" /></td> -->
-<%--                             <td><img src="<c:url value='/image/search/航空2.png'/>" /></td> --%>
-<!--                             <td>馬來西亞航空</td> -->
-<!--                         </tr> -->
-<!--                         <tr> -->
-<!--                             <td><input type="checkbox" value="" /></td> -->
-<%--                             <td><img src="<c:url value='/image/search/航空3.png'/>" /></td> --%>
-<!--                             <td>長榮航空</td> -->
-<!--                         </tr> -->
+	 <div id="searchbar"class="searchbar">
+            <aside class="aside">
+                <table>
+                    <thead><tr><td colspan="3">航班篩選</td> </tr> </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width:10%"><input type="checkbox" value="" /></td>
+                            <td style="width:20%"><img src="<c:url value='/image/search/航空1.png'/>" /></td>
+                            <td style="width:50%;">中華航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空2.png'/>" /></td>
+                            <td>馬來西亞航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空3.png'/>" /></td>
+                            <td>長榮航空</td>
+                        </tr>
 
-<!--                         <tr> -->
-<!--                             <td><input type="checkbox" value="" /></td> -->
-<%--                             <td><img src="<c:url value='/image/search/航空4.png'/>" /></td> --%>
-<!--                             <td>日本航空</td> -->
-<!--                         </tr> -->
-<!--                         <tr> -->
-<!--                             <td><input type="checkbox" value="" /></td> -->
-<%--                             <td><img src="<c:url value='/image/search/航空5.png'/>" /></td> --%>
-<!--                             <td>酷航</td> -->
-<!--                         </tr> -->
-<!--                     </tbody> -->
-<!--                 </table> -->
-<!--                 <button class="barbutton"> -->
-<%--                 	<img class="barbuttonimg" src="<c:url value='/image/search/right.png'/>"> --%>
-<!--                 </button> -->
-<!--             </aside> -->
-<!--         </div> -->
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空4.png'/>" /></td>
+                            <td>日本航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" value="" /></td>
+                            <td><img src="<c:url value='/image/search/航空5.png'/>" /></td>
+                            <td>酷航</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="barbutton">
+                	<img class="barbuttonimg" src="<c:url value='/image/search/right.png'/>">
+                </button>
+            </aside>
+        </div>
 	
 	
-	<div id="flightsResult" style="width:50%;">
+	<div id="flightsResult" class="mainbody" style="width:50%;">
 <!-- 		<div style="border:4px solid #8C0044"> -->
 <!-- 		<table style="border:2px solid #003C9D;width:100%" > -->
 <!-- 			<thead></thead> -->
@@ -278,7 +281,6 @@
  	
 	</script>
 	<jsp:include page="/page/search/myjs/searchjs.jsp" />
-	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 	
 </body>

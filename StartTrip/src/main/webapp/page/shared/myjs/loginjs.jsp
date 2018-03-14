@@ -197,7 +197,7 @@ $(document).ready(function(){
 		});
 });
 </script>
-<<<<<<< HEAD
+
 <script>
 		window.onload = function() {
 			function getUserData() {

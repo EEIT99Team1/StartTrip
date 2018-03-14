@@ -14,42 +14,20 @@
 
 
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
+<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
-<script>
-	$(function() {
-		$("#datego").datepicker({
-			changeMonth: true,
-	        changeYear: true,
-	        minDate: 1, 
-	         
-		})
-	});
-	$(function() {
-		$("#dateback").datepicker({
-			changeMonth: true,
-	        changeYear: true,
-	        minDate: 1, 
-		});
-	});
-
-	$(function() {
-		$("#datepicker").datepicker();
-		$.datepicker.setDefaults({
-			dateFormat : "yy-mm-dd"
-		});
-	})
-</script>
+<jsp:include page="/page/shared/myjs/datepicker.jsp" />
 
 </head>
 <body>
-	
 	<jsp:include page="/page/shared/indexheader.jsp" />
-	
 
 	<article class="mainbody">
 		<form class="search" action="FlightGet.controller" method="get">
