@@ -55,7 +55,7 @@ $(function() {
 							<input type="password" name="pswd" size="20" value="${param.password}">
 							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br /><br />
              				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
-             				<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘記密碼？</a>
+             				<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('page/shared/forgetPassword.jsp')">忘記密碼？</a>
 							<c:set var="target" value="${pageContext.request.servletPath}" scope="session" />
 							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>

@@ -27,14 +27,13 @@ body {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
-<jsp:include page="/page/search/myjs/searchbar.jsp" />
-
 </head>
 <body>
+<jsp:include page="/page/search/myjs/searchbar.jsp" />
 	<jsp:include page="/page/shared/header.jsp" />
 	<br/><br/><br/><br/><br/><br/>
 <!-- 	<div id="clone"></div> -->
-	<hr/>
+<!-- 	<hr/> -->
 	
 	 <div id="searchbar"class="searchbar">
             <aside class="aside">

@@ -14,4 +14,5 @@
                            $('.barbuttonimg').attr('src', "<c:url value='/image/search/right.png'/>");
                         };
                    })
+ })
 </script>

@@ -6,7 +6,6 @@
 <meta charset="utf-8" />
 <title>首頁</title>
 
-
 <!-- 彈跳視窗需要 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id"
@@ -82,8 +81,9 @@
 			</div>
 		</form>
 	</article>
-
+<footer>
 <jsp:include page="/page/shared/footer.jsp" />
+</footer>
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <jsp:include page="/page/search/myjs/firstsearchjs.jsp" />
 	</body>
