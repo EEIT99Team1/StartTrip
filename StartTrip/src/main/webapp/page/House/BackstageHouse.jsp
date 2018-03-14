@@ -18,7 +18,7 @@
 </tr>
 <tr>
  <td>密碼:</td>
- <td><input type="text" name="pass" ></td>
+ <td><input type="password" name="pass" ></td>
 </tr>
 </table>
 <input type="submit" value="登入" style="display:block;margin:0 auto;margin-top:20px">

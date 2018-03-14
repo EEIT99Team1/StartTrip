@@ -103,7 +103,8 @@ public class InsertFBMemberServlet extends HttpServlet {
 			// 新增資料失敗,利用RequestDispatcher送出回應,共用資料放在request物件
 			response.sendRedirect(targetURL);
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("/page/login/FBintoReg.jsp");
+			System.out.println("flase");
+			RequestDispatcher rd = request.getRequestDispatcher("/page/login/InsertFBMemberFail.jsp");
 			rd.forward(request, response);
 			return;
 		}

@@ -42,24 +42,42 @@ padding: auto;
 }
 </style>
 <link rel="shortcut icon" href="../login/img/webicon.ico" />
+<<<<<<< HEAD
+<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
+<title>Insert title here</title>
+<script type="text/javascript">
+$(function() {
+	$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
+});</script>
+=======
 
 <title>Insert title here</title>
+>>>>>>> branch 'master' of https://github.com/EEIT99Team1/StartTrip.git
 </head>
 <body>
+
 <jsp:include page="/page/shared/indexheader.jsp" />
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>
 			<label for="registeremail">信箱：</label> <input id="registeremail" type="text" name="email" size="25" value="${param.email}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorIDEmpty}${success.successIDDup}</Font></small>
+
 		</div>
+
 		<div>
 			<label for="registerpassword">密碼：</label> <input id="registerpassword" type="password" name="password" size="25" >
 			&nbsp;<small><Font color='red'  size="-3">${error.errorPasswordEmpty}</Font></small>
 		</div>
+
 		<div>	
+
 			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
+
 		</div>
 		<div>
 			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>
@@ -77,7 +95,9 @@ padding: auto;
 			<label for="registerphonenumber">手機：</label> <input id="registerphonenumber" type="text" name="phonenumber" size="25" value="${param.phonenumber}" />
 			&nbsp;<small><Font color='red'  size="-3">${error.errorPhonenumber}</Font></small>
 		</div>
+
 	<input class="registersubmit" type="submit" name="submit" value="註冊一般會員" />
+
 	</form>
 	<script>
 	$(document).ready(function(){
