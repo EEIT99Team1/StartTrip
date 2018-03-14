@@ -53,11 +53,11 @@ public class ShopCartServlet extends HttpServlet {
 		//讀取會員的bonus
 		Integer bonus= mb.getBonus();
 		session.setAttribute("nowbonus", bonus);
-		System.out.println(bonus);
+//		System.out.println(bonus);
 		
 		//讀取總total
 		Integer total = Integer.parseInt(req.getParameter("allbonus"));
-		System.out.println(total);		
+//		System.out.println(total);		
 		
 		CustomerDao cdao = wac.getBean(CustomerDao.class);
 		

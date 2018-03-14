@@ -214,13 +214,13 @@
 <!-- 				購物車選單 -->	
 			<div class="checktotalbk">
 				<div class= "checktotal">
-					<p class = "fontstyle">您累計的紅利點數:<span class="nowbonus"></span></p>
+					<p class = "fontstyle">您累計的紅利點數:<span class="nowbonus">{LoginOK.bonus}</span></p>
 					<br>
 					<p class = "fontstyle">所選商品的總點數:<span class="selectbonus"></span></p>
 					<table>
 						<thead>
 						<tr>
-							<td><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確定購買"></form></td>
+							<td><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success success" type="submit" value="確定購買"></form></td>
 							<td><input class="btn btn-danger closebtn" type="button" value="關閉視窗"></td>
 						</tr>
 						</thead>				

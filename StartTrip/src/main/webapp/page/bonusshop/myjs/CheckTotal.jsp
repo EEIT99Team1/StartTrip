@@ -6,16 +6,20 @@
 	// 	確認購買點擊後跳出確認視窗
 	$(".cbtnall").click(function() {
 		$(".checktotalbk").css("display", "block");
-		//讀取servlet的會員bonus
-		$.get("<c:url value="/ShopCartServlet"/>", function() {
-			$(".nowbonus").html("11");
-// 			alert("${errorMsgKey}");			
-		});
-
-		// 	顯示選所商品的bonus
+		// 	顯示選所商品總bonus
 		var total = $("#allbonus").text();
 		$(".selectbonus").text(total);
-	
+		
+		//讀取servlet的會員bonus
+		$.get("<c:url value='/ShopCartServlet'/>",{"allbonus":total},function() {
+			$(".nowbonus").html("${nowbonus}");
+			
+		});	
+	});
+	//確定購買後顯示購買成功或失敗
+	$(".success").click(function(){
+			alert("${successMsgKey}");
+			alert("${errorMsgKey}");
 	});
 
 	//檢查視窗的取消購買
