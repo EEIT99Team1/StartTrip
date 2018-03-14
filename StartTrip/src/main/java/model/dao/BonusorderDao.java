@@ -1,9 +1,12 @@
 package model.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +25,20 @@ public class BonusorderDao {
 	public BonusorderBean select(int wid) {
 		return this.getSession().get(BonusorderBean.class, wid);
 	}
-
+	
+	@Transactional
+	public List<BonusorderBean> selectByemail(String email) {
+		List<BonusorderBean> result = null;
+		if(email!=null && email.trim().length()!=0) {
+			String HQL="from BonusorderBean where email="+"\'"+email+"\'";
+			Query<BonusorderBean> query = getSession().createQuery(HQL, BonusorderBean.class);
+			result=query.list();
+			System.out.println("bonusorderresult ="+result);
+		}
+		return result;
+	}
+	
+	
 	@Transactional
 	public BonusorderBean insert(BonusorderBean bean) {
 		if(bean!=null) {
