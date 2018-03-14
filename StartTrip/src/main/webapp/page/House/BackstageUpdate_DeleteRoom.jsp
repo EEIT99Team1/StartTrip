@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<c:if test="${empty HouseLogin}">
+<c:set var="HouseTarget" value="${pageContext.request.servletPath}" scope="session"></c:set>
+<c:redirect url="/page/House/BackstageHouse.jsp"></c:redirect>
+</c:if>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet" type="text/css" />
@@ -20,7 +24,7 @@
         }
  .menu li {
             float:left;
-            width:7em;
+            width:14%;
             border-right:1px solid #cccccc;
         }      
 
@@ -53,12 +57,13 @@
 	<form action="UpdateDeleteRoom" method="post">
 	  <input type="text" name="name" value="${row.name}" style="display: none;">
 	<ul class="menu">           
-      <li><input type="text" name="roomname" value="${row.roomName}" size="8px"></li>      
-      <li><input type="text" name="price" value="${row.price}" size="8px"></li>   
-      <li><input type="text" name="number" value="${row.number}" size="8px"></li>
-      <li><input type="text" name="explain1" value="${row.explain1}" size="8px"></li>
-      <li><input type="text" name="explain2" value="${row.explain2}" size="8px"></li>  
-      <li><input type="text" name="explain3" value="${row.explain3}" size="8px"></li>
+      <li><input type="text" disabled="disabled" value="${row.roomName}" size="8%"></li>
+      <li><input style="display:none;" type="text" name="name"  value="${row.roomName}" size="8%"></li>      
+      <li><input type="text" name="price" value="${row.price}" size="8%"></li>   
+      <li><input type="text" name="number" value="${row.number}" size="8%"></li>
+      <li><input type="text" name="explain1" value="${row.explain1}" size="8%"></li>
+      <li><input type="text" name="explain2" value="${row.explain2}" size="8%"></li>  
+      <li><input type="text" name="explain3" value="${row.explain3}" size="8%"></li>
       <li>
         <input type="submit" name="account" value="修改" >
         <input type="submit" name="account" value="刪除" >
@@ -101,8 +106,6 @@
 
 
 
-
-
 ${update}
 			
 </table>				
@@ -110,7 +113,8 @@ ${update}
 	</div>
 
 
-	
+
+
 
 
 </body>

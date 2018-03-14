@@ -28,6 +28,7 @@ public class LoginHouse extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
+		String ss = (String) session.getAttribute("HouseTarget");
 		String Account=request.getParameter("account");
 		String Pass=request.getParameter("pass");
 		HouseBean bean=houseService.select_account(Account, Pass);
@@ -40,6 +41,11 @@ public class LoginHouse extends HttpServlet {
 			return;
 		}
 		else {
+			if(ss!=null) {
+				session.removeAttribute("HouseLogin");
+				session.removeAttribute("HouseTarget");
+			}
+			
 			request.setAttribute("select", "YES");
 			request.setAttribute("bean", bean);
 			session.setAttribute("HouseLogin", bean);

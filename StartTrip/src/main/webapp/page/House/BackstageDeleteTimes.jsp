@@ -4,6 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<c:if test="${empty HouseLogin}">
+<c:set var="HouseTarget" value="${pageContext.request.servletPath}" scope="session"></c:set>
+<c:redirect url="/page/House/BackstageHouse.jsp"></c:redirect>
+</c:if>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
@@ -45,11 +51,11 @@
 <input type="text" name="name" value="${HouseLogin.name}" style="display:none;">
 
 <tr>
- <td>gotime:</td>
+ <td>訂房日期:</td>
  <td><input type="text" name="gotime" ></td>
 </tr>
 <tr>
- <td>telephone:</td>
+ <td>連絡電話:</td>
  <td><input type="text" name="telephone" ></td>
 </tr>
 </table>
