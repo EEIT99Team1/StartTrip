@@ -30,6 +30,7 @@ public class DelectTimes extends HttpServlet {
 		 String roomname= request.getParameter("roomname");
 		 String g= request.getParameter("goint");
 		 String o= request.getParameter("outint");
+		 request.getInputStream();
 		 System.out.println("go"+g);
 		 System.out.println("out"+o);
 		 int c=0;
@@ -45,14 +46,14 @@ public class DelectTimes extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("~~~~~~");
 			 request.getRequestDispatcher(
-						"/page/House/TryDeleteTimes.jsp").forward(request, response);
+						"/page/House/BackstageDeleteTimes.jsp").forward(request, response);
 			 return;		
 		}
 		 
 		 if(c==1) {
 			 request.setAttribute("delect", "刪除成功");
 			 request.getRequestDispatcher(
-						"/page/House/TryDeleteTimes.jsp").forward(request, response);
+						"/page/House/BackstageDeleteTimes.jsp").forward(request, response);
 			 return;
 		 }
 		 

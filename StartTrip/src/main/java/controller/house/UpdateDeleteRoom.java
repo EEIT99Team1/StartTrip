@@ -29,7 +29,6 @@ public class UpdateDeleteRoom extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		Map<String, String> err = new HashMap<>();
 		request.setAttribute("err", err);
-		
 		String name = request.getParameter("name");
 		String roomname = request.getParameter("roomname");
 		String p = request.getParameter("price");
@@ -64,7 +63,7 @@ public class UpdateDeleteRoom extends HttpServlet {
 		if(!err.isEmpty()) {
 			System.out.println("NNNNN");
 			request.getRequestDispatcher(
-					"/page/House/TryUpdate_Delete_Room.jsp").forward(request, response);
+					"/page/House/BackstageUpdate_DeleteRoom.jsp").forward(request, response);
 			return;
 		}		
 		
@@ -93,7 +92,7 @@ public class UpdateDeleteRoom extends HttpServlet {
 				}
 				
 				request.getRequestDispatcher(
-						"/page/House/TryUpdate_Delete_Room.jsp").forward(request, response);
+						"/page/House/BackstageUpdate_DeleteRoom.jsp").forward(request, response);
 				return;
 			 			 
 			}
@@ -108,7 +107,7 @@ public class UpdateDeleteRoom extends HttpServlet {
 				request.setAttribute("update", "刪除失敗");
 			}
 			request.getRequestDispatcher(
-					"/page/House/TryUpdate_Delete_Room.jsp").forward(request, response);
+					"/page/House/BackstageUpdate_DeleteRoom.jsp").forward(request, response);
 			return;
 			
 			

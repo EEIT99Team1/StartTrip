@@ -52,6 +52,12 @@ public class HouseService {
    	      	    	
     }
 
-	
+
+    public HouseBean select_house(HouseBean bean) {
+    	return houseDAO.SELECT_HOUSE(bean); 	
+    }
+    
+    
+    
 
 }

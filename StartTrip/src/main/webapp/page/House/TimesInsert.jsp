@@ -42,7 +42,7 @@
 	</table>
 	
 	<input type="submit" value="go" style="display:block;margin:0 auto;margin-top:20px">
-	<h1 align="center" style="color:red;">${select}</h2>
+	<h2 align="center" style="color:red;">${select}</h2>
 </form>
 </body>
 </html>
