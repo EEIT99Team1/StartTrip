@@ -251,4 +251,43 @@ public class HouseDAOJdbc {
 				}				
 	
 
+	private static final String SELECT_HOUSE = "select * from house where account=?  ";
+	
+	public HouseBean SELECT_HOUSE(HouseBean house) {
+				
+					ResultSet rset=null;
+					HouseBean bean =new HouseBean();
+					int c = 0;
+					try(Connection conn = dataSource.getConnection();
+						PreparedStatement stmt = conn.prepareStatement(SELECT_insert_account);) {
+						
+						stmt.setString(1,house.getAccount());
+						
+						
+						 rset = stmt.executeQuery();
+						while(rset.next()) {
+							
+							bean.setName(rset.getString("Name"));
+							bean.setCountry(rset.getString("Country"));
+							bean.setArea(rset.getString("Area"));
+							bean.setAddres(rset.getString("Addres"));
+							bean.setExplain(rset.getString("Explain"));
+							bean.setTelephone(rset.getInt("Telephone"));
+							bean.setPicture("http://localhost:8080/StartTrip/image/House/"+(bean.getName()).trim()+".jpg");
+							bean.setAccount(rset.getString("Account"));
+							bean.setPass(rset.getString("Pass"));
+														
+						}
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					
+					return bean;
+				}				
+	
+	
+	
+	
+	
 }

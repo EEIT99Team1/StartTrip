@@ -1,4 +1,3 @@
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -17,6 +16,9 @@
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 <link href="<c:url value='/css/backstage/statementsAna.css'/>" rel="stylesheet">
+<link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet"
+	type="text/css" />
+<link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 <script>
 chartData = {
 		"2018":[]
@@ -43,6 +45,9 @@ $(function() {
 </c:forEach>
 </head>
 <body>
+	<div id="page" class="container">
+		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
+<div id="main">
 	<form action='<c:url value="/Flightorder.controller"/>' method="get">
 		<select name="selectBy" id="sel" >
 			<option value="start" >start</option>
@@ -73,11 +78,10 @@ $(function() {
 		</table>
 	</c:if>
 	
-	
-
-		<!-- HTML -->
-		<div id="chartdiv"></div>	
-		
+	<!-- HTML -->
+	<div id="chartdiv"></div>	
+	</div>
+</div>
 <script>
 		/**
 		 * Create the chart
@@ -143,7 +147,6 @@ $(function() {
 		  }
 		} );
 		 })
-		</script>
-		
+</script>
 </body>
 </html>

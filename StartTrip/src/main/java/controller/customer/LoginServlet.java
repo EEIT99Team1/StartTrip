@@ -25,10 +25,12 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//取得Spring容器。
 		WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
 		String target = (String) session.getAttribute("target");
+		String contextPath = getServletContext().getContextPath();
 		// System.out.println(target);
 		// 準備存放錯誤訊息的Map物件
 		Map<String, String> errorMsgMap = new HashMap<String, String>();
@@ -63,7 +65,16 @@ public class LoginServlet extends HttpServlet {
 		CustomerDao dao = wac.getBean(CustomerDao.class);
 		CustomerBean mb = ls.checkEmailPassword(userEmail, password);
 		
+		
 		if (mb != null) {
+			//假如近來是0(false)代表不是黑名單，1(true)代表是黑名單。
+			if(mb.getBlacklist()) {
+				req.setAttribute("YouAreBlack", true);//為了在前端判斷用-->loginjs.jsp
+				RequestDispatcher rd = req.getRequestDispatcher(target);
+				rd.forward(req, resp);
+				System.out.println("有執行到這唷啾咪");
+				return;
+			}
 			session.setAttribute("LoginOK", mb);
 		} else {
 			errorMsgMap.put("LoginError", "該帳號不存在或密碼錯誤");
@@ -71,15 +82,15 @@ public class LoginServlet extends HttpServlet {
 		if (errorMsgMap.isEmpty()) {
 			//如果session物件內含有"target"屬性物件，表示使用者先前嘗試執行某個應該登入，但使用者未登入的網頁
 			//，由該網頁放置的"target"屬性物件，因次如果有"target"屬性物件則導向"target"屬性物件所標示的網頁，否則導向首頁。
-			String contextPath = getServletContext().getContextPath();
+			
 //			System.out.println("contextPath ="+contextPath);
 				session.setAttribute("hasError", false);
 				CustomerBean bean =dao.select(userEmail);
 				String firstname = bean.getFirstname();
 				String lastname = bean.getLastname();
 				session.setAttribute("customerBean", bean);
-				session.setAttribute("firstname", "\""+firstname+"\"");
-				session.setAttribute("lastname", "\""+lastname+"\"");
+				session.setAttribute("firstname", firstname);
+				session.setAttribute("lastname", lastname);
 			if (target != null) {
 //				System.out.println("success false");
 				//先由session中移除此項屬性，否則下一次User直接執行login功能後，會再度被導向到target。

@@ -112,3 +112,22 @@ tr,td{
 	width:100%;
 	text-align:center;
 }
+.checktotal{
+	position:fixed;
+	display:none;
+	width:250px;
+	height:150px;
+	top:50%;
+	left:50%;
+	background:#FFFFFF;
+	border-radius:10%;
+	border:solid 1px red;
+	z-index:1;
+	
+}
+
+/* 文字顏色 */
+
+.allbonus,.nowbonus,.selectbonus{
+	color: red;
+}

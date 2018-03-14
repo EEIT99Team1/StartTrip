@@ -107,5 +107,12 @@ public class FlightorderBean implements Serializable {
 		this.orderid = orderid;
 	}
 
+	@Override
+	public String toString() {
+		return "FlightorderBean [wid=" + wid + ", start=" + start + ", endstart=" + endstart + ", uptime=" + uptime
+				+ ", downtime=" + downtime + ", adult=" + adult + ", child=" + child + ", flight=" + flight + ", model="
+				+ model + ", orderid=" + orderid + "]";
+	}
+
 
 }

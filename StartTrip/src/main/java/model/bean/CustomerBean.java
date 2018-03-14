@@ -21,6 +21,8 @@ public class CustomerBean implements Serializable {
 	private String birthday;
 	private String phonenumber ;
 	private Integer bonus;
+	private Boolean  blacklist;
+	
 	
 	
 	
@@ -80,5 +82,10 @@ public class CustomerBean implements Serializable {
 	public void setBonus(Integer bonus) {
 		this.bonus = bonus;
 	}
-	
+	public Boolean getBlacklist() {
+		return blacklist;
+	}
+	public void setBlacklist(Boolean blacklist) {
+		this.blacklist = blacklist;
+	}
 }

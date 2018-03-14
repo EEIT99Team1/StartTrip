@@ -76,9 +76,8 @@ function strToJson(str){
     return json;
 }//Sting >> JSON
 	
-$(document).ready(function() {
+$(document).load(function() {
 	var ans=[];
-	
 	$(".citytext").keyup(function() {
 		var keyin = $(this).val();
 		if(keyin.length>0){
