@@ -109,12 +109,28 @@ $(document).ready(function(){
 		 });
 </script>
 <script>
+//告訴使用者是黑名單
+$(document).ready(function(){
+		var blacklist = "${YouAreBlack}";
+		if(blacklist){
+			alert("很抱歉您無法登入");
+		}
+	});
+</script>
+<script>
 //讓外面的Login顯示登入者姓名。
 $(document).ready(function(){
-		var firstname = ${firstname};
-		var lastname = ${lastname};
-		$("#button").val(firstname+lastname);
-});
+		var firstname = "${firstname}";
+		var lastname = "${lastname}";
+		if(firstname!="" && lastname!=""){
+			//因為登入失敗會回傳null，所以要加判斷。
+			if(firstname=="null" && lastname=="null"){
+				$("#button").val("Login");
+			}else{
+		$("#button").val(lastname+firstname);
+			}
+		}
+	});
 </script>
 <script>
 $(document).ready(function(){
@@ -149,10 +165,10 @@ function sendPost(url){
 <!-- 判斷輸入帳密狀態 -->
 $(document).ready(function(){
 	//是否有錯誤，hasError=true有錯，hasError=false沒錯。
-	var loginStatus = ${hasError};
-	if(loginStatus){
+	var loginStatus = "${hasError}";
+	if(loginStatus=="true"){
 		$("#myModal").css("display","block");
-	}else{
+	}else if(loginStatus=="false"){
 // 		var customermenu = false;
 		btn.off('click');
 // 		if(!customermenu){
@@ -181,3 +197,5 @@ $(document).ready(function(){
 		});
 });
 </script>
+
+

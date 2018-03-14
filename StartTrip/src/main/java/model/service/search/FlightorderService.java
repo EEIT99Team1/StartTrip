@@ -1,8 +1,5 @@
 package model.service.search;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,23 +20,22 @@ public class FlightorderService {
 		}
 		return result;
 	}
-	
-//	
-//	@Transactional(readOnly = true)
-//	public List<FlightorderBean> selectByOrderid(FlightorderBean bean){
-//		List<FlightorderBean> result = null;
-//			if(bean!=null&&bean.getWid()!=0) {
-//				FlightorderBean wid = flightorderDao.selectByOrderid(bean.getOrderid());
-//				if(wid!=null) {
-//					result=new ArrayList<FlightorderBean>();
-//					result.add(wid);
-//			}else {
-//			result = flightorderDao.select();
-//		}
-//		}
-//		return result;
-//	}
-	
+
+	//
+	// @Transactional(readOnly = true)
+	// public List<FlightorderBean> selectByOrderid(FlightorderBean bean){
+	// List<FlightorderBean> result = null;
+	// if(bean!=null&&bean.getWid()!=0) {
+	// FlightorderBean wid = flightorderDao.selectByOrderid(bean.getOrderid());
+	// if(wid!=null) {
+	// result=new ArrayList<FlightorderBean>();
+	// result.add(wid);
+	// }else {
+	// result = flightorderDao.select();
+	// }
+	// }
+	// return result;
+	// }
 
 	public FlightorderBean insert(FlightorderBean bean) {
 		FlightorderBean result = null;

@@ -58,8 +58,8 @@
 					<h3>地點:</h3>
 					<img src="<c:url value='/image/search/mappoint.png'/>" />
 					<div class="searchline">
-						出發地:<input class="citytext" type="text" name="goplace" /> 
-						目的地:<input class="citytext" type="text" name="endplace" />
+						出發地:<input class="citytext" type="text" name="goplace" value="TPE台北桃園(TPE)" required="required"/> 
+						目的地:<input class="citytext" type="text" name="endplace" required="required"/>
 					</div>
 				</div>
 				<div class="searchdiv">
@@ -86,8 +86,8 @@
 				<div class="searchdiv">
 					<h3>日期:</h3>
 					<div class="searchline">
-						去程: <input type="text" id="datego" name="gotime" /> 
-						回程: <input type="text" id="dateback" name="backtime" />
+						去程: <input type="text" id="datego" name="gotime" required="required" /> 
+						回程: <input type="text" id="dateback" name="backtime" required="required" />
 					</div>
 
 				</div>
