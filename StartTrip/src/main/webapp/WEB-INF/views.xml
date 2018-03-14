@@ -59,5 +59,8 @@
 		<property name="url" value="/page/backstage/statementsAna.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>
-
+	
+	<bean id="customerManagement" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/page/backstage/customerManagement.jsp"></property>
+	</bean>
 </beans>

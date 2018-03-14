@@ -10,15 +10,16 @@
 <title>會員管理系統</title>
 </head>
 <body>
-<div id="page" class="container">
+	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
 		<div id="main">
-			<form action="#" method="get">
-				<h2><label for="username">username:</label><input id="username" name="username"/>
-				<label for="password">password:</label><input id="password" name="password"/>
-				<input type="submit" value="登入" /></h2>
-			</form>
+		
+		<c:forEach var="customerList" items="${customerList}">
+		<div>${customerList.email}</div>
+		</c:forEach>
+		
 		</div>
 	</div>
+
 </body>
 </html>
