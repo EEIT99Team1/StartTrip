@@ -36,6 +36,9 @@ public class SearchController {
 		session.setAttribute("searchData", searchData);
 		session.setAttribute("responseXml", "'"+responseXml+"'");
 		
+	
+		
+		
 		return "select";
 	}
 }

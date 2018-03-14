@@ -1,5 +1,6 @@
 package controller.search;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,8 +20,8 @@ public class SearchenterController {
 
 	// passenger
 	@RequestMapping(path = "/Searchenter.controller", method = { RequestMethod.GET })
-	public String order(PassengerBean pbean, OrdermanBean obean, FlightorderBean fbean, Model model,
-			HttpSession session) {
+	public String order(PassengerBean pbean, OrdermanBean obean, FlightorderBean fbean,
+			Model model1,HttpSession session) {
 
 		obean.setStutus(false);
 		System.out.println(pbean);
@@ -28,7 +29,7 @@ public class SearchenterController {
 		System.out.println(fbean);
 
 		Map<String, String> errmsg = new HashMap<>();
-		model.addAttribute("error", errmsg);
+		model1.addAttribute("error", errmsg);
 
 		if (pbean.getFirstname() == null || pbean.getFirstname().trim().length() == 0) {
 			errmsg.put("errfirstname", "姓不可空白");
@@ -36,13 +37,12 @@ public class SearchenterController {
 		if (pbean.getLastname() == null || pbean.getLastname().trim().length() == 0) {
 			errmsg.put("errlastname", "名字不可空白");
 		}
-		if (pbean.getExpiry() == null) {
-			errmsg.put("errexpiry", "護照到期日不可空白");
-		}
-		// if (pbean.getPassport() == null || pbean.getPassport().trim().length() == 0)
-		// {
-		// errmsg.put("errpassport", "護照號碼不可空白");
+		// if (pbean.getExpiry() == null) {
+		// errmsg.put("errexpiry", "護照到期日不可空白");
 		// }
+		if (pbean.getPassport() == null || pbean.getPassport().trim().length() == 0) {
+			errmsg.put("errpassport", "護照號碼不可空白");
+		}
 		if (obean.getEmail() == null || obean.getEmail().trim().length() == 0) {
 			errmsg.put("erremail", "訂購人的電子郵件不可空白");
 		}
@@ -50,6 +50,7 @@ public class SearchenterController {
 		if (!errmsg.isEmpty() && errmsg != null) {
 			System.out.println("success");
 
+			// passenger
 			String firstname = pbean.getFirstname();
 			session.setAttribute("firstname", firstname);
 
@@ -59,20 +60,50 @@ public class SearchenterController {
 			String passport = pbean.getPassport();
 			session.setAttribute("passport", passport);
 
-			String email = obean.getEmail();
-			session.setAttribute("email", email);
+			// String expiry=pbean.getExpiry();
+			// session.setAttribute("expiry",expiry);
 
 			System.out.println("firstname=" + firstname);
 			System.out.println("lastname=" + lastname);
 			System.out.println("passport=" + passport);
+			// System.out.println("expiry="+expiry);
+
+			// orderman
+			String email = obean.getEmail();
+			session.setAttribute("email", email);
+
 			System.out.println("email=" + email);
 
-			// String firstname=pbean.getExpiry();
-			// System.out.println("firstname="+firstname);
-			// session.setAttribute("firstname",firstname);
+			// fightorder
+			String start = fbean.getStart();
+			String endstart = fbean.getEndstart();
+			Date uptime = fbean.getUptime();
+			Date downtime = fbean.getDowntime();
+			int adult = fbean.getAdult();
+			int child = fbean.getChild();
+			String flight = fbean.getFlight();
+			String model = fbean.getModel();
 
-			 return "order.success";
-//			return "order.error";
+			session.setAttribute("start", start);
+			session.setAttribute("endstart", endstart);
+			session.setAttribute("uptime", uptime);
+			session.setAttribute("downtime", downtime);
+			session.setAttribute("adult", adult);
+			session.setAttribute("child", child);
+			session.setAttribute("flight", flight);
+			session.setAttribute("model", model);
+
+			System.out.println("start = " + start);
+			System.out.println("endstart=" + endstart);
+			System.out.println("uptime = " + uptime);
+			System.out.println("downtime = " + downtime);
+			System.out.println("adult = " + adult);
+			System.out.println("child = " + child);
+			System.out.println("flight = " + flight);
+			System.out.println("model = " + model);
+
+			return "order.success";
+			// return "order.error";
 		}
 
 		System.out.println("failed");
