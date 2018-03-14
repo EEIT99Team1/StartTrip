@@ -12,10 +12,13 @@
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 
 </head>
 <body>
+	<jsp:include page="/page/shared/indexheader.jsp" />
+	
+
 	<article>
 		<section>
 <!-- 			<div class="titlebox"> -->
@@ -199,7 +202,7 @@
 					<table>
 						<thead>
 							<tr>
-								<th>總點數：<span class="allbonus" id=allbonus>0</span></th>
+								<th>總點數：<span class="allbonus" id="allbonus" name="allbonus">0</span></th>
 								<th><input class="btn btn-success cbtnall" type="submit" value="確認購物"></th>
 								<th><input class="btn btn-danger dbtnall" type="button" value="全部清除"></th>
 							</tr>
@@ -209,19 +212,21 @@
 <!-- 				確認及清除鈕區塊 -->
 			</div>
 <!-- 				購物車選單 -->	
-			<div class = checktotal>
-				<p class = center>您剩餘紅利點數:<span class="nowbonus"></span></p>
-				<br>
-				<p class = center>所選商品總紅利:<span class="selectbonus"></span></p>
-				<table>
-					<thead>
-					<tr>
-						<td><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確定購買"></form></td>
-						<td><input class="btn btn-danger closebtn" type="button" value="關閉視窗"></td>
-					</tr>
-					</thead>				
-				</table>
-			</div>		
+			<div class="checktotalbk">
+				<div class= "checktotal">
+					<p class = "fontstyle">您累計的紅利點數:<span class="nowbonus"></span></p>
+					<br>
+					<p class = "fontstyle">所選商品的總點數:<span class="selectbonus"></span></p>
+					<table>
+						<thead>
+						<tr>
+							<td><form action="<c:url value='/ShopCartServlet'/>" method="get"><input class="btn btn-success" type="submit" value="確定購買"></form></td>
+							<td><input class="btn btn-danger closebtn" type="button" value="關閉視窗"></td>
+						</tr>
+						</thead>				
+					</table>
+				</div>
+			</div>
 <!-- 			購物最終確認 -->
 		</div><!--row-->
 	</div><!--container-->
@@ -231,36 +236,9 @@
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/DeleteButton.jsp"/>
-<script>
-$(function(){
-	$.ajax({
-		url:'<c:url value="/FileUpLoad.controller"/>',
-		type:'GET',
-		dataType:"json",
-		scriptCharset:'UTF-8',
-		success:function(data){
-			var documentFragmentDiv=$(document.createDocumentFragment());
-			var documentFragmentLi=$(document.createDocumentFragment());
-			for(var i=0,max=data.length;i<max;i++){
-				var div=$("<div></div>").addClass("carousel-item");
-				var li=$("<li></li>").attr({"data-target":"#carouselExampleIndicators","data-slide-to":i});
-				if(i==0){
-					div.addClass("active");
-					li.addClass("active");
-				}
-				var img=$("<img></img>").addClass("titleimg").attr({src:'<c:url value="/image/backstage/'+data[i]+'"/>'});
-				div.append(img);
-				documentFragmentDiv.append(div);
-				documentFragmentLi.append(li);
-			}
-			var title=$(".titlebox");
-			title.append(documentFragmentDiv);
-			var ol=$(".carousel-indicators");
-			ol.append(documentFragmentLi);
-		}
-	});
-});
-</script>
 	<jsp:include page="/page/bonusshop/myjs/CheckTotal.jsp"/>
+	<jsp:include page="/page/bonusshop/myjs/CarouselWall.jsp"/>
+	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />	
 </body>
 </html>

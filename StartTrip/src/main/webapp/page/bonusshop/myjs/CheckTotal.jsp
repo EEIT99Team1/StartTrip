@@ -5,10 +5,10 @@
 <script>
 	// 	確認購買點擊後跳出確認視窗
 	$(".cbtnall").click(function() {
-		$(".checktotal").css("display", "block");
+		$(".checktotalbk").css("display", "block");
 		//讀取servlet的會員bonus
 		$.get("<c:url value="/ShopCartServlet"/>", function() {
-			$(".nowbonus").html("${nowbonus}");
+			$(".nowbonus").html("11");
 // 			alert("${errorMsgKey}");			
 		});
 
@@ -17,8 +17,10 @@
 		$(".selectbonus").text(total);
 	
 	});
-	// 	檢查視窗的取消購買
+
+	//檢查視窗的取消購買
 	$(".closebtn").click(function() {
-		$(".checktotal").css("display", "none");
+		$(".checktotalbk").css("display", "none");
 	});
+
 </script>
