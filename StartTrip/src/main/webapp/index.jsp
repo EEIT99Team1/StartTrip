@@ -6,21 +6,25 @@
 <meta charset="utf-8" />
 <title>首頁</title>
 
+
 <!-- 彈跳視窗需要 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id"
 	content="731303854433-8mlq24ikh4gnnbdff1dbhkmpgk3hou01.apps.googleusercontent.com">
 
 
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
-<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-<%-- <link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" > --%>
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
-<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+	<link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
+	<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+	<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
+	<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+	
+	
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+	<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+
 
 
 	<jsp:include page="/page/shared/myjs/datepickerjs.jsp" />
@@ -84,9 +88,7 @@
 			</div>
 		</form>
 	</article>
-<footer>
 <jsp:include page="/page/shared/footer.jsp" />
-</footer>
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <jsp:include page="/page/search/myjs/firstsearchjs.jsp" />
 	</body>

@@ -51,9 +51,12 @@ padding: auto;
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 <script type="text/javascript">
+
 $(function() {
 	$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
-});</script>
+});
+</script>
+
 
 </head>
 <body>
