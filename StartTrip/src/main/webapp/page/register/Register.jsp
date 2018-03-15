@@ -8,9 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
-<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+<jsp:include page="/css/headerlink.jsp" />
+
 <title>會員註冊</title>
 <style>
 form {
@@ -60,8 +59,7 @@ $(function() {
 
 </head>
 <body>
-
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>

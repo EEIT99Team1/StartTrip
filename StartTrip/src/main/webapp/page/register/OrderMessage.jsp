@@ -7,14 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-
+<jsp:include page="/css/headerlink.jsp" />
 <title>歷史訂單</title>
 <style>
-*{
-	margin:0;
-	padding:0;
-}
-
 #form {
 /* set width in form, not fieldset (still takes up more room w/ fieldset width */
 font:100% verdana,arial,sans-serif;
@@ -22,10 +17,10 @@ margin: auto;
 margin-bottom:10px;
 padding: 0;
 min-width: 500px;
-max-width: 600px;
-width: 560px; 
+max-width: 1000px;
+width: 1400px; 
 /* position:absolute; */
-height:200px;
+height:230px;
 top:0; bottom:0; left:0; right:0;
 border:8px #FFD382 groove;
 background-color: white;
@@ -60,7 +55,8 @@ margin-left: 50px;
 </style>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
+<div>
 <div id="historyorder">歷史訂單</div>
 <c:forEach  var="flight" items="${flightbean}">
 <div id="form">
@@ -90,5 +86,6 @@ margin-left: 50px;
 </c:forEach>
 <jsp:include page="/page/shared/footer.jsp" />
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
+</div>
 </body>
 </html>

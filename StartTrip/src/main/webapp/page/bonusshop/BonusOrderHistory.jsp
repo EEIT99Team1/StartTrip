@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<jsp:include page="/css/headerlink.jsp" />
 <title>紅利商店歷史訂單</title>
 <style>
 *{
@@ -38,14 +39,15 @@ padding: auto;
 
 #bonushistoryorder{
 text-align: center;
-margin-top: 80px;
+margin-top: 90px;
 font-size: 1cm;
 font-family: fantasy;
 }
 </style>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
+<div>
 <div id="bonushistoryorder">紅利商店歷史訂單</div>
 <c:forEach var="order" items="${orderbean}">
 <c:forEach var="shop" items="${bonushopBean}">
@@ -68,6 +70,8 @@ font-family: fantasy;
 		</div>
 </div>
 </c:forEach>
+<br><br><br>
+</div>
 <jsp:include page="/page/shared/footer.jsp" />
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>
