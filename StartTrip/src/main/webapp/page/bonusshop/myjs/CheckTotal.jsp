@@ -17,13 +17,13 @@ $(document).ready(function(){
 	$(".success").click(function(){
 		var j= parseInt($(".nowbonus").text());
 		var k= parseInt($(".selectbonus").text());
-		
+		var total = $("#allbonus").text();
 		if(j>=k){
 			alert("購買成功");
 		}else{
 			alert("您的紅利點數不夠");
 		}
-		$.get("<c:url value='/ShopCartServlet'/>")
+		$.get("<c:url value='/ShopCartServlet'/>?allbonus="+total)
 	});
 
 	//檢查視窗的取消購買
