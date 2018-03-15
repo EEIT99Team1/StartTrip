@@ -15,11 +15,11 @@
 <link href="../../css/search/jquery-ui.min.css" rel="stylesheet">
 
 <!-- <link href="../../css/search/hometitle.css" rel="stylesheet"> -->
-
+<jsp:include page="/css/headerlink.jsp" />
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
 
 <script>
 
@@ -37,7 +37,7 @@
 
 
 
-
+<div style="margin-top: 5%">
 <c:if test="${not empty time}">
 <script >
 var ans=[];
@@ -111,8 +111,8 @@ $('#calendar').fullCalendar({
 	</div>
 <div id="calendar" style="width: 800px; margin: 0 auto;"></div>	
 </form>
-
-
+</div>
+<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 
 
 </body>
