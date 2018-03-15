@@ -52,18 +52,19 @@ $(document).ready(function(){
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
 		modal.style.display = "none";
+		 window.location.reload();
 	}
 	
-//		mybutton.onclick = function(){
-//			modal.style.display = "block";	
-//		}
+		mybutton.onclick = function(){
+			modal.style.display = "block";	
+		}
 	
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
+// 	window.onclick = function(event) {
+// 		if (event.target == modal) {
+// 			modal.style.display = "none";
+// 		}
+// 	}
 });
 </script>
 <script>
@@ -199,6 +200,7 @@ $(document).ready(function(){
 </script>
 
 <script>
+				//FB
 		window.onload = function() {
 			function getUserData() {
 				FB.api('/me?fields=name,id,first_name,last_name,email', function(response) {
