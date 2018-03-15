@@ -82,6 +82,8 @@
  					var bns = tbonus + parseInt(bonus);
 					tbonus = $("#allbonus").text(bns);
 
+					
+					
  					//新增刪除鈕
  					dbtn.on("click",dbtnr);
  					
@@ -96,7 +98,18 @@
  					var bns = tbonus + parseInt(bonus);
 					tbonus = $("#allbonus").text(bns);
 					
- 					}//else				
+ 					}//else
+ 				//顯示購買後餘額
+ 				var	h = parseInt($(".nowbonus").text());
+//  				console.log(h);
+ 				var	g = parseInt($("#allbonus").text());
+//  				console.log(g);
+ 				var balance = h-g;
+ 				if(h>=g){
+ 					$(".balance").text(balance);
+ 				}else{
+ 					$(".balance").text("餘額不足");
+ 				}
 		});//點擊的function		
 	});//ready的function
 </script>
