@@ -32,8 +32,8 @@
 			var gogodate2=tbodygo.find("tr:eq(3) td:eq(1)").text();
 			var goarriveddate2=tbodygo.find("tr:eq(3) td:eq(3)").text();
 			var goflight2=tbodygo.find("tr:eq(3) td:eq(4)").text();
-			
 			var gogotime2 = tbodygo.find("tr:eq(4) td:eq(0)").text();
+			console.log(gogotime2)
 			var goflighttime2 = tbodygo.find("tr:eq(4) td:eq(1)").text();
 			var goarrivedtime2 = tbodygo.find("tr:eq(4) td:eq(2)").text();
 			var gocabin2=tbodygo.find("tr:eq(4) td:eq(3)").text();
@@ -145,7 +145,7 @@
 			"goweight1":goweight1,
  		
 			"gomodel2":gomodel2,
-			"gomodel2":gogodate2,
+			"gogodate2":gogodate2,
 			"goarriveddate2":goarriveddate2,
 			"goflight2":goflight2,
 			"gogotime2":gogotime2,

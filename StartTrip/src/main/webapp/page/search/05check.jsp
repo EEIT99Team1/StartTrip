@@ -29,7 +29,7 @@
 
     <div>
         <input type="submit" value="確認，下一步" />
-        <a href="04enter.jsp"><input type="submit"value="返回" /></a>
+        <a href="04enter.jsp"><input type="button"value="返回" /></a>
     </div>
 	</form>
 </body>
