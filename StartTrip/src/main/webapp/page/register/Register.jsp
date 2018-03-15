@@ -2,11 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<jsp:include page="/css/headerlink.jsp" />
 
 <title>會員註冊</title>
 <style>
@@ -48,14 +50,16 @@ padding: auto;
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 <script type="text/javascript">
-	$(function() {
-		$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
-	});
+
+$(function() {
+	$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
+});
 </script>
+
+
 </head>
 <body>
-
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>
@@ -70,10 +74,8 @@ padding: auto;
 		</div>
 
 		<div>	
-
 			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
-
 		</div>
 		<div>
 			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>

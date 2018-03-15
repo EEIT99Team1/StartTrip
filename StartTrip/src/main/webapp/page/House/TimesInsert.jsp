@@ -6,9 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
+
+
+<div style="margin-top:5%">
 <form action="InsertTimes" method="post">
 <table style="margin: auto;margin-top: 20px">
     <tr>
@@ -57,7 +61,9 @@
 	 </script>
 	
 	</c:if>
+</div>	
 	
+<jsp:include page="/page/shared/myjs/loginjs.jsp" />	
 </form>
 </body>
 </html>
