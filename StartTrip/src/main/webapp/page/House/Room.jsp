@@ -6,14 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="../../js/jquery-3.3.1.min.js"></script>
+<jsp:include page="/css/headerlink.jsp" />
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
 <script >
-
-
 </script>
+
+<div style="margin:5%">
 <c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
 	
@@ -44,6 +45,9 @@
 	</c:forEach>
 	
 	</c:if>
+</div>
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
+
 
 </body>
 </html>

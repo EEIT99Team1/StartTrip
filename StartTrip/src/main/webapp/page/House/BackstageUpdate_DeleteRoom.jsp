@@ -58,7 +58,7 @@
 	  <input type="text" name="name" value="${row.name}" style="display: none;">
 	<ul class="menu">           
       <li><input type="text" disabled="disabled" value="${row.roomName}" size="8%"></li>
-      <li><input style="display:none;" type="text" name="name"  value="${row.roomName}" size="8%"></li>      
+      <li><input style="display:none;" type="text" name="roomname"  value="${row.roomName}" size="8%"></li>      
       <li><input type="text" name="price" value="${row.price}" size="8%"></li>   
       <li><input type="text" name="number" value="${row.number}" size="8%"></li>
       <li><input type="text" name="explain1" value="${row.explain1}" size="8%"></li>

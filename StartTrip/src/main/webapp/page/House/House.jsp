@@ -8,12 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>
+<jsp:include page="/page/shared/header.jsp" />
 
-<jsp:include page="/page/shared/indexheader.jsp" />
 
-
+<div style="margin-top:5%;">
 <form action="SelectHouse" method="post">
 <table style="margin:auto;margin-top:30px;">
      <tr>
@@ -64,11 +66,15 @@
 	
 	</c:if>
 	
-	
+</div>	
+<c:if test="${empty select}">
+<div style="height:450px"></div>
 
+</c:if>
 	
 			
-
+<jsp:include page="/page/House/footer.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 
 <script src="/StartTrip/js/jquery-3.3.1.min.js"></script>
 	<script>
@@ -118,6 +124,6 @@
 
 
 
-<jsp:include page="/page/House/footer.jsp" />
+
 </body>
 </html>
