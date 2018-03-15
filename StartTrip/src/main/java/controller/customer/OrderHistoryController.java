@@ -50,6 +50,7 @@ public class OrderHistoryController {
 			    System.out.println("flightbean = "+flightbean);
 			}else {
 				flightbean.addAll(flightdao.selectByOrderid(odbean.getOrderid()));
+				System.out.println("flightbeanAll = "+flightbean);
 			}
 			i++;
 		}

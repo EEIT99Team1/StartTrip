@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<jsp:include page="/css/headerlink.jsp" />
 
 <title>會員資料</title>
 <style>
@@ -39,6 +40,7 @@ text-align: center;
 margin-top: 90px;
 font-size: 1cm;
 font-family: fantasy;
+z-index: -1;
 }
 .customerinfoupdate{
 font-size:xx-large;
@@ -49,7 +51,7 @@ margin-top: 400px;
 </style>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
 <div id="customerinfo">會員資料</div>
 	<form action="<c:url value='/CustomerInformationAndUpdate.controller'/>" method="post">
 		<div>
@@ -81,6 +83,7 @@ margin-top: 400px;
 		</div>
 	</form>
 	<div class="customerinfoupdate">${successMsg.updateOK}</div>
+	<br/><br/><br/><br/><br/><br/>
 	<jsp:include page="/page/shared/footer.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>

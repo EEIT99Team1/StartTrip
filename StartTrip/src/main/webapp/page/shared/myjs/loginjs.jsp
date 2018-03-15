@@ -198,7 +198,6 @@ $(document).ready(function(){
 		});
 });
 </script>
-
 <script>
 				//FB
 		window.onload = function() {

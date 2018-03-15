@@ -24,6 +24,16 @@ public class CustomerDao {
 	}//select
 	
 	@Transactional
+	public List<CustomerBean> selectAll(){
+		List<CustomerBean> result = null;
+		String HQL ="From CustomerBean";
+		Query<CustomerBean> query= getSession().createQuery(HQL, CustomerBean.class);
+		result = query.list();
+		return result;
+	}
+	
+	
+	@Transactional
 	public CustomerBean insert(CustomerBean bean) {
 		if(bean!=null && (select(bean.getEmail())==null)) {
 			getSession().save(bean);

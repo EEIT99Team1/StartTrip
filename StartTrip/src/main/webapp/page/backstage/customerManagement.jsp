@@ -7,18 +7,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
+
 <title>會員管理系統</title>
 </head>
 <body>
-<div id="page" class="container">
+	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
-		<div id="main">
-			<form action="#" method="get">
-				<h2><label for="username">username:</label><input id="username" name="username"/>
-				<label for="password">password:</label><input id="password" name="password"/>
-				<input type="submit" value="登入" /></h2>
-			</form>
-		</div>
+			<div id="main">
+				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>"> 
+					<c:forEach var="customerList" items="${customerList}" varStatus="status">
+					<span class="customerList">${customerList.email}</span>
+					<input id="blacklistcheckbox" type="checkbox" value="${status.count}" name="blacklistcheckbox">
+					<label for="blacklistcheckbox">加入黑名單</label><br/>
+					</c:forEach>
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
 	</div>
-</body>
+	</body>
 </html>
