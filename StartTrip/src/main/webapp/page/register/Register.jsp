@@ -55,7 +55,8 @@ $(function() {
 </script>
 </head>
 <body>
-<jsp:include page="/page/shared/indexheader.jsp" />
+<jsp:include page="/page/shared/header.jsp" />
+<div>
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>
@@ -95,6 +96,8 @@ $(function() {
 	<input class="registersubmit" type="submit" name="submit" value="註冊一般會員" />
 
 	</form>
+	</div>
+<%-- 	<jsp:include page="/page/shared/footer.jsp" /> --%>
 	<script>
 	$(document).ready(function(){
 		var InsertOK="${success.InsertOK}";
@@ -104,7 +107,6 @@ $(function() {
 			}
 		});
 	</script>
-	<jsp:include page="/page/shared/footer.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>
 </html>

@@ -29,9 +29,9 @@ display:none;
 					<div class="customeroption">
 						<ul>				
 							<li><a href="<c:url value="/page/register/CutomerInfoAndUpdate.jsp"/>">個人資料</a></li>
-							<li><a href="<c:url value='/OrderHistoryController.controller'/>">歷史訂單</a></li>
+							<li><a href="<c:url value='/OrderHistoryController.controller'/>">機票訂單</a></li>
 							<li><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商店</a></li>
-							<li><a href="<c:url value="/BonusShopOrderHistory.controller"/>">紅利商品歷史訂單</a></li>
+							<li><a href="<c:url value="/BonusShopOrderHistory.controller"/>">紅利訂單</a></li>
 							<li><a id="logout">登出</a></li>
 						</ul>
 					</div>
