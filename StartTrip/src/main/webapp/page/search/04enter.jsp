@@ -4,14 +4,14 @@
     
 <!DOCTYPE html>
 <html>
+<head>
 
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-
-<head>
+	<jsp:include page="/css/headerlink.jsp" />
     <meta charset="utf-8" />
     <title>資料填寫</title>
      
@@ -24,6 +24,9 @@
 
 </head>
 <body onload="onLoad()">
+	<jsp:include page="/page/shared/header.jsp" />
+	<br><br><br>
+	<article>
     <h1>資料填寫</h1>
     <hr/>
 	<form action="<c:url value='/Searchenter.controller'/>" method="get">
@@ -68,5 +71,8 @@
             <a href="<c:url value='/index.jsp'/>"><input type="button" value="回查詢首頁" /></a>
         </div>
     </form>
+    </article>
+    <jsp:include page="/page/shared/footer.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>
 </html>
