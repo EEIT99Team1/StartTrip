@@ -51,11 +51,11 @@
 <input type="text" name="name" value="${HouseLogin.name}" style="display:none;">
 
 <tr>
- <td>gotime:</td>
+ <td>訂房日期:</td>
  <td><input type="text" name="gotime" ></td>
 </tr>
 <tr>
- <td>telephone:</td>
+ <td>連絡電話:</td>
  <td><input type="text" name="telephone" ></td>
 </tr>
 </table>

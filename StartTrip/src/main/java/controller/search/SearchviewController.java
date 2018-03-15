@@ -30,34 +30,41 @@ public class SearchviewController {
 	private FlightorderService flightorderService;
 
 	@RequestMapping( method = { RequestMethod.GET })
-	public String view(PassengerBean pbean, OrdermanBean obean, FlightorderBean fbean,
-			HttpSession session,Model model) {
+	public String view(HttpSession session,Model model) {
 	
-		String firstname = (String) session.getAttribute("firstname");
-		String lastname = (String) session.getAttribute("lastname");
-		String passport = (String) session.getAttribute("passport");
-		String email = (String) session.getAttribute("email");
+		OrdermanBean obean = (OrdermanBean) session.getAttribute("obean");
 		
-		System.out.println("firstname1="+session.getAttribute("firstname"));
-		System.out.println("lastname1="+lastname);
-		System.out.println("passport1="+passport);
-		System.out.println("email1="+email);
+		FlightorderBean go1 = (FlightorderBean) session.getAttribute("go1");
+		FlightorderBean go2 = (FlightorderBean) session.getAttribute("go2");
+		FlightorderBean back1 = (FlightorderBean) session.getAttribute("back1");
+		FlightorderBean back2 = (FlightorderBean) session.getAttribute("back2");
 		
-		pbean.setFirstname(firstname);
-		pbean.setLastname(lastname);
-		pbean.setPassport(passport);
-//		pbean.setExpiry(expiry);
-		obean.setStutus(false);
-		obean.setEmail(email);
-
-		 PassengerBean presult = passengerService.insert(pbean);
-		 model.addAttribute("insert", presult);
+		PassengerBean pbean = (PassengerBean) session.getAttribute("pbean");
 		 
 		 OrdermanBean oresult = ordermanService.insert(obean);
-		 model.addAttribute("insert", oresult);
+
+		 int orderid = oresult.getOrderid();
 		 
-		 FlightorderBean fresult = flightorderService.insert(fbean);
-		 model.addAttribute("insert", fresult);
+		 go1.setOrderid(orderid);
+		 
+		 go1 = flightorderService.insert(go1);
+		 
+		 if(go2!=null) {
+			 go2.setOrderid(orderid);
+			 go2 = flightorderService.insert(go2);
+		 }
+		 if(back1!=null) {
+			 back1.setOrderid(orderid);
+			 back1 = flightorderService.insert(back1);
+		 }
+		 if(back2!=null) {
+			 back2.setOrderid(orderid);
+			 back2 = flightorderService.insert(back2);
+		 }
+
+		 pbean.setOrderid(orderid);
+		 PassengerBean presult = passengerService.insert(pbean);
+
 		 
 		 System.out.println("success");
 		 return "view.success";
