@@ -15,12 +15,9 @@
 	       }
 	</style>
 	
-	<link href="<c:url value='/css/search/jquery-ui.min.css'/>" type="text/css" rel="stylesheet">
-	<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-	<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+	<jsp:include page="/css/headerlink.jsp" />
+
 	
-	<link href="<c:url value='/css/title.css'/>" type="text/css" rel="stylesheet" />
-	<link href="<c:url value='/css/footer.css'/>" type="text/css" rel="stylesheet" />
 	<link href="<c:url value='/css/search/searchbody.css'/>" type="text/css" rel="stylesheet" />
 	
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
