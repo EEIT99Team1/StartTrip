@@ -18,6 +18,12 @@ public class CustomerChangeToBlackListController {
 		
 		//取得被勾選黑名單的checkbox
 		
+		
+		
+		
+		
+		
+		
 		return "customerManagement";
 	}
 
