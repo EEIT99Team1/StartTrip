@@ -86,9 +86,7 @@
 			</div>
 		</form>
 	</article>
-<footer>
 <jsp:include page="/page/shared/footer.jsp" />
-</footer>
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <jsp:include page="/page/search/myjs/firstsearchjs.jsp" />
 	</body>

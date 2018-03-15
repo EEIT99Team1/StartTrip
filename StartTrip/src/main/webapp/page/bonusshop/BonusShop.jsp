@@ -7,8 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width= device-width, initial-scale=1.0">
 <title>Bonus shop</title>
+<link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <link href="<c:url value="/css/bonusshop/BonusShop.css"/>" rel="stylesheet">
 <link href="<c:url value="/css/Bootstrap/bootstrap.css"/>" rel="stylesheet">
+<jsp:include page="/css/headerlink.jsp" />
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -16,10 +18,10 @@
 
 </head>
 <body>
-	<jsp:include page="/page/shared/indexheader.jsp" />
+	<jsp:include page="/page/shared/header.jsp" />
 	
 
-	<article>
+	<article style="margin-top:55px">
 		<section>
 <!-- 			<div class="titlebox"> -->
 <%-- 			<img class="titleimg" alt="廣告" src="<c:url value="/image/bonusshop/air.jpg"/>"> --%>
@@ -232,6 +234,8 @@
 	</div><!--container-->
 
 	</article>
+	<jsp:include page="/page/shared/footer.jsp" />
+	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <!-- 	載入function -->
 	<jsp:include page="/page/bonusshop/myjs/ShopCart.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/AddCartshop.jsp"/>
@@ -239,6 +243,5 @@
 	<jsp:include page="/page/bonusshop/myjs/CheckTotal.jsp"/>
 	<jsp:include page="/page/bonusshop/myjs/CarouselWall.jsp"/>
 	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
-	<jsp:include page="/page/shared/myjs/loginjs.jsp" />	
 </body>
 </html>
