@@ -25,7 +25,6 @@ public class ShopCartServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("test");//有就能執行測試，bug
 		//找到Spring控管的容器
 		WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		//轉成UTF-8
@@ -54,16 +53,16 @@ public class ShopCartServlet extends HttpServlet {
 		//讀取會員的bonus
 		Integer bonus= mb.getBonus();
 		session.setAttribute("nowbonus", bonus);
-		System.out.println(bonus);
+//		System.out.println(bonus);
 		
 		//讀取總total
 		Integer total = Integer.parseInt(req.getParameter("allbonus"));
-		System.out.println(total);		
+//		System.out.println(total);		
 		
 		CustomerDao cdao = wac.getBean(CustomerDao.class);
 		
 		//判斷會員紅利夠不夠
-		if(bonus>total) {
+		if(bonus>=total) {
 			Integer allbonus = bonus-total;
 			cdao.update(mb.getEmail(),mb.getPassword(), mb.getFirstname(), mb.getLastname(), mb.getCountry(),mb.getBirthday(), mb.getPhonenumber(),allbonus);
 			successMsgMap.put("bonussuccess","購買成功");

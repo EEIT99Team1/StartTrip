@@ -21,8 +21,7 @@ public class PassengerBean implements Serializable {
 	private Integer wid;
 	private String firstname;
 	private String lastname;
-	@DateTimeFormat(pattern="yyyy-mm-dd")
-	private Date expiry;
+	private String expiry;
 	private String passport;
 	private Integer orderid;
 
@@ -50,11 +49,11 @@ public class PassengerBean implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public java.util.Date getExpiry() {
+	public String getExpiry() {
 		return expiry;
 	}
 
-	public void setExpiry(Date expiry) {
+	public void setExpiry(String expiry) {
 		this.expiry = expiry;
 	}
 

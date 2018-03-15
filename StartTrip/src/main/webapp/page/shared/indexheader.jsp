@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
-<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+
 <style>
 #fbRead{
 display:none;
@@ -20,6 +18,7 @@ $(function() {
 <%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
 			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>			
+			<li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
 		</ul>
 		
@@ -55,7 +54,7 @@ $(function() {
 							<input type="password" name="pswd" size="20" value="${param.password}">
 							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br /><br />
              				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
-             				<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘記密碼？</a>
+             				<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('page/shared/forgetPassword.jsp')">忘記密碼？</a>
 							<c:set var="target" value="${pageContext.request.servletPath}" scope="session" />
 							<input id="mybutton" class="button" type="submit" value="Login">
 						</form>
@@ -116,11 +115,13 @@ $(function() {
 						
 				
 			</div>
+
 				<div class="modal-footer"  id="otherBtns">
 				<button class="loginBtn loginBtn--facebook" onclick="_login()" >使用Facebook註冊</button>
 				<button class="loginBtn loginBtn--google" data-onsuccess="onSignIn">使用 Google註冊</button>
-					<div id="googleIconSize" class="g-signin2"
-						data-onsuccess="onSignIn"></div>
+<!-- 					<div id="googleIconSize" class="g-signin2" -->
+<!-- 						data-onsuccess="onSignIn"></div> -->
+
 					<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
 					<a href="#" onclick="signOut();">Sign out</a>
 				</div>
