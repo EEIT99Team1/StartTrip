@@ -1,6 +1,5 @@
 package controller.manager;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -24,8 +23,9 @@ public class CustomerManagementController {
 	public String method(HttpSession session) {
 		//取的所有會員資料
 		List<CustomerBean> customerList = dao.selectAll();
-		System.out.println("customerList = "+ customerList);
+//		System.out.println("customerList = "+ customerList);
 		session.setAttribute("customerList", customerList);
+		
 		return "customerManagement";
 	}
 }

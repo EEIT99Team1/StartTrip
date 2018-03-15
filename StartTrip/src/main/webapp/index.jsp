@@ -15,7 +15,7 @@
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
 <link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+<%-- <link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" > --%>
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

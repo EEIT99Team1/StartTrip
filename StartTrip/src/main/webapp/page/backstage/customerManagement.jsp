@@ -14,7 +14,7 @@
 	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
 			<div id="main">
-				<form>
+				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>"> 
 					<c:forEach var="customerList" items="${customerList}" varStatus="status">
 					<span class="customerList">${customerList.email}</span>
 					<input id="blacklistcheckbox" type="checkbox" value="${status.count}" name="blacklistcheckbox">

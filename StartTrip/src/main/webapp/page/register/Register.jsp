@@ -2,12 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-
+<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
+<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
 <title>會員註冊</title>
 <style>
 form {
@@ -70,10 +73,8 @@ $(function() {
 		</div>
 
 		<div>	
-
 			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
-
 		</div>
 		<div>
 			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>
