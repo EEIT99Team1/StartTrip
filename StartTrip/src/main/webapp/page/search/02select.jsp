@@ -2,30 +2,31 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta charset="utf-8" />
 <title>查詢結果</title>
-<style type="text/css">
-body {
-            background: #111111 url('../../image/search/searchback.jpg') no-repeat fixed 50% 50%;
-            /*圖片畫面置中不重複*/
-            background-size: cover; /*圖片隨頁面縮放大小*/
-            margin:auto;
-        }
-</style>
-
-<link href="<c:url value='/css/search/jquery-ui.min.css'/>" type="text/css" rel="stylesheet">
-<link href="<c:url value='/css/login/bouncebutton.css'/>" type="text/css" rel="stylesheet" />
-
-<link href="<c:url value='/css/title.css'/>" type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/footer.css'/>" type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/search/searchbody.css'/>" type="text/css" rel="stylesheet" />
-
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+	<style type="text/css">
+	 body { 
+	             background: #111111 url('../../image/search/searchback.jpg') no-repeat fixed 50% 50%;
+	             /*圖片畫面置中不重複*/
+	           background-size: cover; /*圖片隨頁面縮放大小*/ 
+	           margin:auto; 
+	       }
+	</style>
+	
+	<link href="<c:url value='/css/search/jquery-ui.min.css'/>" type="text/css" rel="stylesheet">
+	<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
+	<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+	
+	<link href="<c:url value='/css/title.css'/>" type="text/css" rel="stylesheet" />
+	<link href="<c:url value='/css/footer.css'/>" type="text/css" rel="stylesheet" />
+	<link href="<c:url value='/css/search/searchbody.css'/>" type="text/css" rel="stylesheet" />
+	
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
 	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 	<jsp:include page="/page/search/myjs/searchbar.jsp" />
@@ -37,7 +38,7 @@ body {
 
 	<br/><br/><br/>
 	<div id="clone"></div>
-	<h1 style="margin-left:100px;">機票查詢結果</h1>
+	<h1 style="margin-left:300px;">機票查詢結果</h1>
 	<hr/>
 
 	
@@ -119,9 +120,9 @@ body {
 <!-- 		</div> -->
 <!-- 		</div><br/> -->
 	</div><!-- flightsResult結束 -->
-	<footer id="footer">
-		<jsp:include page="/page/shared/footer.jsp" />
-	</footer>
+	
+	<jsp:include page="/page/shared/footer.jsp" />
+
 	<jsp:include page="/page/search/myjs/ajaxdatasessionjs.jsp" />
 	<jsp:include page="/page/search/myjs/searchjs.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
