@@ -64,7 +64,8 @@
 	</TravelerInfoSummary>
          <TPA_Extensions>
             <IntelliSellTransaction>
-               <RequestType Name="200ITINS"/>
+				<!--可以改數字，等於更改查詢筆數 (50、100、200)-->
+               <RequestType Name="50ITINS"/> 
                <CompressResponse Value="false"/>
             </IntelliSellTransaction>
          </TPA_Extensions>
