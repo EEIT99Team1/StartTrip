@@ -48,18 +48,14 @@ padding: auto;
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
-<title>Insert title here</title>
 <script type="text/javascript">
-
 $(function() {
 	$("#date").datepicker({dateFormat: 'yy-mm-dd',changeYear: true,changeMonth:true,yearRange:'-100:+0'})
 });
 </script>
-
-
 </head>
 <body>
-<jsp:include page="/page/shared/header.jsp" />
+<jsp:include page="/page/shared/indexheader.jsp" />
 <div id=title>會員註冊</div>
 	<form action="<c:url value='/Register.controller'/>"method="post">
 		<div>
@@ -74,8 +70,10 @@ $(function() {
 		</div>
 
 		<div>	
+
 			<label for="registerlastname">姓氏：</label> <input id="registerlastname" type="text" name="lastname" size="25" value="${param.lastname}"/>
 			&nbsp;<small><Font color='red'  size="-3">${error.errorLastname}</Font></small>
+
 		</div>
 		<div>
 			<label for="registerfirstname">名字：</label> <input id="registerfirstname" type="text" name="firstname" size="25" value="${param.firstname}"/>
