@@ -27,13 +27,19 @@ body {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
+	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
+	<jsp:include page="/page/search/myjs/searchbar.jsp" />
+
 </head>
 <body>
-<jsp:include page="/page/search/myjs/searchbar.jsp" />
+
 	<jsp:include page="/page/shared/header.jsp" />
-	<br/><br/><br/><br/><br/><br/>
-<!-- 	<div id="clone"></div> -->
-<!-- 	<hr/> -->
+
+	<br/><br/><br/>
+	<div id="clone"></div>
+	<h1 style="margin-left:100px;">機票查詢結果</h1>
+	<hr/>
+
 	
 	 <div id="searchbar"class="searchbar">
             <aside class="aside">
@@ -73,9 +79,9 @@ body {
                 </button>
             </aside>
         </div>
-	
-	
-	<div id="flightsResult" style="width:50%;margin:auto;">
+
+	<div id="flightsResult" class="mainbody" style="width:50%;margin:auto;">
+
 <!-- 		<div style="border:4px solid #8C0044"> -->
 <!-- 		<table style="border:2px solid #003C9D;width:100%" > -->
 <!-- 			<thead></thead> -->

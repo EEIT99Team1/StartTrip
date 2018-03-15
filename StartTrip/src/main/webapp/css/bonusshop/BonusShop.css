@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-.center{
-	text-align:center;
-}
-
 .titlebox{	
 	text-align: center;	
 /* 	border:solid 3px red; */
@@ -16,7 +12,7 @@
 }
 
 
-/* 下面區塊的css設定 */
+/* 下部區塊的css設定 */
 
 .row{
 /*     border:solid 2px yellow; */
@@ -97,12 +93,12 @@
 	text-align:center;
 	border-bottom: solid 1px red;
 }
-
-html.noscroll {
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
-}
+/* //鎖定滾輪 */
+/* html.noscroll { */
+/*     position: fixed;  */
+/*     overflow-y: scroll; */
+/*     width: 100%; */
+/* } */
 /* 表格樣式設定 */
 table{
 	width:100%;
@@ -112,22 +108,46 @@ tr,td{
 	width:100%;
 	text-align:center;
 }
-.checktotal{
-	position:fixed;
-	display:none;
-	width:250px;
-	height:150px;
-	top:50%;
-	left:50%;
-	background:#FFFFFF;
-	border-radius:10%;
-	border:solid 1px red;
-	z-index:1;
-	
+/* 再次確認視窗 */
+.checktotalbk{	
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 15%;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-/* 文字顏色 */
+.checktotal{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    border-radius:10%; 
+    border:solid 2px red;  
+}
+
+
+/* 文字修改 */
+.center{
+	text-align:center;
+}
 
 .allbonus,.nowbonus,.selectbonus{
 	color: red;
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight:bolder;
+}
+
+.fontstyle{
+	text-align:center;
+	font-size: 20px;
+	font-weight:bolder;
 }

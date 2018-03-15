@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link href="<c:url value='/css/search/index.css'/>" type="text/css"rel="stylesheet" />
-<link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" >
+
 <style>
 #fbRead{
 display:none;
@@ -20,6 +18,7 @@ $(function() {
 <%-- 			<li><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></li> --%>
 			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>			
+			<li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
 		</ul>
 		
