@@ -36,7 +36,7 @@ public class SearchenterController {
 		if (pbean.getLastname() == null || pbean.getLastname().trim().length() == 0) {
 			errmsg.put("errlastname", "名字不可空白");
 		}
-		 if (pbean.getExpiry() == null|| pbean.getPassport().trim().length() == 0) {
+		if (pbean.getExpiry() == null|| pbean.getPassport().trim().length() == 0) {
 		 errmsg.put("errexpiry", "護照到期日不可空白");
 		 }
 		if (pbean.getPassport() == null || pbean.getPassport().trim().length() == 0) {

@@ -183,7 +183,7 @@ public class ConnectionSaber {
 			System.out.println(soapResponseData);
 			
 			// ---------------------------------------------------------
-			 OutputStream os=new FileOutputStream("e:\\02Response.xml");
+			 OutputStream os=new FileOutputStream("C:\\Users\\雲\\Desktop\\02Response.xml");
 			 OutputStreamWriter osw=new OutputStreamWriter(os);
 			 BufferedWriter bw=new BufferedWriter(osw);
 			
