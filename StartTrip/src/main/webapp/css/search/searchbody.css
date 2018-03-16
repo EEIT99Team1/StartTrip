@@ -1,9 +1,4 @@
-﻿        body {
-            background: #111111 url('../../image/search/searchback.jpg') no-repeat fixed 50% 50%;
-            /*圖片畫面置中不重複*/
-            background-size: cover; /*圖片隨頁面縮放大小*/
-            margin:auto;
-        }
+﻿        
         /*body*/
         .mainbody{
             margin:auto;
