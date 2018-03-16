@@ -31,7 +31,16 @@ public class SearchenterController {
 			String cfirstName3,String clastName3,String kidbirthday3,
 			String cfirstName4,String clastName4,String kidbirthday4
 			) {
-
+		session.removeAttribute("abean1");
+		session.removeAttribute("abean2");
+		session.removeAttribute("abean3");
+		session.removeAttribute("abean4");
+		session.removeAttribute("cbean1");
+		session.removeAttribute("cbean2");
+		session.removeAttribute("cbean3");
+		session.removeAttribute("cbean4");
+		
+		
 		obean.setStutus(false);
 		System.out.println(pbean);
 		System.out.println(obean);
