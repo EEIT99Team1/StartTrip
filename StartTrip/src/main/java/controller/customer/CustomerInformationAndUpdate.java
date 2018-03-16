@@ -58,7 +58,7 @@ public class CustomerInformationAndUpdate {
 					successMsg.put("updateOK", "恭喜您更改成功。");
 					bean.setBonus(0);
 					dao.update(bean.getEmail(),bean.getPassword(),bean.getFirstname(),
-							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus());
+							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus(),bean.getBlacklist());
 				}
 				
 				System.out.println("更改成功");

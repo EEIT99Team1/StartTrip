@@ -14,13 +14,13 @@
 	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
 			<div id="main">
-				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>"> 
-					<c:forEach var="customerList" items="${customerList}" varStatus="status">
-					<span class="customerList">${customerList.email}</span>
-					<input id="blacklistcheckbox" type="checkbox" value="${status.count}" name="blacklistcheckbox">
+				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>">
+					<c:forEach var="customerList" items="${customerList}">
+					<span class="customerList" >${customerList.email}</span>
+					<input class="blacklistcheckbox" type="checkbox" value="${customerList.email}" name="blacklistcheckbox">
 					<label for="blacklistcheckbox">加入黑名單</label><br/>
 					</c:forEach>
-					<button type="submit">Subscribe</button>
+					<button type="submit">送出</button>
 				</form>
 			</div>
 	</div>

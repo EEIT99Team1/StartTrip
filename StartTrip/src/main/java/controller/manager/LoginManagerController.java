@@ -10,6 +10,7 @@ public class LoginManagerController {
 	public String method(String username,String password) {
 		System.out.println(username+"\t"+password);
 		
+		
 		return "test.success";
 	}
 }
