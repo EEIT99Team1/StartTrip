@@ -18,7 +18,34 @@ public class OrdermanBean implements Serializable {
 	private Integer orderid;
 	private String email;
 	private Boolean stutus;
+	private String efirstname;
+	private String elastname;
+	private String ephone;
 
+
+	public String getEfirstname() {
+		return efirstname;
+	}
+
+	public void setEfirstname(String efirstname) {
+		this.efirstname = efirstname;
+	}
+
+	public String getElastname() {
+		return elastname;
+	}
+
+	public void setElastname(String elastname) {
+		this.elastname = elastname;
+	}
+
+	public String getEphone() {
+		return ephone;
+	}
+
+	public void setEphone(String ephone) {
+		this.ephone = ephone;
+	}
 
 	public Boolean getStutus() {
 		return stutus;

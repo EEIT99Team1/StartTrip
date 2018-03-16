@@ -74,8 +74,8 @@
 		    </tr>
 		    <tr>
 			    <td>名字(護照上的英文名):</td>
-			    <td><input type="text" name="firstname" /></td>
-			    <td>${error.errfirstname}</td>
+			    <td><input type="text" name="lastname" /></td>
+			    <td>${error.errlastname}</td>
 		    </tr>
 			<tr>
 			    <td>聯絡電話:</td>

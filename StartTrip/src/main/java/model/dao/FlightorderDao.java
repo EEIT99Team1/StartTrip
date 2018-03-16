@@ -59,7 +59,8 @@ public class FlightorderDao {
 	@Transactional
 	public boolean update(Integer wid,String start,String endstart
 			,String uptime,String downtime,Integer adult,
-			Integer child,String fight,String model,Integer orderid) {
+			Integer child,String fight,String model,Integer orderid,
+			String flighttime,String cabin,String flightorderid,String ticketnumber) {
 		FlightorderBean result = getSession().get(FlightorderBean.class,wid);
 		if (result != null) {
 			result.setStart(start);
@@ -71,6 +72,10 @@ public class FlightorderDao {
 			result.setFlight(fight);
 			result.setModel(model);
 			result.setOrderid(orderid);
+			result.setFlighttime(flighttime);
+			result.setCabin(cabin);
+			result.setFlightorderid(flightorderid);
+			result.setTicketnumber(ticketnumber);
 			return true;
 		}
 		return false;

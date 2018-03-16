@@ -1,15 +1,12 @@
 package model.bean;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Passenger")
@@ -21,9 +18,9 @@ public class PassengerBean implements Serializable {
 	private Integer wid;
 	private String firstname;
 	private String lastname;
-	private String expiry;
-	private String passport;
 	private Integer orderid;
+	private String phone;
+	private String kidbirthday;
 
 	public Integer getWid() {
 		return wid;
@@ -49,22 +46,6 @@ public class PassengerBean implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public String getExpiry() {
-		return expiry;
-	}
-
-	public void setExpiry(String expiry) {
-		this.expiry = expiry;
-	}
-
-	public String getPassport() {
-		return passport;
-	}
-
-	public void setPassport(String passport) {
-		this.passport = passport;
-	}
-
 	public Integer getOrderid() {
 		return orderid;
 	}
@@ -73,9 +54,26 @@ public class PassengerBean implements Serializable {
 		this.orderid = orderid;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getKidbirthday() {
+		return kidbirthday;
+	}
+
+	public void setKidbirthday(String kidbirthday) {
+		this.kidbirthday = kidbirthday;
+	}
+
 	@Override
 	public String toString() {
-		return "Passenger [wid=" + wid + ", firstname=" + firstname + ", lastname=" + lastname + ", expiry=" + expiry
-				+ ", passport=" + passport + ", orderid=" + orderid + "]";
+		return "PassengerBean [wid=" + wid + ", firstname=" + firstname + ", lastname=" + lastname + ", orderid="
+				+ orderid + ", phone=" + phone + ", kidbirthday=" + kidbirthday + "]";
 	}
+
 }
