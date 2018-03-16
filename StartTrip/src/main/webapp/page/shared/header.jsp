@@ -24,7 +24,7 @@ display:none;
         <ul id="top-bar" class="menu">
 	        <li class="menuliimg"><a href="<c:url value="/index.jsp"/>"><img class="menuimg" src="<c:url value='/image/index/01.png'/>" /></a></li>
 	        <li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
-	        <li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
+	        <li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">民宿</a></li>
 	        <li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
 		</ul>

@@ -44,7 +44,7 @@ public class FlightorderBean implements Serializable {
 	}
 
 	public void setCabin(String cabin) {
-		this.cabin = cabin.substring(0,1);
+		this.cabin = cabin;
 	}
 
 	public String getFlightorderid() {

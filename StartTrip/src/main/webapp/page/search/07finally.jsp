@@ -212,6 +212,7 @@
         <input type="submit" value="列印明細" />
         <a href="<c:url value='/index.jsp'/>">
         <input type="button" value="回查詢首頁" /></a>
+        <input type="button" value="民宿" /></a>
     </div>
     
     		

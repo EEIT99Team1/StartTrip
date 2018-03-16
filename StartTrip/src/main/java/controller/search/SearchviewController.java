@@ -88,6 +88,7 @@ public class SearchviewController {
 			 }
 		 }
 		 if(cbean1!=null) {
+			 cbean1.setOrderid(orderid);
 			 passengerService.insert(cbean1);
 			 if(cbean2!=null) {
 				 cbean2.setOrderid(orderid);
