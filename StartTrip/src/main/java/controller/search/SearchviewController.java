@@ -39,7 +39,15 @@ public class SearchviewController {
 		FlightorderBean back1 = (FlightorderBean) session.getAttribute("back1");
 		FlightorderBean back2 = (FlightorderBean) session.getAttribute("back2");
 		
-		PassengerBean pbean = (PassengerBean) session.getAttribute("pbean");
+		PassengerBean abean1 = (PassengerBean) session.getAttribute("abean1");
+		PassengerBean abean2 = (PassengerBean) session.getAttribute("abean2");
+		PassengerBean abean3 = (PassengerBean) session.getAttribute("abean3");
+		PassengerBean abean4 = (PassengerBean) session.getAttribute("abean4");
+		
+		PassengerBean cbean1 = (PassengerBean) session.getAttribute("cbean1");
+		PassengerBean cbean2 = (PassengerBean) session.getAttribute("cbean2");
+		PassengerBean cbean3 = (PassengerBean) session.getAttribute("cbean3");
+		PassengerBean cbean4 = (PassengerBean) session.getAttribute("cbean4");
 		 
 		OrdermanBean oresult = ordermanService.insert(obean);
 
@@ -62,9 +70,41 @@ public class SearchviewController {
 			back2 = flightorderService.insert(back2);
 		}
 
-		 pbean.setOrderid(orderid);
-		 PassengerBean presult = passengerService.insert(pbean);
-
+		 abean1.setOrderid(orderid);
+		 passengerService.insert(abean1);
+		 if(abean2!=null) {
+			 abean2.setOrderid(orderid);
+			 passengerService.insert(abean2);
+			 
+			 if(abean3!=null) {
+				 abean3.setOrderid(orderid);
+				 passengerService.insert(abean3);
+				 
+				 if(abean4!=null) {
+					 abean4.setOrderid(orderid);
+					 passengerService.insert(abean4);
+					 
+				 }
+			 }
+		 }
+		 if(cbean1!=null) {
+			 passengerService.insert(cbean1);
+			 if(cbean2!=null) {
+				 cbean2.setOrderid(orderid);
+				 passengerService.insert(cbean2);
+				 
+				 if(cbean3!=null) {
+					 cbean3.setOrderid(orderid);
+					 passengerService.insert(cbean3);
+					 
+					 if(cbean4!=null) {
+						 cbean4.setOrderid(orderid);
+						 passengerService.insert(cbean4);
+						 
+					 }
+				 }
+			 }
+		 }
 		 
 		 System.out.println("success");
 		 return "view.success";
