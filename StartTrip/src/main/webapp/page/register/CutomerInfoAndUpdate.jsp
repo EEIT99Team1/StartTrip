@@ -55,7 +55,7 @@ margin-top: 400px;
 <div id="customerinfo">會員資料</div>
 	<form action="<c:url value='/CustomerInformationAndUpdate.controller'/>" method="post">
 		<div>
-			<label for="email">信箱:</label> <input type="text" name="email" size="25" value="${customerBean.email}" readonly="readonly"/>
+			<label for="email" style="margin-right: 2px;">信箱:</label> <input style="border: none;" type="text" name="email" size="25" value="${customerBean.email}" readonly="readonly"/>
 		</div>
 		<div>
 			<label for="passid">密碼:</label> <input type="password" name="password" size="25" value="${customerBean.password}"/>
@@ -76,7 +76,7 @@ margin-top: 400px;
 			<label for="phonenumber">手機:</label> <input type="text" name="phonenumber" size="25" value="${customerBean.phonenumber}"/>
 		</div>
 		<div>
-			<label for="bonus">紅利點數:</label><input type="text" name="bonus" size="25" value="${customerBean.bonus}" readonly="readonly"/>
+			<label for="bonus" style="margin-left: 127px;float: left;">紅利點數:</label><input style="border: none; color: red;margin-top: 4px;margin-right: 50px;" type="text" name="bonus" size="25" value="${customerBean.bonus}" readonly="readonly"/>
 		</div>
 		<div>
 			<input type="submit" name="submit" value="確認修改" />

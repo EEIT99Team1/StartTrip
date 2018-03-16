@@ -30,7 +30,8 @@ public class OrdermanService {
 	public boolean update(OrdermanBean bean) {
 		boolean result = false;
 		if(bean!=null) {
-			result = ordermanDao.update(bean.getEmail(),bean.getOrderid(),bean.getStutus());
+			result = ordermanDao.update(bean.getEmail(),bean.getOrderid(),bean.getStutus()
+					,bean.getEfirstname(),bean.getElastname(),bean.getEphone());
 		}
 		return result;
 	}

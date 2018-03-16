@@ -20,8 +20,12 @@ $(document).ready(function(){
 		var total = $("#allbonus").text();
 		if(j>=k){
 			alert("購買成功");
+			$(".checktotalbk").css("display", "none");
+
 		}else{
 			alert("您的紅利點數不夠");
+			$(".checktotalbk").css("display", "none");
+
 		}
 		$.get("<c:url value='/ShopCartServlet'/>?allbonus="+total)
 	});

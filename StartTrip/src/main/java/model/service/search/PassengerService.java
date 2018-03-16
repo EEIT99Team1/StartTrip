@@ -37,7 +37,7 @@ public class PassengerService {
 		if(bean!=null) {
 			result = passengerDao.update(
 					bean.getWid(), bean.getFirstname(), bean.getLastname(),
-					bean.getExpiry(), bean.getPassport(), bean.getOrderid());
+					bean.getOrderid(),bean.getPhone(),bean.getKidbirthday());
 		}
 		return result;
 	}
