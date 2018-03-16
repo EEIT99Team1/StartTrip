@@ -49,7 +49,7 @@
 <!-- 		</div> -->
 <!-- 	</div> -->
 	
-<%-- 	<form action="<c:url value='/Searchenter.controller'/>" method="get"> --%>
+	<form id="passengerForm" action="<c:url value='/Searchenter.controller'/>" method="get">
     <table  class="form-control">
 	    <thead>
 		    <tr>
@@ -148,7 +148,7 @@
 <!-- 	    	</tr> -->
 	    
 <!-- 	    </tbody> -->
-
+	</form>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
@@ -164,6 +164,7 @@
 	$(document).ready(function(){
 		var documentFragment1 = $(document.createDocumentFragment());
 		var adult = parseInt("${go1.adult}");
+
 		for(var i=1;i<=adult;i++){
 			var pid="p"+i;
 			
@@ -217,7 +218,7 @@
 		
 		var documentFragment2 = $(document.createDocumentFragment());
 		var child = parseInt("${go1.child}");
-
+		
 		if(child >=1){	
 			for(var j=1;j<= child ;j++){
 				var cid="c"+j;
@@ -243,7 +244,6 @@
 		var submit=$("<input></input>");
 		submit.attr({type:"submit",value:"確認送出"}).addClass("btn btn-success");
 		
-// 		var a1 = $("")
 		
 		var button1=$("<input></input>");
 		button1.attr({type:"button",value:"返回查詢結果"}).addClass("btn btn-success");
