@@ -36,23 +36,24 @@ public class SearchenterController {
 		if (pbean.getLastname() == null || pbean.getLastname().trim().length() == 0) {
 			errmsg.put("errlastname", "乘客名字不可空白");
 		}
-//		if (pbean.getPhone() == null|| pbean.getPhone().trim().length() == 0) {
-//		 errmsg.put("errphone", "聯絡電話不可空白");
-//		 }
-//		if(fbean.getChild()>=1) {
-//			if (pbean.getBrithday() == null || pbean.getBrithday().trim().length() == 0) {
-//				errmsg.put("errbrithday", "生日不可空白");
-//			}
-//		}
+		if (pbean.getPhone() == null|| pbean.getPhone().trim().length() == 0) {
+		 errmsg.put("errphone", "聯絡電話不可空白");
+		 }
+		if(fbean.getChild()>=1) {
+			if (pbean.getKidbirthday() == null || 
+					pbean.getKidbirthday().trim().length() == 0) {
+				errmsg.put("errbrithday", "生日不可空白");
+			}
+		}
 		if (obean.getEmail() == null || obean.getEmail().trim().length() == 0) {
 			errmsg.put("erremail", "訂購人電子郵件不可空白");
 		}
-		
-//		if( bean.get Firstname()==null ||  bean.get Firstname().trim().length() == 0) {
-//		errmsg.put("err firstname", "聯絡人姓氏不可空白");
-//		}
-//		if ( bean.get Lastname() == null || pbean.get Lastname().trim().length() == 0) {
-//			errmsg.put("err lastname", "聯絡人名字不可空白");
+		if( obean.getEfirstname()==null ||  obean.getEfirstname().trim().length() == 0) {
+			errmsg.put("err firstname", "聯絡人姓氏不可空白");
+		}
+		if (obean.getElastname() == null || obean.getElastname().trim().length() == 0) {
+			errmsg.put("err lastname", "聯絡人名字不可空白");
+		}
 		
 		if (errmsg.isEmpty()) {
 			System.out.println("success");
