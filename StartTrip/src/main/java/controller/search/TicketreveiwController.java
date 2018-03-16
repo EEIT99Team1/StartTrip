@@ -30,7 +30,10 @@ public class TicketreveiwController {
 			String backgotime2,String backflighttime2,String backarrivedtime2,String backcabin2,
 			String backstartplace2,String backarrivedplace2,String backweight2
 			,HttpSession session) {		
-		
+		session.removeAttribute("go1");
+		session.removeAttribute("go2");
+		session.removeAttribute("back1");
+		session.removeAttribute("back2");
 		SearchDataBean searchData = (SearchDataBean) session.getAttribute("searchData");
 		int adult = Integer.parseInt(searchData.getAdult());
 		int child = Integer.parseInt(searchData.getChild());
