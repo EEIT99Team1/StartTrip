@@ -64,7 +64,7 @@
 	</TravelerInfoSummary>
          <TPA_Extensions>
             <IntelliSellTransaction>
-               <RequestType Name="200ITINS"/>
+               <RequestType Name="50ITINS"/>
                <CompressResponse Value="false"/>
             </IntelliSellTransaction>
          </TPA_Extensions>

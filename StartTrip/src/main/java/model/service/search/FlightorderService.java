@@ -50,7 +50,7 @@ public class FlightorderService {
 		if (bean != null) {
 			result = flightorderDao.update(bean.getWid(), bean.getStart(), bean.getEndstart(), bean.getUptime(),
 					bean.getDowntime(), bean.getAdult(), bean.getChild(), bean.getFlight(), bean.getModel(),
-					bean.getOrderid());
+					bean.getOrderid(),bean.getFlighttime(),bean.getCabin(),bean.getFlightorderid(),bean.getTicketnumber());
 		}
 		return result;
 	}

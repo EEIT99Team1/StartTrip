@@ -48,11 +48,15 @@ public class OrdermanDao {
 	}
 
 	@Transactional
-	public boolean update(String email, Integer orderid, boolean stutus) {
+	public boolean update(String email, Integer orderid, boolean stutus,String efirstname,
+	String elastname,String ephone) {
 		OrdermanBean result = getSession().get(OrdermanBean.class, orderid);
 		if (result != null) {
 			result.setEmail(email);
 			result.setStutus(stutus);
+			result.setEfirstname(efirstname);
+			result.setElastname(elastname);
+			result.setEphone(ephone);
 			return true;
 		}
 		return false;

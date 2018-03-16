@@ -32,14 +32,14 @@ public class PassengerDao {
 	}
 	@Transactional
 	public boolean update(Integer wid,String firstname,String lastname,
-			String expiry,String passport,Integer orderid) {
+			Integer orderid,String phone,String kidbirthday) {
 		PassengerBean result = getSession().get(PassengerBean.class, wid);
 		if(result!=null) {
 			result.setFirstname(firstname);
 			result.setLastname(lastname);
-			result.setExpiry(expiry);
-			result.setPassport(passport);
 			result.setOrderid(orderid);
+			result.setPhone(phone);
+			result.setKidbirthday(kidbirthday);
 			return true;
 		}
 		return false;
