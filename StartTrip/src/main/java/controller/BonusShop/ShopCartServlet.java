@@ -55,8 +55,9 @@ public class ShopCartServlet extends HttpServlet {
 		session.setAttribute("nowbonus", bonus);
 //		System.out.println(bonus);
 		//讀取總total
-		Integer total = Integer.parseInt(req.getParameter("allbonus"));
-//		System.out.println(total);		
+		String all = req.getParameter("allbonus");
+//		System.out.println(all);		
+		Integer total = Integer.parseInt(all);
 		
 		CustomerDao cdao = wac.getBean(CustomerDao.class);
 		

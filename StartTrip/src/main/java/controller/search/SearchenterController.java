@@ -21,7 +21,7 @@ public class SearchenterController {
 	// passenger
 	@RequestMapping(path = "/Searchenter.controller", method = { RequestMethod.GET })
 	public String order(PassengerBean pbean, OrdermanBean obean, 
-			Model model1,HttpSession session) {
+			Model model1,HttpSession session, FlightorderBean fbean) {
 
 		obean.setStutus(false);
 		System.out.println(pbean);
@@ -31,21 +31,29 @@ public class SearchenterController {
 		model1.addAttribute("error", errmsg);
 
 		if (pbean.getFirstname() == null || pbean.getFirstname().trim().length() == 0) {
-			errmsg.put("errfirstname", "姓不可空白");
+			errmsg.put("errfirstname", "乘客姓氏不可空白");
 		}
 		if (pbean.getLastname() == null || pbean.getLastname().trim().length() == 0) {
-			errmsg.put("errlastname", "名字不可空白");
+			errmsg.put("errlastname", "乘客名字不可空白");
 		}
-//		 if (pbean.getExpiry() == null|| pbean.getPassport().trim().length() == 0) {
-//		 errmsg.put("errexpiry", "護照到期日不可空白");
+//		if (pbean.getPhone() == null|| pbean.getPhone().trim().length() == 0) {
+//		 errmsg.put("errphone", "聯絡電話不可空白");
 //		 }
-//		if (pbean.getPassport() == null || pbean.getPassport().trim().length() == 0) {
-//			errmsg.put("errpassport", "護照號碼不可空白");
+//		if(fbean.getChild()>=1) {
+//			if (pbean.getBrithday() == null || pbean.getBrithday().trim().length() == 0) {
+//				errmsg.put("errbrithday", "生日不可空白");
+//			}
 //		}
 		if (obean.getEmail() == null || obean.getEmail().trim().length() == 0) {
-			errmsg.put("erremail", "訂購人的電子郵件不可空白");
+			errmsg.put("erremail", "訂購人電子郵件不可空白");
 		}
-
+		
+//		if( bean.get Firstname()==null ||  bean.get Firstname().trim().length() == 0) {
+//		errmsg.put("err firstname", "聯絡人姓氏不可空白");
+//		}
+//		if ( bean.get Lastname() == null || pbean.get Lastname().trim().length() == 0) {
+//			errmsg.put("err lastname", "聯絡人名字不可空白");
+		
 		if (errmsg.isEmpty()) {
 			System.out.println("success");
 			// passenger
