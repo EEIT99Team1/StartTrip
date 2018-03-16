@@ -62,23 +62,23 @@
 	    <tbody>
 		    <tr>
 			    <td>電子郵件:</td>
-			    <td><input type="text" name="email"/></td>
+			    <td><input type="text" name="email" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 再確認電子郵件:</td>
-			    <td><input type="text" /></td>
+			    <td><input type="text" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人姓氏:</td>
-			    <td><input type="text" name="efirstname"/></td>
+			    <td><input type="text" name="efirstname" value="${LoginOK.firstname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人名字:</td>
-			    <td><input type="text" name="elastname"/></td>
+			    <td><input type="text" name="elastname" value="${LoginOK.lastname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人電話:</td>
-			    <td><input type="text" name="ephone"/></td>
+			    <td><input type="text" name="ephone" value="${LoginOK.phonenumber}"/></td>
 		    </tr>
 	    </tbody>
  </table>
@@ -203,7 +203,11 @@
 			divrow.addClass("row").append(h1).append(divfirname).append(divlasname)
 			.append(divpassport);
 // .append(divexpiry);
-			
+			if(i==1){
+				input1.attr({value:"${LoginOK.firstname}"});
+				input2.attr({value:"${LoginOK.lastname}"});
+				input3.attr({value:"${LoginOK.phonenumber}"});
+			}
 			documentFragment1.append(divrow);
 			
 		}//forloop END
