@@ -22,7 +22,7 @@ public class RegisterController {
 	private CustomerDao dao;
 	
 	@RequestMapping(method= {RequestMethod.POST},produces="text/plain;charset=utf-8")
-	public String regist(CustomerBean bean , Model model,HttpSession session) {
+	public String regist(CustomerBean bean , Model model,HttpSession session,String password,String passwordcheck) {
 		
 		Map<String,String> errorMsg = new HashMap<String,String>();
 		Map<String,String> successMsg = new HashMap<String,String>(); 
@@ -54,8 +54,10 @@ public class RegisterController {
 				errorMsg.put("errorPhonenumber", "手機欄必須輸入");
 			}else if (bean.getPhonenumber().trim().length() < 10) {
 				errorMsg.put("phonenumbererr", "手機號碼格式不正確");
-
 			}
+//			if(password != passwordcheck) {
+//				errorMsg.put("valueNoEqual", "密碼與確認密碼不同");
+//			}
 			
 			if(!errorMsg.isEmpty() && errorMsg!=null) {
 				System.out.println("失敗");
