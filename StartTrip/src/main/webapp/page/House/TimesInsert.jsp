@@ -42,11 +42,11 @@
 	</tr>
 	<tr>
 		<td>房客姓名 : </td>
-		<td><input type="text" name="people" ></td>		
+		<td><input type="text" name="people" value="${people}" ></td>		
 	</tr>
 	<tr>
 		<td>房客電話 : </td>
-		<td><input type="text" name="telephone" ></td>		
+		<td><input type="text" name="telephone" value="${telephone}"></td>		
 	</tr>
 	</table>
 	

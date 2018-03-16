@@ -97,12 +97,14 @@ $('#calendar').fullCalendar({
 	</tr>
 	<tr>
 		<td>入住時間 : </td>
-		<td><input type="text" name="gotime" id="datepicker" ></td>		
+		<td><input type="text" name="gotime" id="datepicker" value="${gotime}"  ></td>		
 	</tr>
 	<tr>
 		<td>入住天數 : </td>
-		<td><input type="text" name="outtime" ></td>		
+		<td><input type="text" name="outtime" value="${day}" ></td>		
 	</tr>
+<input type="text" name="people" value="${people}">
+<input type="text" name="telephone" value="${telephone}">
 
 </table>
 	<div>
