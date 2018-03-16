@@ -61,6 +61,8 @@ public class SearchenterController {
 			// orderman
 			session.setAttribute("obean", obean);
 			
+			FlightorderBean go1 =(FlightorderBean) session.getAttribute("go1");
+			
 			return "order.success";
 			// return "order.error";
 		}
