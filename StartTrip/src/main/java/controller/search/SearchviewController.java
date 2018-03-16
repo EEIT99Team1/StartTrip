@@ -41,26 +41,26 @@ public class SearchviewController {
 		
 		PassengerBean pbean = (PassengerBean) session.getAttribute("pbean");
 		 
-		 OrdermanBean oresult = ordermanService.insert(obean);
+		OrdermanBean oresult = ordermanService.insert(obean);
 
-		 int orderid = oresult.getOrderid();
+		int orderid = oresult.getOrderid();
 		 
-		 go1.setOrderid(orderid);
+		go1.setOrderid(orderid);
 		 
-		 go1 = flightorderService.insert(go1);
+		go1 = flightorderService.insert(go1);
 		 
-		 if(go2!=null) {
-			 go2.setOrderid(orderid);
-			 go2 = flightorderService.insert(go2);
-		 }
-		 if(back1!=null) {
-			 back1.setOrderid(orderid);
-			 back1 = flightorderService.insert(back1);
-		 }
-		 if(back2!=null) {
-			 back2.setOrderid(orderid);
-			 back2 = flightorderService.insert(back2);
-		 }
+		if(go2!=null) {
+			go2.setOrderid(orderid);
+			go2 = flightorderService.insert(go2);
+		}
+		if(back1!=null) {
+			back1.setOrderid(orderid);
+			back1 = flightorderService.insert(back1);
+		}
+		if(back2!=null) {
+			back2.setOrderid(orderid);
+			back2 = flightorderService.insert(back2);
+		}
 
 		 pbean.setOrderid(orderid);
 		 PassengerBean presult = passengerService.insert(pbean);
