@@ -64,8 +64,8 @@
 	</TravelerInfoSummary>
          <TPA_Extensions>
             <IntelliSellTransaction>
-               <RequestType Name="50ITINS"/>
-               <CompressResponse Value="false"/>
+               <RequestType Name="200ITINS"/>
+               <CompressResponse Value="true"/>
             </IntelliSellTransaction>
          </TPA_Extensions>
       </OTA_AirLowFareSearchRQ>

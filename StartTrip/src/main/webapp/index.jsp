@@ -77,10 +77,12 @@
 					<input type="radio"name="way" id="one" value="OneWay" />
 						<label for="one">單程</label>
 					艙等: <select name="cabin">
-						<option value="Y">經濟客艙</option>
-						<option value="Y">商務艙</option>
-						<option value="Y">豪華商務艙</option>
-						<option value="Y">頭等艙</option>
+						<option value="Y">經濟艙</option>
+						<option value="S">豪華經濟艙</option>
+						<option value="C">商務艙</option>
+						<option value="J">豪華商務艙</option>
+						<option value="F">頭等艙</option>
+						<option value="P">豪華頭等艙</option>
 					</select>
 				</div>
 			</div>

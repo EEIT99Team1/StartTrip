@@ -28,6 +28,10 @@ public class GoToTimes extends HttpServlet {
 		request.setAttribute("roomName", roomName);
 		request.setAttribute("price", price);
 		request.setAttribute("picture", picture);
+		request.setAttribute("day", request.getParameter("day"));
+		request.setAttribute("gotime", request.getParameter("gotime"));
+		request.setAttribute("telephone", request.getParameter("telephone"));
+		request.setAttribute("people", request.getParameter("people"));
 		List<TimesBean> c = timesService.select(name, roomName);
 		request.getSession().setAttribute("time", c);
 		
