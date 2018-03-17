@@ -14,29 +14,44 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>資料填寫</title>
-    
-<style>
-/* .checktable { */
-/* 	margin: auto; */
-/* 	text-align: center; */
-/* 	border-collapse: collapse; */
-/* 	border: 2px solid black; */
-/* 	margin: 20px auto; */
-/* 	width: 600px; */
-/* } */
-
-/* .checkthead { */
-/* 	border: 2px solid black; */
-/* } */
-</style>
+   
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+	
+<style>
+
+.container{
+width: 900px;
+background:rgba(209, 209, 209,0.7);
+}
+
+form{
+width: 800px;
+margin:auto;
+}
+body{
+background:rgba(255, 244, 194,0.6);
+}
+
+</style>
+	
 </head>
-<body  class="bg-light">
+<body >
 	<jsp:include page="/page/shared/header.jsp" />
 	<br><br><br>
 <!-- 	<div class="container"> -->
@@ -49,36 +64,35 @@
 <!-- 		</div> -->
 <!-- 	</div> -->
 	
-
+<div class = "container">
 <form id="passengerForm" action="<c:url value='/Searchenter.controller'/>" method="get">
-    <table  class="form-control">
+    <table  class="table">
 	    <thead>
 		    <tr>
-		    	<th><h2>聯絡人資料填寫</h2></th>
-				<th></th>
-				<th></th>
+		    	<th colspan="2"><h3>聯絡人資料填寫</h3></th>
+
 		    </tr>
 	    </thead>
 	    <tbody>
 		    <tr>
 			    <td>電子郵件:</td>
-			    <td><input type="text" name="email" value="${LoginOK.email}"/></td>
+			    <td><input class="form-control" type="text" name="email" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 再確認電子郵件:</td>
-			    <td><input type="text" value="${LoginOK.email}"/></td>
+			    <td><input class="form-control" type="text" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人姓氏:</td>
-			    <td><input type="text" name="efirstname" value="${LoginOK.firstname}"/></td>
+			    <td><input class="form-control" type="text" name="efirstname" value="${LoginOK.firstname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人名字:</td>
-			    <td><input type="text" name="elastname" value="${LoginOK.lastname}"/></td>
+			    <td><input class="form-control" type="text" name="elastname" value="${LoginOK.lastname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人電話:</td>
-			    <td><input type="text" name="ephone" value="${LoginOK.phonenumber}"/></td>
+			    <td><input class="form-control" type="text" name="ephone" value="${LoginOK.phonenumber}"/></td>
 		    </tr>
 	    </tbody>
  </table>
@@ -146,19 +160,7 @@
 <!-- 	    </tbody> -->
 
 	</form>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-		
+	</div>	
 <script>
 	$(document).ready(function(){
 		var documentFragment1 = $(document.createDocumentFragment());
@@ -253,18 +255,18 @@
 				documentFragment2.append(divrow);
 			}
 		}
-			
-		var submit=$("<input></input>");
+		var buttondiv=$("<div></div>").css({"padding":"20px 23%"});
+		var submit=$("<input></input>").css({"margin":"10px"});
 		submit.attr({type:"submit",value:"確認送出"}).addClass("btn btn-success");
 		
 		
-		var button1=$("<input></input>");
+		var button1=$("<input></input>").css({"margin":"10px"});
 		button1.attr({type:"button",value:"返回查詢結果"}).addClass("btn btn-success");
-		var button2=$("<input></input>");
+		var button2=$("<input></input>").css({"margin":"10px"});
 		button2.attr({type:"button",value:"回首頁"}).addClass("btn btn-success");
 		
-		
-		$("#passengerForm").append(documentFragment1).append(documentFragment2).append(submit).append(button1).append(button2);
+		buttondiv.append(button1).append(submit).append(button2);
+		$("#passengerForm").append(documentFragment1).append(documentFragment2).append(buttondiv);
 		
 	});
 	</script>
