@@ -36,11 +36,11 @@
 	</tr>
 <!-- 	<tr> -->
 <!-- 		<td>姓名 : </td> -->
-		<td><input  type="text" name="people" value="${hname}" ></td>
+		<td><input  type="text" name="people" value="${hname}" style="display: none;" ></td>
 <!-- 	</tr> -->
 <!-- 	<tr> -->
 <!-- 		<td>電話 : </td> -->
-		<td><input  type="text" name="telephone" value="${hphone}" ></td>
+		<td><input  type="text" name="telephone" value="${hphone}" style="display: none;"></td>
 <!-- 	</tr> -->
 	
 </table >
@@ -65,12 +65,12 @@
         <h3 align="center">地址:${row.addres}</h3>
 		<h3 align="center">電話:${row.telephone}</h3>
 		<h3 align="center">民宿介紹:${row.explain}</h3>
-		<h3 align="center">goint:${goint}</h3>
-		<h3 align="center">gotime:${gotime}</h3>
-		<h3 align="center">outint:${outint}</h3>
-		<h3 align="center">day:${day}</h3>
-		<h3 align="center">people:${hname}</h3>
-		<h3 align="center">telephone:${hphone}</h3>
+<%-- 		<h3 align="center">goint:${goint}</h3> --%>
+<%-- 		<h3 align="center">gotime:${gotime}</h3> --%>
+<%-- 		<h3 align="center">outint:${outint}</h3> --%>
+<%-- 		<h3 align="center">day:${day}</h3> --%>
+<%-- 		<h3 align="center">people:${hname}</h3> --%>
+<%-- 		<h3 align="center">telephone:${hphone}</h3> --%>
 	
 	
 	</table>

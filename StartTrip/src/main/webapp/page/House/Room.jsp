@@ -39,10 +39,6 @@
 		<h3 align="center">入住人數:${row.number}</h3>
 		<h3 align="center">註解:1.${row.explain1} 2.${row.explain2} 3.${row.explain3}</h3>
 		<h3 align="center">價錢:${row.price}</h3>
-${day}
-${gotime}
-${people}
-${telephone}
 	</table>
 	
 	</c:forEach>

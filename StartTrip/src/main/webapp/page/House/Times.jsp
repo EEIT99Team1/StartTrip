@@ -103,8 +103,8 @@ $('#calendar').fullCalendar({
 		<td>入住天數 : </td>
 		<td><input type="text" name="outtime" value="${day}" ></td>		
 	</tr>
-<input type="text" name="people" value="${people}">
-<input type="text" name="telephone" value="${telephone}">
+<input type="text" name="people" value="${people}" style="display:none;">
+<input type="text" name="telephone" value="${telephone}" style="display:none;">
 
 </table>
 	<div>
