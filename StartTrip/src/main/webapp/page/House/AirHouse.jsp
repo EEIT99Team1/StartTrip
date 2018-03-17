@@ -89,11 +89,5 @@
 	
 			
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
-
-
-
-
-
-
 </body>
 </html>
