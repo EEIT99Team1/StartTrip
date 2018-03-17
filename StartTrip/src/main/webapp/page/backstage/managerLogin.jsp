@@ -25,10 +25,11 @@
 	</div>
 <script>
 $(document).ready(function(){
-	var success = ${successMsg.welcomeManager};
+	var success = "${successMsg.welcomeManager}";
 	if(success!=""){
 		$("form").empty();
-		$("form").text(success);
+// 		$("form").attr("action","'<c:url value='/LoginManager.controller'/>'");
+		$("form").html(success+"&nbsp;<input type='submit' value='登出' />");
 	}
 	
 })
