@@ -8,18 +8,36 @@
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 
+<style>
+ #main form{
+ 	margin:auto; 
+ 	border: 1px solid red; 
+ 	width: 300px; 
+ 	} 
+ #main div{ 
+ 	margin-top:5px; 
+ 	border-bottom: 1px solid red; 
+ 	
+	} 
+
+</style>
 <title>會員管理系統</title>
 </head>
 <body>
 	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
 			<div id="main">
+				<h1>會員管理</h1>
 				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>">
 					<c:forEach var="customerList" items="${customerList}">
+					<div>
 					<span class="customerList" >${customerList.email}</span>
 					<input class="blacklistcheckbox" type="checkbox" value="${customerList.email}" name="blacklistcheckbox">
 					<label for="blacklistcheckbox">加入黑名單</label><br/>
+					</div>
+						<table></table>
 					</c:forEach>
+					<br>
 					<button type="submit">送出</button>
 				</form>
 			</div>
