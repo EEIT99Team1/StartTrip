@@ -8,7 +8,7 @@
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet"
 	type="text/css" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
-
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <title>ManagerLogin</title>
 </head>
 <body>	
@@ -20,8 +20,19 @@
 				<label for="password">password:</label><input id="password" name="password"/>
 				<input type="submit" value="登入" /></h2>
 			</form>
-			
+<%-- 			<div>${errorMsg.erroridorpassword}${successMsg.welcomeManager}</div> --%>
 		</div>
 	</div>
+<script>
+$(document).ready(function(){
+	var success = ${successMsg.welcomeManager};
+	if(success!=""){
+		$("form").empty();
+		$("form").text(success);
+	}
+	
+})
+
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@ public class CustomerDao {
 	@Transactional
 	public List<CustomerBean> selectAll(){
 		List<CustomerBean> result = null;
-		String HQL ="From CustomerBean";
+		String HQL ="From CustomerBean where blacklist = 0";
 		Query<CustomerBean> query= getSession().createQuery(HQL, CustomerBean.class);
 		result = query.list();
 		return result;
