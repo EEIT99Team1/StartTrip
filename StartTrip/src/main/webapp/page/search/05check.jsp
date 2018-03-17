@@ -94,7 +94,7 @@ background:rgba(255, 244, 194,0.6);
 	<br/>
 	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資料確認</h1>
 	<br/>
-		<table class="table table-sm table1">
+		<table class="table table1">
 			<thead>
 				<tr>
 					<th colspan="7">
@@ -545,11 +545,8 @@ background:rgba(255, 244, 194,0.6);
 			</table>
 		</div>
 		</c:if>
-		
-		<br />
-		
 		</div>
-
+		<br />
 		<script>
 // 			$(document)
 // 					.ready(
