@@ -30,7 +30,10 @@ public class TicketreveiwController {
 			String backgotime2,String backflighttime2,String backarrivedtime2,String backcabin2,
 			String backstartplace2,String backarrivedplace2,String backweight2
 			,HttpSession session) {		
-		
+		session.removeAttribute("go1");
+		session.removeAttribute("go2");
+		session.removeAttribute("back1");
+		session.removeAttribute("back2");
 		SearchDataBean searchData = (SearchDataBean) session.getAttribute("searchData");
 		int adult = Integer.parseInt(searchData.getAdult());
 		int child = Integer.parseInt(searchData.getChild());
@@ -45,7 +48,9 @@ public class TicketreveiwController {
 		go1.setAdult(adult);
 		go1.setChild(child);
 		go1.setFlight(goflight1);
+		go1.setFlighttime(goflighttime1);
 		go1.setModel(gomodel1);
+		go1.setCabin(gocabin1);
 		session.setAttribute("go1", go1);
 //		System.out.println(go1);
 		
@@ -61,7 +66,9 @@ public class TicketreveiwController {
 			go2.setAdult(adult);
 			go2.setChild(child);
 			go2.setFlight(goflight2);
+			go2.setFlighttime(goflighttime2);
 			go2.setModel(gomodel2);
+			go2.setCabin(gocabin2);
 			System.out.println(go2);
 			
 			session.setAttribute("go2", go2);
@@ -79,7 +86,9 @@ public class TicketreveiwController {
 			back1.setAdult(adult);
 			back1.setChild(child);
 			back1.setFlight(backflight1);
+			back1.setFlighttime(backflighttime1);
 			back1.setModel(backmodel1);
+			back1.setCabin(backcabin1);
 			System.out.println(back1);
 			
 			session.setAttribute("back1", back1);
@@ -96,7 +105,9 @@ public class TicketreveiwController {
 			back2.setAdult(adult);
 			back2.setChild(child);
 			back2.setFlight(backflight2);
+			back2.setFlighttime(backflighttime2);
 			back2.setModel(backmodel2);
+			back2.setCabin(backcabin2);
 			System.out.println(back2);
 			
 			session.setAttribute("back2", back2);

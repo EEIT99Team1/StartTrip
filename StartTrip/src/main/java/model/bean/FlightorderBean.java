@@ -16,6 +16,7 @@ public class FlightorderBean implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer wid;
+	private Integer orderid;
 	private String start;
 	private String endstart;
 	private String uptime;
@@ -24,7 +25,43 @@ public class FlightorderBean implements Serializable {
 	private Integer child;
 	private String flight;
 	private String model;
-	private Integer orderid;
+	private String flighttime;
+	private String cabin;
+	private String flightorderid;
+	private String ticketnumber;
+	
+
+	public String getFlighttime() {
+		return flighttime;
+	}
+
+	public void setFlighttime(String flighttime) {
+		this.flighttime = flighttime;
+	}
+
+	public String getCabin() {
+		return cabin;
+	}
+
+	public void setCabin(String cabin) {
+		this.cabin = cabin;
+	}
+
+	public String getFlightorderid() {
+		return flightorderid;
+	}
+
+	public void setFlightorderid(String flightorderid) {
+		this.flightorderid = flightorderid;
+	}
+
+	public String getTicketnumber() {
+		return ticketnumber;
+	}
+
+	public void setTicketnumber(String ticketnumber) {
+		this.ticketnumber = ticketnumber;
+	}
 
 	public Integer getWid() {
 		return wid;
@@ -109,9 +146,10 @@ public class FlightorderBean implements Serializable {
 
 	@Override
 	public String toString() {
-		return "FlightorderBean [wid=" + wid + ", start=" + start + ", endstart=" + endstart + ", uptime=" + uptime
-				+ ", downtime=" + downtime + ", adult=" + adult + ", child=" + child + ", flight=" + flight + ", model="
-				+ model + ", orderid=" + orderid + "]";
+		return "FlightorderBean [wid=" + wid + ", orderid=" + orderid + ", start=" + start + ", endstart=" + endstart
+				+ ", uptime=" + uptime + ", downtime=" + downtime + ", adult=" + adult + ", child=" + child
+				+ ", flight=" + flight + ", model=" + model + ", flighttime=" + flighttime + ", cabin=" + cabin
+				+ ", flightorderid=" + flightorderid + ", ticketnumber=" + ticketnumber + "]";
 	}
 
 

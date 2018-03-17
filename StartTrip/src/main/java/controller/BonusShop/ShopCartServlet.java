@@ -30,13 +30,13 @@ public class ShopCartServlet extends HttpServlet {
 		//轉成UTF-8
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
-		//錯誤訊息的建立
-		Map<String, String> erroeMsgMap = new HashMap<String, String>();
-		Map<String, String> successMsgMap = new HashMap<String, String>();
-		//準備EL的連接
-		//EL要用.就是代表有額外塞入別的訊息
-		session.setAttribute("errorMsgKey", erroeMsgMap);
-		session.setAttribute("successMsgKey", successMsgMap);
+//		//錯誤訊息的建立
+//		Map<String, String> erroeMsgMap = new HashMap<String, String>();
+//		Map<String, String> successMsgMap = new HashMap<String, String>();
+//		//準備EL的連接
+//		//EL要用.就是代表有額外塞入別的訊息
+//		session.setAttribute("errorMsgKey", erroeMsgMap);
+//		session.setAttribute("successMsgKey", successMsgMap);
 		
 		
 		//連接另一個頁面的setAttribute的變數LohinOK
@@ -54,24 +54,21 @@ public class ShopCartServlet extends HttpServlet {
 		Integer bonus= mb.getBonus();
 		session.setAttribute("nowbonus", bonus);
 //		System.out.println(bonus);
-		
 		//讀取總total
-		Integer total = Integer.parseInt(req.getParameter("allbonus"));
-//		System.out.println(total);		
+		String all = req.getParameter("allbonus");
+//		System.out.println(all);		
+		Integer total = Integer.parseInt(all);
 		
 		CustomerDao cdao = wac.getBean(CustomerDao.class);
 		
 		//判斷會員紅利夠不夠
 		if(bonus>=total) {
 			Integer allbonus = bonus-total;
-			cdao.update(mb.getEmail(),mb.getPassword(), mb.getFirstname(), mb.getLastname(), mb.getCountry(),mb.getBirthday(), mb.getPhonenumber(),allbonus);
-			successMsgMap.put("bonussuccess","購買成功");
+			cdao.update(mb.getEmail(),mb.getPassword(), mb.getFirstname(), mb.getLastname(), mb.getCountry(),mb.getBirthday(), mb.getPhonenumber(),allbonus,mb.getBlacklist());
 			RequestDispatcher rd = req.getRequestDispatcher("/page/bonusshop/BonusShop.jsp");
 			rd.forward(req, resp);
 			return;
 		}else {
-			//放入錯誤訊息("el呼叫用",顯示的訊息)
-			erroeMsgMap.put("bonuserror","您的紅利點數不夠");
 			//執行後返回頁面
 			RequestDispatcher rd = req.getRequestDispatcher("/page/bonusshop/BonusShop.jsp");
 			rd.forward(req, resp);

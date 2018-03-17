@@ -119,7 +119,7 @@
 	</div><!-- flightsResult結束 -->
 	
 	<jsp:include page="/page/shared/footer.jsp" />
-
+	
 	<jsp:include page="/page/search/myjs/ajaxdatasessionjs.jsp" />
 	<jsp:include page="/page/search/myjs/searchjs.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />

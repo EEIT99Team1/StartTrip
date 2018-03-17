@@ -65,7 +65,7 @@
          <TPA_Extensions>
             <IntelliSellTransaction>
                <RequestType Name="200ITINS"/>
-               <CompressResponse Value="false"/>
+               <CompressResponse Value="true"/>
             </IntelliSellTransaction>
          </TPA_Extensions>
       </OTA_AirLowFareSearchRQ>

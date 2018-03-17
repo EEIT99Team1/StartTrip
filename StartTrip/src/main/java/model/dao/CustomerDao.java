@@ -44,7 +44,7 @@ public class CustomerDao {
 	
 	@Transactional
 	public boolean update(String email,String password,String firstname
-			,String lastname,String country,String birthday,String phonenumber,int bonus) {
+			,String lastname,String country,String birthday,String phonenumber,int bonus,Boolean  blacklist) {
 		CustomerBean rs = this.getSession().get(CustomerBean.class, email);
 		if(rs!=null) {
 			rs.setPassword(password);
@@ -54,6 +54,7 @@ public class CustomerDao {
 			rs.setBirthday(birthday);
 			rs.setPhonenumber(phonenumber);
 			rs.setBonus(bonus);
+			rs.setBlacklist(blacklist);
 			return true;
 		}
 		return false;
