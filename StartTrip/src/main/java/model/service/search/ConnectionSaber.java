@@ -2,6 +2,7 @@ package model.service.search;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,7 +10,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Base64;
 import java.util.Iterator;
+import java.util.zip.GZIPInputStream;
 
 import javax.servlet.ServletContext;
 
@@ -180,8 +183,11 @@ public class ConnectionSaber {
 			while((str=br.readLine())!=null) {
 				soapResponseData+=str;
 			}
-			System.out.println(soapResponseData);
+			int start=soapResponseData.indexOf("<CompressedResponse xmlns=\"http://www.opentravel.org/OTA/2003/05\">")+66;
+			int end=soapResponseData.indexOf("</CompressedResponse>");
 			
+			System.out.println(soapResponseData.substring(start,end));
+			String base64=soapResponseData.substring(start,end);
 			// ---------------------------------------------------------
 			 OutputStream os=new FileOutputStream("e:\\02Response.xml");
 			 OutputStreamWriter osw=new OutputStreamWriter(os);
@@ -194,12 +200,14 @@ public class ConnectionSaber {
 			 osw.close();
 			 os.close();
 
-			 return soapResponseData;
+			 return decodeBase64AndUnzip(base64);
 		} catch (HttpException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (DocumentException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		} 
 		finally {
@@ -249,5 +257,18 @@ public class ConnectionSaber {
 			post.setRequestHeader("SOAPAction", "CloseSession");
 			post.releaseConnection();
 		}
+	}
+	public String decodeBase64AndUnzip(String base64String) throws Exception{
+		Base64.Decoder decoder = Base64.getDecoder();
+		byte[] afterDecoder = decoder.decode(base64String);
+		ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(afterDecoder);
+		GZIPInputStream gzipInputStream = new GZIPInputStream(arrayInputStream);
+		BufferedReader br = new BufferedReader(new InputStreamReader(gzipInputStream,"UTF-8"));
+		String s = null;
+		StringBuffer sb = new StringBuffer();
+		while((s = br.readLine()) != null){
+			sb.append(s);
+		}
+		return sb.toString();
 	}
 }
