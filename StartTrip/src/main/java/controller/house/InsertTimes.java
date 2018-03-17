@@ -76,13 +76,14 @@ public class InsertTimes extends HttpServlet {
 				CustomerBean cbean=(CustomerBean)session.getAttribute("LoginOK");
 				WebApplicationContext context=
 						WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+				if (cbean!=null){
 				CustomerDao dao=context.getBean(CustomerDao.class);
 				cbean.setBonus(cbean.getBonus()+price);
 				dao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getLastname(),
 						cbean.getCountry(), cbean.getBirthday(), cbean.getPhonenumber(), cbean.getBonus(), cbean.getBlacklist());
 				System.out.println(cbean);
 				session.setAttribute("LoginOK",cbean);
-				session.setAttribute("customerBean",cbean);
+				session.setAttribute("customerBean",cbean);}
 			}
 			else{
 				request.setAttribute("select", "有錯誤,請找管理員回報錯誤訊息");
