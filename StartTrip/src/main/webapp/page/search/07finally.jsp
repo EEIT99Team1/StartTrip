@@ -212,6 +212,9 @@
         <input type="submit" value="列印明細" />
         <a href="<c:url value='/index.jsp'/>">
         <input type="button" value="回查詢首頁" /></a>
+        <form action="<c:url value='/ForwordToHouse.controller'/>" method="get">
+        	<input type="submit" value="續訂民宿" />
+        </form>
     </div>
     
     		

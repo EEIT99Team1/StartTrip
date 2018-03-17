@@ -64,7 +64,7 @@ public class ShopCartServlet extends HttpServlet {
 		//判斷會員紅利夠不夠
 		if(bonus>=total) {
 			Integer allbonus = bonus-total;
-			cdao.update(mb.getEmail(),mb.getPassword(), mb.getFirstname(), mb.getLastname(), mb.getCountry(),mb.getBirthday(), mb.getPhonenumber(),allbonus);
+			cdao.update(mb.getEmail(),mb.getPassword(), mb.getFirstname(), mb.getLastname(), mb.getCountry(),mb.getBirthday(), mb.getPhonenumber(),allbonus,mb.getBlacklist());
 			RequestDispatcher rd = req.getRequestDispatcher("/page/bonusshop/BonusShop.jsp");
 			rd.forward(req, resp);
 			return;

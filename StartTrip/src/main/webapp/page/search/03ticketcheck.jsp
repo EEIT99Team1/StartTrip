@@ -86,11 +86,11 @@
 	                <td rowspan="2">${go1.uptime}</td>
 	                <td rowspan="2"></td>
 	                <td rowspan="2">${go1.downtime}</td>
-	                <td rowspan="3">()3時10分</td>
+	                <td rowspan="3">${go1.flighttime}</td>
 	                <td>${go1.flight}</td>
 	            </tr>
 	            <tr>
-	                <td>():經濟艙(F)</td>
+	                <td>${go1.cabin}</td>
 	            </tr>
 	            <tr>
 	                <td>${go1.start}</td>
@@ -103,11 +103,11 @@
 	                <td rowspan="2">${go2.uptime}</td>
 	                <td rowspan="2"></td>
 	                <td rowspan="2">${go2.downtime}</td>
-	                <td rowspan="3">()3時10分</td>
+	                <td rowspan="3">${go2.flighttime}</td>
 	                <td>${go2.flight}</td>
 	            </tr>
 	            <tr>
-	                <td>():經濟艙(F)</td>
+	                <td>${go2.cabin}</td>
 	            </tr>
 	            <tr>
 	                <td>${go2.start}</td>
@@ -138,11 +138,11 @@
 	                <td rowspan="2">${back1.uptime}</td>
 	                <td rowspan="2"></td>
 	                <td rowspan="2">${back1.downtime}</td>
-	                <td rowspan="3">()3時10分</td>
+	                <td rowspan="3">${back1.flighttime}</td>
 	                <td>${back1.flight}</td>
 	            </tr>
 	            <tr>
-	                <td>():經濟艙(F)</td>
+	                <td>${back1.cabin}</td>
 	            </tr>
 	            <tr>
 	                <td>${back1.start}</td>
@@ -155,11 +155,11 @@
 	                <td rowspan="2">${back2.uptime}</td>
 	                <td rowspan="2"></td>
 	                <td rowspan="2">${back2.downtime}</td>
-	                <td rowspan="3">()3時10分</td>
+	                <td rowspan="3">${back2.flighttime}</td>
 	                <td>${back2.flight}</td>
 	            </tr>
 	            <tr>
-	                <td>():經濟艙(F)</td>
+	                <td>${back2.cabin}</td>
 	            </tr>
 	            <tr>
 	                <td>${back2.start}</td>
