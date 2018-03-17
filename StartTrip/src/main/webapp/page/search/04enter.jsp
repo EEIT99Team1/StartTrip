@@ -49,7 +49,8 @@
 <!-- 		</div> -->
 <!-- 	</div> -->
 	
-	<form id="passengerForm" action="<c:url value='/Searchenter.controller'/>" method="get">
+
+<form id="passengerForm" action="<c:url value='/Searchenter.controller'/>" method="get">
     <table  class="form-control">
 	    <thead>
 		    <tr>
@@ -61,28 +62,23 @@
 	    <tbody>
 		    <tr>
 			    <td>電子郵件:</td>
-			    <td><input type="text" name="email"/></td>
-			    <td>${error.erremail}</td>
+			    <td><input type="text" name="email" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 再確認電子郵件:</td>
-			    <td><input type="text" /></td>
-			    <td></td>
+			    <td><input type="text" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人姓氏:</td>
-			    <td><input type="text" /></td>
-			    <td></td>
+			    <td><input type="text" name="efirstname" value="${LoginOK.firstname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人名字:</td>
-			    <td><input type="text" /></td>
-			    <td></td>
+			    <td><input type="text" name="elastname" value="${LoginOK.lastname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人電話:</td>
-			    <td><input type="text" /></td>
-			    <td></td>
+			    <td><input type="text" name="ephone" value="${LoginOK.phonenumber}"/></td>
 		    </tr>
 	    </tbody>
  </table>
@@ -148,7 +144,9 @@
 <!-- 	    	</tr> -->
 	    
 <!-- 	    </tbody> -->
+
 	</form>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
@@ -160,9 +158,11 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	<script>
+		
+<script>
 	$(document).ready(function(){
 		var documentFragment1 = $(document.createDocumentFragment());
+		
 		var adult = parseInt("${go1.adult}");
 
 		for(var i=1;i<=adult;i++){
@@ -170,72 +170,85 @@
 			
 			//firstname			
 			var input1=$("<input></input>");
-			input1.attr({type:"text",id:pid+"firstName",required:"required"});
+			input1.attr({type:"text",id:pid+"firstName",name:"afirstName"+i,required:"required"});
 			input1.addClass("form-control");
 			var label1=$("<label></label>");
 			label1.text("First name").attr("for",pid+"firstName");
 			var divfirname=$("<div></div>");
-			divfirname.addClass("col-md-6 mb-3").append(label1).append(input1);
+			divfirname.addClass("col-md-4 mb-3").append(label1).append(input1);
 			
 			//lastname
 			var input2=$("<input></input>");
-			input2.attr({type:"text",id:pid+"lastName",required:"required"});
+			input2.attr({type:"text",id:pid+"lastName",name:"alastName"+i,required:"required"});
 			input2.addClass("form-control");
 			var label2=$("<label></label>");
 			label2.text("Last name").attr("for",pid+"lastName");
 			var divlasname=$("<div></div>");
-			divlasname.addClass("col-md-6 mb-3").append(label2).append(input2);
+			divlasname.addClass("col-md-4 mb-3").append(label2).append(input2);
 			
-			//護照號碼
+// 		alert(adult);
+// 			//乘客聯絡電話
 			var input3=$("<input></input>");
-			input3.attr({type:"text",id:pid+"passport",required:"required"});
+			input3.attr({type:"text",id:pid+"phone",name:"phone"+i,required:"required"});
 			input3.addClass("form-control");
 			var label3=$("<label></label>");
-			label3.text("護照號碼").attr("for",pid+"passport");
+			label3.text("乘客聯絡電話").attr("for",pid+"phone");
 			var divpassport=$("<div></div>");
-			divpassport.addClass("col-md-6 mb-3").append(label3).append(input3);
-			
-			//護照到期日
-			var input4=$("<input></input>");
-			input4.attr({type:"text",id:pid+"expiry",required:"required"});
-			input4.addClass("form-control");
-			var label4=$("<label></label>");
-			label4.text("護照到期日").attr("for",pid+"expiry");
-			var divexpiry=$("<div></div>");
-			divexpiry.addClass("col-md-6 mb-3").append(label4).append(input4);
-			
-			
+			divpassport.addClass("col-md-4 mb-3").append(label3).append(input3);
+
 			var h1=$("<h5></h5>");
 			h1.text("乘客"+i).addClass("col-md-12 mb-3");
 			
 			var divrow=$("<div></div>");
 			divrow.addClass("row").append(h1).append(divfirname).append(divlasname)
-			.append(divpassport).append(divexpiry);
-			
+			.append(divpassport);
+// .append(divexpiry);
+			if(i==1){
+				input1.attr({value:"${LoginOK.firstname}"});
+				input2.attr({value:"${LoginOK.lastname}"});
+				input3.attr({value:"${LoginOK.phonenumber}"});
+			}
 			documentFragment1.append(divrow);
 			
 		}//forloop END
 		
 		var documentFragment2 = $(document.createDocumentFragment());
 		var child = parseInt("${go1.child}");
-		
 		if(child >=1){	
 			for(var j=1;j<= child ;j++){
 				var cid="c"+j;
-// 				//firstname			
+ 				//firstname			
 				var input1=$("<input></input>");
-				input1.attr({type:"text",id:cid+"firstName",required:"required"});
+				input1.attr({type:"text",id:cid+"firstName",name:"cfirstName"+j,required:"required"});
 				input1.addClass("form-control");
 				var label1=$("<label></label>");
 				label1.text("First name").attr("for",cid+"firstName");
 				var divfirname=$("<div></div>");
-				divfirname.addClass("col-md-6 mb-3").append(label1).append(input1);
+				divfirname.addClass("col-md-4 mb-3").append(label1).append(input1);
 				
+				//lastname
+				var input2=$("<input></input>");
+				input2.attr({type:"text",id:cid+"lastName",name:"clastName"+j,required:"required"});
+				input2.addClass("form-control");
+				var label2=$("<label></label>");
+				label2.text("Last name").attr("for",cid+"lastName");
+				var divlasname=$("<div></div>");
+				divlasname.addClass("col-md-4 mb-3").append(label2).append(input2);
+				
+				//birthday
+				var input2=$("<input></input>");
+				input2.attr({type:"text",id:cid+"kidbirthday",name:"kidbirthday"+j,required:"required"});
+				input2.addClass("form-control");
+				var label2=$("<label></label>");
+				label2.text("birthday").attr("for",cid+"kidbirthday");
+				var divkidbirthday=$("<div></div>");
+				divkidbirthday.addClass("col-md-4 mb-3").append(label2).append(input2);
+			
 				var h2=$("<h5></h5>");
 				h2.text("孩童"+j).addClass("col-md-12 mb-3");
 				
 				var divrow=$("<div></div>");
-				divrow.addClass("row").append(h2).append(divfirname);
+				divrow.addClass("row").append(h2).append(divfirname).append(divlasname).append(divkidbirthday);
 				
 				documentFragment2.append(divrow);
 			}
@@ -255,6 +268,7 @@
 		
 	});
 	</script>
+	
     <jsp:include page="/page/shared/footer.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
 </body>

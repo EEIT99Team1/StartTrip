@@ -84,4 +84,8 @@
 		<property name="url" value="/page/register/OrderHistoryDetail.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>
+	<bean id="forwordToHouse" class="org.springframework.web.servlet.view.RedirectView">
+		<property name="url" value="/page/House/House.jsp"></property>
+		<property name="contextRelative" value="true"></property>
+	</bean>
 </beans>
