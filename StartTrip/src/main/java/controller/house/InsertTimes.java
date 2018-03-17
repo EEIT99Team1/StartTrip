@@ -74,15 +74,17 @@ public class InsertTimes extends HttpServlet {
 			else if(c==1) {
 				request.setAttribute("insert", "訂房完成");
 				CustomerBean cbean=(CustomerBean)session.getAttribute("LoginOK");
-				WebApplicationContext context=
-						WebApplicationContextUtils.getWebApplicationContext(getServletContext());
-				CustomerDao dao=context.getBean(CustomerDao.class);
-				cbean.setBonus(cbean.getBonus()+price);
-				dao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getLastname(),
-						cbean.getCountry(), cbean.getBirthday(), cbean.getPhonenumber(), cbean.getBonus(), cbean.getBlacklist());
-				System.out.println(cbean);
-				session.setAttribute("LoginOK",cbean);
-				session.setAttribute("customerBean",cbean);
+				if(cbean!=null) {
+					WebApplicationContext context=
+							WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+					CustomerDao dao=context.getBean(CustomerDao.class);
+					cbean.setBonus(cbean.getBonus()+price);
+					dao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getLastname(),
+							cbean.getCountry(), cbean.getBirthday(), cbean.getPhonenumber(), cbean.getBonus(), cbean.getBlacklist());
+					System.out.println(cbean);
+					session.setAttribute("LoginOK",cbean);
+					session.setAttribute("customerBean",cbean);
+				}
 			}
 			else{
 				request.setAttribute("select", "有錯誤,請找管理員回報錯誤訊息");
