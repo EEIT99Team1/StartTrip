@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="../../js/jquery-ui.min.js"></script>
 
 <script src="../../js/House/moment.min.js"></script>
@@ -97,12 +97,14 @@ $('#calendar').fullCalendar({
 	</tr>
 	<tr>
 		<td>入住時間 : </td>
-		<td><input type="text" name="gotime" id="datepicker" ></td>		
+		<td><input type="text" name="gotime" id="datepicker" value="${gotime}"  ></td>		
 	</tr>
 	<tr>
 		<td>入住天數 : </td>
-		<td><input type="text" name="outtime" ></td>		
+		<td><input type="text" name="outtime" value="${day}" ></td>		
 	</tr>
+<input type="text" name="people" value="${people}" style="display:none;">
+<input type="text" name="telephone" value="${telephone}" style="display:none;">
 
 </table>
 	<div>

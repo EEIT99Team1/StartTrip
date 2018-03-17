@@ -3,6 +3,8 @@ package controller.customer;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +21,16 @@ public class CustomerInformationAndUpdate {
 	private CustomerDao dao;
 	
 	@RequestMapping(method= {RequestMethod.POST},produces="text/plain;charset=utf-8")
-	public String Update(CustomerBean bean,Model model) {
+	public String Update(CustomerBean bean,Model model,HttpSession session) {
 		
 		Map<String,String> errorMsg= new HashMap<String,String>();
 		Map<String,String> successMsg = new HashMap<String,String>();
 		
 		model.addAttribute("errorMsg",errorMsg);
 		model.addAttribute("successMsg",successMsg);
+		
+		CustomerBean cbean =dao.select(bean.getEmail());
+		Boolean blacklist  = cbean.getBlacklist();
 		
 		if(bean.getPassword()==null || bean.getPassword().trim().length()==0) {
 			errorMsg.put("errorPasswordEmpty", "密碼欄必須輸入");
@@ -56,9 +61,13 @@ public class CustomerInformationAndUpdate {
 				
 				}else{
 					successMsg.put("updateOK", "恭喜您更改成功。");
-					bean.setBonus(0);
+//					bean.setBonus(0);
 					dao.update(bean.getEmail(),bean.getPassword(),bean.getFirstname(),
-							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus());
+							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus(),blacklist);
+				
+				session.setAttribute("LoginOK", bean);
+				session.setAttribute("customerBean", bean);
+				
 				}
 				
 				System.out.println("更改成功");

@@ -23,12 +23,10 @@
 			<li class="menuliimg"><a href="<c:url value="/index.jsp"/>"><img
 					class="menuimg" src="<c:url value='/image/index/01.png'/>" /></a></li>
 			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
-			<li class="menuli"><a
-				href="http://localhost:8080/StartTrip/page/House/House.jsp">飯店</a></li>
-			<li class="menuli"><a
-				href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
-			<li><input type="button" id="button" class="button"
-				style="float: right;" value="Login" /></li>
+			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">民宿</a></li>			
+			<li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
+			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
+
 		</ul>
 
 		<!--下拉選單 -->
@@ -58,24 +56,22 @@
 
 				<div class="modal-body">
 					<div id="fLoginfrom">
-					<form id="inputAccountAndPasswordSpaceFormId"
-						action="<c:url value="/LoginServlet"/>" method="post">
-						<label>帳號：</label> <input type="text" name="userEmail" size="20"
-							value="${param.userEmail}"> &nbsp;<small><Font
-							color='red' size="-3">${ErrorMsgKey.AccountEmptyError}</Font></small><br />
-						<label>密碼：</label> <input type="password" name="pswd" size="20"
-							value="${param.password}"> &nbsp;<small><Font
-							color='red' size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br />
-						<br /> &nbsp;<small><Font color='red' size="-3">${ErrorMsgKey.LoginError}</Font></small><br />
-						<br /> <a href="#" onclick="_pa6789()">忘記密碼？</a>
-<%-- 						<c:set var="target" value="${pageContext.request.servletPath}" --%>
-<%-- 							scope="session" /> --%>
-						<input id="mybutton" class="button" type="submit" value="Login">
-					</form>
+						<form id="inputAccountAndPasswordSpaceFormId"
+							action="<c:url value="/LoginServlet"/>" method="post">
+							<label>帳號：</label>
+							<input type="text" name="userEmail" size="20" value="${param.userEmail}">
+							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.AccountEmptyError}</Font></small><br />
+							<label>密碼：</label>
+							<input type="password" name="pswd" size="20" value="${param.password}">
+							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br /><br />
+             				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
+							<input id="mybutton" class="button" type="submit" value="Login">
+             				<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
+             				<a href="#" onclick="_pa6789()">忘記密碼？</a>
+							<c:set var="target" value="${pageContext.request.servletPath}" scope="session" />
+						</form>
 					</div>
-				<!-- FB註冊 -->
-					<form action="<c:url value="/InsertFBMemberServlet" />"
-						method="post" id="fbRead">
+						<form action="<c:url value="/InsertFBMemberServlet" />" method="post" id="fbRead">
 						<div>
 							<br /> <label for="email">Email：</label> <input id="inputEmail"
 								type="text" readonly name="email" size="40"
@@ -125,6 +121,7 @@
 								value="${param.phonenumber}" required /> <small><Font
 								color='red' size="-3">${error.phonenumbererr}</Font></small>
 						</div>
+
 						<br /> <input type="submit" name="submit" value="註冊會員"
 							/><br /> <br />
 					</form>
@@ -140,16 +137,10 @@
 						<input type=submit value="提交"  >
 					</form>
 				</div>
-
+			
 				<div class="modal-footer" id="otherBtns">
 					<button class="loginBtn loginBtn--facebook" onclick="_login()">使用Facebook註冊</button>
-					<button class="loginBtn loginBtn--google" data-onsuccess="onSignIn">使用
-						Google註冊</button>
-					<!-- 					<div id="googleIconSize" class="g-signin2" -->
-					<!-- 						data-onsuccess="onSignIn"></div> -->
-
-					<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
-					<a href="#" onclick="signOut();">Sign out</a>
+					<button class="loginBtn loginBtn--google" data-onsuccess="onSignIn">使用Google註冊</button>
 				</div>
 			</div>
 		</div>

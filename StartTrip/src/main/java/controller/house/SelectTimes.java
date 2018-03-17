@@ -31,6 +31,8 @@ public class SelectTimes extends HttpServlet {
 		String price1 = request.getParameter("price");
 		request.setAttribute("picture", request.getParameter("picture"));
 		request.setAttribute("name",name);
+		request.setAttribute("people", request.getParameter("people") );
+		request.setAttribute("telephone",  request.getParameter("telephone"));
 		int price = Integer.parseInt(price1);
 		try {
 			java.util.Date gotime = simpleDateFormat.parse(go);
