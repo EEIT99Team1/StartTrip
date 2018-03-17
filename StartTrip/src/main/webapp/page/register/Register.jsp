@@ -104,6 +104,7 @@ $(function() {
 			alert(InsertOK);
 			setTimeout("location.href='/StartTrip/index.jsp'",0);
 			}
+		InsertOK ="";
 		});
 	</script>
 	<script>
