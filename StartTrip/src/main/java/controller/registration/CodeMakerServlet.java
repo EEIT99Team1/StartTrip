@@ -24,15 +24,18 @@ public class CodeMakerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
      
     //隨機生成
-    Random random = new Random();
-     
+    //public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";//放到session中的key  
+    //private Random random = new Random();  
+    //String randString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//随机产生的字符串
+
+    Random random = new Random();  
     //驗證碼字體
     private Font[] codeFont =
     {
-        new Font("Times New Roman", Font.PLAIN,18), 
-        new Font("Times New Roman", Font.PLAIN, 18),
-        new Font("Times New Roman", Font.PLAIN,18),
-        new Font("Times New Roman", Font.PLAIN, 18)
+        new Font("Times New Roman", Font.PLAIN,24), 
+        new Font("Times New Roman", Font.PLAIN, 20),
+        new Font("Times New Roman", Font.PLAIN,23),
+        new Font("Times New Roman", Font.PLAIN, 22)
     };
     //驗證碼數字顏色
     private Color[] color =
@@ -41,6 +44,7 @@ public class CodeMakerServlet extends HttpServlet {
     };
  
     String codeNumbers = "";
+    
  
     int width = 60, height = 20;
  
@@ -76,16 +80,17 @@ public class CodeMakerServlet extends HttpServlet {
             drawCode(g, i);
         }
         //干擾線
-        drawNoise(g, 12);
+        drawNoise(g, 10);
  
         // 邊框
         //g.setColor(Color.gray);
         //g.drawRect(0, 0, width - 1, height - 1);
  
         // 驗證碼內容存進session中，用於驗證用戶輸入比對是否正確時使用
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         session.removeAttribute("rand");
         session.setAttribute("rand", codeNumbers);
+        
         
         // 重設字串
         codeNumbers = "";
