@@ -24,7 +24,6 @@
 	<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 	<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
-
 	<jsp:include page="/page/shared/myjs/datepickerjs.jsp" />
 
 </head>
