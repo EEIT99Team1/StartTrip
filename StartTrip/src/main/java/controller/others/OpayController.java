@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class OpayController {
 	@RequestMapping(path= {"/oPay.controller"},method= {RequestMethod.GET},produces = { "application/json" })
 	@ResponseBody
-	public String method() {
-		Integer price = 12;
+	public String method(Integer TotalAmount) {
+		Integer price = TotalAmount;
+		System.out.println(price);
 		String desc = "test1";
 		String date = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new java.util.Date());
 		Long tradeNo = (long)(Math.random()*1000000000000L);

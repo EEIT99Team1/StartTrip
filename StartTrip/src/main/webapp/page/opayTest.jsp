@@ -29,7 +29,7 @@ PaymentType 交易類型:
 <input type="text" name="PaymentType" value="aio" /><br />
 
 TotalAmount 交易金額: 
-<input type="text" id="price" name="TotalAmount" value="" /><br />
+<input type="text" id="price" name="TotalAmount" value="${flightprice}" /><br />
 
 TradeDesc 交易描述: 
 <input type="text" id="desc"name="TradeDesc" value="" /><br />
@@ -64,7 +64,7 @@ CheckMacValue 檢查碼:
 </form>
 <script>
 $("#reqBook").click(function(){
-	$.get("<c:url value='/oPay.controller'/>",function(data){
+	$.get("<c:url value='/oPay.controller'/>",{"TotalAmount":"${flightprice}"},function(data){
 		var input = data;
 		$("#price").val(input.price);
 		$("#date").val(input.date);

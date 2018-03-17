@@ -95,12 +95,14 @@ public class LoginServlet extends HttpServlet {
 //				System.out.println("success false");
 				//先由session中移除此項屬性，否則下一次User直接執行login功能後，會再度被導向到target。
 				session.removeAttribute("target");
-				RequestDispatcher rd = req.getRequestDispatcher(target);
-				rd.forward(req, resp);
+//				RequestDispatcher rd = req.getRequestDispatcher(target);
+//				rd.forward(req, resp);
+				resp.sendRedirect(contextPath+target);
 //				System.out.println("contextPath + target ="+contextPath + target);
 			} else {
-				RequestDispatcher rd = req.getRequestDispatcher(contextPath+"/index.jsp");
-				rd.forward(req, resp);
+//				RequestDispatcher rd = req.getRequestDispatcher(contextPath+"/index.jsp");
+//				rd.forward(req, resp);
+				resp.sendRedirect(contextPath+"index.jsp");
 				System.out.println("contextPath +index.jsp = "+contextPath + "/index.jsp");
 			}
 			System.out.println("success");

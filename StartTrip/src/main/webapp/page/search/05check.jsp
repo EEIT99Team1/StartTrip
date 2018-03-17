@@ -92,7 +92,7 @@ background:rgba(255, 244, 194,0.6);
 	
 	<div class = "container">
 	<br/>
-	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資料確認</h1>
+	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資料確認${flightprice}</h1>
 	<br/>
 		<table class="table table1">
 			<thead>
