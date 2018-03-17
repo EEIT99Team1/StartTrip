@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>
@@ -48,6 +49,13 @@
 		<td>房客電話 : </td>
 		<td><input type="text" name="telephone" value="${telephone}"></td>		
 	</tr>
+	<tr>
+		<td>會員帳號 : </td>
+		<td>${LoginOK.email}</td>		
+	</tr>
+	
+	
+	
 	</table>
 	
 	<input type="submit" value="go" style="display:block;margin:0 auto;margin-top:20px">
@@ -57,13 +65,13 @@
 	<script>
 	 alert('${insert}');
 
-	 location.href='<c:url value='/page/House/House.jsp'/>';
+	 location.href="<c:url value='/page/House/House.jsp'/>";
 	 </script>
 	
 	</c:if>
 </div>	
+</form>
 	
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />	
-</form>
 </body>
 </html>

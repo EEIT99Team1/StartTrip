@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>

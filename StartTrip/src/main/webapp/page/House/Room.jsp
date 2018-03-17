@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 <title>Insert title here</title>
 </head>

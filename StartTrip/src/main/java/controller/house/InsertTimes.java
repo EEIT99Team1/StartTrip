@@ -9,8 +9,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import model.bean.CustomerBean;
 import model.bean.TimesBean;
+import model.dao.CustomerDao;
 import model.service.TimesService;
 
 
@@ -27,6 +33,8 @@ public class InsertTimes extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
+		
 		request.setCharacterEncoding("UTF-8");
 		String name=request.getParameter("name");
 		String roomName=request.getParameter("roomName");
@@ -65,6 +73,16 @@ public class InsertTimes extends HttpServlet {
 			}
 			else if(c==1) {
 				request.setAttribute("insert", "訂房完成");
+				CustomerBean cbean=(CustomerBean)session.getAttribute("LoginOK");
+				WebApplicationContext context=
+						WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+				CustomerDao dao=context.getBean(CustomerDao.class);
+				cbean.setBonus(cbean.getBonus()+price);
+				dao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getLastname(),
+						cbean.getCountry(), cbean.getBirthday(), cbean.getPhonenumber(), cbean.getBonus(), cbean.getBlacklist());
+				System.out.println(cbean);
+				session.setAttribute("LoginOK",cbean);
+				session.setAttribute("customerBean",cbean);
 			}
 			else{
 				request.setAttribute("select", "有錯誤,請找管理員回報錯誤訊息");

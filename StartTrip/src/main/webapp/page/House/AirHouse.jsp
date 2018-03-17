@@ -3,12 +3,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>
@@ -16,7 +16,7 @@
 
 
 <div style="margin-top:5%;">
-<form action="AirSelelctHouse" method="post">
+<form action="<c:url value='/page/House/AirSelelctHouse'/>" method="post">
 <table style="margin:auto;margin-top:30px;">
      <tr>
 		<td>國家 : </td>
@@ -32,7 +32,7 @@
 	</tr>
 	<tr>
 		<td>入住天數 : </td>
-		<td><input  type="text" name="day" value="${day}"></td>
+		<td><input  type="text" name="day" value="${hday}"></td>
 	</tr>
 <!-- 	<tr> -->
 <!-- 		<td>姓名 : </td> -->
