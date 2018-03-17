@@ -4,18 +4,18 @@
 
 <script>
 	$(function() {
-		$("#datego").datepicker({
+		 var date = $("#datego").datepicker({
 			changeMonth: true,
 	        changeYear: true,
 	        minDate: 1, 
-	         
+
 		})
-	});
-	$(function() {
+		});
+		$(function() {
 		$("#dateback").datepicker({
 			changeMonth: true,
 	        changeYear: true,
-	        minDate: 1, 
+	        minDate:1, 
 		});
 	});
 

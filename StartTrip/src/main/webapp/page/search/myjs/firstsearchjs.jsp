@@ -25,12 +25,8 @@ $(document).ready(function() {
 					for(var i=0,max=dataObj.length;i<max;i++){
 						var aircode=dataObj[i].aircode;
 						var airport=dataObj[i].airport;
-						var country=dataObj[i].country;
 						console.log(aircode+":"+airport);
 						ans.push(aircode+airport);
-						$(".citytext").autocomplete({
-							source:ans
-						});
 					}
 					$(".citytext").autocomplete({
 						source:ans

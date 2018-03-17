@@ -20,10 +20,10 @@
 			console.log(PricedItinerarys.length);
 			
 			for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){
-				var divBig=$("<div></div>").css({"border":"4px solid #8C0044"});//最外圈的div
+				var divBig=$("<div></div>");//.css({"border":"4px solid #8C0044"});//最外圈的div
 				var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊").click(infoDivShow);
 				var infoDiv=$("<div></div>").attr({id:"dflightInfo"+i}).css({"display":"none"});
-				var tableShow=$("<table></table>").css({"border":"2px solid #003C9D","width":"100%"});
+				var tableShow=$("<table></table>").addClass("table").css({"width":"100%","text-align":"center"});//.css({"border":"2px solid #003C9D","width":"100%"});
 				var tbodyShow=$("<tbody></tbody>");
 				console.log(i);
 				//總金額//總飛行時間
@@ -115,7 +115,7 @@
 					
 					//table
 					if(j==0){
-						gotable=$("<table></table>").css({"border":"2px solid #003C9D","width":"100%"});
+						gotable=$("<table></table>").addClass("table").css({"width":"100%","padding":"10px"});//.css({"border":"2px solid #003C9D","width":"100%"});
 						//thead
 						thead=$("<thead></thead>");
 						var trhead=$("<tr></tr>");

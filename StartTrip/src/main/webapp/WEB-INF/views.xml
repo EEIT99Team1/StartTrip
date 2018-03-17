@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="test.success" class="org.springframework.web.servlet.view.RedirectView">
-		<property name="url" value="/testshow.jsp"></property>
+		<property name="url" value="/page/backstage/managerLogin.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>
 
