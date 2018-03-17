@@ -259,13 +259,19 @@ background:rgba(255, 244, 194,0.6);
 		var submit=$("<input></input>").css({"margin":"10px"});
 		submit.attr({type:"submit",value:"確認送出"}).addClass("btn btn-success");
 		
+// 		<a href="02select.jsp">
+		var a1 = $("<a></a>").attr({"href":"02select.jsp"});
 		
 		var button1=$("<input></input>").css({"margin":"10px"});
 		button1.attr({type:"button",value:"返回查詢結果"}).addClass("btn btn-success");
+		a1.append(button1);
+		
+		var a2 = $("<a></a>").attr({"href":"../../index.jsp"});
 		var button2=$("<input></input>").css({"margin":"10px"});
 		button2.attr({type:"button",value:"回首頁"}).addClass("btn btn-success");
+		a2.append(button2);
 		
-		buttondiv.append(button1).append(submit).append(button2);
+		buttondiv.append(a1).append(submit).append(a2);
 		$("#passengerForm").append(documentFragment1).append(documentFragment2).append(buttondiv);
 		
 	});
