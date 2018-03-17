@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="test.success" class="org.springframework.web.servlet.view.RedirectView">
-		<property name="url" value="/testshow.jsp"></property>
+		<property name="url" value="/page/backstage/managerLogin.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>
 
@@ -84,8 +84,7 @@
 		<property name="url" value="/page/register/OrderHistoryDetail.jsp"></property>
 		<property name="contextRelative" value="true"></property>
 	</bean>
-	<bean id="forwordToHouse" class="org.springframework.web.servlet.view.RedirectView">
-		<property name="url" value="/page/House/House.jsp"></property>
-		<property name="contextRelative" value="true"></property>
+	<bean id="forwordToHouse" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/page/House/AirHouse.jsp"></property>
 	</bean>
 </beans>

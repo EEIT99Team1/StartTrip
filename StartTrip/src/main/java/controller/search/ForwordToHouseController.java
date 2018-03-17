@@ -3,6 +3,7 @@ package controller.search;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,9 +13,9 @@ import model.bean.OrdermanBean;
 @Controller
 public class ForwordToHouseController {
 	@RequestMapping(path="/ForwordToHouse.controller",method=RequestMethod.GET)
-	public String forword(HttpSession session) {
-		String hcountry="日本";
-		String hplace="東京";		
+	public String forword(HttpSession session,Model model) {
+		String hcountry="台灣";
+		String hplace="台北";		
 		String hdate;
 		String hphone;
 		String hname;
@@ -38,15 +39,16 @@ public class ForwordToHouseController {
 
 		System.out.println(hcountry);
 		System.out.println(hplace);
-		System.out.println(hdate);
+		hdate=hdate.replaceAll("-","/");
+		System.out.println(hdate.split("T")[0]);
 		System.out.println(hphone);
 		System.out.println(hname);
 		
-		session.setAttribute("hcountry",hcountry);
-		session.setAttribute("hplace",hplace);
-		session.setAttribute("hdate",hdate);
-		session.setAttribute("hphone",hphone);
-		session.setAttribute("hname",hname);
+		model.addAttribute("hcountry",hcountry);
+		model.addAttribute("hplace",hplace);
+		model.addAttribute("hdate",hdate.split("T")[0]);
+		model.addAttribute("hphone",hphone);
+		model.addAttribute("hname",hname);
 		
 		return "forwordToHouse";
 	}

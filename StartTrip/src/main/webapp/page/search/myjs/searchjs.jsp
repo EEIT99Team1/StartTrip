@@ -30,9 +30,9 @@
 				var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
 				var totalTime=0;
 				//行李重量
-				var weight;
-				if(PricedItinerarys[i].getElementsByTagName("Allowance")[0]!=null){
-					weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
+				var weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
+				if(weight==null){
+					weight=25;
 				}
 				
 				console.log(totalFare+"?????--");
