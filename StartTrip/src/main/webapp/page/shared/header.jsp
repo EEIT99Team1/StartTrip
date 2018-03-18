@@ -57,7 +57,7 @@ display:none;
 							<input type="text" name="userEmail" size="20" value="${param.userEmail}">
 							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.AccountEmptyError}</Font></small><br />
 							<label>密碼：</label>
-							<input type="password" name="pswd" size="20" value="${param.password}">
+							<input type="password" name="pswd" size="20">
 							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br /><br />
              				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
 							<input id="mybutton" class="button" type="submit" value="Login">
