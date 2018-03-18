@@ -63,7 +63,7 @@
 						<span class="bonus">12</span>
 					</div>
 					<div class="center">
-						<input class="btn btn-primary addcart" id="b1" type="submit" value="選擇">						
+						<input class="btn btn-primary addcart" id="b1" type="submit" value="加入">						
 					</div>
 				</div>
 <!-- 				區塊1 -->
@@ -84,7 +84,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" id="b2" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b2" type="submit" value="加入">	
 
 					</div>
 				</div>
@@ -106,7 +106,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" id="b3" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b3" type="submit" value="加入">	
 
 					</div>
 				</div>
@@ -128,7 +128,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" id="b4" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b4" type="submit" value="加入">	
 
 					</div>
 				</div>
@@ -150,7 +150,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" id="b5" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b5" type="submit" value="加入">	
 
 					</div>
 				</div>
@@ -172,7 +172,7 @@
 					</div>
 					<div class="center">
 
-						<input class="btn btn-primary addcart" id="b6" type="submit" value="選擇">	
+						<input class="btn btn-primary addcart" id="b6" type="submit" value="加入">	
 
 					</div>
 				</div>
