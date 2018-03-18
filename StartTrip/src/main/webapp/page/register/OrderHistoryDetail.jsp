@@ -20,13 +20,17 @@
 <c:forEach  var="flight" items="${flightbean2}">
 		<div>
 			<label class="front" for="start">起飛地點:</label>&nbsp;<small class="ordermessagefront"><Font color='black' size="-3">${flight.start}</Font></small>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="back" for="endstart">降落地點:</label>&nbsp;<small class="ordermessageback"><Font color='black' size="-3">${flight.endstart}</Font></small>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="front" for="adult">成人數量:</label>&nbsp;<small class="ordermessagefront"><Font color='black'  size="-3">${flight.adult}</Font></small>
+			&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="back" for="child">孩童數量:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.child}</Font></small>
 		</div>
 		<div>
 			<label class="front" for="uptime">起程時間:</label>&nbsp;<small class="ordermessagefront"><Font color='black' size="-3">${flight.uptime}</Font></small>
 			<label class="back" for="downtime">落地時間:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.downtime}</Font></small>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="front" for="flight">航班代碼:</label>&nbsp;<small class="ordermessagefront"><Font color='black'  size="-3">${flight.flight}</Font></small>
 			<label class="back" for="model">飛機型號:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.model}</Font></small>
 		</div>

@@ -28,7 +28,7 @@ public class RegisterController {
 		Map<String,String> successMsg = new HashMap<String,String>(); 
 		
 		model.addAttribute("error",errorMsg);
-		session.setAttribute("success",successMsg);
+		model.addAttribute("success",successMsg);
 		
 			if(bean.getEmail()==null || bean.getEmail().trim().length()==0) {
 				errorMsg.put("errorIDEmpty", "帳號欄必須輸入");
@@ -41,8 +41,6 @@ public class RegisterController {
 			}
 			if(bean.getFirstname()==null || bean.getFirstname().trim().length()==0) {
 				errorMsg.put("errorFirstname", "名字欄必須輸入");
-			}else if (bean.getFirstname().trim().length() < 2) {
-				errorMsg.put("firstnameerr", "名字欄字數不足");
 			}
 			if(bean.getCountry()==null || bean.getCountry().trim().length()==0) {
 				errorMsg.put("errorCountry", "國家欄必須輸入");
