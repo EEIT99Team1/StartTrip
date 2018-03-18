@@ -38,6 +38,17 @@ public class FlightorderDao {
 	}
 	
 	@Transactional
+	public List<FlightorderBean> flightorderidCheck(String flightorderid) {
+		List<FlightorderBean> result=null;
+		if(flightorderid!=null) {
+			String HQL="FROM FlightorderBean WHERE flightorderid='"+flightorderid+"'";
+			Query<FlightorderBean> query=getSession().createQuery(HQL,FlightorderBean.class);
+			result=query.list();
+		}
+		return result;
+	}
+	
+	@Transactional
 	public List selectBy(String selectBy) {
 		String HQL="select "+selectBy+",count("+selectBy+") from FlightorderBean flight GROUP BY "+selectBy;
 
