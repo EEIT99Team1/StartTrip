@@ -28,7 +28,7 @@ public class RegisterController {
 		Map<String,String> successMsg = new HashMap<String,String>(); 
 		
 		model.addAttribute("error",errorMsg);
-		session.setAttribute("success",successMsg);
+		model.addAttribute("success",successMsg);
 		
 			if(bean.getEmail()==null || bean.getEmail().trim().length()==0) {
 				errorMsg.put("errorIDEmpty", "帳號欄必須輸入");

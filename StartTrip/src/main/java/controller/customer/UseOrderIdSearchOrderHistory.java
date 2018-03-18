@@ -20,13 +20,13 @@ public class UseOrderIdSearchOrderHistory {
 	private FlightorderDao flightdao;
 	
 	@RequestMapping(method= {RequestMethod.GET},produces="text/plain;charset=utf-8")
-	public String method(HttpSession session,String choice) {
+	public String method(HttpSession session,String choice,String flightorderid) {
 		List<FlightorderBean> flightbean = null;
 		Integer id = Integer.parseInt(choice);
 		flightbean = flightdao.selectByOrderid(id);
 		System.out.println("flightbean = "+flightbean);
 		session.setAttribute("flightbean2", flightbean);
-		session.setAttribute("choiceid", id);
+		session.setAttribute("choiceid", flightorderid);
 		
 		return "orderhistory2";
 	}

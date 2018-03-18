@@ -11,11 +11,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import model.bean.FlightorderBean;
 import model.bean.search.SearchDataBean;
 import model.service.search.FlightorderService;
+import model.service.search.RadomFlightOrderId;
 
 @Controller
 @RequestMapping(path = "/Ticketreveiw.controller")
 public class TicketreveiwController {
 
+	@Autowired
+	private RadomFlightOrderId radom;
+	
 	@RequestMapping(method = { RequestMethod.POST })
 	public 	String ordercheck(
 			String gomodel1, String gogodate1, String goarriveddate1, String goflight1,
@@ -36,8 +40,10 @@ public class TicketreveiwController {
 		session.removeAttribute("back1");
 		session.removeAttribute("back2");
 
-		System.out.println(flightprice);
+		//儲存總金額
 		session.setAttribute("flightprice", flightprice);
+		//產生6位數亂碼flightOrderId
+		String flightOrderId=radom.radomFlightOrderId();
 
 		SearchDataBean searchData = (SearchDataBean) session.getAttribute("searchData");
 		int adult = Integer.parseInt(searchData.getAdult());
@@ -56,6 +62,7 @@ public class TicketreveiwController {
 		go1.setFlighttime(goflighttime1);
 		go1.setModel(gomodel1);
 		go1.setCabin(gocabin1);
+		go1.setFlightorderid(flightOrderId);
 		session.setAttribute("go1", go1);
 		// System.out.println(go1);
 
@@ -74,6 +81,7 @@ public class TicketreveiwController {
 			go2.setFlighttime(goflighttime2);
 			go2.setModel(gomodel2);
 			go2.setCabin(gocabin2);
+			go2.setFlightorderid(flightOrderId);
 			System.out.println(go2);
 
 			session.setAttribute("go2", go2);
@@ -94,6 +102,7 @@ public class TicketreveiwController {
 			back1.setFlighttime(backflighttime1);
 			back1.setModel(backmodel1);
 			back1.setCabin(backcabin1);
+			back1.setFlightorderid(flightOrderId);
 			System.out.println(back1);
 
 			session.setAttribute("back1", back1);
@@ -113,6 +122,7 @@ public class TicketreveiwController {
 			back2.setFlighttime(backflighttime2);
 			back2.setModel(backmodel2);
 			back2.setCabin(backcabin2);
+			back2.setFlightorderid(flightOrderId);
 			System.out.println(back2);
 
 			session.setAttribute("back2", back2);
