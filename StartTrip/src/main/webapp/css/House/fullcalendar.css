@@ -343,7 +343,7 @@ temporary rendered events).
 .fc-event-dot {
   background-color: #3a87ad;
   /* default BACKGROUND color */ }
-
+/* 預約的顏色 */
 .fc-event,
 .fc-event:hover {
   color: #fff;
@@ -607,18 +607,19 @@ TODO: more distinction between this file and common.css
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-popover .fc-header,
 .fc-unthemed .fc-list-heading td {
-  background: #eee; }
+  background: #000; }
 
 .fc-unthemed .fc-popover .fc-header .fc-close {
-  color: #666; }
+  color: #000; }
 
 .fc-unthemed td.fc-today {
-  background: #fcf8e3; }
+  background: #fff4c1; }
+/*   今天的顏色 #fcf8e3 */
 
 .fc-unthemed .fc-disabled-day {
   background: #d7d7d7;
   opacity: .3; }
-
+/* #fcf8e3  #d7d7d7 */
 /* Icons (inline elements with styled text that mock arrow icons)
 --------------------------------------------------------------------------------------------------*/
 .fc-icon {
@@ -913,9 +914,8 @@ NOTE: use percentage font sizes or else old IE chokes
 .fc-basic-view .fc-day-top .fc-week-number {
   min-width: 1.5em;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #f2f2f2;;
   color: #808080; }
-
 /* when week/day number have own column */
 .fc-basic-view td.fc-week-number {
   text-align: center; }
@@ -1291,3 +1291,4 @@ be a descendant of the grid when it is being dragged.
 .fc-unthemed .fc-list-empty {
   /* theme will provide own background */
   background-color: #eee; }
+  

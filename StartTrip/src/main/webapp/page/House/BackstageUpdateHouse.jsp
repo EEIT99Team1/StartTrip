@@ -45,15 +45,18 @@
 </tr>
 <tr>
  <td>Country:</td>
- <td><input type="text" name="country" value="${bean.country}"></td>
+ <td><input type="text" disabled="disabled" value="${bean.country}"></td>
+ <td><input style="display:none;" type="text" name="country" value="${bean.country}"></td>
 </tr>
 <tr>
  <td>Area:</td>
- <td><input type="text" name="area" value="${bean.area}"></td>
+ <td><input type="text" disabled="disabled" value="${bean.area}"></td>
+ <td><input style="display:none;" type="text" name="area" value="${bean.area}"></td>
 </tr>
 <tr>
  <td>Addres:</td>
- <td><input type="text" name="addres" value="${bean.addres}"></td>
+ <td><input type="text" disabled="disabled" value="${bean.addres}"></td>
+ <td><input style="display:none;" type="text" name="addres" value="${bean.addres}"></td>
 </tr>
 <tr>
  <td>Telephone:</td>
