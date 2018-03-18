@@ -8,6 +8,11 @@
 <title>Test index</title>
 </head>
 <body>
+<h1>getAirLineName.controller</h1>
+<form action='<c:url value="/getAirLineName.controller"/>'>
+	AirlLineId:<input type="text" name="airlLineId"/><br/>
+	<input type="submit" value="submit"/>
+</form><hr/>
 <h1>test.controller</h1>
 <form action='<c:url value="/test.controller"/>'>
 	ID:<input type="text" name="id"/><br/>

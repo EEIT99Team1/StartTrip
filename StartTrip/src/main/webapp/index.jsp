@@ -66,12 +66,12 @@
 					<h3>日期:</h3>
 					<div class="searchline">
 						去程: <input type="text" id="datego" name="gotime" required="required" /> 
-						回程: <input type="text" id="dateback" name="backtime" required="required" />
+						回程: <input type="text" id="dateback" name="backtime" required="required"/>
 					</div>
 
 				</div>
 				<div class="searchdiv" style="padding-bottom: 2%">
-					<input type="radio" name="way" id="double" required value="Return"checked />
+					<input type="radio" name="way" id="double" required value="Return" checked />
 						<label for="double">來回</label> 
 					<input type="radio"name="way" id="one" value="OneWay" />
 						<label for="one">單程</label>
