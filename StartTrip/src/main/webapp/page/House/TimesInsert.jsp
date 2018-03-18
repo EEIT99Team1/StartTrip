@@ -43,11 +43,11 @@
 	</tr>
 	<tr>
 		<td>房客姓名 : </td>
-		<td><input type="text" name="people" value="${people}" ></td>		
+		<td><input type="text" name="people" value="${LoginOK.lastname}${LoginOK.firstname}" ></td>		
 	</tr>
 	<tr>
 		<td>房客電話 : </td>
-		<td><input type="text" name="telephone" value="${telephone}"></td>		
+		<td><input type="text" name="telephone" value="${LoginOK.phonenumber}"></td>		
 	</tr>
 	<tr>
 		<td>會員帳號 : </td>

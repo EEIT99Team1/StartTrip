@@ -92,7 +92,7 @@ background:rgba(255, 244, 194,0.6);
 	
 	<div class = "container">
 	<br/>
-	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資料確認${flightprice}</h1>
+	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資料確認</h1>
 	<br/>
 		<table class="table table1">
 			<thead>
@@ -103,6 +103,15 @@ background:rgba(255, 244, 194,0.6);
 				</tr>
 			</thead>
 			<thead class="table1th">
+				<tr>
+					<th></th>
+					<th>機票金額:</th>
+					<th>${flightprice}元<span style="color:red">(台幣)</span></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
 				<tr>
 					<th></th>
 					<th>大人人數:</th>

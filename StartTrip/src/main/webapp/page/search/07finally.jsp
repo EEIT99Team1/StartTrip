@@ -92,6 +92,15 @@
 			<thead class="table1th">
 				<tr>
 					<th></th>
+					<th>機票金額:</th>
+					<th>${flightprice}元<span style="color:red">(台幣)</span></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th></th>
 					<th>大人人數:</th>
 					<th>${go1.adult}人</th>
 					<th></th>

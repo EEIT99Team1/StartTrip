@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import model.bean.CustomerBean;
 import model.bean.FlightorderBean;
 import model.bean.OrdermanBean;
 import model.bean.PassengerBean;
+import model.dao.CustomerDao;
 import model.service.search.FlightorderService;
 import model.service.search.OrdermanService;
 import model.service.search.PassengerService;
@@ -28,6 +30,8 @@ public class SearchviewController {
 	private OrdermanService ordermanService;
 	@Autowired
 	private FlightorderService flightorderService;
+	@Autowired
+	private CustomerDao customerDao;
 
 	@RequestMapping( method = { RequestMethod.GET })
 	public String view(HttpSession session,Model model) {
@@ -107,6 +111,17 @@ public class SearchviewController {
 			 }
 		 }
 		 
+		 CustomerBean cbean=(CustomerBean)session.getAttribute("LoginOK");
+		 System.out.println("cbean"+cbean);
+		 if(cbean!=null) {
+			 Integer flightprice= Integer.parseInt((String)session.getAttribute("flightprice"));
+			 System.out.println("cbean"+flightprice);
+			 cbean.setBonus(flightprice);
+			 customerDao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getFirstname(), 
+					 cbean.getCountry(), cbean.getBirthday(), cbean.getBirthday(), cbean.getBonus(), cbean.getBlacklist());
+			 session.setAttribute("LoginOK", cbean);
+			 session.setAttribute("customerBean", cbean);
+		 }
 		 System.out.println("success");
 		 return "view.success";
 
