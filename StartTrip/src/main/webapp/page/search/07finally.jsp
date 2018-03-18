@@ -92,6 +92,15 @@
 			<thead class="table1th">
 				<tr>
 					<th></th>
+					<th>訂單編號:</th>
+					<th>${go1.flightorderid}</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th></th>
 					<th>機票金額:</th>
 					<th>${flightprice}元<span style="color:red">(台幣)</span></th>
 					<th></th>
