@@ -79,7 +79,8 @@
 </form>	
 
 	
-		</table>
+</table>
+
 <c:if test="${empty bean}">
 <script >
 alert("修改成功");
