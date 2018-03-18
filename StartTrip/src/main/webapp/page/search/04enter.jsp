@@ -76,23 +76,23 @@ background:rgba(255, 244, 194,0.6);
 	    <tbody>
 		    <tr>
 			    <td>電子郵件:</td>
-			    <td><input class="form-control" type="text" name="email" value="${LoginOK.email}"/></td>
+			    <td><input class="form-control" type="text" autocomplete="off" name="email" value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 再確認電子郵件:</td>
-			    <td><input class="form-control" type="text" value="${LoginOK.email}"/></td>
+			    <td><input class="form-control" type="text" autocomplete="off"  value="${LoginOK.email}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人姓氏:</td>
-			    <td><input class="form-control" type="text" name="efirstname" value="${LoginOK.firstname}"/></td>
+			    <td><input class="form-control" type="text" autocomplete="off" name="efirstname" value="${LoginOK.firstname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人名字:</td>
-			    <td><input class="form-control" type="text" name="elastname" value="${LoginOK.lastname}"/></td>
+			    <td><input class="form-control" type="text" autocomplete="off" name="elastname" value="${LoginOK.lastname}"/></td>
 		    </tr>
 		    <tr>
 			    <td> 聯絡人電話:</td>
-			    <td><input class="form-control" type="text" name="ephone" value="${LoginOK.phonenumber}"/></td>
+			    <td><input class="form-control" type="text" autocomplete="off" name="ephone" value="${LoginOK.phonenumber}"/></td>
 		    </tr>
 	    </tbody>
  </table>
@@ -172,7 +172,7 @@ background:rgba(255, 244, 194,0.6);
 			
 			//firstname			
 			var input1=$("<input></input>");
-			input1.attr({type:"text",id:pid+"firstName",name:"afirstName"+i,required:"required"});
+			input1.attr({type:"text",id:pid+"firstName",name:"afirstName"+i,required:"required","autocomplete":"off"});
 			input1.addClass("form-control");
 			var label1=$("<label></label>");
 			label1.text("First name").attr("for",pid+"firstName");
@@ -181,7 +181,7 @@ background:rgba(255, 244, 194,0.6);
 			
 			//lastname
 			var input2=$("<input></input>");
-			input2.attr({type:"text",id:pid+"lastName",name:"alastName"+i,required:"required"});
+			input2.attr({type:"text",id:pid+"lastName",name:"alastName"+i,required:"required","autocomplete":"off"});
 			input2.addClass("form-control");
 			var label2=$("<label></label>");
 			label2.text("Last name").attr("for",pid+"lastName");
@@ -191,7 +191,7 @@ background:rgba(255, 244, 194,0.6);
 // 		alert(adult);
 // 			//乘客聯絡電話
 			var input3=$("<input></input>");
-			input3.attr({type:"text",id:pid+"phone",name:"phone"+i,required:"required"});
+			input3.attr({type:"text",id:pid+"phone",name:"phone"+i,required:"required","autocomplete":"off"});
 			input3.addClass("form-control");
 			var label3=$("<label></label>");
 			label3.text("乘客聯絡電話").attr("for",pid+"phone");
@@ -221,7 +221,7 @@ background:rgba(255, 244, 194,0.6);
 				var cid="c"+j;
  				//firstname			
 				var input1=$("<input></input>");
-				input1.attr({type:"text",id:cid+"firstName",name:"cfirstName"+j,required:"required"});
+				input1.attr({type:"text",id:cid+"firstName",name:"cfirstName"+j,required:"required","autocomplete":"off"});
 				input1.addClass("form-control");
 				var label1=$("<label></label>");
 				label1.text("First name").attr("for",cid+"firstName");
@@ -230,7 +230,7 @@ background:rgba(255, 244, 194,0.6);
 				
 				//lastname
 				var input2=$("<input></input>");
-				input2.attr({type:"text",id:cid+"lastName",name:"clastName"+j,required:"required"});
+				input2.attr({type:"text",id:cid+"lastName",name:"clastName"+j,required:"required","autocomplete":"off"});
 				input2.addClass("form-control");
 				var label2=$("<label></label>");
 				label2.text("Last name").attr("for",cid+"lastName");
@@ -239,7 +239,7 @@ background:rgba(255, 244, 194,0.6);
 				
 				//birthday
 				var input2=$("<input></input>");
-				input2.attr({type:"text",id:cid+"kidbirthday",name:"kidbirthday"+j,required:"required"});
+				input2.attr({type:"text",id:cid+"kidbirthday",name:"kidbirthday"+j,required:"required","autocomplete":"off"});
 				input2.addClass("form-control");
 				var label2=$("<label></label>");
 				label2.text("birthday").attr("for",cid+"kidbirthday");
@@ -255,20 +255,20 @@ background:rgba(255, 244, 194,0.6);
 				documentFragment2.append(divrow);
 			}
 		}
-		var buttondiv=$("<div></div>").css({"padding":"20px 23%"});
+		var buttondiv=$("<div></div>").css({"padding":"20px 27%"});
 		var submit=$("<input></input>").css({"margin":"10px"});
-		submit.attr({type:"submit",value:"確認送出"}).addClass("btn btn-success");
+		submit.attr({type:"submit",value:"確認送出"}).addClass("btn btn-secondary").css({"opacity": "0.8"});
 		
 // 		<a href="02select.jsp">
 		var a1 = $("<a></a>").attr({"href":"02select.jsp"});
 		
-		var button1=$("<input></input>").css({"margin":"10px"});
-		button1.attr({type:"button",value:"返回查詢結果"}).addClass("btn btn-success");
+		var button1=$("<input></input>").css({"margin":"5px"});
+		button1.attr({type:"button",value:"返回查詢結果"}).addClass("btn btn-secondary").css({"opacity": "0.8"});
 		a1.append(button1);
 		
 		var a2 = $("<a></a>").attr({"href":"../../index.jsp"});
-		var button2=$("<input></input>").css({"margin":"10px"});
-		button2.attr({type:"button",value:"回首頁"}).addClass("btn btn-success");
+		var button2=$("<input></input>").css({"margin":"5px"});
+		button2.attr({type:"button",value:"回首頁"}).addClass("btn btn-secondary").css({"opacity": "0.8"});
 		a2.append(button2);
 		
 		buttondiv.append(a1).append(submit).append(a2);

@@ -602,10 +602,10 @@
 
     <div   class = "container" style="padding:0 18% 45px 18%;background:rgba(255, 244, 194,0);">
         <form action="<c:url value='/ForwordToHouse.controller'/>" method="get">
-        <input  class="btn btn-success"  type="button" value="列印明細" />
+        <input  class="btn btn-secondary" style="opacity: 0.8" type="button" value="列印明細" />
         <a href="<c:url value='/index.jsp'/>">
-        <input  class="btn btn-success"  type="button" value="回查詢首頁" /></a>
-        	<input  class="btn btn-success"  type="submit" value="續訂民宿" />
+        <input  class="btn btn-secondary" style="opacity: 0.8"  type="button" value="回查詢首頁" /></a>
+        	<input  class="btn btn-secondary" style="opacity: 0.8"  type="submit" value="續訂民宿" />
         </form>
     </div>
     

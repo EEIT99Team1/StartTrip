@@ -37,13 +37,13 @@
 					<h3>地點:</h3>
 					<img src="<c:url value='/image/search/mappoint.png'/>" />
 					<div class="searchline">
-						出發地:<input class="citytext" type="text" name="goplace" value="TPE台北桃園(TPE)" required="required"/> 
-						目的地:<input class="citytext" type="text" name="endplace" required="required"/>
+						出發地:<input class="citytext" type="text" name="goplace" value="TPE台北桃園(TPE)" required="required"autocomplete="off"/> 
+						目的地:<input class="citytext" type="text" name="endplace" required="required" autocomplete="off"/>
 					</div>
 				</div>
 				<div class="searchdiv">
 					<h3>人數:</h3>
-					<input type="submit" class="searchsubmit" value="查詢" />
+					<input type="submit" class="searchsubmit"  value="查詢" />
 
 					<div class="searchline">
 						大人: <select name="adult">
@@ -65,15 +65,16 @@
 				<div class="searchdiv">
 					<h3>日期:</h3>
 					<div class="searchline">
-						去程: <input type="text" id="datego" name="gotime" required="required" /> 
-						回程: <input type="text" id="dateback" name="backtime" required="required" />
+						去程: <input type="text"autocomplete="off" class="form-control" id="datego" name="gotime" required="required" size="40"/>
+						<br> 
+						回程: <input type="text"autocomplete="off"  class="form-control"id="dateback" name="backtime" required="required"size="40" />
 					</div>
 
 				</div>
 				<div class="searchdiv" style="padding-bottom: 2%">
-					<input type="radio" name="way" id="double" required value="Return"checked />
+					<input type="radio"class="form-control" name="way" id="double" required value="Return"checked />
 						<label for="double">來回</label> 
-					<input type="radio"name="way" id="one" value="OneWay" />
+					<input type="radio" class="form-control"name="way" id="one" value="OneWay" />
 						<label for="one">單程</label>
 					艙等: <select name="cabin">
 						<option value="Y">經濟艙</option>
@@ -86,9 +87,18 @@
 				</div>
 			</div>
 		</form>
+		
+		<script>
+			$(".searchsubmit").click(function() {
+				$("#loadingback").stop().css({"display":"block"})
+				$("#showbox").stop().css({"display":"block"})
+			})
+		</script>
 	</article>
 <jsp:include page="/page/shared/footer.jsp" />
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <jsp:include page="/page/search/myjs/firstsearchjs.jsp" />
+		<div class="loadingback"id="loadingback" ></div>
+		<div class="showbox" id="showbox"><img src="<c:url value='/image/search/loading.gif'/>"></div>
 	</body>
 </html>

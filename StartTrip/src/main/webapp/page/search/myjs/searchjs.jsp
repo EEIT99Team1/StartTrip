@@ -6,7 +6,7 @@
 	<script>
 		function infoDivShow(){
 			var id="#d"+$(this).attr("id");
-			$(id).toggle(1000);
+			$(id).slideToggle(1000);
 		}	
 	</script>
 	<script>
@@ -21,7 +21,8 @@
 			
 			for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){
 				var divBig=$("<div></div>");//.css({"border":"4px solid #8C0044"});//最外圈的div
-				var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊").click(infoDivShow);
+				var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊")
+				.click(infoDivShow).addClass("btn btn-light").css({"margin-left":"325px","margin-bottom":"20px"});
 				var infoDiv=$("<div></div>").attr({id:"dflightInfo"+i}).css({"display":"none"});
 				var tableShow=$("<table></table>").addClass("table").css({"width":"100%","text-align":"center"});//.css({"border":"2px solid #003C9D","width":"100%"});
 				var tbodyShow=$("<tbody></tbody>");
@@ -77,13 +78,13 @@
 					if(j==0){
 						//放入tableShow資訊
 						var tr0show = $("<tr></tr>");
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(flightCode);
+						var td00show = $("<td></td>").attr({rowspan:"5"}).text(flightCode).css({"vertical-align":"middle"});
 						var td01show = $("<td></td>").text(departureAirport);
 						var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
 						var td02show = $("<td></td>").append(imgshowArrows);
 						var td03show = $("<td></td>").text(arrivalAirport);
 						var td04show = $("<td></td>");
-						var td05show = $("<td></td>").attr({rowspan:"2"}).css({"width":"20%"}).text(totalFare+"元(台幣)");
+						var td05show = $("<td></td>").attr({rowspan:"2"}).css({"width":"20%","vertical-align":"middle"}).text(totalFare+"元(台幣)");
 						tr0show.append(td00show).append(td01show).append(td02show)
 								.append(td03show).append(td04show).append(td05show);
 						
@@ -97,8 +98,8 @@
 					
 						var tr2show = $("<tr></tr>");
 						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
-						var butSelect= $("<button></button>").text("訂購").on("click",takedata);
-						var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%"});
+						var butSelect= $("<button></button>").text("訂購").on("click",takedata).addClass("btn btn-light");
+						var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%","vertical-align":"middle"});
 						td21show.append(butSelect);
 						tr2show.append(td20show).append(td21show);
 						
@@ -115,14 +116,15 @@
 					
 					//table
 					if(j==0){
-						gotable=$("<table></table>").addClass("table").css({"width":"100%","padding":"10px"});//.css({"border":"2px solid #003C9D","width":"100%"});
+						gotable=$("<table></table>").addClass("table").css({"width":"100%","padding":"10px","vertical-align":"middle","text-align": "center"});//.css({"border":"2px solid #003C9D","width":"100%"});
 						//thead
 						thead=$("<thead></thead>");
 						var trhead=$("<tr></tr>");
 						var th0=$("<th></th>").text("去程:");
 						var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-						var th1=$("<th></th>").text(departureAirport).append(imgFlight0);;
-						var th2=$("<th></th>").text(arrivalAirport);
+						var th1=$("<th></th>").attr({colspan:"2"}).text(departureAirport).append(imgFlight0);
+						var th2=$("<th></th>").attr({colspan:"2"}).text(arrivalAirport);
+	
 						trhead.append(th0).append(th1).append(th2);
 						thead.append(trhead);
 						//thead-end
@@ -133,7 +135,7 @@
 						thead.find("tr th:eq(2)").text(arrivalAirport);
 					}
 					var trB0=$("<tr></tr>");
-					var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum);
+					var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum).css({"vertical-align":"middle"});
 					var td01=$("<td></td>").text(departureDateTime[0]);
 					var td02=$("<td></td>");
 					var td03=$("<td></td>").text(arrivalDateTime[0]);
@@ -242,8 +244,8 @@
 							var trhead=$("<tr></tr>");
 							var th0=$("<th></th>").text("回程:");
 							var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-							var th1=$("<th></th>").text(departureAirport).append(imgFlight0);;
-							var th2=$("<th></th>").text(arrivalAirport);
+							var th1=$("<th></th>").attr({colspan:"2"}).text(departureAirport).append(imgFlight0);;
+							var th2=$("<th></th>").attr({colspan:"2"}).text(arrivalAirport);
 							trhead.append(th0).append(th1).append(th2);
 							thead.append(trhead);
 							//thead-end
@@ -254,7 +256,7 @@
 							thead.find("tr th:eq(2)").text(arrivalAirport);
 						}
 						var trB0=$("<tr></tr>");
-						var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum);
+						var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum).css({"vertical-align":"middle"});
 						var td01=$("<td></td>").text(departureDateTime[0]);
 						var td02=$("<td></td>");
 						var td03=$("<td></td>").text(arrivalDateTime[0]);
@@ -291,12 +293,12 @@
 				
 				
 				var br=$("<br/>");
-				var p0=$("<p></p>").text("托運行李");
-				var p1=$("<p></p>").text("1.託運行李相關規定請參照航空公司官方網站行李限制說明。");
-				var p2=$("<p></p>").text("2.聯合營運航班需依實際承運航空公司託運行李相關規定為主。");
-				var p3=$("<p></p>").text("3.託運行李若以件數計算，則每1件不得超過20公斤；若以重量計算，則不得超過表列之公斤數。");
-				var p4=$("<p></p>").text("4.託運行李資訊是根據航空公司於訂位系統中的票價規則進行自動分析而取得，本公司不保證其準確性，得依實際開票時之確認為準， 開票後如有變動，恕不另行通知。");
-				var p5=$("<p></p>").text("5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。");
+				var p0=$("<p></p>").css({"padding-left":"15px"}).text("托運行李");
+				var p1=$("<p></p>").css({"padding-left":"15px"}).text("1.託運行李相關規定請參照航空公司官方網站行李限制說明。");
+				var p2=$("<p></p>").css({"padding-left":"15px"}).text("2.聯合營運航班需依實際承運航空公司託運行李相關規定為主。");
+				var p3=$("<p></p>").css({"padding-left":"15px"}).text("3.託運行李若以件數計算，則每1件不得超過20公斤；若以重量計算，則不得超過表列之公斤數。");
+				var p4=$("<p></p>").css({"padding-left":"15px"}).text("4.託運行李資訊是根據航空公司於訂位系統中的票價規則進行自動分析而取得，本公司不保證其準確性，得依實際開票時之確認為準， 開票後如有變動，恕不另行通知。");
+				var p5=$("<p></p>").css({"padding-left":"15px"}).text("5.行李是否可直掛目的地，須依航空公司、當地政府、機場規定為準。");
 				infoDiv.append(br).append(p0).append(p1).append(p2).append(p3).append(p4).append(p5);
 				
 				tableShow.append(tbodyShow);
