@@ -38,6 +38,21 @@
 
 
 <div style="margin-top: 5%">
+
+<c:if test="${empty time}">
+<script >
+$(document).ready(function() {
+$('#calendar').fullCalendar({
+	
+});
+});
+</script>
+
+
+
+</c:if>
+
+
 <c:if test="${not empty time}">
 <script >
 var ans=[];
