@@ -111,7 +111,7 @@ $('#calendar').fullCalendar({
 	<input type="submit" value="go" style="display:block;margin:0 auto">
 	<h1 align="center" style="color:red;">${select}</h1>
 	</div>
-<div id="calendar" style="width: 800px; margin: 0 auto;"></div>	
+<div id="calendar" style="width: 800px; margin: 0 auto;background-color:#EBEBEB"></div>	
 </form>
 </div>
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
