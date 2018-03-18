@@ -18,7 +18,7 @@
 <c:if test="${orderid != flight.orderid}">
 	<div>
 		<label for="orderid">訂單編號:</label>&nbsp;
-		<input type="button" value="${flight.orderid}" onclick="location.href='<c:url value="/UseOrderIdSearchOrderHistory.controller"/>?choice=${flight.orderid}'">
+		<input type="button" value="${flight.flightorderid}" onclick="location.href='<c:url value="/UseOrderIdSearchOrderHistory.controller"/>?choice=${flight.orderid}&flightorderid=${flight.flightorderid}'">
 	</div>
 </c:if>
 <c:set value="${flight.orderid}" var="orderid" scope="session" ></c:set>
