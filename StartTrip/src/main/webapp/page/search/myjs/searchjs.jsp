@@ -8,6 +8,24 @@
 			var id="#d"+$(this).attr("id");
 			$(id).slideToggle(1000);
 		}	
+		var arr={};
+		function getAirLineName(code){
+			var airLineName
+			if(arr[code]!==undefined){
+				return arr[code];
+			}
+			$.ajax({  
+		          type : "get",  
+		          url : "<c:url value='/getAirLineName.controller'/>",  
+		          data : {"airlLineId":code},  
+		          async : false,  
+		          success : function(data){   
+		        	  airLineName = data;  
+		          }  
+		    });
+			arr[code]=airLineName;
+			return airLineName;
+		}
 	</script>
 	<script>
 		$(document).ready(function() {
@@ -31,12 +49,16 @@
 				var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
 				var totalTime=0;
 				//行李重量
-				var weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
-				if(weight==null){
-					weight=25;
+				var weight;
+// 				=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
+				if(PricedItinerarys[i].getElementsByTagName("Allowance")[0]==undefined){
+					weight=30;
+				}else{
+					weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");
+					if(weight==null){
+						weight=30;
+					}
 				}
-				
-				console.log(totalFare+"?????--");
 				
 				
 				var	gotable;
@@ -58,11 +80,12 @@
 					
 					
 					var operatingAirline=Flight[j].getElementsByTagName("OperatingAirline")[0];
-					//航空公司//航班代號//飛機型號
+					//航空公司//航班代號//飛機型號//航空公司中文
 					var flightCode=operatingAirline.getAttribute("Code");
 					var flightNum=operatingAirline.getAttribute("FlightNumber");
 					var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
-					
+					var airLineName=getAirLineName(flightCode);
+
 					console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
 					console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);
 					
@@ -78,7 +101,10 @@
 					if(j==0){
 						//放入tableShow資訊
 						var tr0show = $("<tr></tr>");
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(flightCode).css({"vertical-align":"middle"});
+
+						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName).css({"border":"","vertical-align":"middle"});
+
+
 						var td01show = $("<td></td>").text(departureAirport);
 						var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
 						var td02show = $("<td></td>").append(imgshowArrows);
@@ -90,11 +116,12 @@
 						
 						
 						var tr1show = $("<tr></tr>");
-						var td10show = $("<td></td>").text(departureDateTime[1].substring(0,5));
-						var td11show = $("<td></td>");
-						var td12show = $("<td></td>").text(arrivalDateTime[1].substring(0,5));
-						var td13show = $("<td></td>").text(elapsedTimeString+"，直飛");
-						tr1show.append(td10show).append(td11show).append(td12show).append(td13show);
+						var td10show = $("<td></td>").attr({rowspan:"4"}).text(flightCode);
+						var td11show = $("<td></td>").text(departureDateTime[1].substring(0,5));
+						var td12show = $("<td></td>");
+						var td13show = $("<td></td>").text(arrivalDateTime[1].substring(0,5));
+						var td14show = $("<td></td>").text(elapsedTimeString+"，直飛");
+						tr1show.append(td10show).append(td11show).append(td12show).append(td13show).append(td14show);
 					
 						var tr2show = $("<tr></tr>");
 						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
@@ -195,6 +222,7 @@
 						var flightCode=operatingAirline.getAttribute("Code");
 						var flightNum=operatingAirline.getAttribute("FlightNumber");
 						var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
+// 						var airLineName=getAirLineName(flightCode);
 						
 						console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
 						console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);

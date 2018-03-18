@@ -65,14 +65,18 @@
 				<div class="searchdiv">
 					<h3>日期:</h3>
 					<div class="searchline">
-						去程: <input type="text"autocomplete="off" class="form-control" id="datego" name="gotime" required="required" size="40"/>
+
+						去程: <input type="text"autocomplete="off"id="datego" name="gotime" required="required" size="40"/>
 						<br> 
-						回程: <input type="text"autocomplete="off"  class="form-control"id="dateback" name="backtime" required="required"size="40" />
+						回程: <input type="text"autocomplete="off"id="dateback" name="backtime" required="required"size="40" />
+
 					</div>
 
 				</div>
 				<div class="searchdiv" style="padding-bottom: 2%">
-					<input type="radio"class="form-control" name="way" id="double" required value="Return"checked />
+
+					<input type="radio" name="way" id="double" required value="Return" checked />
+
 						<label for="double">來回</label> 
 					<input type="radio" class="form-control"name="way" id="one" value="OneWay" />
 						<label for="one">單程</label>

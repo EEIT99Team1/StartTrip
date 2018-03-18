@@ -39,3 +39,14 @@ $(document).ready(function() {
 	});
 });
 </script>
+<script>
+$(function(){
+	$("#one").click(function(){
+		$("#dateback").css({"display":"none"}).attr({"value":"0"});
+	});
+	$("#double").click(function(){
+		$("#dateback").css({"display":"inline"}).attr({"value":""});
+	});
+	
+})
+</script>

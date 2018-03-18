@@ -93,7 +93,7 @@
 				<tr>
 					<th></th>
 					<th>訂單編號:</th>
-					<th>${go1.flightorderid}</th>
+					<th><span style="color:red">${go1.flightorderid}</span></th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -102,7 +102,7 @@
 				<tr>
 					<th></th>
 					<th>機票金額:</th>
-					<th>${flightprice}元<span style="color:red">(台幣)</span></th>
+					<th>${flightprice}元(台幣)</th>
 					<th></th>
 					<th></th>
 					<th></th>
