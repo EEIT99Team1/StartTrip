@@ -84,7 +84,7 @@ public class MailServlet extends HttpServlet {
 		String codeR = request.getParameter("rand");
 		if(codeNumbers.equals(codeR)) {  
 			session.removeAttribute("errcode");
-			System.out.println("LINe76驗證碼correct");
+			System.out.println("Line76驗證碼correct");
     	}else {
     		errorCode.put("errorC", "驗證碼輸入錯誤！"); 
     		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
@@ -100,8 +100,7 @@ public class MailServlet extends HttpServlet {
 		System.out.println("信件成功寄出！到:"+emailcheck);
 		dbEmail.put("dbpsdemail", "信件成功寄出！到:"+emailcheck+"，請登入信箱查收！");
 		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-		rd.forward(request, response);
-		
+		rd.forward(request, response);	
 		
 		
     	 Properties props = new Properties();
@@ -115,7 +114,7 @@ public class MailServlet extends HttpServlet {
     	        new javax.mail.Authenticator() {
     	            @Override
     	            protected PasswordAuthentication getPasswordAuthentication() {
-    	                return new PasswordAuthentication("bbberr9920@gmail.com","lin19891216");
+    	                return new PasswordAuthentication("serviceEEIT99@gmail.com","eeit99eeit99");
     	            }
     	        });
 
@@ -125,10 +124,10 @@ public class MailServlet extends HttpServlet {
     	    try {
 
     	        Message message = new MimeMessage(ss);
-    	        message.setFrom(new InternetAddress("bbberr9920@gmail.com"));
+    	        message.setFrom(new InternetAddress("serviceEEIT99@gmail.com"));
     	        message.setRecipients(Message.RecipientType.TO,
     	                InternetAddress.parse(emailcheck));
-    	        message.setSubject("StartTrip帳號密碼");
+    	        message.setSubject("StartTrip密碼找回");
     	        message.setText("親愛的會員"+forgotlastname+" "+forgotfirstmame+" 您好:"+"您的密碼是:"+forgotpassword);
 
     	        Transport.send(message);

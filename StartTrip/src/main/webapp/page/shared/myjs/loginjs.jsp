@@ -325,5 +325,16 @@
 		if(emailWrong!=""){
 			alert(emailWrong);}
 	});
-
+	$(document).ready(
+	function(){
+		var csEmail ="${send.mailsend}";
+		if(csEmail!=""){
+			alert(csEmail);}
+	});
+</script>
+<script>
+	//客服信箱
+	function sdCSmail() {
+		document.getElementById('dialogEmail').style.display = 'none';
+	}
 </script>
