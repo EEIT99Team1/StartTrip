@@ -8,6 +8,9 @@
  		var place = $(this).parent().parent().parent().parent().parent();
 		var tbodygo=place.find("div:eq(0) table:eq(0) tbody:eq(0)");
 		
+		var flightprice=place.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(5)").text();
+		flightprice=flightprice.match(/\d+/)[0];//只取出數字的部分
+
 		//去程
 		//轉機的第一筆資料
 		var gomodel1=tbodygo.find("tr:eq(0) td:eq(0)").text();
@@ -179,12 +182,13 @@
 			"backcabin2":backcabin2,
 			"backstartplace2":backstartplace2,
 			"backarrivedplace2":backarrivedplace2,
-			"backweight2":backweight2
+			"backweight2":backweight2,
+			"flightprice":flightprice
  		},
  			url:"<c:url value='/Ticketreveiw.controller'/>",
  			scriptCharset:'UTF-8',
  			success:function(){
- 				javascript:location.href='03ticketcheck.jsp';
+ 				javascript:location.href="<c:url value='/page/search/03ticketcheck.jsp'/>";
  			}
  	})
  	}

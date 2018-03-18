@@ -61,10 +61,10 @@
 		</tr>
 	</table>
 <%-- 		大人人數:${go1.adult}</br> 小孩人數:${go1.child} --%>
-	去程:${go1.start} → ${go1.endstart} → ${go2.endstart}</br>
-	回程:
+	去程:${go1.start} → ${go1.endstart} <c:if test="${not empty go2.endstart}">→ ${go2.endstart}</c:if><br/>
+	回程:${back1.start} → ${back1.endstart} <c:if test="${not empty back2.endstart}">→ ${back2.endstart}</c:if>
 	</div>
-	<hr />
+	<hr/>
 
 	<div>
 		<table class="checktable">
@@ -117,8 +117,8 @@
 	            </tr>
 	        </tbody>
 	    </table>
-	    </br>
-	    </br>
+	    <br/>
+	    <br/>
 	    <table class="checktable">
 	        <thead class="checkthead">
 	        	<tr>

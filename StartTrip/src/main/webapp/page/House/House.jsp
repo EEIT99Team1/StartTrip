@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
+<link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
 </head>
 <body>
@@ -51,13 +52,22 @@
 <%-- 		<td>民宿介紹:${row.explain}</td> --%>
 <!-- 		<img  src=${row.picture} style="display:block;margin:auto;" /> -->
 <!-- 	</tr> -->
+<div class="f1" id="f1">
 
+ <fieldset class="f2">
+<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img  style="width:100%;" src=${row.picture}></a>
+</fieldset>
+<h1 style="margin:0px">${row.name}</h1>
+<p style= "margin:0px;margin:10px">地址: ${row.addres}</p>
+<p style= "margin:0px;margin:10px">電話: ${row.telephone}</p>
+<p id="h1" style= "margin:0px;margin:10px">簡介: ${row.explain}</p>
+</div>
 	   
-	    <h1 align="center">民宿:${row.name}</h1>
-        <h3 align="center"><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img src=${row.picture}></a></h3>
-        <h3 align="center">地址:${row.addres}</h3>
-		<h3 align="center">電話:${row.telephone}</h3>
-		<h3 align="center">民宿介紹:${row.explain}</h3>
+<%-- 	    <h1 align="center">民宿:${row.name}</h1> --%>
+<%--         <h3 align="center"><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img src=${row.picture}></a></h3> --%>
+<%--         <h3 align="center">地址:${row.addres}</h3> --%>
+<%-- 		<h3 align="center">電話:${row.telephone}</h3> --%>
+<%-- 		<h3 align="center">民宿介紹:${row.explain}</h3> --%>
 		
 	
 	
@@ -125,7 +135,20 @@
 
 
 
+<script>
+$(function() {			
+	$('.f1').mouseover(function () {
+		$(this).css('border','7px solid #f3b65e');
+	})
+	
+	$('.f1').mouseout(function () {
+		$(this).css('border','2px solid #A1A1A1');
+	})
 
+})
+
+
+</script>
 
 
 

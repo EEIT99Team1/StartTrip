@@ -28,7 +28,9 @@ public class InsertFBMemberServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		Map<String, String> errorMsg = new HashMap<String, String>();
+		Map<String,String> successMsg = new HashMap<String,String>(); 
 		session.setAttribute("error", errorMsg);
+		session.setAttribute("success",successMsg);
 
 		// 讀取輸入資料
 		String firstname = request.getParameter("firstname");
@@ -47,30 +49,30 @@ public class InsertFBMemberServlet extends HttpServlet {
 		System.out.println(country);
 		// 進行必要的型態轉換，
 
-		// 檢查輸入資料
-		if (password == null || password.trim().length() == 0) {
-			errorMsg.put("passworderr", "不能空白");
-		}
-		if (phonenumber.trim().length() < 10) {
-			errorMsg.put("phonenumbererr", "電話號碼格式不正確");
-		}
-		if (firstname.trim().length() < 1) {
-			errorMsg.put("firstnameerr", "名字 字數不足");
-		}
-		if  (lastname.trim().length() < 1) {
-			errorMsg.put("lastnameerr", "姓氏字數不足");
-		}
-		if  (email.trim().length() < 1) {
-			errorMsg.put("emailerr", "電子郵件 格式錯誤");
-		}
-		if  (birthday.trim().length() < 1) {
-			errorMsg.put("birthdayerr", "生日格式錯誤");
-		}
-		if (!errorMsg.isEmpty()) {
-			RequestDispatcher rd = request.getRequestDispatcher("/page/login/FBintoReg.jsp");
-			rd.forward(request, response);
-			return;
-		}
+//		// 檢查輸入資料
+//		if (password == null || password.trim().length() == 0) {
+//			errorMsg.put("passworderr", "不能空白");
+//		}
+//		if (phonenumber.trim().length() < 10) {
+//			errorMsg.put("phonenumbererr", "電話號碼格式不正確");
+//		}
+//		if (firstname.trim().length() < 1) {
+//			errorMsg.put("firstnameerr", "名字 字數不足");
+//		}
+//		if  (lastname.trim().length() < 1) {
+//			errorMsg.put("lastnameerr", "姓氏字數不足");
+//		}
+//		if  (email.trim().length() < 1) {
+//			errorMsg.put("emailerr", "電子郵件 格式錯誤");
+//		}
+//		if  (birthday.trim().length() < 1) {
+//			errorMsg.put("birthdayerr", "生日格式錯誤");
+//		}
+//		if (!errorMsg.isEmpty()) {
+//			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+//			rd.forward(request, response);
+//			return;
+//		}
 		// 轉向成功加入會員頁面
 			WebApplicationContext wac=WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		try {
@@ -83,10 +85,13 @@ public class InsertFBMemberServlet extends HttpServlet {
 			mb.setLastname(lastname);
 			mb.setPhonenumber(phonenumber);
 			mb.setPassword(password);
+			mb.setBlacklist(false);
 			mb.setBonus(0);
 			CustomerDao customerDao =wac.getBean(CustomerDao.class);
 			if(customerDao.insert(mb)==null) {
 				errorMsg.put("emailerr","此帳號已註冊過，請直接登入" );
+				successMsg.put("InsertFBok", "此帳號已註冊過，請直接登入");
+				System.out.println("insert(mb)="+mb);
 			}
 			session.setAttribute("mb", mb);
 		} catch (Exception e) {
@@ -97,15 +102,18 @@ public class InsertFBMemberServlet extends HttpServlet {
 			// 不這樣寫是因為頁面不會跳轉,若按重新整理寫入資料會重做一遍,容易有疑慮
 			// RequestDispatcher rd =
 			// request.getRequestDispatcher("跳轉頁面.jsp");
-			String url = request.getContextPath() + "/page/login/InsertFBMemberSuccess.jsp";
-			String targetURL = response.encodeRedirectURL(url);
 			// 新增資料成功,利用response.encodeRedirect送出回應,共用資料放在Session物件
-			// 新增資料失敗,利用RequestDispatcher送出回應,共用資料放在request物件
+			successMsg.put("InsertFBok", "恭喜您註冊成功。");
+			System.out.println("InsertFBok"+ "恭喜您註冊成功。");
+			String url = request.getContextPath() + "/index.jsp";
+			String targetURL = response.encodeRedirectURL(url);
 			response.sendRedirect(targetURL);
 		} else {
-			System.out.println("flase");
-			RequestDispatcher rd = request.getRequestDispatcher("/page/login/InsertFBMemberFail.jsp");
+			// 新增資料失敗,利用RequestDispatcher送出回應,共用資料放在request物件
+			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			rd.forward(request, response);
+			System.out.println("InsertFB,flase");
+			successMsg.put("InsertFBok", "此帳號已註冊過，請直接登入。");
 			return;
 		}
 	}
