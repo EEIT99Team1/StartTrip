@@ -11,9 +11,8 @@
 <title>機票訂單過往資訊</title>
 </head>
 <body>
-<div>歷史訂單編號</div>
-<jsp:include page="/page/shared/header.jsp" />
 <br><br><br><br>
+<jsp:include page="/page/shared/header.jsp" />
 <div>
 	<label for="orderid">訂單編號:</label>&nbsp;<small><Font color='red' size="-3">${choiceid}</Font></small>
 </div>
@@ -24,7 +23,7 @@
 			<label class="back" for="endstart">降落地點:</label>&nbsp;<small class="ordermessageback"><Font color='black' size="-3">${flight.endstart}</Font></small>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="front" for="adult">成人數量:</label>&nbsp;<small class="ordermessagefront"><Font color='black'  size="-3">${flight.adult}</Font></small>
-			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="back" for="child">孩童數量:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.child}</Font></small>
 		</div>
 		<div>
