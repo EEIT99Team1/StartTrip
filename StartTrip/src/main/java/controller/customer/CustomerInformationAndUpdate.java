@@ -30,7 +30,6 @@ public class CustomerInformationAndUpdate {
 		model.addAttribute("successMsg",successMsg);
 		
 		CustomerBean cbean =dao.select(bean.getEmail());
-		Boolean blacklist  = cbean.getBlacklist();
 		
 		if(bean.getPassword()==null || bean.getPassword().trim().length()==0) {
 			errorMsg.put("errorPasswordEmpty", "密碼欄必須輸入");
@@ -60,13 +59,20 @@ public class CustomerInformationAndUpdate {
 					return "customerupdate.error";
 				
 				}else{
+					cbean.setPassword(bean.getPassword());
+					cbean.setLastname(bean.getLastname());
+					cbean.setFirstname(bean.getFirstname());
+					cbean.setCountry(bean.getCountry());
+					cbean.setBirthday(bean.getBirthday());
+					cbean.setPhonenumber(bean.getPhonenumber());
+					
 					successMsg.put("updateOK", "恭喜您更改成功。");
 //					bean.setBonus(0);
-					dao.update(bean.getEmail(),bean.getPassword(),bean.getFirstname(),
-							bean.getLastname(),bean.getCountry(),bean.getBirthday(),bean.getPhonenumber(),bean.getBonus(),blacklist);
+					dao.update(cbean.getEmail(),cbean.getPassword(),cbean.getFirstname(),
+							cbean.getLastname(),cbean.getCountry(),cbean.getBirthday(),cbean.getPhonenumber(),cbean.getBonus(),cbean.getBlacklist());
 				
-				session.setAttribute("LoginOK", bean);
-				session.setAttribute("customerBean", bean);
+					session.setAttribute("LoginOK", cbean);
+					session.setAttribute("customerBean", cbean);
 				
 				}
 				

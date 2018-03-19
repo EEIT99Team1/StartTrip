@@ -188,7 +188,7 @@
 			// 				});  	
 			// 	    	};
 			btn.click(function() {
-				$('.customermenu').toggle(500);
+				$('.customermenu').slideToggle(200);
 			})
 		}
 		;

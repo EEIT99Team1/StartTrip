@@ -1,17 +1,18 @@
 ﻿.f1{
     width:50%;
-/*     height:180px; */
+    height:auto;
     border:2px solid #A1A1A1;
     margin:15px;
     border-radius:20px;
     margin: auto;
     margin-bottom:20px;
+    background:rgba(128, 128, 128,0.2);
 }
 
 .f2{
     width:20%;
     height:141px;
     border:0px ;
-    margin:10px;
-    float:left;
+   	display: block;
+   	
 }

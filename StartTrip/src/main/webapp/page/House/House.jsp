@@ -12,13 +12,15 @@
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
+<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<jsp:include page="/page/shared/header.jsp" />
+<jsp:include page="/page/shared/indexheader.jsp" />
 
-
-<div style="margin-top:5%;">
-<form action="SelectHouse" method="post">
+<!-- <article class="mainbody"> -->
+<!-- </article> -->
+<div class="mainbody" style="margin-top:10%;">
+<form class="search" action="SelectHouse" method="post">
 <table style="margin:auto;margin-top:30px;">
      <tr>
 		<td>國家 : </td>
@@ -42,7 +44,7 @@
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
-	<table style="margin:auto;margin-top:50px; width:500px">
+<!-- 	<table style="margin:auto;margin-top:50px;margin-bottom:50px; width:500px"> -->
 <!-- 	<tr> -->
 <%-- 	    <td><h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1></td> --%>
 <%-- 	    <td>國家:${row.country}</td> --%>
@@ -52,16 +54,33 @@
 <%-- 		<td>民宿介紹:${row.explain}</td> --%>
 <!-- 		<img  src=${row.picture} style="display:block;margin:auto;" /> -->
 <!-- 	</tr> -->
-<div class="f1" id="f1">
 
- <fieldset class="f2">
-<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img  style="width:100%;" src="${row.picture}"></a>
-</fieldset>
-<h1 style="margin:0px">${row.name}</h1>
-<p style= "margin:0px;margin:10px">地址: ${row.addres}</p>
-<p style= "margin:0px;margin:10px">電話: ${row.telephone}</p>
-<p id="h1" style= "margin:0px;margin:10px;padding-left:21%">簡介:</p>
-<p style= "margin:0px;margin:10px;padding-left:25%">${row.explain}</p>
+<div class="f1" id="f1" style="border:2px solid #A1A1A1;height:auto;">
+	 <fieldset class="f2"style="height: auto;width: auto;">
+		 <table>
+			 <tr>
+			 	<td rowspan="5">
+				 	<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}" style="float: left">
+					<img src="${row.picture}"/>
+					</a>
+				</td>
+				<td></td>
+			 </tr>
+			 <tr>
+			 	<td><h1>${row.name}</h1></td>
+			 </tr>
+			 <tr>
+			 	<td>地址: ${row.addres}</td>
+			 </tr>
+			 <tr>
+			 	<td>電話: ${row.telephone}</td>
+			 </tr>
+			 <tr>
+			 	<td>簡介: ${row.explain}</td>
+			 </tr>
+		 </table>
+	</fieldset>
+
 </div>
 	   
 <%-- 	    <h1 align="center">民宿:${row.name}</h1> --%>
@@ -72,7 +91,7 @@
 		
 	
 	
-	</table>
+<!-- 	</table> -->
 	
 	</c:forEach>
 	
@@ -139,11 +158,11 @@
 <script>
 $(function() {			
 	$('.f1').mouseover(function () {
-		$(this).css('border','7px solid #f3b65e');
+		$(this).css('border','6px solid #f3b65e');
 	})
 	
 	$('.f1').mouseout(function () {
-		$(this).css('border','2px solid #A1A1A1');
+		$(this).css('border','5px solid #A1A1A1');
 	})
 
 })
