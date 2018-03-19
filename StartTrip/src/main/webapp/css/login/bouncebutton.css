@@ -54,6 +54,7 @@ body {
 	color: #ffffff;
 	text-decoration: none;
 	margin-right: 20px;
+	
 }
 
 .button:hover, .button:focus {
@@ -94,7 +95,7 @@ body {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 9999; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
+	padding-top: 200px; /* Location of the box */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
@@ -111,7 +112,7 @@ body {
 	margin: auto;
 	padding: 0;
 	border: 1px solid #888;
-	width: 80%; /*彈跳視窗寬度，30%可能可以剛好。*/ 
+	width: 30%; /*彈跳視窗寬度，30%可能可以剛好。*/ 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
 	-webkit-animation-name: animatetop;
@@ -161,7 +162,5 @@ body {
 	padding-left: 10px;
 }
 
-label {
-	
-}
+
 </style>

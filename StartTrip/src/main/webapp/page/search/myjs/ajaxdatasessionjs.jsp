@@ -188,7 +188,7 @@
  			url:"<c:url value='/Ticketreveiw.controller'/>",
  			scriptCharset:'UTF-8',
  			success:function(){
- 				javascript:location.href="<c:url value='/page/search/03ticketcheck.jsp'/>";
+ 				javascript:location.href="<c:url value='/page/search/04enter.jsp'/>";
  			}
  	})
  	}

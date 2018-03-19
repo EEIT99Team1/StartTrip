@@ -69,7 +69,7 @@
 	});
 </script>
 <script>
-	$("#mybutton").css("display", "none");
+	$("#mybutton").css("visibility", "hidden");
 	var userEmail, password;
 
 	$(document).ready(function() {
@@ -107,9 +107,9 @@
 		});
 		function showLoginButton() {
 			if (userEmail && password) {
-				$("#mybutton").css("display", "block");
+				$("#mybutton").css("visibility", "visible");
 			} else {
-				$("#mybutton").css("display", "none");
+				$("#mybutton").css("visibility", "hidden");
 			}
 		}
 	});
@@ -331,10 +331,4 @@
 		if(csEmail!=""){
 			alert(csEmail);}
 	});
-</script>
-<script>
-	//客服信箱
-	function sdCSmail() {
-		document.getElementById('dialogEmail').style.display = 'none';
-	}
 </script>

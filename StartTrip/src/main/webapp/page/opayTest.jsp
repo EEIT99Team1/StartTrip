@@ -50,7 +50,7 @@ ChooseSubPayment 預設子付款方式:
 <input type="text" name="ChooseSubPayment" value="" /><br />
 
 ClientBackURL Client端返回廠商網址: 
-<input type="text" name="ClientBackURL" value="https://developers.opay.tw/AioMock/MerchantClientBackUrl" /><br />
+<input type="text" name="ClientBackURL" value="http://localhost:8080/StartTrip/page/search/07finally.jsp" /><br />
 
 CheckMacValue 簽章類型: 
 <input type="text" name="EncryptType" value="1" /><br />
@@ -58,13 +58,13 @@ CheckMacValue 簽章類型:
 CheckMacValue 檢查碼: 
 <input type="text" id="sha" name="CheckMacValue" value="" /><br />
 </div>
-<div id="bookRide" style="display:none">
+<div id="bookRide" style="">
 <input type="submit" value="Submit Booking" />
 </div>
 </form>
 <script>
-$("#reqBook").click(function(){
-	$.get("<c:url value='/oPay.controller'/>",{"TotalAmount":"${flightprice}"},function(data){
+$(function(){
+	$.get("<c:url value='/oPay.controller'/>",{"TotalAmount":"12"},function(data){
 		var input = data;
 		$("#price").val(input.price);
 		$("#date").val(input.date);
@@ -73,7 +73,7 @@ $("#reqBook").click(function(){
 		$("#sha").val(input.sha);
 		$("#bookRide").css("display","block");
 	})
-});
+})
 </script>
 </body>
 </html>
