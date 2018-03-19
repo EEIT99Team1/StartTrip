@@ -16,17 +16,20 @@
         .menu{
 			background:rgba(250,235,215,0.3);
             list-style-type:none;
-            height: 55px;
+            height: 100px;
             width:100%;
             top:0;
             overflow:hidden;
             /*border:2px solid black;*/
+            text-align:center;
+            
         }
 
         .menu li{
             display:block;
             line-height:3em;
             height:100%;
+            
 
         }
 
@@ -46,20 +49,20 @@
            text-decoration:none;
            display:block;
            color:black;
-           height:55px;
-           line-height:3em;
+           height:100px;
+           line-height:6em;
          }
 
 
        .menuliimg {
            float:left;
             width:15em;
-            height:55px;
+            height:100px;
         }
 
         .menuimg{
-            padding-top:2px;
-            height:60px;
+           padding-top:20px;
+           width:15em;
         }
         .mainbody{
             height:500px;
