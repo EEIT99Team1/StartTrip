@@ -47,7 +47,7 @@ body{overflow: auto;}
 <!-- 	</tr> -->
 	
 </table >
-<input type="submit" name="prodaction" value="收尋" style="display:block;margin:0 auto;margin-top: 20px">	
+<input type="submit" name="prodaction" value="搜尋" style="display:block;margin:0 auto;margin-top: 20px">	
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
