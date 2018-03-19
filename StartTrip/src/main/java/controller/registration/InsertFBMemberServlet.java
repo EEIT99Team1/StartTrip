@@ -30,7 +30,7 @@ public class InsertFBMemberServlet extends HttpServlet {
 		Map<String, String> errorMsg = new HashMap<String, String>();
 		Map<String,String> successMsg = new HashMap<String,String>(); 
 		session.setAttribute("error", errorMsg);
-		session.setAttribute("success",successMsg);
+		request.setAttribute("success",successMsg);
 
 		// 讀取輸入資料
 		String firstname = request.getParameter("firstname");
@@ -39,7 +39,7 @@ public class InsertFBMemberServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String phonenumber = request.getParameter("phonenumber");
 		String birthday = request.getParameter("birthday");
-		String password=request.getParameter("password");
+		String password=request.getParameter("psd1");
 		System.out.println(password);
 		System.out.println(birthday);
 		System.out.println(phonenumber);

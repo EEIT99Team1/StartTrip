@@ -25,7 +25,11 @@
 	<script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 
 	<jsp:include page="/page/shared/myjs/datepickerjs.jsp" />
-
+<style>
+.heighttext{
+height: 150px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="/page/shared/indexheader.jsp" />
@@ -117,7 +121,7 @@
 				</div>
 				<label id="CSContent" >文字內容：</label>
 				<div >
-				<input type="text" class="heighttext" placeholder="限200字內，禁不雅言語。" name="csContentinput" spellcheck="false" maxlength="200" required/>
+				<input type="text" class="heighttext"  placeholder="限200字內，禁不雅言語。" name="csContentinput" spellcheck="false" maxlength="200" required/>
 				</div>
 				<div>
 					<input type="submit" value="送出" onclick="sdCSmail()" />
