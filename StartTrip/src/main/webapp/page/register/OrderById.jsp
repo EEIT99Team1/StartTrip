@@ -37,6 +37,30 @@ background-color: white;
 	font-size: 1cm;
 	font-family: fantasy;
  }
+ 
+ .orderidbutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.orderidbutton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.orderidbutton:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
 </style>
 </head>
 <body>
@@ -48,7 +72,7 @@ background-color: white;
 <c:if test="${orderid != flight.orderid}">
 	<div>
 		<label for="orderid">訂單編號:</label>&nbsp;
-		<input style="width:100px" type="button" value="${flight.flightorderid}" onclick="location.href='<c:url value="/UseOrderIdSearchOrderHistory.controller"/>?choice=${flight.orderid}&flightorderid=${flight.flightorderid}'">
+		<input class="orderidbutton" style="width:100px" type="button" value="${flight.flightorderid}" onclick="location.href='<c:url value="/UseOrderIdSearchOrderHistory.controller"/>?choice=${flight.orderid}&flightorderid=${flight.flightorderid}'">
 	</div>
 </c:if>
 <c:set value="${flight.orderid}" var="orderid" scope="session" ></c:set>
