@@ -55,7 +55,7 @@
 <div class="f1" id="f1">
 
  <fieldset class="f2">
-<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img  style="width:100%;" src=${row.picture}></a>
+<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}"><img  style="width:100%;" src="${row.picture}"></a>
 </fieldset>
 <h1 style="margin:0px">${row.name}</h1>
 <p style= "margin:0px;margin:10px">地址: ${row.addres}</p>
