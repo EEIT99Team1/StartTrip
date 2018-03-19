@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" session="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta charset="utf-8" />
 <title>首頁</title>
@@ -68,7 +68,9 @@
 
 						去程: <input type="text"autocomplete="off"id="datego" name="gotime" required="required" size="40"/>
 						<br> 
-						回程: <input type="text"autocomplete="off"id="dateback" name="backtime" required="required"size="40" />
+						<div id="datebackdiv">
+						回程: <input type="text"autocomplete="off"id="dateback"name="backtime" required="required"size="40" />
+						</div>
 
 					</div>
 
@@ -94,8 +96,8 @@
 		
 		<script>
 			$(".searchsubmit").click(function() {
-				$("#loadingback").stop().css({"display":"block"})
-				$("#loadshowbox").stop().css({"display":"block"})
+				$("#loadingback").css({"display":"block"})
+				$("#loadshowbox").css({"display":"block"})
 			})
 		</script>
 	</article>

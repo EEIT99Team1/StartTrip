@@ -42,10 +42,12 @@ $(document).ready(function() {
 <script>
 $(function(){
 	$("#one").click(function(){
-		$("#dateback").css({"display":"none"}).attr({"value":"0"});
+		$("#datebackdiv").css({"visibility":"hidden"});
+		$("#dateback").attr({"value":"0"});
 	});
 	$("#double").click(function(){
-		$("#dateback").css({"display":"inline"}).attr({"value":""});
+		$("#datebackdiv").css({"visibility":"visible"});
+		$("#dateback").attr({"value":""});
 	});
 	
 })
