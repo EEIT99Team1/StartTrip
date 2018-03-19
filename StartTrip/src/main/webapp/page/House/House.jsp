@@ -56,18 +56,20 @@
 <!-- 	</tr> -->
 
 <div class="f1" id="f1" style="border:2px solid #A1A1A1;height:auto;">
-	 <fieldset class="f2"style="height: auto;width: auto;">
-		 <table>
+	 <fieldset class="f2"style="height: auto;width:100%;">
+		
+	
+	 <table>
 			 <tr>
 			 	<td rowspan="6">
 				 	<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}" style="float: left">
-					<img src="${row.picture}" style="padding-right:10px;"/>
+					<img src="${row.picture}" style="padding-right:10px;padding-left:0;float: left;width:auto"/>
 					</a>
 				</td>
 				<td></td>
 			 </tr>
 			 <tr>
-			 	<td><h1>${row.name}</h1></td>
+			 	<td style="width:63%"><h1>${row.name}</h1></td>
 			 </tr>
 			 <tr>
 			 	<td>地址: ${row.addres}</td>
@@ -82,8 +84,7 @@
 			 	<td style="padding-left:6%">${row.explain}</td>
 			 </tr>
 		 </table>
-	</fieldset>
-
+</fieldset>
 </div>
 	   
 <%-- 	    <h1 align="center">民宿:${row.name}</h1> --%>
