@@ -7,17 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
+<style>
+body{overflow: auto;}
+</style>
 </head>
 <body>
-<jsp:include page="/page/shared/header.jsp" />
+<jsp:include page="/page/shared/indexheader.jsp" />
 
-
-<div style="margin-top:5%;">
-<form action="<c:url value='/page/House/AirSelelctHouse'/>" method="post">
+<div style="margin-top:10%;margin-bottom: 10%;">
+<form class="search" action="<c:url value='/page/House/AirSelelctHouse'/>" method="post">
 <table style="margin:auto;margin-top:30px;">
      <tr>
 		<td>國家 : </td>
@@ -49,7 +51,7 @@
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">
-	<table style="margin:auto;margin-top:50px; width:500px">
+
 <!-- 	<tr> -->
 <%-- 	    <td><h1><a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}">民宿:${row.name}</a></h1></td> --%>
 <%-- 	    <td>國家:${row.country}</td> --%>
@@ -73,23 +75,40 @@
 <%-- 		<h3 align="center">day:${day}</h3> --%>
 <%-- 		<h3 align="center">people:${hname}</h3> --%>
 <%-- 		<h3 align="center">telephone:${hphone}</h3> --%>
-<div class="f1" id="f1">
 
- <fieldset class="f2">
-<a href="http://localhost:8080/StartTrip/page/House/AirSelectRoom?name=${row.name}&day=${day}&outint=${outint}&gotime=${gotime}&goint=${goint}&people=${hname}&telephone=${hphone}&people=${hname}&telephone=${hphone}"><img  style="width:100%;" src=${row.picture}></a>
-</fieldset>
-<h1 style="margin:0px">${row.name}</h1>
-<p style= "margin:0px;margin:10px">地址: ${row.addres}</p>
-<p style= "margin:0px;margin:10px">電話: ${row.telephone}</p>
-<p id="h1" style= "margin:0px;margin:10px">簡介: ${row.explain}</p>
+
+<div class="f1" id="f1" style="border:2px solid #A1A1A1;height:auto; margin-top: 5%">
+	 <fieldset class="f2"style="height: auto;width: auto;">
+		 <table>
+			 <tr>
+			 	<td rowspan="5">
+				 	<a href="http://localhost:8080/StartTrip/page/House/AirSelectRoom?name=${row.name}&day=${day}&outint=${outint}&gotime=${gotime}&goint=${goint}&people=${hname}&telephone=${hphone}&people=${hname}&telephone=${hphone}"" style="float: left">
+					<img src="${row.picture}"/>
+					</a>
+				</td>
+				<td></td>
+			 </tr>
+			 <tr>
+			 	<td><h1>${row.name}</h1></td>
+			 </tr>
+			 <tr>
+			 	<td>地址: ${row.addres}</td>
+			 </tr>
+			 <tr>
+			 	<td>電話: ${row.telephone}</td>
+			 </tr>
+			 <tr>
+			 	<td>簡介: ${row.explain}</td>
+			 </tr>
+		 </table>
+	</fieldset>
 </div>
 	
 	
 	
 	
 	
-	
-	</table>
+
 	
 	</c:forEach>
 	

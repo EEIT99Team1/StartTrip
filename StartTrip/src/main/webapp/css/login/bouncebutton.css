@@ -20,8 +20,8 @@ body {
 	margin-top:0;
 	display: none;
 	position:fixed;
-	top:55px;
-	right:10px;
+	top:77px;
+	right:20px;
 	line-height: 35px;
 	float: right;
     color: #FFF;
@@ -34,6 +34,7 @@ body {
     line-height: 35px;
     width: 100px;
     z-index: 100;
+    border-radius: 5px;
 }
 
 .button {
@@ -42,7 +43,7 @@ body {
 	vertical-align: middle;
 	padding: 14.5px 25px;
 	border: 1px solid #a12727;
-	border-radius: 2px;
+	border-radius: 5px;
 
 	background: #ff4a4a;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ff4a4a),
@@ -54,7 +55,7 @@ body {
 	color: #ffffff;
 	text-decoration: none;
 	margin-right: 20px;
-	
+	width: 100px;
 }
 
 .button:hover, .button:focus {
