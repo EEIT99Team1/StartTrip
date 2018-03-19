@@ -63,7 +63,7 @@
 			 <tr>
 			 	<td rowspan="6">
 				 	<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}" style="float: left">
-					<img src="${row.picture}" style="padding-right:10px;padding-left:0;float: left;width:auto"/>
+					<img src="${row.picture}" style="padding-right:10px;padding-left:0;float: left;width:100%"/>
 					</a>
 				</td>
 				<td></td>

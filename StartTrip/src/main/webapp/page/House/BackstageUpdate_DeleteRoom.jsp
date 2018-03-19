@@ -115,6 +115,15 @@ ${update}
 		</div>
 	</div>
 
+<c:if test="${not empty update}">
+<script >
+alert('${update}');
+window.location.href='http://localhost:8080/StartTrip/page/House/SelectRoom?name=${HouseLogin.name}&account=go';
+
+</script>
+</c:if>
+
+
 
 <c:if test="${not empty picture}">
 <script >
