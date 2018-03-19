@@ -9,6 +9,23 @@
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 <title>機票訂單過往資訊</title>
+<style>
+#orderHistoryDetailForm{
+/* set width in form, not fieldset (still takes up more room w/ fieldset width */
+font:100% verdana,arial,sans-serif;
+margin: auto;
+margin-bottom:10px;
+padding: 0;
+min-width: 500px;
+max-width: 1000px;
+width: 1400px; 
+/* position:absolute; */
+height:230px;
+top:0; bottom:0; left:0; right:0;
+border:8px #FFD382 groove;
+background-color: white;
+}
+</style>
 </head>
 <body>
 <br><br><br><br>
@@ -17,6 +34,7 @@
 	<label for="orderid">訂單編號:</label>&nbsp;<small><Font color='red' size="-3">${choiceid}</Font></small>
 </div>
 <c:forEach  var="flight" items="${flightbean2}">
+	<form class="orderHistoryDetailForm">
 		<div>
 			<label class="front" for="start">起飛地點:</label>&nbsp;<small class="ordermessagefront"><Font color='black' size="-3">${flight.start}</Font></small>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,6 +52,7 @@
 			<label class="back" for="model">飛機型號:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.model}</Font></small>
 		</div>
 		<div style="border: double;"></div>
+	</form>
 </c:forEach>
 <jsp:include page="/page/shared/footer.jsp" />
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
