@@ -25,7 +25,7 @@
 			<li class="menuli"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">民宿</a></li>			
 			<li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
-			<li><input type="button" id="button" class="button" style="float: right;" value="Login"/></li>
+			<li><input type="button" id="button" class="button" style="float: right;margin-top:23px" value="Login"/></li>
 
 		</ul>
 
@@ -64,10 +64,12 @@
 							<label>密碼：</label>
 							<input type="password" name="pswd" size="20">
 							&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.PasswordEmptyError}</Font></small><br /><br />
-             				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small><br /><br />
-							<input id="mybutton" class="button" type="submit" value="Login">
+             				&nbsp;<small><Font color='red'  size="-3">${ErrorMsgKey.LoginError}</Font></small>
+             				<div>
              				<a href="<c:url value="/page/register/Register.jsp"/>">Sign up</a>
              				<a href="#" onclick="_pa6789()">忘記密碼？</a>
+             				</div>
+							<input id="mybutton"  class="button" type="submit" value="Login">
 							<c:set var="target" value="${pageContext.request.servletPath}" scope="session" />
 						</form>
 					</div>

@@ -54,7 +54,7 @@ body {
 	color: #ffffff;
 	text-decoration: none;
 	margin-right: 20px;
-	margin-top:23px
+	
 }
 
 .button:hover, .button:focus {
@@ -95,7 +95,7 @@ body {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 9999; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
+	padding-top: 200px; /* Location of the box */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
@@ -162,7 +162,5 @@ body {
 	padding-left: 10px;
 }
 
-label {
-	
-}
+
 </style>

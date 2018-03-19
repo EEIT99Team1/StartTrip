@@ -74,6 +74,7 @@
     function printScreen(printlist)
       {
          var value = printlist.innerHTML;
+        
          var printPage = window.open("", "Printing...", "");
          printPage.document.open();
          printPage.document.write("<HTML><head></head><BODY onload='window.print();window.close()'>");
@@ -92,11 +93,14 @@
     
     <div class = "container">
     <br/>
-    <h1>訂購完成，感謝您的購買</h1>
+    <h1 style="padding-left:10px;">已付款完成，感謝您的購買</h1>
     <hr />
     <br/>
-    <div id="print_parts">
-		<table class="table table-sm table1">
+    <div id="print_alls">
+    	<div >
+    
+    
+		<table class="table table-sm table1"> <!-- 		style="" -->
 			<thead>
 				<tr>
 					<th colspan="7">
@@ -282,6 +286,7 @@
 			</tbody>
 		</table>
 		</div>
+		
 		<br />
 <!-- 		<table class="checktable"> -->
 <!-- 			<thead class="checkthead"> -->
@@ -611,13 +616,13 @@
 		</c:if>
 		
 		<br />
-		
 		</div>
-
 </div>
+</div>
+
     <div   class = "container" style="padding:0 18% 45px 18%;background:rgba(255, 244, 194,0);">
         <form action="<c:url value='/ForwordToHouse.controller'/>" method="get">
-         <a href="#" onclick="printScreen(print_parts);"><input  class="btn btn-secondary" style="opacity: 0.8"
+         <a href="#" onclick="printScreen(print_alls);"><input  class="btn btn-secondary" style="opacity: 0.8"
           type="button" value="列印明細" /></a>
         <a href="<c:url value='/index.jsp'/>">
         <input  class="btn btn-secondary" style="opacity: 0.8"  type="button" value="回查詢首頁" /></a>
