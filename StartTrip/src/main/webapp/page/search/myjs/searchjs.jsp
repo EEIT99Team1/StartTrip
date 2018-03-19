@@ -102,7 +102,7 @@
 						//放入tableShow資訊
 						var tr0show = $("<tr></tr>");
 
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName).css({"border":"","vertical-align":"middle"});
+						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle"});
 
 
 						var td01show = $("<td></td>").text(departureAirport);
@@ -116,12 +116,12 @@
 						
 						
 						var tr1show = $("<tr></tr>");
-						var td10show = $("<td></td>").attr({rowspan:"4"}).text(flightCode);
+// 						var td10show = $("<td></td>").attr({rowspan:"4"}).text(flightCode);
 						var td11show = $("<td></td>").text(departureDateTime[1].substring(0,5));
 						var td12show = $("<td></td>");
 						var td13show = $("<td></td>").text(arrivalDateTime[1].substring(0,5));
 						var td14show = $("<td></td>").text(elapsedTimeString+"，直飛");
-						tr1show.append(td10show).append(td11show).append(td12show).append(td13show).append(td14show);
+						tr1show.append(td11show).append(td12show).append(td13show).append(td14show);
 					
 						var tr2show = $("<tr></tr>");
 						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");

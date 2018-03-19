@@ -277,7 +277,8 @@ background:rgba(255, 244, 194,0.6);
 	});
 	</script>
 	
-    <jsp:include page="/page/shared/footer.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
+
+    <jsp:include page="/page/shared/footer.jsp" />
 </body>
 </html>

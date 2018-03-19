@@ -335,6 +335,8 @@
 <script>
 	//客服信箱
 	function sdCSmail() {
-		document.getElementById('dialogEmail').style.display = 'none';
-	}
+		$("#dialogEmail").dialog({hide : {effect : "blind",duration : 1000}})
+		//.css({"display":'none'})
+		
+		;}
 </script>
