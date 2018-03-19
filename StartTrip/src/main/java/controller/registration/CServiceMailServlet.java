@@ -57,14 +57,6 @@ public class CServiceMailServlet extends HttpServlet {
         String csCode=dateString+sb;
         System.out.println("客訴編號="+csCode);
     	
-        //通知客戶已寄出
-		Map<String,String> sendEmail = new HashMap<String,String>();
-		request.setAttribute("send",sendEmail);
-		if (ckCustomer!=null) {
-			sendEmail.put("mailsend", "非常感謝您的支持！客服人員將會盡快給您答覆！");
-			RequestDispatcher rdis = request.getRequestDispatcher("/index.jsp");
-			rdis.forward(request, response);
-		}
         
     	//Email
     	Properties props = new Properties();
@@ -94,6 +86,15 @@ public class CServiceMailServlet extends HttpServlet {
 	    } catch (MessagingException e) {
 	        throw new RuntimeException(e);
 	    }
+        //通知客戶已寄出
+		Map<String,String> sendEmail = new HashMap<String,String>();
+		request.setAttribute("send",sendEmail);
+		if (ckCustomer!=null) {
+			sendEmail.put("mailsend", "非常感謝您的支持！客服人員將會盡快給您答覆！");
+			RequestDispatcher rdis = request.getRequestDispatcher("/index.jsp");
+			rdis.forward(request, response);
+			return;
+		}
 	}
 	
 }
