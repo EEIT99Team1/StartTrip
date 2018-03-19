@@ -95,7 +95,7 @@
 		<script>
 			$(".searchsubmit").click(function() {
 				$("#loadingback").stop().css({"display":"block"})
-				$("#showbox").stop().css({"display":"block"})
+				$("#loadshowbox").stop().css({"display":"block"})
 			})
 		</script>
 	</article>
@@ -103,6 +103,6 @@
 <jsp:include page="/page/shared/myjs/loginjs.jsp" />
 <jsp:include page="/page/search/myjs/firstsearchjs.jsp" />
 		<div class="loadingback"id="loadingback" ></div>
-		<div class="showbox" id="showbox"><img src="<c:url value='/image/search/loading.gif'/>"></div>
+		<div class="loadshowbox" id="loadshowbox"><img src="<c:url value='/image/search/loading.gif'/>"></div>
 	</body>
 </html>

@@ -118,13 +118,13 @@
             left:0px;
             
         }
-        .showbox {
+        .loadshowbox {
              position:fixed;
              top:35%;
              left:43%;
              display:none;
         }
-        .showbox img{
+        .loadshowbox img{
              width: 200px
         }
        
