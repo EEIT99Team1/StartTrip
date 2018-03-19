@@ -81,7 +81,8 @@
 <h1 style="margin:0px">${row.name}</h1>
 <p style= "margin:0px;margin:10px">地址: ${row.addres}</p>
 <p style= "margin:0px;margin:10px">電話: ${row.telephone}</p>
-<p id="h1" style= "margin:0px;margin:10px">簡介: ${row.explain}</p>
+<p id="h1" style= "margin:0px;margin:10px;padding-left:21%">簡介: ${row.explain}</p>
+<p style= "margin:0px;margin:10px">${row.explain}</p>
 </div>
 	
 	
