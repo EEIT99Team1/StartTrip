@@ -59,9 +59,9 @@
 	 <fieldset class="f2"style="height: auto;width: auto;">
 		 <table>
 			 <tr>
-			 	<td rowspan="5">
+			 	<td rowspan="6">
 				 	<a href="http://localhost:8080/StartTrip/page/House/SelectRoom?name=${row.name}" style="float: left">
-					<img src="${row.picture}"/>
+					<img src="${row.picture}" style="padding-right:10px;"/>
 					</a>
 				</td>
 				<td></td>
@@ -76,7 +76,10 @@
 			 	<td>電話: ${row.telephone}</td>
 			 </tr>
 			 <tr>
-			 	<td>簡介: ${row.explain}</td>
+			 	<td>簡介:</td>
+			 </tr>
+			 <tr>
+			 	<td style="padding-left:6%">${row.explain}</td>
 			 </tr>
 		 </table>
 	</fieldset>
