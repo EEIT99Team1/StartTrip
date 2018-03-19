@@ -726,7 +726,7 @@ background:rgba(255, 244, 194,0.6);
 		ChooseSubPayment 預設子付款方式: 
 		<input type="text" name="ChooseSubPayment" value="" /><br />
 		ClientBackURL Client端返回廠商網址: 
-		<input type="text" name="ClientBackURL" value="http://localhost:8080/StartTrip/page/search/07finally.jsp" /><br />
+		<input type="text" name="ClientBackURL" value="http://localhost:8080/StartTrip/Searchview.controller" /><br />
 		CheckMacValue 簽章類型: 
 		<input type="text" name="EncryptType" value="1" /><br />
 		CheckMacValue 檢查碼: 

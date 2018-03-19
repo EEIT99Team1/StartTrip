@@ -54,6 +54,7 @@
 <%-- 		<td>民宿介紹:${row.explain}</td> --%>
 <!-- 		<img  src=${row.picture} style="display:block;margin:auto;" /> -->
 <!-- 	</tr> -->
+
 <div class="f1" id="f1" style="border:2px solid #A1A1A1;height:auto;">
 	 <fieldset class="f2"style="height: auto;width: auto;">
 		 <table>
@@ -79,6 +80,7 @@
 			 </tr>
 		 </table>
 	</fieldset>
+
 </div>
 	   
 <%-- 	    <h1 align="center">民宿:${row.name}</h1> --%>

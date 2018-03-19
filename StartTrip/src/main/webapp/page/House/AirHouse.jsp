@@ -76,7 +76,6 @@ body{overflow: auto;}
 <%-- 		<h3 align="center">people:${hname}</h3> --%>
 <%-- 		<h3 align="center">telephone:${hphone}</h3> --%>
 
-
 <div class="f1" id="f1" style="border:2px solid #A1A1A1;height:auto; margin-top: 5%">
 	 <fieldset class="f2"style="height: auto;width: auto;">
 		 <table>
@@ -102,6 +101,7 @@ body{overflow: auto;}
 			 </tr>
 		 </table>
 	</fieldset>
+
 </div>
 	
 	
