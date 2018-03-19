@@ -10,7 +10,7 @@
 <jsp:include page="/css/headerlink.jsp" />
 <title>機票訂單過往資訊</title>
 <style>
-#orderHistoryDetailForm{
+.orderHistoryDetailForm{
 /* set width in form, not fieldset (still takes up more room w/ fieldset width */
 font:100% verdana,arial,sans-serif;
 margin: auto;
@@ -19,23 +19,32 @@ padding: 0;
 min-width: 500px;
 max-width: 1000px;
 width: 1400px; 
-/* position:absolute; */
-height:230px;
+/* /* position:absolute; */ */
+/* height:230px; */
 top:0; bottom:0; left:0; right:0;
 border:8px #FFD382 groove;
 background-color: white;
+}
+.orderhistory{
+	text-align: center;
+	margin-top: 90px;
+	font-size: 1cm;
+	font-family: fantasy;
+}
+.orderhistoryfont{
+font-size: 40px;
 }
 </style>
 </head>
 <body>
 <br><br><br><br>
 <jsp:include page="/page/shared/header.jsp" />
-<div>
-	<label for="orderid">訂單編號:</label>&nbsp;<small><Font color='red' size="-3">${choiceid}</Font></small>
+<div class="orderhistory">
+	<label for="orderid">訂單編號:</label>&nbsp;<small><Font class="orderhistoryfont" color='red' size="-3">${choiceid}</Font></small>
 </div>
 <c:forEach  var="flight" items="${flightbean2}">
 	<form class="orderHistoryDetailForm">
-		<div>
+		<div >
 			<label class="front" for="start">起飛地點:</label>&nbsp;<small class="ordermessagefront"><Font color='black' size="-3">${flight.start}</Font></small>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="back" for="endstart">降落地點:</label>&nbsp;<small class="ordermessageback"><Font color='black' size="-3">${flight.endstart}</Font></small>
@@ -51,7 +60,6 @@ background-color: white;
 			<label class="front" for="flight">航班代碼:</label>&nbsp;<small class="ordermessagefront"><Font color='black'  size="-3">${flight.flight}</Font></small>
 			<label class="back" for="model">飛機型號:</label>&nbsp;<small class="ordermessageback"><Font color='black'  size="-3">${flight.model}</Font></small>
 		</div>
-		<div style="border: double;"></div>
 	</form>
 </c:forEach>
 <jsp:include page="/page/shared/footer.jsp" />
