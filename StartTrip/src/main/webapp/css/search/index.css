@@ -7,9 +7,10 @@
         body{
              background : #111111 url('../../image/index/03.jpg') no-repeat fixed 50% 50% ;/*圖片畫面置中不重複*/
              background-size: cover;/*圖片隨頁面縮放大小*/
+             overflow: hidden;
         }
         html,body{
-            height: 87.3%;
+            height: 100%;
         }
 
         .menu{
@@ -61,7 +62,7 @@
             height:60px;
         }
         .mainbody{
-            height:90%;
+            height:500px;
             margin:auto;
             font-size:20px;
 
@@ -83,8 +84,8 @@
         }
         .search img{
             float:right;
-            width:8%;
-            margin-right:5%;
+            width:50px;
+            margin-left:5px;
             margin-top:0.5%;
         }
         .searchsubmit{
@@ -95,11 +96,10 @@
         footer{
             clear:both;
             width:100%;
-            position:absolute;
+            position:fixed;
             bottom:0; /* 設置位置於下方 */
             padding-top:0.5%;
-            padding-bottom:0.5%;
-            background-color:antiquewhite;
+
             background:rgba(250,235,215,0.3);
         }
         footer span{
@@ -107,5 +107,25 @@
             padding-right:1%;
         }
       
+      .loadingback{
+            background-color:#e0e0e0;
+            opacity:0.7;
+            height:100%;
+            width:100%;
+           display:none;
+             position:fixed;
+             top:0px;
+            left:0px;
+            
+        }
+        .showbox {
+             position:fixed;
+             top:35%;
+             left:43%;
+             display:none;
+        }
+        .showbox img{
+             width: 200px
+        }
        
        

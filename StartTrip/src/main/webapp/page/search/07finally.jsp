@@ -70,6 +70,20 @@
 		background:rgba(255, 244, 194,0.6);
 		}
     </style>
+    <script type="text/javascript">
+    function printScreen(printlist)
+      {
+         var value = printlist.innerHTML;
+         var printPage = window.open("", "Printing...", "");
+         printPage.document.open();
+         printPage.document.write("<HTML><head></head><BODY onload='window.print();window.close()'>");
+         printPage.document.write("<PRE>");
+         printPage.document.write(value);
+         printPage.document.write("</PRE>");
+         printPage.document.close("</BODY></HTML>");
+      }
+</script>
+
     
 </head>
 <body>
@@ -81,6 +95,7 @@
     <h1>訂購完成，感謝您的購買</h1>
     <hr />
     <br/>
+    <div id="print_parts">
 		<table class="table table-sm table1">
 			<thead>
 				<tr>
@@ -92,8 +107,17 @@
 			<thead class="table1th">
 				<tr>
 					<th></th>
+					<th>訂單編號:</th>
+					<th><span style="color:red">${go1.flightorderid}</span></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th></th>
 					<th>機票金額:</th>
-					<th>${flightprice}元<span style="color:red">(台幣)</span></th>
+					<th>${flightprice}元(台幣)</th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -590,13 +614,14 @@
 		
 		</div>
 
-
+</div>
     <div   class = "container" style="padding:0 18% 45px 18%;background:rgba(255, 244, 194,0);">
         <form action="<c:url value='/ForwordToHouse.controller'/>" method="get">
-        <input  class="btn btn-success"  type="button" value="列印明細" />
+         <a href="#" onclick="printScreen(print_parts);"><input  class="btn btn-secondary" style="opacity: 0.8"
+          type="button" value="列印明細" /></a>
         <a href="<c:url value='/index.jsp'/>">
-        <input  class="btn btn-success"  type="button" value="回查詢首頁" /></a>
-        	<input  class="btn btn-success"  type="submit" value="續訂民宿" />
+        <input  class="btn btn-secondary" style="opacity: 0.8"  type="button" value="回查詢首頁" /></a>
+        	<input  class="btn btn-secondary" style="opacity: 0.8"  type="submit" value="續訂民宿" />
         </form>
     </div>
     

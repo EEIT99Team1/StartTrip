@@ -701,8 +701,8 @@ background:rgba(255, 244, 194,0.6);
 		<div   class = "container" style="padding:0 23% 45px 23%;background:rgba(255, 244, 194,0);">
 		<form action="<c:url value='/page/search/06opay.jsp'/>"method="get">
 			<div>
-				<input class="btn btn-success" style="padding-right:10px;" type="submit" value="確認，前往付款" />
-				<a href="04enter.jsp"><input class="btn btn-success"  type="button" value="返回" /></a>
+				<input   class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" type="submit" value="確認，前往付款" />
+				<a href="04enter.jsp"><input   class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
 		</form>
 		</div>

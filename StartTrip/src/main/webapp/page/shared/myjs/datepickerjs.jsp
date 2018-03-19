@@ -8,8 +8,8 @@
 			changeMonth: true,
 	        changeYear: true,
 	        minDate: 1, 
-
 		})
+
 		});
 		$(function() {
 		$("#dateback").datepicker({

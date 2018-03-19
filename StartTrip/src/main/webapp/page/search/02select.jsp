@@ -50,7 +50,7 @@
 
 	<br/><br/><br/>
 	<div id="clone"></div>
-	<h1 style="margin-left:300px;">機票查詢結果</h1>
+	<h1 style="margin-left:300px;font-weight: bold;">機票查詢結果</h1>
 	<hr/>
 
 	
@@ -132,12 +132,11 @@
 <!-- 		</div> -->
 <!-- 		</div><br/> -->
 	</div><!-- flightsResult結束 -->
-	
+
 	<jsp:include page="/page/shared/footer.jsp" />
 	
 	<jsp:include page="/page/search/myjs/ajaxdatasessionjs.jsp" />
 	<jsp:include page="/page/search/myjs/searchjs.jsp" />
 	<jsp:include page="/page/shared/myjs/loginjs.jsp" />
-	
 </body>
 </html>

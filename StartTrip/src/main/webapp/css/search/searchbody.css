@@ -63,3 +63,24 @@
             border:none;
             border-left:1.5px solid white;
         }
+
+        .loadingback{
+            background-color:#e0e0e0;
+            opacity:0.7;
+            height:100%;
+            width:100%;
+           display:block;
+             position:fixed;
+             top:0px;
+            left:0px;
+            
+        }
+        .showbox {
+             position:fixed;
+             top:35%;
+             left:43%;
+             display:block;
+        }
+        .showbox img{
+             width: 200px
+        }

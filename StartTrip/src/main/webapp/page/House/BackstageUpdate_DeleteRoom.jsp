@@ -103,7 +103,10 @@
 	</c:forEach>
 	
 	</c:if>
-
+<form action="picture_room" method="post" enctype = "multipart/form-data">
+<input type="file" value="圖片選擇" name="file">
+<input type="submit" value="圖片修改">	
+</form>
 
 
 ${update}
@@ -113,7 +116,13 @@ ${update}
 	</div>
 
 
+<c:if test="${not empty picture}">
+<script >
+alert('${picture}');
+window.location.href='http://localhost:8080/StartTrip/page/House/SelectRoom?name=${HouseLogin.name}&account=go';
 
+</script>
+</c:if>
 
 
 
