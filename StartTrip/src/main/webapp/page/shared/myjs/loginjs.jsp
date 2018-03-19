@@ -332,11 +332,3 @@
 			alert(csEmail);}
 	});
 </script>
-<script>
-	//客服信箱
-	function sdCSmail() {
-		$("#dialogEmail").dialog({hide : {effect : "blind",duration : 1000}})
-		//.css({"display":'none'})
-		
-		;}
-</script>

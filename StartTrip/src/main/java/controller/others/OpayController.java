@@ -23,7 +23,7 @@ public class OpayController {
 		String defaultVal ="HashKey=5294y06JbISpM5x9&"
 				+ "ChoosePayment=ALL&"
 				+ "ChooseSubPayment=&"
-				+ "ClientBackURL=https://developers.opay.tw/AioMock/MerchantClientBackUrl&"
+				+ "ClientBackURL=http://localhost:8080/StartTrip/page/search/07finally.jsp&"
 				+ "EncryptType=1&"
 				+ "ItemName=StartTrip&"
 				+ "MerchantID=2000132&"
@@ -63,6 +63,7 @@ public class OpayController {
 				+ "','tradeNo':'"
 				+ tradeNo
 				+ "'}";
+		System.out.println(opay);
 		return opay.replaceAll("'", "\"");
 	}
 	
