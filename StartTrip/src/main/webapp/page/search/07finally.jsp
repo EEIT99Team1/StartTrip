@@ -84,7 +84,9 @@ body {
 		printPage.document.open();
 		printPage.document
 				.write("<HTML><head></head><BODY onload='window.print();window.close()'>");
+
 		printPage.document.write(value);
+
 		printPage.document.close("</BODY></HTML>");
 	}
 </script>
@@ -102,7 +104,7 @@ body {
 		<h1 style="padding-left: 10px;">已付款完成，感謝您的購買</h1>
 		<hr />
 		<br />
-		<div id="print_alls" >
+		<div id="print_alls">
 			<table class="table table-sm table1" style="display: block;">
 				<!-- 		style="" -->
 				<thead>
