@@ -23,7 +23,7 @@ public class OpayController {
 		String defaultVal ="HashKey=5294y06JbISpM5x9&"
 				+ "ChoosePayment=ALL&"
 				+ "ChooseSubPayment=&"
-				+ "ClientBackURL=http://localhost:8080/StartTrip/page/search/07finally.jsp&"
+				+ "ClientBackURL=http://localhost:8080/StartTrip/Searchview.controller&"
 				+ "EncryptType=1&"
 				+ "ItemName=StartTrip&"
 				+ "MerchantID=2000132&"

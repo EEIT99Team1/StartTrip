@@ -21,18 +21,13 @@ public class CustomerBean implements Serializable {
 	private String birthday;
 	private String phonenumber ;
 	private Integer bonus;
-	private Boolean  blacklist;
-	
-	
-	
-	
-	
+	private Boolean blacklist;
 	
 	@Override
 	public String toString() {
 		return "CustomerBean [email=" + email + ", password=" + password + ", firstname=" + firstname + ", lastname="
 				+ lastname + ", country=" + country + ", birthday=" + birthday + ", phonenumber=" + phonenumber
-				+ ", bonus=" + bonus + "]";
+				+ ", bonus=" + bonus + ", blacklist=" + blacklist + "]";
 	}
 	public String getEmail() {
 		return email;

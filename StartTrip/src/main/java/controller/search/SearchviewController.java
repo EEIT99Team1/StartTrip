@@ -116,9 +116,10 @@ public class SearchviewController {
 		 if(cbean!=null) {
 			 Integer flightprice= Integer.parseInt((String)session.getAttribute("flightprice"));
 			 System.out.println("cbean"+flightprice);
-			 cbean.setBonus(flightprice);
+			 cbean.setBonus(cbean.getBonus()+flightprice);
+			 System.out.println("Blacklist===="+cbean.getBlacklist());
 			 customerDao.update(cbean.getEmail(), cbean.getPassword(), cbean.getFirstname(), cbean.getFirstname(), 
-					 cbean.getCountry(), cbean.getBirthday(), cbean.getBirthday(), cbean.getBonus(), cbean.getBlacklist());
+					 cbean.getCountry(), cbean.getBirthday(), cbean.getPhonenumber(), cbean.getBonus(), cbean.getBlacklist());
 			 session.setAttribute("LoginOK", cbean);
 			 session.setAttribute("customerBean", cbean);
 		 }
