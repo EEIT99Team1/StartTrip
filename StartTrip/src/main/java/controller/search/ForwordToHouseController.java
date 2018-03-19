@@ -14,8 +14,8 @@ import model.bean.OrdermanBean;
 public class ForwordToHouseController {
 	@RequestMapping(path="/ForwordToHouse.controller",method=RequestMethod.GET)
 	public String forword(HttpSession session,Model model) {
-		String hcountry="台灣";
-		String hplace="台北";		
+		String hcountry="日本";
+		String hplace="東京都";		
 		String hdate;
 		String hphone;
 		String hname;

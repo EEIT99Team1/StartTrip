@@ -698,16 +698,65 @@ background:rgba(255, 244, 194,0.6);
 // 							});
 		</script>
 		<br/>
-		<div   class = "container" style="padding:0 23% 45px 23%;background:rgba(255, 244, 194,0);">
-		<form action="<c:url value='/page/search/06opay.jsp'/>"method="get">
+		<div class="container" style="padding:0 23% 45px 23%;background:rgba(255, 244, 194,0);">
 			<div>
-				<input   class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" type="submit" value="確認，前往付款" />
+<form id="formWebATM" method="post" accept-charset="UTF-8"
+ action="https://payment-stage.opay.tw/Cashier/AioCheckOut/V5">
+	<div style="display:none">
+		MerchantID 商店代號:
+		<input type="text" name="MerchantID" value="2000132" /><br />
+		MerchantTradeNo 商店交易編號: 
+		<input type="text" id="tradeNo" name="MerchantTradeNo" value="" /><br />
+		MerchantTradeDate 商店交易時間: 
+		<input type="text" id="dateOpay" name="MerchantTradeDate" value="" /><br />
+		PaymentType 交易類型: 
+		<input type="text" name="PaymentType" value="aio" /><br />
+		TotalAmount 交易金額: 
+		<input type="text" id="price" name="TotalAmount" value="${flightprice}" /><br />
+		TradeDesc 交易描述: 
+		<input type="text" id="desc"name="TradeDesc" value="" /><br />
+		ItemName 商品名稱: 
+		<input type="text" name="ItemName" value="StartTrip" /><br />
+		ReturnURL 付款完成通知回傳網址: 
+		<input type="text" name="ReturnURL" value="https://developers.opay.tw/AioMock/MerchantReturnUrl" /><br />
+		ChoosePayment 預設付款方式: 
+		<input type="text" name="ChoosePayment" value="ALL" /><br />
+		會員商店代碼: 
+		<input type="text" name="StoreID" value="" /><br />
+		ChooseSubPayment 預設子付款方式: 
+		<input type="text" name="ChooseSubPayment" value="" /><br />
+		ClientBackURL Client端返回廠商網址: 
+		<input type="text" name="ClientBackURL" value="http://localhost:8080/StartTrip/page/search/07finally.jsp" /><br />
+		CheckMacValue 簽章類型: 
+		<input type="text" name="EncryptType" value="1" /><br />
+		CheckMacValue 檢查碼: 
+		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
+	</div>
+	<div id="bookRide">
+		<input type="submit" value="確認，前往付款(歐付保)" class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" />
+	</div>
+</form>
+				<form action="<c:url value='/page/search/06ourpay.jsp'/>">
+				<input class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" type="submit" value="確認，前往付款(站內)" />
+				</form>
 				<a href="04enter.jsp"><input   class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
-		</form>
 		</div>
 
 		<jsp:include page="/page/shared/footer.jsp" />
 		<jsp:include page="/page/shared/myjs/loginjs.jsp" />
+<script>
+$(function(){
+	$.get("<c:url value='/oPay.controller'/>",{"TotalAmount":"${flightprice}"},function(data){
+		var input = data;
+		$("#price").val(input.price);
+		$("#dateOpay").val(input.date);
+		$("#tradeNo").val(input.tradeNo);
+		$("#desc").val(input.desc);
+		$("#sha").val(input.sha);
+		alert("1234")
+	})
+})
+</script>
 </body>
 </html>
