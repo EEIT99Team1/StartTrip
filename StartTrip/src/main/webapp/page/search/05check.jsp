@@ -754,7 +754,6 @@ $(function(){
 		$("#tradeNo").val(input.tradeNo);
 		$("#desc").val(input.desc);
 		$("#sha").val(input.sha);
-		alert("1234")
 	})
 })
 </script>
