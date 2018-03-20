@@ -732,16 +732,17 @@ background:rgba(255, 244, 194,0.6);
 		CheckMacValue 檢查碼: 
 		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
 	</div>
-	<div id="bookRide" style="width:1000px;margin:-60%">
+	<div id="bookRide">
 
 		<input type="submit" value="確認，前往付款(歐付寶)" class="btn btn-success" style="opacity: 0.8;" />
-			<a href="<c:url value='/page/search/06ourpay.jsp'/>">
-				<input class="btn btn-secondary" style="opacity: 0.8;" type="submit" value="確認，前往付款(站內)" />
-			</a>
-			<a href="04enter.jsp"><input class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 
 	</div>
 </form>
+<form action="<c:url value='/page/search/06ourpay.jsp'/>">
+
+				<input class="btn btn-secondary" style="opacity: 0.8;" type="submit" value="確認，前往付款(站內)" />
+</form>
+			<a href="04enter.jsp"><input class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
 		</div>
 
