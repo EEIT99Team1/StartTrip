@@ -25,7 +25,7 @@
         }
  .menu li {
             float:left;
-            width:7em;
+            width:15%;
             border-right:1px solid #cccccc;
         }
 

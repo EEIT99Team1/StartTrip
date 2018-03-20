@@ -45,9 +45,9 @@
       <li>房名</li>      
       <li>價格/1天</li>   
       <li>入住人數</li>
-      <li>註解1</li>
-      <li>註解2</li>
-      <li>註解3</li>
+      <li>客房設備</li>
+      <li>服務</li>
+      <li>規則</li>
      </ul>	  
 		  
 
@@ -114,6 +114,15 @@ ${update}
 </table>				
 		</div>
 	</div>
+
+<c:if test="${not empty update}">
+<script >
+alert('${update}');
+window.location.href='http://localhost:8080/StartTrip/page/House/SelectRoom?name=${HouseLogin.name}&account=go';
+
+</script>
+</c:if>
+
 
 
 <c:if test="${not empty picture}">
