@@ -7,12 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
-<link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
+<link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <style>
 body{overflow: auto;}
+menuimg{height: 100px}
 </style>
 </head>
 <body>

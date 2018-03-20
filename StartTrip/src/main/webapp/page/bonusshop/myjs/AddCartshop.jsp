@@ -66,7 +66,7 @@
  					var tdc = tda.clone();
  					var tdd = tda.clone();
  					var bonus = addimg.parent().parent().find("div:eq(1) span:eq(0)").text();
- 					var dbtn = $("<input class='btn btn-primary dbtn' type= 'submit' value= 'delete'>");
+ 					var dbtn = $("<input class='btn btn-primary dbtn' type= 'submit' value= '刪除'>");
  					var bonusInt =  parseInt(bonus);
  										
  					cloneimgb.css({

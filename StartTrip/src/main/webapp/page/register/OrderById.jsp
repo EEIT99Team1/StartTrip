@@ -66,7 +66,7 @@ background-color: white;
 <body>
 <jsp:include page="/page/shared/header.jsp" />
 <br><br><br><br><br>
-<div class="ordertitle">歷史訂單編號</div>
+<div class="ordertitle">歷史機票訂單編號</div>
 <div class="orderidform">
 <c:forEach  var="flight" items="${flightbean}">
 <c:if test="${orderid != flight.orderid}">

@@ -9,7 +9,7 @@
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 
 <script src="<c:url value="/js/jquery-3.3.1.min.js" />"></script>
-<title>Insert title here</title>
+<title>後台系統</title>
 </head>
 <body>
 <div id="page" class="container">
@@ -27,10 +27,11 @@
 	
 	
 		<form action="<c:url value='/FileUpLoad.controller' />" method="post" enctype = "multipart/form-data">
-			Select file to upload: <input type="file" name="file[]" size="60" multiple="multiple"/>
+			選擇上傳檔案: <input type="file" name="file[]" size="60" multiple="multiple"/>
 			<input type="submit" value="上傳" />
 		</form>
-		<div id="show"><h1>SHOW!!</h1>
+		<div id="show">
+<!-- 		<h1>SHOW!!</h1> -->
 		</div>
 	</div>
 </div>

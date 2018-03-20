@@ -102,7 +102,7 @@
 						//放入tableShow資訊
 						var tr0show = $("<tr></tr>");
 
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle"});
+						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle","width":"150px"});
 
 
 						var td01show = $("<td></td>").text(departureAirport);

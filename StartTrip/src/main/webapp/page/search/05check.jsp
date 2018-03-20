@@ -733,7 +733,9 @@ background:rgba(255, 244, 194,0.6);
 		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
 	</div>
 	<div id="bookRide">
-		<input type="submit" value="確認，前往付款(歐付保)" class="btn btn-success" style="opacity: 0.8;margin: 0" />
+
+		<input type="submit" value="確認，前往付款(歐付 寶)" class="btn btn-success" style="opacity: 0.8;padding-right:10px;" />
+
 	</div>
 </form>
 				<form action="<c:url value='/page/search/06ourpay.jsp'/>">

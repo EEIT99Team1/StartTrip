@@ -99,8 +99,7 @@ public class MailServlet extends HttpServlet {
 		String forgotpassword=cb.getPassword();
 		System.out.println("信件成功寄出！到:"+emailcheck);
 		dbEmail.put("dbpsdemail", "信件成功寄出！到:"+emailcheck+"，請登入信箱查收！");
-		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-		rd.forward(request, response);	
+
 		
 		
     	 Properties props = new Properties();
@@ -137,6 +136,10 @@ public class MailServlet extends HttpServlet {
     	    } catch (MessagingException e) {
     	        throw new RuntimeException(e);
     	    }
+    		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+    		rd.forward(request, response);	
+    		return;
+    	    
     }
 
 }

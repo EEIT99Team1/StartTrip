@@ -64,7 +64,7 @@ font-family: fantasy;
 		<div>
 			<label>商品編號:</label>&nbsp;<small><Font color='black' size="-3">${order.id}</Font></small><br/>
 			<label>商品名稱:</label>&nbsp;<small><Font color='black' size="-3">${productname}</Font></small><br/>
-			<label>選購數量:</label>&nbsp;<small><Font class="shopmuch" color='black' size="-3">${order.wmuchs}</Font></small><br/>
+			<label>兌換數量:</label>&nbsp;<small><Font class="shopmuch" color='black' size="-3">${order.wmuchs}</Font></small><br/>
 			<label>商品金額:</label>&nbsp;<small><Font class="shopbonus" color='black' size="-3">${productbonus}</Font></small><br/>
 			<label>總金額:</label>&nbsp;<small><Font color='black'  size="-3">${tatol}</Font></small><br/>
 		</div>
