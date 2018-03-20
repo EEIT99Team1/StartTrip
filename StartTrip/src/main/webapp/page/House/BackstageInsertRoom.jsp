@@ -32,28 +32,28 @@
 </tr>
 
 <tr>
- <td>roomname:</td>
+ <td>房名:</td>
  <td><input type="text" name="roomname" ></td>
 </tr>
 
 <tr>
- <td>price:</td>
+ <td>價格/1天:</td>
  <td><input type="text" name="price" ></td>
 </tr>
 <tr>
- <td>number:</td>
+ <td>入住人數:</td>
  <td><input type="text" name="number" ></td>
 </tr>
 <tr>
- <td>explain1:</td>
+ <td>客房設備:</td>
  <td><input type="text" name="explain1" ></td>
 </tr>
 <tr>
- <td>explain2:</td>
+ <td>服務:</td>
  <td><input type="text" name="explain2" ></td>
 </tr>
 <tr>
- <td>explain3:</td>
+ <td>規則:</td>
  <td><input type="text" name="explain3" ></td>
 </tr>
 	</table>
