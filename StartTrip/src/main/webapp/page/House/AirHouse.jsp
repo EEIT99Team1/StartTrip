@@ -7,12 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
-<link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
+<link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <style>
 body{overflow: auto;}
+menuimg{height: 100px}
 </style>
 </head>
 <body>
@@ -47,7 +48,7 @@ body{overflow: auto;}
 <!-- 	</tr> -->
 	
 </table >
-<input type="submit" name="prodaction" value="收尋" style="display:block;margin:0 auto;margin-top: 20px">	
+<input type="submit" name="prodaction" value="搜尋" style="display:block;margin:0 auto;margin-top: 20px">	
 </form>	
 	<c:if test="${not empty select}">
 	<c:forEach var="row" items="${select}">

@@ -6,7 +6,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>後台系統</title>
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
@@ -50,13 +50,13 @@ $(function() {
 <div id="main">
 	<form action='<c:url value="/Flightorder.controller"/>' method="get">
 		<select name="selectBy" id="sel" >
-			<option value="start" >start</option>
-			<option value="endstart">endstart</option>
-			<option value="uptime">uptime</option>
-			<option value="downtime">downtime</option>
-			<option value="adult">adult</option>
-			<option value="child">child</option>
-			<option value="model">model</option>
+			<option value="start" >出發地</option>
+			<option value="endstart">目的地</option>
+			<option value="uptime">起飛日</option>
+			<option value="downtime">抵達日</option>
+			<option value="adult">成人數量</option>
+			<option value="child">小孩</option>
+			<option value="model">機型</option>
 		</select> <input type="submit" value="submit" id="sub" onClick="save()"/>
 	</form>
 	<c:if test="${not empty forder}">

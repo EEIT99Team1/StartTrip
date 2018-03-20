@@ -126,8 +126,8 @@
 <script>
 	//讓外面的Login顯示登入者姓名。
 	$(document).ready(function() {
-		var firstname = "${firstname}";
-		var lastname = "${lastname}";
+		var firstname = "${LoginOK.firstname}";
+		var lastname = "${LoginOK.lastname}";
 		if (firstname != "" && lastname != "") {
 			//因為登入失敗會回傳null，所以要加判斷。
 			if (firstname == "null" && lastname == "null") {

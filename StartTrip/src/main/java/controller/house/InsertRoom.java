@@ -79,7 +79,7 @@ public class InsertRoom extends HttpServlet {
 			request.setAttribute("select", "房間名重複了歐");
 		}
 		else if(c==1) {
-			request.setAttribute("select", "輸入成功");
+			request.setAttribute("select", "新增成功");
 		}
 		else {
 			request.setAttribute("select", "系統有問題,請找管理員");

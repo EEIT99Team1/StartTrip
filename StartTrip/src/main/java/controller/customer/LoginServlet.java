@@ -25,6 +25,16 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 1. 讀取使用者輸入資料
+		String userEmail = req.getParameter("userEmail");
+		String password = req.getParameter("pswd");
+		
+		if("admin".equals(userEmail)&&"admin".equals(password)) {
+			resp.sendRedirect("/StartTrip/page/backstage/managementPlaywall.jsp");
+			return;
+		}
+		
+		
 		//取得Spring容器。
 		WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		req.setCharacterEncoding("UTF-8");
@@ -36,9 +46,7 @@ public class LoginServlet extends HttpServlet {
 		Map<String, String> errorMsgMap = new HashMap<String, String>();
 		// 將errorMsgMap放入request物件內，識別字串為 "ErrorMsgKey"
 		session.setAttribute("ErrorMsgKey", errorMsgMap);
-		// 1. 讀取使用者輸入資料
-		String userEmail = req.getParameter("userEmail");
-		String password = req.getParameter("pswd");
+
 		// String rm = req.getParameter("rememberMe");
 		// String requestURI = (String) session.getAttribute("requestURI");
 		System.out.println(userEmail);

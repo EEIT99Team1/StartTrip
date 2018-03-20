@@ -55,12 +55,12 @@
 						<img class="image" alt="商品1" src="<c:url value="/image/bonusshop/commodity1.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品1</p>
+					<p class="center">7-11點券</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">12</span>
+						<span class="bonus">1000</span>
 					</div>
 					<div class="center">
 						<input class="btn btn-primary addcart" id="b1" type="submit" value="加入">						
@@ -75,12 +75,12 @@
 						<img class="image" alt="商品2" src="<c:url value="/image/bonusshop/commodity2.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品2</p>
+					<p class="center">柴犬娃娃</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">45</span>
+						<span class="bonus">2000</span>
 					</div>
 					<div class="center">
 
@@ -97,12 +97,12 @@
 						<img class="image" alt="商品3" src="<c:url value="/image/bonusshop/commodity3.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品3</p>
+					<p class="center">手提包</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">78</span>
+						<span class="bonus">3000</span>
 					</div>
 					<div class="center">
 
@@ -119,12 +119,12 @@
 						<img class="image" alt="商品4" src="<c:url value="/image/bonusshop/commodity4.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品4</p>
+					<p class="center">後背包</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">123</span>
+						<span class="bonus">3000</span>
 					</div>
 					<div class="center">
 
@@ -141,12 +141,12 @@
 						<img class="image" alt="商品5" src="<c:url value="/image/bonusshop/commodity5.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品5</p>
+					<p class="center">機票5折券</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">456</span>
+						<span class="bonus">50000</span>
 					</div>
 					<div class="center">
 
@@ -163,12 +163,12 @@
 						<img class="image" alt="商品6" src="<c:url value="/image/bonusshop/commodity6.jpg"/>">
 					</div>
 <!-- 				文字區塊 -->
-					<p class="center">商品6</p>
+					<p class="center">任天堂switch</p>
 <!-- 				按鈕區塊 -->
 					<div>
 
 						<label>點數：</label>
-						<span class="bonus">789</span>
+						<span class="bonus">100000</span>
 					</div>
 					<div class="center">
 
@@ -219,7 +219,7 @@
 					<br>
 					<p class = "fontstyle">所選商品的總點數:<span class="selectbonus"></span></p>
 					<br>
-					<p class = "fontstyle">購買後的紅利點數:<span class="balance"></span></p>
+					<p class = "fontstyle">兌換後的紅利點數:<span class="balance"></span></p>
 					<table>
 						<thead>
 						<tr>
