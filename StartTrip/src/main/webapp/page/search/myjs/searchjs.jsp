@@ -341,5 +341,11 @@
 			
 			$("#flightsResult").append(documentFragment);
 			
+// 			if($("#selectmoney").click().value=="high")
 		});
+		
+		
+		
+		
+		
 	</script>	
