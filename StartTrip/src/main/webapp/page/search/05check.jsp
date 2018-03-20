@@ -733,13 +733,13 @@ background:rgba(255, 244, 194,0.6);
 		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
 	</div>
 	<div id="bookRide">
-		<input type="submit" value="確認，前往付款(歐付保)" class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" />
+		<input type="submit" value="確認，前往付款(歐付保)" class="btn btn-success" style="opacity: 0.8;margin: 0" />
 	</div>
 </form>
 				<form action="<c:url value='/page/search/06ourpay.jsp'/>">
-				<input class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" type="submit" value="確認，前往付款(站內)" />
+				<input class="btn btn-secondary" style="opacity: 0.8;" type="submit" value="確認，前往付款(站內)" />
 				</form>
-				<a href="04enter.jsp"><input   class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
+				<a href="04enter.jsp"><input class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
 		</div>
 
