@@ -43,9 +43,9 @@
 	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 	<jsp:include page="/page/search/myjs/searchbar.jsp" />
 
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
-
 	<jsp:include page="/page/shared/header.jsp" />
 
 	<br/><br/><br/>

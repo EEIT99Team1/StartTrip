@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width= device-width, initial-scale=1.0">
 <title>Bonus shop</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <link href="<c:url value="/css/bonusshop/BonusShop.css"/>" rel="stylesheet">
 <link href="<c:url value="/Bootstrap/bootstrap.css"/>" rel="stylesheet">

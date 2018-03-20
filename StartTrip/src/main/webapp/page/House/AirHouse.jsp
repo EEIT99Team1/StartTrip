@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
 <style>

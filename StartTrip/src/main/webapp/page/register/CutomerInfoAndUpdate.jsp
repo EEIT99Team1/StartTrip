@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />

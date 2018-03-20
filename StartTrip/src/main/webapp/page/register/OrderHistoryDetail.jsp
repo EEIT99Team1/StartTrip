@@ -35,6 +35,7 @@ background-color: white;
 font-size: 40px;
 }
 </style>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
 <br><br><br><br>
