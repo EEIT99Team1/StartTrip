@@ -29,6 +29,10 @@
 .heighttext{
 height: 150px;
 }
+.customermenu{
+	position:fixed;
+	top:77px;
+}
 </style>
 </head>
 <body>

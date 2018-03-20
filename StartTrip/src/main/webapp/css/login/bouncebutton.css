@@ -20,7 +20,7 @@ body {
 	margin-top:0;
 	display: none;
 	position:fixed;
-	top:77px;
+	top:55px;
 	right:20px;
 	line-height: 35px;
 	float: right;
@@ -33,7 +33,7 @@ body {
     height: 35px;
     line-height: 35px;
     width: 100px;
-    z-index: 100;
+    z-index: 9999;
     border-radius: 5px;
 }
 

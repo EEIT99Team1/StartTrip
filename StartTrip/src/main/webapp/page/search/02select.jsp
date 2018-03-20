@@ -8,7 +8,7 @@
 <title>查詢結果</title>
 	<style type="text/css">
 	 body { 
-	             background: #111111 url('../../image/search/searchback.jpg') no-repeat fixed 50% 50%;
+	             background: #111111 url('../../image/search/searchback3.jpg') no-repeat fixed 50% 50%;
 	             /*圖片畫面置中不重複*/
 	           background-size: cover; /*圖片隨頁面縮放大小*/ 
 	           margin:auto; 
