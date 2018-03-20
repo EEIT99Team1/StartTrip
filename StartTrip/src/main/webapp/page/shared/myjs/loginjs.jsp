@@ -293,8 +293,8 @@
 			$("#inputEmail").val(response.email);
 		});
 	}
-	$(document).ready(
-	function() {
+	
+	$(document).ready(function() {
 		var InsertFBok = "${success.InsertFBok}";
 		if (InsertFBok != "") {
 			alert(InsertFBok);}

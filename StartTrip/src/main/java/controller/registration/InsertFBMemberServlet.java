@@ -103,17 +103,19 @@ public class InsertFBMemberServlet extends HttpServlet {
 			// RequestDispatcher rd =
 			// request.getRequestDispatcher("跳轉頁面.jsp");
 			// 新增資料成功,利用response.encodeRedirect送出回應,共用資料放在Session物件
-			successMsg.put("InsertFBok", "恭喜您註冊成功。");
-			System.out.println("InsertFBok"+ "恭喜您註冊成功。");
-			String url = request.getContextPath() + "/index.jsp";
-			String targetURL = response.encodeRedirectURL(url);
-			response.sendRedirect(targetURL);
+			successMsg.put("InsertFBok", "恭喜您註冊成功！");
+			//String url = request.getContextPath() + "/index.jsp";
+			//String targetURL = response.encodeRedirectURL(url);
+			//response.sendRedirect(targetURL);
+			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+			rd.forward(request, response);
+			System.out.println("InsertFBok_line107"+ "恭喜您註冊成功。");
 		} else {
 			// 新增資料失敗,利用RequestDispatcher送出回應,共用資料放在request物件
 			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			rd.forward(request, response);
-			System.out.println("InsertFB,flase");
 			successMsg.put("InsertFBok", "此帳號已註冊過，請直接登入。");
+			System.out.println("InsertFB_line115,flase");
 			return;
 		}
 	}
