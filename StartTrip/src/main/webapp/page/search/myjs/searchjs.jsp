@@ -35,12 +35,21 @@
 			var xmlDoc = parser.parseFromString(text, "text/xml");
 			var PricedItinerarys = xmlDoc.getElementsByTagName("PricedItinerary");
 			var documentFragment = $(document.createDocumentFragment());
+// 			var documentFragment2 = $(document.createDocumentFragment());
 			console.log(PricedItinerarys.length);
 // 			alert($("#selectmoney").val());
 
+				
 			$("#selectmoney").change(function(){
 				if($(this).val()=="lowtohigh"){
-					for(var i=PricedItinerarys.length-1;i>0;i--){
+					for(var i=50;i>0;i--){
+						var div="#d"+i;
+						var divOb=$(div);
+						$("#flightsResult").prepend(divOb);
+					}
+					
+				}else if($(this).val()=="hightolow"){
+					for(var i=0;i<50;i++){
 						var div="#d"+i;
 						var divOb=$(div);
 						$("#flightsResult").prepend(divOb);
