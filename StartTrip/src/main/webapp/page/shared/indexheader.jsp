@@ -124,8 +124,7 @@
 								color='red' size="-3">${error.phonenumbererr}</Font></small>
 						</div>
 
-						<br /> <input type="submit" name="submit" value="註冊會員"
-							/><br /> <br />
+						<br /> <input type="submit" name="submit" value="註冊會員" /><br /> <br />
 					</form>
 				<!--忘記密碼？ -->
 					<form id="fPaswrd" method=post action="<c:url value='/MailServlet' />">

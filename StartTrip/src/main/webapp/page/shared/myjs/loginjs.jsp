@@ -200,7 +200,7 @@
 			$(this).css('background-color', '#7AC5CD');
 		});
 		$(".customeroption li").mouseout(function() {
-			$(this).css('background-color', 'red');
+			$(this).css({"background":"rgba(255, 46, 46,0.9)"});
 		});
 	});
 </script>
@@ -293,8 +293,8 @@
 			$("#inputEmail").val(response.email);
 		});
 	}
-	$(document).ready(
-	function() {
+	
+	$(document).ready(function() {
 		var InsertFBok = "${success.InsertFBok}";
 		if (InsertFBok != "") {
 			alert(InsertFBok);}

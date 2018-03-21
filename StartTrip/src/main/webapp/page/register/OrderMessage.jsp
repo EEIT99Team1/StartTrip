@@ -53,6 +53,7 @@ padding:auto;
 margin-left: 50px;
 }
 </style>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
 <jsp:include page="/page/shared/header.jsp" />

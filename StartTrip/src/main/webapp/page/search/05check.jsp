@@ -12,7 +12,7 @@
 	type="text/css" rel="stylesheet" />
 <link href="<c:url value='/css/login/FB&Googlebutton.css'/>"
 	rel="stylesheet">
-
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <link href="<c:url value='/css/title.css'/>" type="text/css"
 	rel="stylesheet" />
 <link href="<c:url value='/css/footer.css'/>" type="text/css"
@@ -733,13 +733,16 @@ background:rgba(255, 244, 194,0.6);
 		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
 	</div>
 	<div id="bookRide">
-		<input type="submit" value="確認，前往付款(歐付 寶)" class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" />
+
+		<input type="submit" value="確認，前往付款(歐付寶)" class="btn btn-success" style="opacity: 0.8;" />
+
 	</div>
 </form>
-				<form action="<c:url value='/page/search/06ourpay.jsp'/>">
-				<input class="btn btn-secondary" style="opacity: 0.8;padding-right:10px;" type="submit" value="確認，前往付款(站內)" />
-				</form>
-				<a href="04enter.jsp"><input   class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
+<form action="<c:url value='/page/search/06ourpay.jsp'/>">
+
+				<input class="btn btn-secondary" style="opacity: 0.8;" type="submit" value="確認，前往付款(站內)" />
+</form>
+			<a href="04enter.jsp"><input class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
 		</div>
 
