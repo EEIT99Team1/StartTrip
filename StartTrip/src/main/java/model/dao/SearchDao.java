@@ -61,7 +61,7 @@ public class SearchDao {
 
 	@Transactional
 	public List<SearchBean> selectByCode(String aircode) {
-		String HQL_SEARCH = "from SearchBean WHERE aircode like '%" + aircode + "%'";
+		String HQL_SEARCH = "from SearchBean WHERE aircode like'" + aircode + "%'";
 		Query<SearchBean> query = getSession().createQuery(HQL_SEARCH, SearchBean.class);
 		List<SearchBean> list = query.list();
 
