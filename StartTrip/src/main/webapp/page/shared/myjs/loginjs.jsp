@@ -3,18 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <script>
-	//Google+第三放登入取得資料方法
-	$(document).ready(function() {
-		function onSignIn(googleUser) {
-			var profile = googleUser.getBasicProfile();
-			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-			console.log('Name: ' + profile.getName());
-			console.log('Image URL: ' + profile.getImageUrl());
-			console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-			// 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
-			// 		$("#button").append(m1);
-		}
-	});
+ 	//Google+第三放登入取得資料方法 
+// 	$(document).ready(function() {
+// 		function onSignIn(googleUser) {
+// 			var profile = googleUser.getBasicProfile();
+// 			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+// 			console.log('Name: ' + profile.getName());
+// 			console.log('Image URL: ' + profile.getImageUrl());
+// 			console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+// 			// 		var m1 = $("<img></img>").attr("src", profile.getImageUrl());
+// 			// 		$("#button").append(m1);
+// 		}
+// 	});       
 </script>
 <!-- googleSignOut -->
 <script>
@@ -204,6 +204,7 @@
 		});
 	});
 </script>
+<!-- FB login -->
 <script>
 	//FB
 	window.onload = function() {
@@ -300,6 +301,7 @@
 			alert(InsertFBok);}
 	});
 </script>
+<!-- Email -->
 <script>
 	//忘記密碼？
 	function _pa6789(){
@@ -332,3 +334,4 @@
 			alert(csEmail);}
 	});
 </script>
+<!-- Google login -->
