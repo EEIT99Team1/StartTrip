@@ -2,7 +2,29 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
+<script>
+var countF=50;
+$(function(){
+$("#CI").click(function(){
+	for(var i=0;i<countF;i++){
+		var choose=$(this).val();
+		var div="#d"+i;
+		var divOb=$(div);
+		var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
+		var code=str.substring((str.length-2),str.length);
+		console.log("choose=="+choose)
+		console.log("code=="+code);
+		if(code==choose){
+			console.log(0)
+			divOb.css({"display":"block"});
+		}else{
+			console.log(1)
+			divOb.css({"display":"none"});
+		}
+	}
+})
+})
+</script>
 	<script>
 		function infoDivShow(){
 			var id="#d"+$(this).attr("id");
@@ -38,6 +60,10 @@
 // 			var documentFragment2 = $(document.createDocumentFragment());
 			console.log(PricedItinerarys.length);
 // 			alert($("#selectmoney").val());
+// operatingAirline.getAttribute("Code");
+// if($("#CI").click()){
+// 	operatingAirline.getAttribute("Code")=="CI";
+// }
 
 				
 			$("#selectmoney").change(function(){
@@ -63,6 +89,8 @@
 					
 				}
 			})	
+			
+			countF=PricedItinerarys.length;
 					for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){	
 // 			console.log(PricedItinerarys.length)
 					var divBig=$("<div></div>").attr({"id":"d"+i});//.css({"border":"4px solid #8C0044"});//最外圈的div
@@ -130,8 +158,7 @@
 							var tr0show = $("<tr></tr>");
 	
 							var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle","width":"150px"});
-	
-	
+								
 							var td01show = $("<td></td>").text(departureAirport);
 							var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
 							var td02show = $("<td></td>").append(imgshowArrows);
