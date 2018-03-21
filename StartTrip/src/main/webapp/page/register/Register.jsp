@@ -47,6 +47,7 @@ padding: auto;
 <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="<c:url value='/js/jquery-ui.min.js'/>"></script>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <link href="<c:url value='/css/search/jquery-ui.min.css'/>"type="text/css" rel="stylesheet">
 <script type="text/javascript">
 $(function() {

@@ -200,7 +200,7 @@
 			$(this).css('background-color', '#7AC5CD');
 		});
 		$(".customeroption li").mouseout(function() {
-			$(this).css('background-color', 'red');
+			$(this).css({"background":"rgba(255, 46, 46,0.9)"});
 		});
 	});
 </script>

@@ -14,17 +14,17 @@
         /*search bar*/
         .aside {
             width:275px;
-            background:rgba(255, 255, 255,0.2);
+            background:rgba(143, 143, 143,0.3);
             height:500px;
             position: fixed;
-            top:137px;
+            top:168px;
             left: -275px;
         }
 
         .searchbar table{
             width:auto;
             float:right;
-            margin-left:5%;
+            margin-left:40%;
             height:500px;
         }
        
@@ -59,7 +59,7 @@
             padding: 0;
             border-top-right-radius:20px;
             border-bottom-right-radius:20px;
-            background:rgba(255, 255, 255,0.2);
+            background:rgba(143, 143, 143,0.3);
             border:none;
             border-left:1.5px solid white;
         }

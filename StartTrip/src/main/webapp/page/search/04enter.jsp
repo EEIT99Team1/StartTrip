@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 	<jsp:include page="/css/headerlink.jsp" />
     <meta charset="utf-8" />
     <link rel="stylesheet"

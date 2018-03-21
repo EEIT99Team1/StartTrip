@@ -5,11 +5,11 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 .customeroption li{
-	background-color : red;
+	background:rgba(255, 46, 46,0.9);
 	list-style-type: none;
 }
 .customeroption li a{
-	color : white;
+ 	color : white;
 	text-decoration:none;
 }
 .logbutton{
@@ -32,7 +32,7 @@ body {
     text-align: center;
     height: 35px;
     line-height: 35px;
-    width: 100px;
+    width: 200px;
     z-index: 9999;
     border-radius: 5px;
 }

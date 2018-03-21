@@ -23,7 +23,9 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	    <script src="jquery-3.1.0.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
@@ -43,36 +45,44 @@
 	<jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 	<jsp:include page="/page/search/myjs/searchbar.jsp" />
 
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
-
 	<jsp:include page="/page/shared/header.jsp" />
 
 	<br/><br/><br/>
 	<div id="clone"></div>
 	<h1 style="margin-left:300px;font-weight: bold;">機票查詢結果</h1>
+	
+		<select id="selectmoney" style="margin-right:300px;float:right;">
+			<option id="selectmoneylow" value="lowtohigh">按價格以低到高</option>
+			<option id="selectmoneyhigh" value="hightolow">按價格以高到低</option>
+		</select>
+	
+	
+	<br>
 	<hr/>
 
 	
 	 <div id="searchbar"class="searchbar">
             <aside class="aside">
-                <table>
+                <table  >
                     <thead><tr><td colspan="3">航班篩選</td> </tr> </thead>
                     <tbody>
-                        <tr>
-                            <td style="width:10%"><input type="checkbox" value="" /></td>
+                        <tr >
+                            <td style="width:10%"><input id="CI" type="checkbox" value="CI" /></td>
                             <td style="width:20%"><img src="<c:url value='/image/search/航空1.png'/>" /></td>
                             <td style="width:50%;">中華航空</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="BR"  value="BR" /></td>
+                            <td><img src="<c:url value='/image/search/航空3.png'/>" /></td>
+                            <td>長榮航空</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" value="" /></td>
                             <td><img src="<c:url value='/image/search/航空2.png'/>" /></td>
                             <td>馬來西亞航空</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" value="" /></td>
-                            <td><img src="<c:url value='/image/search/航空3.png'/>" /></td>
-                            <td>長榮航空</td>
                         </tr>
 
                         <tr>
