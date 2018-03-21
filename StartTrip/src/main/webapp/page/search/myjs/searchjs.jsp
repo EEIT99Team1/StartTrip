@@ -5,24 +5,42 @@
 <script>
 var countF=50;
 $(function(){
-$("#CI").click(function(){
-	for(var i=0;i<countF;i++){
-		var choose=$(this).val();
-		var div="#d"+i;
-		var divOb=$(div);
-		var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
-		var code=str.substring((str.length-2),str.length);
-		console.log("choose=="+choose)
-		console.log("code=="+code);
-		if(code==choose){
-			console.log(0)
-			divOb.css({"display":"block"});
-		}else{
-			console.log(1)
-			divOb.css({"display":"none"});
+	$("#CI").click(function(){
+		for(var i=0;i<countF;i++){
+			var choose=$(this).val();
+			var div="#d"+i;
+			var divOb=$(div);
+			var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
+			var code=str.substring((str.length-2),str.length);
+			console.log("choose=="+choose)
+			console.log("code=="+code);
+			if(code==choose){
+				console.log(0)
+				divOb.css({"display":"block"});
+			}else{
+				console.log(1)
+				divOb.css({"display":"none"});
+			}
 		}
-	}
-})
+	})
+	$("#BR").click(function(){
+		for(var i=0;i<countF;i++){
+			var choose=$(this).val();
+			var div="#d"+i;
+			var divOb=$(div);
+			var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
+			var code=str.substring((str.length-2),str.length);
+			console.log("choose=="+choose)
+			console.log("code=="+code);
+			if(code==choose){
+				console.log(0)
+				divOb.css({"display":"block"});
+			}else{
+				console.log(1)
+				divOb.css({"display":"none"});
+			}
+		}
+	})
 })
 </script>
 	<script>
