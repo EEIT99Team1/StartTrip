@@ -36,160 +36,178 @@
 			var PricedItinerarys = xmlDoc.getElementsByTagName("PricedItinerary");
 			var documentFragment = $(document.createDocumentFragment());
 			console.log(PricedItinerarys.length);
-			
-			for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){
-				var divBig=$("<div></div>");//.css({"border":"4px solid #8C0044"});//最外圈的div
-				var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊")
-				.click(infoDivShow).addClass("btn btn-light").css({"margin-left":"325px","margin-bottom":"20px"});
-				var infoDiv=$("<div></div>").attr({id:"dflightInfo"+i}).css({"display":"none"});
-				var tableShow=$("<table></table>").addClass("table").css({"width":"100%","text-align":"center"});//.css({"border":"2px solid #003C9D","width":"100%"});
-				var tbodyShow=$("<tbody></tbody>");
-				console.log(i);
-				//總金額//總飛行時間
-				var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
-				var totalTime=0;
-				//行李重量
-				var weight;
-// 				=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
-				if(PricedItinerarys[i].getElementsByTagName("Allowance")[0]==undefined){
-					weight=30;
-				}else{
-					weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");
-					if(weight==null){
-						weight=30;
+// 			alert($("#selectmoney").val());
+
+			$("#selectmoney").change(function(){
+				if($(this).val()=="lowtohigh"){
+					for(var i=PricedItinerarys.length-1;i>0;i--){
+						var div="#d"+i;
+						var divOb=$(div);
+						$("#flightsResult").prepend(divOb);
 					}
+				}else if($(this).val()=="hightolow"){
+					for(var i=0;i<PricedItinerarys.length;i++){
+						var div="#d"+i;
+						var divOb=$(div);
+						$("#flightsResult").prepend(divOb);
+					}
+					
 				}
-				
-				
-				var	gotable;
-				var thead;
-				var tbody;
-				//去程飛機資訊
-				var go_trip  = PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[0];
-				var Flight=go_trip.getElementsByTagName("FlightSegment");
-				for(var j=0,maxj=Flight.length;j<maxj;j++){
-					//出發時間//抵達時間//艙等//飛行時間
-					var departureDateTime=Flight[j].getAttribute("DepartureDateTime");
-					var arrivalDateTime=Flight[j].getAttribute("ArrivalDateTime");
-					var resBookDesigCode=Flight[j].getAttribute("ResBookDesigCode");
-					var elapsedTime=Flight[j].getAttribute("ElapsedTime");
-	
-					//出發地點//抵達地點
-					var departureAirport=Flight[j].getElementsByTagName("DepartureAirport")[0].getAttribute("LocationCode");
-					var arrivalAirport=Flight[j].getElementsByTagName("ArrivalAirport")[0].getAttribute("LocationCode");
-					
-					
-					var operatingAirline=Flight[j].getElementsByTagName("OperatingAirline")[0];
-					//航空公司//航班代號//飛機型號//航空公司中文
-					var flightCode=operatingAirline.getAttribute("Code");
-					var flightNum=operatingAirline.getAttribute("FlightNumber");
-					var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
-					var airLineName=getAirLineName(flightCode);
-
-					console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
-					console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);
-					
-					//將 出發時間&抵達時間 分割為 [0]日期 與 [1]時間
-					departureDateTime=departureDateTime.split("T");
-					arrivalDateTime=arrivalDateTime.split("T");
-					//飛行時間(分) 轉為字串(時分)//計算總飛行時間
-					var hour=Math.floor(elapsedTime/60);
-					var min=elapsedTime%60;
-					var elapsedTimeString=hour+"小時"+min+"分";
-					totalTime=totalTime+parseInt(elapsedTime);
-					
-					if(j==0){
-						//放入tableShow資訊
-						var tr0show = $("<tr></tr>");
-
-						var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle","width":"150px"});
-
-
-						var td01show = $("<td></td>").text(departureAirport);
-						var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-						var td02show = $("<td></td>").append(imgshowArrows);
-						var td03show = $("<td></td>").text(arrivalAirport);
-						var td04show = $("<td></td>");
-						var td05show = $("<td></td>").attr({rowspan:"2"}).css({"width":"20%","vertical-align":"middle"}).text(totalFare+"元(台幣)");
-						tr0show.append(td00show).append(td01show).append(td02show)
-								.append(td03show).append(td04show).append(td05show);
-						
-						
-						var tr1show = $("<tr></tr>");
-// 						var td10show = $("<td></td>").attr({rowspan:"4"}).text(flightCode);
-						var td11show = $("<td></td>").text(departureDateTime[1].substring(0,5));
-						var td12show = $("<td></td>");
-						var td13show = $("<td></td>").text(arrivalDateTime[1].substring(0,5));
-						var td14show = $("<td></td>").text(elapsedTimeString+"，直飛");
-						tr1show.append(td11show).append(td12show).append(td13show).append(td14show);
-					
-						var tr2show = $("<tr></tr>");
-						var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
-						var butSelect= $("<button></button>").text("訂購").on("click",takedata).addClass("btn btn-light");
-						var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%","vertical-align":"middle"});
-						td21show.append(butSelect);
-						tr2show.append(td20show).append(td21show);
-						
-						tbodyShow.append(tr0show).append(tr1show).append(tr2show);
+			})	
+					for(var i=0,maxi=PricedItinerarys.length;i<maxi;i++){	
+// 			console.log(PricedItinerarys.length)
+					var divBig=$("<div></div>").attr({"id":"d"+i});//.css({"border":"4px solid #8C0044"});//最外圈的div
+					var infoBut=$("<button></button>").attr({id:"flightInfo"+i}).append("航班資訊")
+							.click(infoDivShow).addClass("btn btn-light").css({"margin-left":"325px","margin-bottom":"20px"});
+					var infoDiv=$("<div></div>").attr({id:"dflightInfo"+i}).css({"display":"none"});
+					var tableShow=$("<table></table>").addClass("table").css({"width":"100%","text-align":"center"});//.css({"border":"2px solid #003C9D","width":"100%"});
+					var tbodyShow=$("<tbody></tbody>");
+						console.log(i);
+					//總金額//總飛行時間
+					var totalFare=PricedItinerarys[i].getElementsByTagName("TotalFare")[0].getAttribute("Amount");
+					var totalTime=0;
+					//行李重量
+					var weight;
+	// 				=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");	
+					if(PricedItinerarys[i].getElementsByTagName("Allowance")[0]==undefined){
+						weight=30;
 					}else{
-						//更新抵達機場//更新抵達時間//更新總飛行時數
-						tbodyShow.find("tr:eq(0) td:eq(3)").text(arrivalAirport);
-						tbodyShow.find("tr:eq(1) td:eq(2)").text(arrivalDateTime[1].substring(0,5));
-						tbodyShow.find("tr:eq(1) td:eq(3)").text(
-								Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
-						
+						weight=PricedItinerarys[i].getElementsByTagName("Allowance")[0].getAttribute("Weight");
+						if(weight==null){
+							weight=30;
+						}
 					}
+				
+				
+					var	gotable;
+					var thead;
+					var tbody;
+				//去程飛機資訊
+					var go_trip  = PricedItinerarys[i].getElementsByTagName("OriginDestinationOption")[0];
+					var Flight=go_trip.getElementsByTagName("FlightSegment");
+					for(var j=0,maxj=Flight.length;j<maxj;j++){
+						//出發時間//抵達時間//艙等//飛行時間
+						var departureDateTime=Flight[j].getAttribute("DepartureDateTime");
+						var arrivalDateTime=Flight[j].getAttribute("ArrivalDateTime");
+						var resBookDesigCode=Flight[j].getAttribute("ResBookDesigCode");
+						var elapsedTime=Flight[j].getAttribute("ElapsedTime");
+		
+						//出發地點//抵達地點
+						var departureAirport=Flight[j].getElementsByTagName("DepartureAirport")[0].getAttribute("LocationCode");
+						var arrivalAirport=Flight[j].getElementsByTagName("ArrivalAirport")[0].getAttribute("LocationCode");
+						
+						
+						var operatingAirline=Flight[j].getElementsByTagName("OperatingAirline")[0];
+						//航空公司//航班代號//飛機型號//航空公司中文
+						var flightCode=operatingAirline.getAttribute("Code");
+						var flightNum=operatingAirline.getAttribute("FlightNumber");
+						var airEquipType=Flight[j].getElementsByTagName("Equipment")[0].getAttribute("AirEquipType");
+						var airLineName=getAirLineName(flightCode);
+	
+						console.log(departureDateTime+">>>"+arrivalDateTime+"|||"+resBookDesigCode+" : " +elapsedTime);
+						console.log(departureAirport+">>>"+arrivalAirport+"|||"+flightCode+" : " +flightNum);
+						
+						//將 出發時間&抵達時間 分割為 [0]日期 與 [1]時間
+						departureDateTime=departureDateTime.split("T");
+						arrivalDateTime=arrivalDateTime.split("T");
+						//飛行時間(分) 轉為字串(時分)//計算總飛行時間
+						var hour=Math.floor(elapsedTime/60);
+						var min=elapsedTime%60;
+						var elapsedTimeString=hour+"小時"+min+"分";
+						totalTime=totalTime+parseInt(elapsedTime);
+						
+						if(j==0){
+							//放入tableShow資訊
+							var tr0show = $("<tr></tr>");
+	
+							var td00show = $("<td></td>").attr({rowspan:"5"}).text(airLineName+flightCode).css({"vertical-align":"middle","width":"150px"});
+	
+	
+							var td01show = $("<td></td>").text(departureAirport);
+							var imgshowArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
+							var td02show = $("<td></td>").append(imgshowArrows);
+							var td03show = $("<td></td>").text(arrivalAirport);
+							var td04show = $("<td></td>");
+							var td05show = $("<td></td>").attr({rowspan:"2"}).css({"width":"20%","vertical-align":"middle"}).text(totalFare+"元(台幣)");
+							tr0show.append(td00show).append(td01show).append(td02show)
+									.append(td03show).append(td04show).append(td05show);
+							
+							
+							var tr1show = $("<tr></tr>");
+	// 						var td10show = $("<td></td>").attr({rowspan:"4"}).text(flightCode);
+							var td11show = $("<td></td>").text(departureDateTime[1].substring(0,5));
+							var td12show = $("<td></td>");
+							var td13show = $("<td></td>").text(arrivalDateTime[1].substring(0,5));
+							var td14show = $("<td></td>").text(elapsedTimeString+"，直飛");
+							tr1show.append(td11show).append(td12show).append(td13show).append(td14show);
+						
+							var tr2show = $("<tr></tr>");
+							var td20show = $("<td></td>").attr({colspan:"4"}).text("-----------------------------------------------------------------------");
+							var butSelect= $("<button></button>").text("訂購").on("click",takedata).addClass("btn btn-light");
+							var td21show = $("<td></td>").attr({rowspan:"3"}).css({"width":"20%","vertical-align":"middle"});
+							td21show.append(butSelect);
+							tr2show.append(td20show).append(td21show);
+							
+							tbodyShow.append(tr0show).append(tr1show).append(tr2show);
+						}else{
+							//更新抵達機場//更新抵達時間//更新總飛行時數
+							tbodyShow.find("tr:eq(0) td:eq(3)").text(arrivalAirport);
+							tbodyShow.find("tr:eq(1) td:eq(2)").text(arrivalDateTime[1].substring(0,5));
+							tbodyShow.find("tr:eq(1) td:eq(3)").text(
+									Math.floor(totalTime/60)+"小時"+totalTime%60+"分"+"，轉"+j+"次");
+							
+						}
 					
 					
 					//table
-					if(j==0){
-						gotable=$("<table></table>").addClass("table").css({"width":"100%","padding":"10px","vertical-align":"middle","text-align": "center"});//.css({"border":"2px solid #003C9D","width":"100%"});
-						//thead
-						thead=$("<thead></thead>");
-						var trhead=$("<tr></tr>");
-						var th0=$("<th></th>").text("去程:");
-						var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-						var th1=$("<th></th>").attr({colspan:"2"}).text(departureAirport).append(imgFlight0);
-						var th2=$("<th></th>").attr({colspan:"2"}).text(arrivalAirport);
-	
-						trhead.append(th0).append(th1).append(th2);
-						thead.append(trhead);
-						//thead-end
-						//tbody
-						tbody=$("<tbody></tbody>");
-						gotable.append(thead).append(tbody);
-					}else{
-						thead.find("tr th:eq(2)").text(arrivalAirport);
-					}
-					var trB0=$("<tr></tr>");
-					var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum).css({"vertical-align":"middle"});
-					var td01=$("<td></td>").text(departureDateTime[0]);
-					var td02=$("<td></td>");
-					var td03=$("<td></td>").text(arrivalDateTime[0]);
-					var imgFlight=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
-					var td04=$("<td></td>").before(":").text(airEquipType).prepend(imgFlight);
-					trB0.append(td00).append(td01).append(td02).append(td03).append(td04);
+						if(j==0){
+							gotable=$("<table></table>").addClass("table").css({"width":"100%","padding":"10px","vertical-align":"middle","text-align": "center"});//.css({"border":"2px solid #003C9D","width":"100%"});
+							//thead
+							thead=$("<thead></thead>");
+							var trhead=$("<tr></tr>");
+							var th0=$("<th></th>").text("去程:");
+							var imgFlight0=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
+							var th1=$("<th></th>").attr({colspan:"2"}).text(departureAirport).append(imgFlight0);
+							var th2=$("<th></th>").attr({colspan:"2"}).text(arrivalAirport);
+		
+							trhead.append(th0).append(th1).append(th2);
+							thead.append(trhead);
+							//thead-end
+							//tbody
+							tbody=$("<tbody></tbody>");
+							gotable.append(thead).append(tbody);
+						}else{
+							thead.find("tr th:eq(2)").text(arrivalAirport);
+						}
+						var trB0=$("<tr></tr>");
+						var td00=$("<td></td>").attr({rowspan:"3"}).text(flightCode+flightNum).css({"vertical-align":"middle"});
+						var td01=$("<td></td>").text(departureDateTime[0]);
+						var td02=$("<td></td>");
+						var td03=$("<td></td>").text(arrivalDateTime[0]);
+						var imgFlight=$("<img></img>").attr({src:'<c:url value="/image/search/003-plane.png"/>'});
+						var td04=$("<td></td>").before(":").text(airEquipType).prepend(imgFlight);
+							trB0.append(td00).append(td01).append(td02).append(td03).append(td04);
 					
-					var trB1=$("<tr></tr>");
-					var td10=$("<td></td>").text(departureDateTime[1].substring(0,5));
-					var td11=$("<td></td>").text(elapsedTimeString);
-					var td12=$("<td></td>").text(arrivalDateTime[1].substring(0,5));
-					var imgChair=$("<img></img>").attr({src:'<c:url value="/image/search/002-desk-chair.png"/>'});
-					var td13=$("<td></td>").before(":").text(resBookDesigCode+"(經濟艙)").prepend(imgChair);
-					trB1.append(td10).append(td11).append(td12).append(td13);
-					
-					var trB2=$("<tr></tr>");
-					var td20=$("<td></td>").text(departureAirport);
-					var imgArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
-					var td21=$("<td></td>").append(imgArrows);
-					var td22=$("<td></td>").text(arrivalAirport);
-					var imgBagage=$("<img></img>").attr({src:'<c:url value="/image/search/001-suitcase.png"/>'});
-					var td23=$("<td></td>").text(":"+weight+"kg").prepend(imgBagage);
-					trB2.append(td20).append(td21).append(td22).append(td23);
-					
-					tbody.append(trB0).append(trB1).append(trB2);
-						//tbody-end
-					//table-end
+						var trB1=$("<tr></tr>");
+						var td10=$("<td></td>").text(departureDateTime[1].substring(0,5));
+						var td11=$("<td></td>").text(elapsedTimeString);
+						var td12=$("<td></td>").text(arrivalDateTime[1].substring(0,5));
+						var imgChair=$("<img></img>").attr({src:'<c:url value="/image/search/002-desk-chair.png"/>'});
+						var td13=$("<td></td>").before(":").text(resBookDesigCode+"(經濟艙)").prepend(imgChair);
+						trB1.append(td10).append(td11).append(td12).append(td13);
+						
+						var trB2=$("<tr></tr>");
+						var td20=$("<td></td>").text(departureAirport);
+						var imgArrows=$("<img></img>").attr({src:'<c:url value="/image/search/004-arrows.png"/>'});
+						var td21=$("<td></td>").append(imgArrows);
+						var td22=$("<td></td>").text(arrivalAirport);
+						var imgBagage=$("<img></img>").attr({src:'<c:url value="/image/search/001-suitcase.png"/>'});
+						var td23=$("<td></td>").text(":"+weight+"kg").prepend(imgBagage);
+						trB2.append(td20).append(td21).append(td22).append(td23);
+						
+						tbody.append(trB0).append(trB1).append(trB2);
+							//tbody-end
+						//table-end
 					
 					infoDiv.append(gotable);
 				}//for迴圈 j 結束
@@ -335,13 +353,13 @@
 				
 				
 				var br0=$("<br/>");
-				documentFragment.append(divBig).append(br0);
+					documentFragment.append(divBig).append(br0);
 // 				$("#flightsResult").append(divBig).append(br0);
-			}//for迴圈 i 結束
+				}//for迴圈 i 結束
+			
 			
 			$("#flightsResult").append(documentFragment);
-			
-// 			if($("#selectmoney").click().value=="high")
+		
 		});
 		
 		
