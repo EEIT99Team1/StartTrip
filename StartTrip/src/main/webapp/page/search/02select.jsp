@@ -24,10 +24,8 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-select.min.css">
 	    <script src="jquery-3.1.0.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
@@ -57,9 +55,10 @@
 	<h1 style="margin-left:300px;font-weight: bold;">機票查詢結果</h1>
 	
 		<select id="selectmoney" style="margin-right:300px;float:right;">
-			<option value="low">按價格以低到高</option>
-			<option value="high">按價格以高到低</option>
+			<option id="selectmoneylow" value="lowtohigh">按價格以低到高</option>
+			<option id="selectmoneyhigh" value="hightolow">按價格以高到低</option>
 		</select>
+	
 	
 	<br>
 	<hr/>
