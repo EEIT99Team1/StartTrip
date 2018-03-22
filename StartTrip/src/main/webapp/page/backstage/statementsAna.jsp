@@ -18,6 +18,7 @@
 <link href="<c:url value='/css/backstage/statementsAna.css'/>" rel="stylesheet">
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet"
 	type="text/css" />
+	<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 <script>
 chartData = {
@@ -43,6 +44,16 @@ $(function() {
 	
 	</script>
 </c:forEach>
+
+<style >
+	#menu .page_item2 a
+	{
+		background: #2980b9;
+		color: rgba(255,255,255,1);
+	}
+</style>
+
+
 </head>
 <body>
 	<div id="page" class="container">

@@ -10,6 +10,7 @@
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <title>ManagerLogin</title>
+
 </head>
 <body>	
 	<div id="page" class="container">

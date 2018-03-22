@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value='/css/backstage/default.css' />" rel="stylesheet" type="text/css" />
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
-
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <style>
  #main form{
  	margin:auto; 
@@ -20,13 +20,19 @@
  	
 	} 
 
+	#menu .page_item3 a
+	{
+		background: #2980b9;
+		color: rgba(255,255,255,1);
+	}
+
 </style>
 <title>會員管理系統</title>
 </head>
 <body>
 	<div id="page" class="container">
 		<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
-			<div id="main">
+			<div id="main" style="height: 600px">
 				<h1>會員管理</h1>
 				<form action="<c:url value="/CustomerChangeToBlackListController.controller"/>">
 					<c:forEach var="customerList" items="${customerList}">
