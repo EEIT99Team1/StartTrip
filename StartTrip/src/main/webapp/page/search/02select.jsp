@@ -66,16 +66,16 @@
 	
 	 <div id="searchbar"class="searchbar">
             <aside class="aside">
-                <table>
+                <table  >
                     <thead><tr><td colspan="3">航班篩選</td> </tr> </thead>
                     <tbody>
-                        <tr>
-                            <td style="width:10%"><input type="checkbox" value="CI" /></td>
+                        <tr >
+                            <td style="width:10%"><input id="CI" type="checkbox" value="CI" /></td>
                             <td style="width:20%"><img src="<c:url value='/image/search/航空1.png'/>" /></td>
                             <td style="width:50%;">中華航空</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" value="BR" /></td>
+                            <td><input type="checkbox" id="BR"  value="BR" /></td>
                             <td><img src="<c:url value='/image/search/航空3.png'/>" /></td>
                             <td>長榮航空</td>
                         </tr>
