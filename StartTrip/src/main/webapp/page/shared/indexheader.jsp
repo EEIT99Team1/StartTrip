@@ -65,7 +65,7 @@
 					class="menuimg" style="height: 80px" src="<c:url value='/image/index/01.png'/>" /></a></li>
 			<li class="menuli menuli1"><a href="<c:url value="/index.jsp"/>">機票</a></li>
 			<li class="menuli menuli2"><a href="http://localhost:8080/StartTrip/page/House/House.jsp">民宿</a></li>			
-			<li class="menuli"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
+			<li class="menuli menuli3"><a href="<c:url value="/page/bonusshop/BonusShop.jsp"/>">紅利商城</a></li>
 			<li><input type="button" id="button" class="button" style="float: right;margin-top:23px" value="Login"/></li>
 
 		</ul>

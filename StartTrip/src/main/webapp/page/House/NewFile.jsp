@@ -8,8 +8,9 @@
 <link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <link href="<c:url value='/css/House/room.css'/>" type="text/css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<!-- <style > -->
+<title>民宿</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
+<style >
 /* .w1{ */
 /*     width:80%; */
 /*     height:300px;  */
@@ -31,7 +32,7 @@
 /* } */
 
 
-<!-- </style> -->
+</style>
 </head>
 <body>
 

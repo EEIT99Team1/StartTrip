@@ -16,7 +16,8 @@
 
 <!-- <link href="../../css/search/hometitle.css" rel="stylesheet"> -->
 <jsp:include page="/css/headerlink.jsp" />
-<title>Insert title here</title>
+<title>民宿</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
 <jsp:include page="/page/shared/header.jsp" />
