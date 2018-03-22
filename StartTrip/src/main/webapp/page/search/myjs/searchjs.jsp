@@ -5,41 +5,48 @@
 <script>
 var countF=50;
 $(function(){
-	$("#CI").click(function(){
+	$(".CI").click(function(){
+		var options=[];
+		$(".CI").each(function(){
+			//被勾選
+			if($(this).prop('checked')){
+				options.push($(this).val());
+			}
+		})
+		if(options.length==0){
+			for(var i=0;i<countF;i++){
+				var div="#d"+i;
+				var divOb=$(div);
+				divOb.css({"display":"block"});
+			}
+		}
+		if(options.length==1){
 		for(var i=0;i<countF;i++){
-			var choose=$(this).val();
+			var choose=options[0];
 			var div="#d"+i;
 			var divOb=$(div);
 			var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
 			var code=str.substring((str.length-2),str.length);
-			console.log("choose=="+choose)
-			console.log("code=="+code);
 			if(code==choose){
-				console.log(0)
 				divOb.css({"display":"block"});
 			}else{
-				console.log(1)
 				divOb.css({"display":"none"});
 			}
-		}
-	})
-	$("#BR").click(function(){
+		}}
+		if(options.length==2){
 		for(var i=0;i<countF;i++){
-			var choose=$(this).val();
+			var choose=options[0];
+			var choose1=options[1];
 			var div="#d"+i;
 			var divOb=$(div);
 			var str=divOb.find("table:eq(0) tbody:eq(0) tr:eq(0) td:eq(0)").text();
 			var code=str.substring((str.length-2),str.length);
-			console.log("choose=="+choose)
-			console.log("code=="+code);
-			if(code==choose){
-				console.log(0)
+			if(code==choose||code==choose1){
 				divOb.css({"display":"block"});
 			}else{
-				console.log(1)
 				divOb.css({"display":"none"});
 			}
-		}
+		}}
 	})
 })
 </script>
@@ -406,8 +413,8 @@ $(function(){
 				divBig.append(tableShow).append(infoBut).append(infoDiv);
 				
 				
-				var br0=$("<br/>");
-					documentFragment.append(divBig).append(br0);
+// 				var br0=$("<br/>");
+					documentFragment.append(divBig);
 // 				$("#flightsResult").append(divBig).append(br0);
 				}//for迴圈 i 結束
 			
