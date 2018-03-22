@@ -54,6 +54,25 @@
 
 
 /* Google */
+    #customGoogleBtn {
+      display: inline-block;
+      background: #DD4B39;
+      color:  #FFF;
+      width: 190px;
+      height:40px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+      font-size: 16px;
+      text-align:center;
+      line-height:40px;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+    }
+    #customGoogleBtn:hover {
+      cursor: pointer;
+    }
 .loginBtn--google {
   /*font-family: "Roboto", Roboto, arial, sans-serif;*/
   background: #DD4B39;

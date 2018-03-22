@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
 <%-- <link href="<c:url value='/css/login/bouncebutton.css'/>"type="text/css" rel="stylesheet" /> --%>
 <%-- <link href="<c:url value='/css/login/FB&Googlebutton.css'/>" rel="stylesheet" > --%>
 
 <style>
 #fbRead {display: none;}
 #fPaswrd{display: none;}
+/* Google button CSS */
+    #customGoogleBtn {display: inline-block;background:#DD4B39;color:#FFF; width:190px;
+      height:34px;border-radius: 5px;border: thin solid #888;box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;font-size: 16px;text-align:center;line-height:34px;
+      font-weight: bold;font-family: 'Roboto', sans-serif;}
+    #customGoogleBtn:hover {cursor: pointer;}
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -14,9 +22,42 @@
 	});
 	function refreshcode() {
 		document.getElementById("code").src = "CodeMakerServlet?a="+ Math.random() + 100;
-		return false;
-	}
+		return false;}
 </script>
+<script>
+//Google
+  var googleUser = {}; var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '145884058344-anfdfmdnrv2eb0so3t0tdanec9gqv9tm.apps.googleusercontent.com',
+        //cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        scope: 'profile email'});
+      attachSignin(document.getElementById('customGoogleBtn'));
+    });
+  };
+  function attachSignin(element) {
+    console.log("element.id:"+element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          console.log('FamilyName='+googleUser.getBasicProfile().getFamilyName());
+          console.log('GivenName='+googleUser.getBasicProfile().getGivenName());
+          console.log('Email='+googleUser.getBasicProfile().getEmail());
+          document.getElementById('inputAccountAndPasswordSpaceFormId').style.display = 'none';
+			document.getElementById('otherBtns').style.display = 'none';
+			$("#fbRead").show();
+			$("#inputFname").val(googleUser.getBasicProfile().getGivenName());
+			$("#inputLname").val(googleUser.getBasicProfile().getFamilyName());
+			$("#inputEmail").val(googleUser.getBasicProfile().getEmail());
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+//   googlesignOut
+  function signOut() {var auth2 = gapi.auth2.getAuthInstance();
+  		auth2.signOut().then(function () {console.log('User signed out.');});}
+  </script>
 <header>
 	<nav>
 		<ul class="menu">
@@ -140,8 +181,8 @@
 				</div>
 			
 				<div class="modal-footer" id="otherBtns">
-					<button class="loginBtn loginBtn--facebook" onclick="_login()">使用Facebook註冊</button>
-					<button class="loginBtn loginBtn--google" data-onsuccess="onSignIn">使用Google註冊</button>
+					<button id="" class="loginBtn loginBtn--facebook" onclick="_login()">使用Facebook註冊</button>
+					<div id="customGoogleBtn" class="customGPlusSignIn" ><span>使用Google註冊</span><script>startApp();</script></div>
 				</div>
 			</div>
 		</div>
