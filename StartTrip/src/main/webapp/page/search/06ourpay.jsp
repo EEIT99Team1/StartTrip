@@ -81,6 +81,10 @@ background:rgba(255, 244, 194,0.6);
 .pay-card-num li{
 	list-style-type:none;
 }
+.menuli1{
+            background:rgba(0, 125, 250,0.6);
+			color:white;
+        }
 </style>
 <jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
 </head>
@@ -101,10 +105,10 @@ background:rgba(255, 244, 194,0.6);
 		   <dd>
 		  <ul class="pay-card-num divCustonCardNo">
 		         <li class="card-num">
-		            <input id="CCpart1" name="CCpart1" type="text" maxlength="4" class="card_number creditNum" autocomplete="off"> - 
-		            <input id="CCpart2" name="CCpart2" type="text" maxlength="4" class="card_number creditNum" autocomplete="off"> - 
-		            <input id="CCpart3" name="CCpart3" type="text" maxlength="4" class="card_number creditNum" autocomplete="off"> - 
-		            <input id="CCpart4" name="CCpart4" type="text" maxlength="4" class="card_number creditNum" autocomplete="off">
+		            <input id="CCpart1" name="CCpart1" type="text" maxlength="4" class="card_number creditNum" autocomplete="off" size="10"> - 
+		            <input id="CCpart2" name="CCpart2" type="text" maxlength="4" class="card_number creditNum" autocomplete="off" size="10"> - 
+		            <input id="CCpart3" name="CCpart3" type="text" maxlength="4" class="card_number creditNum" autocomplete="off" size="10"> - 
+		            <input id="CCpart4" name="CCpart4" type="text" maxlength="4" class="card_number creditNum" autocomplete="off" size="10">
 		         </li>
 		         <li class="card-type">
 		            <span id="visa" class="picCreadit cc-icon cc-visa" style="display:none;"></span>
@@ -120,8 +124,8 @@ background:rgba(255, 244, 194,0.6);
 		   <dl class="noUnionPay pay-card-date creditBinding">
 		      <dt><sup class="inp-required">*</sup>卡片有效期限</dt>
 		      <dd>
-		         <input type="text" id="CreditMM" name="CreditMM" placeholder="MM" autocomplete="off" maxlength="2">
-		         <input type="text" id="CreditYY" name="CreditYY" placeholder="YY" autocomplete="off" maxlength="2">
+		         <input type="text" id="CreditMM" name="CreditMM" placeholder="MM" autocomplete="off" maxlength="2" size="10">-
+		         <input type="text" id="CreditYY" name="CreditYY" placeholder="YY" autocomplete="off" maxlength="2" size="10">
 		      </dd>
 		      <dd class="pay-card-ccvb">
 		         <dl>
@@ -140,7 +144,7 @@ background:rgba(255, 244, 194,0.6);
 		</div>
 	</div>
 	<br />
-	<div  class = "container">
+	<div >
 		<div id="passengerVeiw"></div>
 		<div   class = "container" style="padding:0 23% 45px 23%;background:rgba(255, 244, 194,0);">
 		<form action="<c:url value='/Searchview.controller'/>"method="get">

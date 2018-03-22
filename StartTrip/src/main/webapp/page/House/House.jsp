@@ -13,6 +13,13 @@
 <link href="<c:url value='/css/House/house.css'/>" type="text/css" rel="stylesheet" />
 <jsp:include page="/css/headerlink.jsp" />
 <link href="<c:url value='/css/House/houseindex.css'/>" type="text/css" rel="stylesheet" />
+<style >
+.menuli2{
+            background:rgba(0, 125, 250,0.6);
+			color:white;
+        }
+
+</style>
 </head>
 <body>
 <jsp:include page="/page/shared/indexheader.jsp" />

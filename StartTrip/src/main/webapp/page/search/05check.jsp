@@ -78,7 +78,10 @@ background:rgba(209, 209, 209,0.7);
 body{
 background:rgba(255, 244, 194,0.6);
 }
-
+.menuli1{
+            background:rgba(0, 125, 250,0.6);
+			color:white;
+        }
 
 </style>
 <jsp:include page="/page/shared/myjs/headerstylejs.jsp" />
@@ -701,8 +704,8 @@ background:rgba(255, 244, 194,0.6);
 		<div class="container" style="padding:0 23% 45px 23%;background:rgba(255, 244, 194,0);">
 			<div>
 <form id="formWebATM" method="post" accept-charset="UTF-8"
- action="https://payment-stage.opay.tw/Cashier/AioCheckOut/V5">
-	<div style="display:none">
+ action="https://payment-stage.opay.tw/Cashier/AioCheckOut/V5" >
+	<div style="display:none;">
 		MerchantID 商店代號:
 		<input type="text" name="MerchantID" value="2000132" /><br />
 		MerchantTradeNo 商店交易編號: 
@@ -732,17 +735,15 @@ background:rgba(255, 244, 194,0.6);
 		CheckMacValue 檢查碼: 
 		<input type="text" id="sha" name="CheckMacValue" value="" /><br />
 	</div>
-	<div id="bookRide">
+	<div id="bookRide" style="width: 900px;margin-left: -100px">
 
 		<input type="submit" value="確認，前往付款(歐付寶)" class="btn btn-success" style="opacity: 0.8;" />
 
+		<a href="<c:url value='/page/search/06ourpay.jsp'/>"><input class="btn btn-secondary" style="opacity: 0.8;" type="button" value="確認，前往付款(站內)" /></a>
+		
+		<a href="<c:url value='/page/search/04enter.jsp'/>"><input class="btn btn-secondary" style="opacity: 0.8" type="button" value="返回" /></a>
 	</div>
 </form>
-<form action="<c:url value='/page/search/06ourpay.jsp'/>">
-
-				<input class="btn btn-secondary" style="opacity: 0.8;" type="submit" value="確認，前往付款(站內)" />
-</form>
-			<a href="04enter.jsp"><input class="btn btn-secondary" style="opacity: 0.8"   type="button" value="返回" /></a>
 			</div>
 		</div>
 

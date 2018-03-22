@@ -13,6 +13,10 @@
 	           background-size: cover; /*圖片隨頁面縮放大小*/ 
 	           margin:auto; 
 	       }
+	 .menuli1{
+            background:rgba(0, 125, 250,0.6);
+			color:white;
+        }
 	</style>
 	
 	<jsp:include page="/css/headerlink.jsp" />

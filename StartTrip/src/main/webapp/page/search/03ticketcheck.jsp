@@ -20,7 +20,10 @@
 	border: 2px solid black;
 
 }
-
+.menuli1{
+            background:rgba(0, 125, 250,0.6);
+			color:white;
+        }
 </style>
 
 <link href="<c:url value='/css/search/searchbody.css'/>" type="text/css" rel="stylesheet" />
