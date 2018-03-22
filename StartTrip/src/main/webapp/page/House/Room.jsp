@@ -8,8 +8,8 @@
 <script src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 <jsp:include page="/css/headerlink.jsp" />
 <link href="<c:url value='/css/House/room.css'/>" type="text/css" rel="stylesheet" />
-
-<title>Insert title here</title>
+<title>民宿</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
 <jsp:include page="/page/shared/header.jsp" />

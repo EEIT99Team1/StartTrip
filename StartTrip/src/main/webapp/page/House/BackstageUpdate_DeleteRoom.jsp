@@ -13,7 +13,8 @@
 <link href="<c:url value='/css/backstage/fonts.css' />" rel="stylesheet" type="text/css" />
 
 <script src="<c:url value="/js/jquery-3.3.1.min.js" />"></script>
-<title>Insert title here</title>
+<title>民宿後台</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 <style >
  .menu {
             width:100%;

@@ -33,7 +33,8 @@
 
 </style>
 
-<title>Insert title here</title>
+<title>民宿後台</title>
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
 </head>
 <body>
 
