@@ -563,3 +563,29 @@
 		color: #000;
 		background: red;
 	}
+
+	#menu .page_item1 a:hover{
+            background-color:#97cbff;
+			opacity:0.8;
+            color:white;
+        }
+	#menu .page_item2 a:hover{
+            background-color:#97cbff;
+			opacity:0.8;
+            color:white;
+        }
+	#menu .page_item3 a:hover{
+            background-color:#97cbff;
+			opacity:0.8;
+            color:white;
+        }
+	#menu .page_item4 a:hover{
+            background-color:#97cbff;
+			opacity:0.8;
+            color:white;
+        }
+	#menu .page_item5 a:hover{
+            background-color:#97cbff;
+			opacity:0.8;
+            color:white;
+        }

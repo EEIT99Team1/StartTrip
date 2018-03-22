@@ -10,11 +10,22 @@
 
 <script src="<c:url value="/js/jquery-3.3.1.min.js" />"></script>
 <title>後台系統</title>
+<style >
+	#menu .page_item1 a
+	{
+		background: #2980b9;
+		color: rgba(255,255,255,1);
+	}
+</style>
+
+<link rel="shortcut icon" href="<c:url value='/page/login/img/webicon.ico'/>" />
+
+
 </head>
 <body>
 <div id="page" class="container">
 	<jsp:include page="/page/backstage/headerBackstage.jsp"></jsp:include>
-	<div id="main">
+	<div id="main" style="height: 600px">
 		<table id="bonusImgTable" style="width:80%">
 			<thead>
 				<tr><th><h2>紅利頁面輪播牆</h2></th></tr>
